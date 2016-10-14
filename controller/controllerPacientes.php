@@ -825,6 +825,105 @@ class controllerPacientes {
    }
 //
 
+      public function mostrarMigrarJugadores()
+   {
+
+       //ACCESO A DATOS
+    $paciente = new Paciente('pacientes');
+    $paciente->load("id=".$idPaciente);
+
+    $division = new Division('divisiones');
+    $division->load("id=".$paciente->division);
+
+    $divisionSel = new Division('divisiones');
+    $divisionSel->load("id=".$paciente->divisionseleccion);
+    
+    //Buscar seleccionados Clubes
+    $clubSeleccionado=NULL;
+    $divisionSeleccionada=NULL;
+    $deporteSeleccionado=NULL;
+    $sexoSeleccionado=NULL;
+
+    //Buscar seleccionados selecciones
+    $clubSeleccionadoSel=NULL;
+    $divisionSeleccionadaSel=NULL;
+    $deporteSeleccionadoSel=NULL;
+    $sexoSeleccionadoSel=NULL;
+
+
+    //Buscar lista de Clubes
+    $listaClubes = $this->traerClubes();
+
+    //Buscar lista de deportes
+    $listaDeportes = $this->traerDeportesXClub($clubSeleccionado);
+
+    //Buscar lista de sexos
+    $listaSexos = $this->traerSexoXDeporteXClub($clubSeleccionado,$deporteSeleccionado);
+
+    //Buscar lista de Divisiones
+    $listaDivisiones = $this->traerDivisionesXSexoXDeporteXClub($clubSeleccionado,$deporteSeleccionado,$sexoSeleccionado);
+
+
+
+    //Buscar lista de selecciones
+    $listaSelecciones = $this->traerSelecciones();
+
+    //Buscar lista de deportes
+    $listaDeportesSel = $this->traerDeportesXClub($clubSeleccionadoSel);
+
+    //Buscar lista de sexos
+    $listaSexosSel = $this->traerSexoXDeporteXClub($clubSeleccionadoSel,$deporteSeleccionadoSel);
+
+    //Buscar lista de Divisiones
+    $listaDivisionesSel = $this->traerDivisionesXSexoXDeporteXClub($clubSeleccionadoSel,$deporteSeleccionadoSel,$sexoSeleccionadoSel);
+
+
+
+
+     //PRESENTACION
+    $smarty = new Smarty;
+
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+
+//evio de seleccionados clubes
+
+    $smarty->assign('clubSeleccionado',$clubSeleccionado);
+    $smarty->assign('divisionSeleccionada',$divisionSeleccionada);
+    $smarty->assign('deporteSeleccionado',$deporteSeleccionado);
+    $smarty->assign('sexoSeleccionado',$sexoSeleccionado);
+
+//envio de listas clubes
+
+    $smarty->assign('listaClubes',$listaClubes);
+    $smarty->assign('listaDeportes',$listaDeportes);
+    $smarty->assign('listaSexos',$listaSexos);
+    $smarty->assign('listaDivisiones',$listaDivisiones);
+
+
+//evio de seleccionados selecciones
+
+    $smarty->assign('clubSeleccionadoSel',$clubSeleccionadoSel);
+    $smarty->assign('divisionSeleccionadaSel',$divisionSeleccionadaSel);
+    $smarty->assign('deporteSeleccionadoSel',$deporteSeleccionadoSel);
+    $smarty->assign('sexoSeleccionadoSel',$sexoSeleccionadoSel);
+
+
+//envio de listas selecciones
+
+    $smarty->assign('listaSelecciones',$listaSelecciones);
+    $smarty->assign('listaDeportesSel',$listaDeportesSel);
+    $smarty->assign('listaSexosSel',$listaSexosSel);
+    $smarty->assign('listaDivisionesSel',$listaDivisionesSel);
+
+    
+    $smarty->display('actualizarJugadoresXDivision.tpl');
+
+   }
+
 
    // traerFormConsultarClub
    public function mostrarConsultarPaciente($idPaciente)
@@ -971,6 +1070,13 @@ if (isset($_REQUEST['modulo']))
                           
     case 'mostrarActualizarPaciente': {
                             $this->mostrarActualizarPaciente($this->request['idPaciente']);
+                            break;
+                          }
+
+  
+
+      case 'mostrarMigrarJugadores': {
+                            $this->mostrarMigrarJugadores();
                             break;
                           }
 

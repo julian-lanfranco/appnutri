@@ -178,6 +178,31 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                             $('#selectorDeDeportes').html(a);
                                              }
                         });
+});
+
+        $("#central").on("change","#seleccionClubesOrigen", function(){
+
+                
+                var idClub=$("#seleccionClubesOrigen").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  idDivision:  "+idDivision+" id Seleccion: "+idSeleccion+" idSelDivision: "+idSelDivision);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarDeportesXClub&idClub="+idClub,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#selectorDeDeportesOrigen').html(a);
+                                             }
+                        });
 
         
         });
