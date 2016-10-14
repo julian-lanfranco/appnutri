@@ -445,6 +445,33 @@ class controllerPacientes {
 
    }  
 
+     public function cargarSelectorDeportesMigracion($deportes)
+   {
+
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('deportes',$deportes);
+
+
+    $smarty->display('selectorDeportesMigracion.tpl');
+
+   }
+
      public function cargarSelectorDeportesSelecciones($deportes)
    {
 
@@ -496,6 +523,33 @@ class controllerPacientes {
 
 
     $smarty->display('selectorSexos.tpl');
+
+   }  
+
+     public function cargarSelectorSexoMigracion($sexos)
+   {
+
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('sexos',$sexos);
+
+
+    $smarty->display('selectorSexosMigracion.tpl');
 
    }  
 
@@ -1111,6 +1165,15 @@ if (isset($_REQUEST['modulo']))
 
                                 break;
                                 }   
+    case 'buscarDeportesXClubMigracion': {
+                                      $deportes=$this->traerDeportesXClub($_REQUEST['idClub']);
+
+                                      $this->cargarSelectorDeportesMigracion($deportes);
+
+
+                                break;
+                                }   
+    
     
     case 'buscarSexoXDeportesXClub': 
                                   {
@@ -1118,6 +1181,17 @@ if (isset($_REQUEST['modulo']))
                                   $sexos=$this->traerSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte']);
 
                                   $this->cargarSelectorSexo($sexos);
+
+
+                                break;
+                                }
+                                
+    case 'buscarSexoXDeportesXClubMigracion': 
+                                  {
+                                  
+                                  $sexos=$this->traerSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte']);
+
+                                  $this->cargarSelectorSexoMigracion($sexos);
 
 
                                 break;

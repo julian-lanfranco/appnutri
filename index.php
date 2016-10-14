@@ -8,7 +8,7 @@
  require_once('controller/controllerMedicionesSimples.php');
  require_once('controller/controllerEstudioLaboratorio.php');
 require_once('controller/controllerRecordatorio24.php');
-
+//prueba
 
 
   if (isset($_REQUEST['modulo'])) 

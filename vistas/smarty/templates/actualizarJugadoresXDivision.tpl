@@ -45,7 +45,7 @@
 
 
 <label class="col-sm-1">Division:</label>
-<div id=seelctorDeDivisionesOrigen>
+<div id=selectorDeDivisionesOrigen>
 <div class="col-sm-2">
     <select name="seleccionDivisionesOrigen" class="form-control" id="seleccionDivisionesOrigen">
     <option label="ninguno" value="ninguno">Ninguno</option>

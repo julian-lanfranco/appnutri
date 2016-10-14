@@ -195,7 +195,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                         $.ajax({
                         type: "GET",
                         url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarDeportesXClub&idClub="+idClub,
+                        data: "accion=buscarDeportesXClubMigracion&idClub="+idClub,
                 
                         success: function(a) {
 
@@ -233,6 +233,36 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
 
         
         });
+
+
+        $("#central").on("change", "#seleccionDeportesOrigen", function(){
+
+                
+                var deporte=$("#selectorDeDeportesOrigen").val();
+                var idClub=$("#seleccionClubesOrigen").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarSexoXDeportesXClubMigracion&deporte="+deporte+"&idClub="+idClub,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#selectorDeSexoOrigen').html(a);
+                                             }
+                        });
+
+        
+        });
+
 
     $("#central").on("change", "#seleccionSexoModPacientes", function(){
 
