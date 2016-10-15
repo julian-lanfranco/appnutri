@@ -149,7 +149,25 @@ class controllerPacientes {
 
         return $deportesArray;
    }
+public function migrarJugadores($jugadores,$divisionDestino){
+    
+    $paciente = new Paciente('pacientes');
+    
 
+    foreach ($jugadores as $jugador) 
+      {
+   
+        if ($jugador>0) {
+                          $paciente->load("id=".$jugador);
+                          $paciente->division=$divisionDestino;
+                          $paciente->save();
+                        }
+      }
+
+
+
+
+}
   public function traerSexoXDeporteXClub($idClub,$deporte)
    {
         $divisiones = new Division('divisiones');
@@ -223,6 +241,14 @@ class controllerPacientes {
         $pacientesArray = $paciente->Find("1 order by id"); 
         return $pacientesArray;
    }
+
+  public function traerPacientesXDivision($division)
+   {
+        $paciente = new Paciente('pacientes');
+        $pacientesArray = $paciente->Find("division='".$division."' order by id"); 
+        return $pacientesArray;
+   }
+
 
   public function traerDivisiones()
    {
@@ -472,6 +498,62 @@ class controllerPacientes {
 
    }
 
+
+     public function cargarListadoJugadores($jugadores)
+   {
+
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('jugadores',$jugadores);
+
+
+    $smarty->display('tablaJugadoresMigracion.tpl');
+
+   }
+   
+
+  public function cargarSelectorDeportesMigracionDestino($deportes)
+   {
+
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('deportes',$deportes);
+
+
+    $smarty->display('selectorDeportesMigracionDestino.tpl');
+
+   }
+
      public function cargarSelectorDeportesSelecciones($deportes)
    {
 
@@ -548,11 +630,34 @@ class controllerPacientes {
 
     $smarty->assign('sexos',$sexos);
 
-
     $smarty->display('selectorSexosMigracion.tpl');
 
    }  
+     public function cargarSelectorSexoMigracionDestino($sexos)
+   {
 
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('sexos',$sexos);
+
+    $smarty->display('selectorSexosMigracionDestino.tpl');
+
+   }  
     public function cargarSelectorSexoSelecciones($sexos)
    {
 
@@ -605,6 +710,61 @@ class controllerPacientes {
 
 
     $smarty->display('selectorDivisiones.tpl');
+
+   }  
+
+
+    public function cargarSelectorDivisionesMigracion($divisiones)
+   {
+
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('divisiones',$divisiones);
+
+
+    $smarty->display('selectorDivisionesMigracion.tpl');
+
+   }
+
+  public function cargarSelectorDivisionesMigracionDestino($divisiones)
+   {
+
+    //ACCESO A DATOS
+
+    $divisionesArray="";
+    $idClub="";
+    $idDivision="";
+    $seleccionArray="";
+    $selDivisionesArray="";
+
+
+    //PRESENTACION
+    $smarty = new Smarty;
+    
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $smarty->assign('divisiones',$divisiones);
+
+
+    $smarty->display('selectorDivisionesMigracionDestino.tpl');
 
    }  
 
@@ -1172,7 +1332,30 @@ if (isset($_REQUEST['modulo']))
 
 
                                 break;
-                                }   
+                                } 
+
+
+    case 'buscarDeportesXClubMigracionDestino': {
+                                      $deportes=$this->traerDeportesXClub($_REQUEST['idClub']);
+
+                                      $this->cargarSelectorDeportesMigracionDestino($deportes);
+
+
+                                break;
+                                }
+    case 'migrarJugadores': {
+                                      
+                              $jugadores=$this->request['jugadorMigracion'];
+                              $divisionDestino=$this->request['seleccionDivisionesDestino'];
+                              $this->migrarJugadores($jugadores,$divisionDestino);
+
+
+                                break;
+                                }  
+  
+
+  
+    
     
     
     case 'buscarSexoXDeportesXClub': 
@@ -1192,6 +1375,16 @@ if (isset($_REQUEST['modulo']))
                                   $sexos=$this->traerSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte']);
 
                                   $this->cargarSelectorSexoMigracion($sexos);
+
+
+                                break;
+                                }
+    case 'buscarSexoXDeportesXClubMigracionDestino': 
+                                  {
+                                  
+                                  $sexos=$this->traerSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte']);
+
+                                  $this->cargarSelectorSexoMigracionDestino($sexos);
 
 
                                 break;
@@ -1219,6 +1412,43 @@ if (isset($_REQUEST['modulo']))
 
                                 break;
                                 }
+
+
+    case 'buscarDivisionesXSexoXDeportesXClubMigracion': 
+                                  {
+                                  
+                                  $divisiones=$this->traerDivisionesXSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte'],$_REQUEST['sexo']);
+
+                                  $this->cargarSelectorDivisionesMigracion($divisiones);
+
+
+                                break;
+                                }
+
+
+    case 'buscarDivisionesXSexoXDeportesXClubMigracionDestino': 
+                                  {
+                                  
+                                  $divisiones=$this->traerDivisionesXSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte'],$_REQUEST['sexo']);
+
+                                  $this->cargarSelectorDivisionesMigracionDestino($divisiones);
+
+
+                                break;
+                                }
+
+    case 'buscarJugadoresXDivision': 
+                                  {
+                                  
+                                  $jugadores=$this->traerPacientesXDivision($_REQUEST['division']);
+
+                                  $this->cargarListadoJugadores($jugadores);
+
+
+                                break;
+                                }
+
+    
 
     case 'buscarDivisionesXSexoXDeportesXSeleccion': 
                                   {

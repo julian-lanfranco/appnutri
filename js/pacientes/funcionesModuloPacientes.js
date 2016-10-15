@@ -1,3 +1,7 @@
+function cabecera() {
+    return "<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th>   <th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr>   <tbody style='display: block;  overflow-y: auto;float: left;height: 250px; width:100%'></tbody></table>";              
+}
+
 //Funciones Js del Modulo Pacientes
 $("#central").on("click", "#imgSeleccionarPaciente", function(){
         
@@ -98,6 +102,8 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                             });
         
         });
+
+
 
 
         $("#central").on("change", "#cadenaPaciente", function(){
@@ -201,11 +207,41 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
 
                                             //$('#central').html(a); 
                                             $('#selectorDeDeportesOrigen').html(a);
+                                            $('#listadoJugadores').html(cabecera());
                                              }
                         });
 
         
         });
+
+        $("#central").on("change","#seleccionClubesDestino", function(){
+
+                
+                var idClub=$("#seleccionClubesDestino").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  idDivision:  "+idDivision+" id Seleccion: "+idSeleccion+" idSelDivision: "+idSelDivision);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarDeportesXClubMigracionDestino&idClub="+idClub,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#selectorDeDeportesDestino').html(a);
+                                             }
+                        });
+
+        
+        });
+
+
     $("#central").on("change", "#seleccionDeportesModPacientes", function(){
 
                 
@@ -238,7 +274,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
         $("#central").on("change", "#seleccionDeportesOrigen", function(){
 
                 
-                var deporte=$("#selectorDeDeportesOrigen").val();
+                var deporte=$("#seleccionDeportesOrigen").val();
                 var idClub=$("#seleccionClubesOrigen").val();
                 
                 //var idDivision=$("#seleccionDivisionesModPacientes").val();
@@ -257,6 +293,35 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
 
                                             //$('#central').html(a); 
                                             $('#selectorDeSexoOrigen').html(a);
+                                            $('#listadoJugadores').html(cabecera());
+                                             }
+                        });
+
+        
+        });
+
+$("#central").on("change", "#seleccionDeportesDestino", function(){
+
+                
+                var deporte=$("#seleccionDeportesDestino").val();
+                var idClub=$("#seleccionClubesDestino").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarSexoXDeportesXClubMigracionDestino&deporte="+deporte+"&idClub="+idClub,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#selectorDeSexoDestino').html(a);
                                              }
                         });
 
@@ -293,6 +358,92 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
         
         });
 
+    $("#central").on("change", "#seleccionSexoOrigen", function(){
+
+                
+                var deporte=$("#seleccionDeportesOrigen").val();
+                var idClub=$("#seleccionClubesOrigen").val();
+                var sexo=$("#seleccionSexoOrigen").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarDivisionesXSexoXDeportesXClubMigracion&deporte="+deporte+"&idClub="+idClub+"&sexo="+sexo,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#selectorDeDivisionesOrigen').html(a);
+                                            $('#listadoJugadores').html(cabecera());
+                                             }
+                        });
+
+        
+        });
+
+
+    $("#central").on("change", "#seleccionSexoDestino", function(){
+
+                
+                var deporte=$("#seleccionDeportesDestino").val();
+                var idClub=$("#seleccionClubesDestino").val();
+                var sexo=$("#seleccionSexoDestino").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarDivisionesXSexoXDeportesXClubMigracionDestino&deporte="+deporte+"&idClub="+idClub+"&sexo="+sexo,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#selectorDeDivisionesDestino').html(a);
+                                             }
+                        });
+
+        
+        });
+
+    $("#central").on("change", "#seleccionDivisionesOrigen", function(){
+
+                
+                var division=$("#seleccionDivisionesOrigen").val();
+                
+                //var idDivision=$("#seleccionDivisionesModPacientes").val();
+
+                
+                
+                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
+  
+
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarJugadoresXDivision&division="+division,
+                
+                        success: function(a) {
+
+                                            //$('#central').html(a); 
+                                            $('#listadoJugadores').html(a);
+                                             }
+                        });
+
+        
+        });
 
 
     $("#central").on("change", "#seleccionDivisionesModTablaPacientes", function(){

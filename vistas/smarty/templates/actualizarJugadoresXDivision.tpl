@@ -3,7 +3,8 @@
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
      <tr style="">
       <td style="width: 100%;    float: left;" >
-<form  id="actualizapaciente" method="post">  
+
+<form  id="migrarJugadores" method="post">  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <label class="col-sm-1">Club Origen:</label>
@@ -94,7 +95,7 @@
 
 
 <label class="col-sm-1">Division:</label>
-<div id=seelctorDeDivisionesDestino>
+<div id=selectorDeDivisionesDestino>
 <div class="col-sm-2">
     <select name="seleccionDivisionesDestino" class="form-control" id="seleccionDivisionesDestino">
     <option label="ninguno" value="ninguno">Ninguno</option>
@@ -106,6 +107,22 @@
 </div>
 <br><br><br>
 
+  <p>Seleccione Jugadores a migrar:</p> 
+  <div id=listadoJugadores>
+  <table class="table table-striped header-fixed" style="width: 100%;">
+  <tr style="">
+   <th style="width: 33%; float: left;">Id</th>
+   <th style="width: 33%; float: left;">Nombre</th>
+   <th style="width: 33%; float: left;">Migrar</th>
+  </tr>
+   <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
+
+    </tbody>  
+  </table>
+
+
+</div>
+
 
 
 <br><br><br>
@@ -113,13 +130,15 @@
 
 
 <div class="form-group" align="center">
-    <input type="submit" id="btnActualizarPaciente" name="btnActualizarPaciente" class="btn btn-default" value="Actualizar"/>
-    <input type="button" id="btnCancelarActualizarPaciente" name="btnCancelarActualizarPaciente" class="btn btn-default" value="Cancelar" />
+    <button id="btnMigrarJugadores"  type="submit" form="migrarJugadores" class="btn btn-default">Migrar</button>
+    <input type="button" id="btnCancelarMigrarJugadores" name="btnCancelarMigrarJugadores" class="btn btn-default" value="Cancelar" />
 </div>    
 
        </td>
       </tr>
    </tbody>  
   </table> 
-</form>
+
 <script type="text/javascript" src="js/pacientes/funcionesModPacientesDinamico.js"> </script>
+</form>
+<script type="text/javascript" src="js/funcionesMigracionJugadoresDinamico.js"></script>

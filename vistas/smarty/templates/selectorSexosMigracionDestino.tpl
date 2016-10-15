@@ -1,5 +1,5 @@
 <div class="col-sm-2">
-    <select name=seleccionSexoOrigen class="form-control" id="seleccionSexoOrigen">
+    <select name=seleccionSexoDestino class="form-control" id="seleccionSexoDestino">
     <option label="ninguno" value="ninguno">Ninguno</option>
 
     {foreach from=$sexos item=sexo}
@@ -12,9 +12,9 @@
 
 
 <label class="col-sm-1">Division:</label>
-<div id=selectorDeDivisionesOrigen>
+<div id=selectorDeDivisionesDestino>
 <div class="col-sm-2">
-    <select name=seleccionDivisionesOrigen class="form-control" id="seleccionDivisionesOrigen">
+    <select name=seleccionDivisionesDestino class="form-control" id="seleccionDivisionesDestino">
     {foreach from=$divisiones item=division}
     <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre}-{$division->deporte|upper}</option>
     {/foreach}
