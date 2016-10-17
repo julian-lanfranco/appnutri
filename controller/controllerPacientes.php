@@ -53,7 +53,12 @@ class controllerPacientes {
     $smarty->display('nuevoDivision.tpl');
    }
 //
-  
+  public function traerPacientesJson(){
+
+    $pacientes=$this->traerPacientes();
+    echo json_encode($pacientes);
+  }
+
 // crearClub
   public function crearPaciente()
    {
@@ -113,7 +118,7 @@ class controllerPacientes {
       public function traerClubes()
    {
         $club = new Club('clubes');
-        $clubArray = $club->Find("tipo='normal' order by id"); 
+        $clubArray = $club->Find("1 order by id"); 
         return $clubArray;
    }
 
@@ -149,17 +154,53 @@ class controllerPacientes {
 
         return $deportesArray;
    }
-public function migrarJugadores($jugadores,$divisionDestino){
+public function migrarJugadores($jugadores,$divDestino,$divOrigen){
     
     $paciente = new Paciente('pacientes');
+
+    $divisionOrigen = new Division('divisiones');
+    $divisionDestino = new Division('divisiones');
+
+    $clubOrigen = new Club('clubes');
+    $clubDestino = new Club('clubes');
+
+    $divisionOrigen->Load("id=".$divOrigen);
+    $divisionDestino->Load("id=".$divDestino);
+
+    $clubOrigen->Load("id=".$divisionOrigen->club);
+    $clubDestino->Load("id=".$divisionDestino->club);
+
     
+
 
     foreach ($jugadores as $jugador) 
       {
    
         if ($jugador>0) {
-                          $paciente->load("id=".$jugador);
-                          $paciente->division=$divisionDestino;
+                          
+                          $paciente->Load("id=".$jugador);
+
+                          if ($divOrigen=="ninguno") 
+                            {
+                              if ($divDestino=="ninguno") {}
+                              else {
+                                    if ($clubDestino->tipo=="normal") $paciente->division=$divDestino;
+                                    if ($clubDestino->tipo=="seleccion") $paciente->divisionseleccion=$divDestino;
+                                    }  
+                            }
+                            else {
+                                    if ($divDestino=="ninguno") 
+                                    {
+                                    if ($clubOrigen->tipo=="normal") $paciente->division=NULL;
+                                    if ($clubOrigen->tipo=="seleccion") $paciente->divisionseleccion=NULL;  
+                                    }
+                                    else {
+                                          if ($clubDestino->tipo=="normal") $paciente->division=$divDestino;
+                                          if ($clubDestino->tipo=="seleccion") $paciente->divisionseleccion=$divDestino;
+                                          
+                                          }
+                                  }
+                          
                           $paciente->save();
                         }
       }
@@ -242,10 +283,17 @@ public function migrarJugadores($jugadores,$divisionDestino){
         return $pacientesArray;
    }
 
+      public function traerPacientesSinDivison()
+   {
+        $paciente = new Paciente('pacientes');
+        $pacientesArray = $paciente->Find("division is NULL order by id"); 
+        return $pacientesArray;
+   }
+
   public function traerPacientesXDivision($division)
    {
         $paciente = new Paciente('pacientes');
-        $pacientesArray = $paciente->Find("division='".$division."' order by id"); 
+        $pacientesArray = $paciente->Find("(division='".$division."') or (divisionseleccion='".$division."') order by id"); 
         return $pacientesArray;
    }
 
@@ -526,33 +574,6 @@ public function migrarJugadores($jugadores,$divisionDestino){
 
    }
    
-
-  public function cargarSelectorDeportesMigracionDestino($deportes)
-   {
-
-    //ACCESO A DATOS
-
-    $divisionesArray="";
-    $idClub="";
-    $idDivision="";
-    $seleccionArray="";
-    $selDivisionesArray="";
-
-
-    //PRESENTACION
-    $smarty = new Smarty;
-    
-    $smarty->template_dir = 'vistas/smarty/templates/';
-    $smarty->compile_dir = 'vistas/smarty/templates_c/';
-    $smarty->config_dir = 'vistas/smarty/configs/';
-    $smarty->cache_dir = 'vistas/smarty/cache/';
-
-    $smarty->assign('deportes',$deportes);
-
-
-    $smarty->display('selectorDeportesMigracionDestino.tpl');
-
-   }
 
      public function cargarSelectorDeportesSelecciones($deportes)
    {
@@ -1042,15 +1063,6 @@ public function migrarJugadores($jugadores,$divisionDestino){
       public function mostrarMigrarJugadores()
    {
 
-       //ACCESO A DATOS
-    $paciente = new Paciente('pacientes');
-    $paciente->load("id=".$idPaciente);
-
-    $division = new Division('divisiones');
-    $division->load("id=".$paciente->division);
-
-    $divisionSel = new Division('divisiones');
-    $divisionSel->load("id=".$paciente->divisionseleccion);
     
     //Buscar seleccionados Clubes
     $clubSeleccionado=NULL;
@@ -1091,7 +1103,9 @@ public function migrarJugadores($jugadores,$divisionDestino){
     //Buscar lista de Divisiones
     $listaDivisionesSel = $this->traerDivisionesXSexoXDeporteXClub($clubSeleccionadoSel,$deporteSeleccionadoSel,$sexoSeleccionadoSel);
 
+  //buscar jugadores sin division
 
+   $jugadoresSinDivision=$this->traerPacientesSinDivison();
 
 
      //PRESENTACION
@@ -1132,11 +1146,13 @@ public function migrarJugadores($jugadores,$divisionDestino){
     $smarty->assign('listaDeportesSel',$listaDeportesSel);
     $smarty->assign('listaSexosSel',$listaSexosSel);
     $smarty->assign('listaDivisionesSel',$listaDivisionesSel);
-
+    $smarty->assign('jugadoresSinDivision',$jugadoresSinDivision);
     
     $smarty->display('actualizarJugadoresXDivision.tpl');
 
    }
+
+
 
 
    // traerFormConsultarClub
@@ -1281,6 +1297,11 @@ if (isset($_REQUEST['modulo']))
 
                                     break;
                           }
+    case 'traerPacientes': {
+                            $this->traerPacientesJson();
+                            break;
+                          }
+
                           
     case 'mostrarActualizarPaciente': {
                             $this->mostrarActualizarPaciente($this->request['idPaciente']);
@@ -1289,10 +1310,11 @@ if (isset($_REQUEST['modulo']))
 
   
 
-      case 'mostrarMigrarJugadores': {
+  case 'mostrarMigrarJugadores': {
                             $this->mostrarMigrarJugadores();
                             break;
                           }
+
 
     case 'eliminarPaciente': {
                             $this->eliminarPaciente($this->request['idPaciente']);
@@ -1326,28 +1348,25 @@ if (isset($_REQUEST['modulo']))
                                 break;
                                 }   
     case 'buscarDeportesXClubMigracion': {
+                                      
+
                                       $deportes=$this->traerDeportesXClub($_REQUEST['idClub']);
 
-                                      $this->cargarSelectorDeportesMigracion($deportes);
+                                      echo json_encode($deportes);
+                                      //$this->cargarSelectorDeportesMigracion($deportes);
 
 
                                 break;
                                 } 
 
-
-    case 'buscarDeportesXClubMigracionDestino': {
-                                      $deportes=$this->traerDeportesXClub($_REQUEST['idClub']);
-
-                                      $this->cargarSelectorDeportesMigracionDestino($deportes);
-
-
-                                break;
-                                }
     case 'migrarJugadores': {
                                       
                               $jugadores=$this->request['jugadorMigracion'];
                               $divisionDestino=$this->request['seleccionDivisionesDestino'];
-                              $this->migrarJugadores($jugadores,$divisionDestino);
+                              $divisionOrigen=$this->request['seleccionDivisionesOrigen'];
+
+                              //echo($divisionDestino." ".$divisionOrigen);
+                              $this->migrarJugadores($jugadores,$divisionDestino,$divisionOrigen);
 
 
                                 break;
@@ -1374,7 +1393,8 @@ if (isset($_REQUEST['modulo']))
                                   
                                   $sexos=$this->traerSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte']);
 
-                                  $this->cargarSelectorSexoMigracion($sexos);
+                                  echo json_encode($sexos);
+                                  //$this->cargarSelectorSexoMigracion($sexos);
 
 
                                 break;
@@ -1419,7 +1439,8 @@ if (isset($_REQUEST['modulo']))
                                   
                                   $divisiones=$this->traerDivisionesXSexoXDeporteXClub($_REQUEST['idClub'],$_REQUEST['deporte'],$_REQUEST['sexo']);
 
-                                  $this->cargarSelectorDivisionesMigracion($divisiones);
+                                  echo json_encode($divisiones);
+                                 // $this->cargarSelectorDivisionesMigracion($divisiones);
 
 
                                 break;
@@ -1440,9 +1461,11 @@ if (isset($_REQUEST['modulo']))
     case 'buscarJugadoresXDivision': 
                                   {
                                   
-                                  $jugadores=$this->traerPacientesXDivision($_REQUEST['division']);
+                                  $juga=$this->traerPacientesXDivision($_REQUEST['division']);
 
-                                  $this->cargarListadoJugadores($jugadores);
+                                  echo json_encode($juga);
+
+                                  //$this->cargarListadoJugadores($jugadores);
 
 
                                 break;

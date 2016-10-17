@@ -7,8 +7,13 @@
  require_once('controller/controllerAnamnesis.php');
  require_once('controller/controllerMedicionesSimples.php');
  require_once('controller/controllerEstudioLaboratorio.php');
+
 require_once('controller/controllerRecordatorio24.php');
-//prueba
+
+ require_once('controller/controllerRecordatorio24.php'); 
+ require_once('controller/controllerMedicionesAntropometricas.php');
+
+
 
 
   if (isset($_REQUEST['modulo'])) 
@@ -60,7 +65,15 @@ require_once('controller/controllerRecordatorio24.php');
 
                                 break;
                               }
-                              
+        
+        case 'medicionesAntropometricas' : {
+
+                                $mvc = new controllerMedicionesAntropometricas($_REQUEST);
+
+                                $mvc->router();
+
+                                break;
+                              }                              
         case 'estudioLaboratorio' : {
 
 

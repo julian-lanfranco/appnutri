@@ -5,11 +5,10 @@
       <td style="width: 100%;    float: left;" >
 
 <form  id="migrarJugadores" method="post">  
-<input type="hidden" name="tipo_form" id="tipo_form" value="form_clubes">
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<br>
+<input type="hidden" name="tipo_form" id="tipo_form" value="form_selecciones">
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<label class="col-sm-1">Origen:</label>
+<label class="col-sm-1">Seleccion Origen:</label>
 
 <div id=selectorDeClubesOrigen>
 
@@ -17,7 +16,7 @@
 
     <select name="seleccionClubesOrigen" class="form-control" id="seleccionClubesOrigen">
     <option label="ninguno" value="ninguno">Ninguno</option>
-    {foreach from=$listaClubes item=club}
+    {foreach from=$listaSelecciones item=club}
     {if $club->id eq $clubSeleccionado}
     <option label="{$club->nombre}"  value="{$club->id}" selected>{$club->nombre|upper}</option>
     {else}
@@ -63,14 +62,14 @@
 
 <br><br><br>
 
-<label class="col-sm-1">Destino:</label>
+<label class="col-sm-1">Seleccion Destino:</label>
 
 <div id=selectorDeClubesDestino>
 
 <div class="col-sm-2" >
     <select name="seleccionClubesDestino" class="form-control" id="seleccionClubesDestino">
      <option label="ninguno" value="ninguno">Ninguno</option>
-    {foreach from=$listaClubes item=club}
+    {foreach from=$listaSelecciones item=club}
     {if $club->id eq $clubSeleccionadoSel}
     <option label="{$club->nombre}"  value="{$club->id}" selected>{$club->nombre|upper}</option>
     {else}

@@ -14,7 +14,7 @@ $("#migrarJugadores").submit(function(e) {
            success: function(data)
            {
                $('#listadoJugadores').html(cabecera()); 
-                alert('Migracion Exitosa');
+                alert("Migracion Exitosa");
 
            }
          });
