@@ -18,6 +18,35 @@
                             });
                 });
 
+        $('#btnMostrarMigrarJugadores').click(function(){
+                      
+                    
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=mostrarMigrarJugadores",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                            
+                });
+                $('#btnMostrarMigrarJugadoresSeleccion').click(function(){
+                      
+                    
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=mostrarMigrarJugadoresSeleccion",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                            
+                });
+        
 
 		$('#btnMostrarNuevoClub').click(function(){
 

@@ -55,7 +55,9 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
       <a href="#" id="btnMostrarTablaDivisiones">Listar Divisiones</a><br>
-      <a href="#" id="btnMostrarNuevoDivision">Nueva Division</a>  
+      <a href="#" id="btnMostrarNuevoDivision">Nueva Division</a> <br>
+      <a href="#" id="btnMostrarMigrarJugadores">Migracion de Jugadores</a>
+
       </div>
     </div>
 

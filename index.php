@@ -7,8 +7,12 @@
  require_once('controller/controllerAnamnesis.php');
  require_once('controller/controllerMedicionesSimples.php');
  require_once('controller/controllerEstudioLaboratorio.php');
+
+require_once('controller/controllerRecordatorio24.php');
+
  require_once('controller/controllerRecordatorio24.php'); 
  require_once('controller/controllerMedicionesAntropometricas.php');
+
 
 
 
