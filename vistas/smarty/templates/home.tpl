@@ -113,6 +113,19 @@
       </div>
     </div>    
 
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Mi Cuenta</a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+
+            <a href="#" id="btnCambiarPassword">Cambiar Contraseña</a> <br>
+            <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
+      </div>
+    </div>     
+      
 
   </div>
 
