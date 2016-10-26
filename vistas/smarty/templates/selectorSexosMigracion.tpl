@@ -5,6 +5,7 @@
     {foreach from=$sexos item=sexo}
 
     <option label="{$sexo}"  value="{$sexo}">{$sexo|upper}</option>
+
     {/foreach}
 
 </select>

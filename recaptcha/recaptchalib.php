@@ -39,6 +39,7 @@ define("RECAPTCHA_API_SERVER", "http://www.google.com/recaptcha/api");
 define("RECAPTCHA_API_SECURE_SERVER", "https://www.google.com/recaptcha/api");
 define("RECAPTCHA_VERIFY_SERVER", "www.google.com");
 
+
 /**
  * Encodes the given data into a query string format
  * @param $data - array of string elements to be encoded
