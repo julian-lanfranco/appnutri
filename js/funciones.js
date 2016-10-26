@@ -18,6 +18,35 @@
                             });
                 });
 
+        $('#btnMostrarMigrarJugadores').click(function(){
+                      
+                    
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=mostrarMigrarJugadores",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                            
+                });
+                $('#btnMostrarMigrarJugadoresSeleccion').click(function(){
+                      
+                    
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=mostrarMigrarJugadoresSeleccion",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                            
+                });
+        
 
 		$('#btnMostrarNuevoClub').click(function(){
 
@@ -275,10 +304,32 @@
                 });
 
 
+        $('#btnCerrarSesion').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=usuarios",
+                        data: "accion=CerrarSesion",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
 
 
-
-
+        $('#btnCambiarPassword').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=usuarios",
+                        data: "accion=mostrarActualizarUsuario",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
 
 
 $.getScript( "js/clubes/funcionesModuloClubes.js" )
@@ -307,6 +358,12 @@ $.getScript( "js/medicionesAntropometricas/funcionesModuloMedicionesAntropometri
   .fail(function( jqxhr, settings, exception ) {
     alert( "Triggered ajaxError handler 5." );
 });
+
+$.getScript( "js/usuarios/funcionesModuloUsuarios.js" )
+  .fail(function( jqxhr, settings, exception ) {
+    alert( "Triggered ajaxError handler 5." );
+});
+
 
 $.getScript( "js/estudiosLaboratorio/funcionesModuloEstudioLaboratorio.js" )
   .fail(function( jqxhr, settings, exception ) {
