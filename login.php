@@ -5,11 +5,8 @@
  * and open the template in the editor.
  */
 require_once('controller/controllerUsuario.php'); 
-require_once('recaptcha/recaptchalib.php');
 
-//variables captcha
-$publickey = "6LdvJwoUAAAAAGCDxUyFLkg7uD7_Vr0TD9OWUzNP";
-$error = null; 
+
 ?>
 
 <form  id="usuarioform" method="post" action="controller/controllerLogin.php"> 
@@ -39,23 +36,26 @@ $error = null;
      
      <br>
      <label class="col-sm-4">Usuario:</label>
-     <div class="col-sm-6">
-        <input type="text" class="form-control" id="usuario" name="usuario" value="" required pattern="^[a-zA-Z0-9-\s]+"  title="Ingrese su usuario">
+     <div class="col-sm-8">
+        <input type="text" class="form-control" id="usuario" name="usuario" value="" placeholder="usuario" required pattern="^[a-zA-Z0-9-\s]+"  title="Ingrese su usuario">
      </div>
      <br><br><br>
     
-     <label class="col-sm-4">Password:</label>
-     <div class="col-sm-6">
-        <input type="password" class="form-control" id="password" name="password" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese su contraseña.">
+     <label class="col-sm-4">Contraseña:</label>
+     <div class="col-sm-8">
+        <input type="password" class="form-control" id="password" name="password" value="" placeholder="contraseña" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese su contraseña.">
      </div>
      <br><br><br>
 
- 
-     <?php
-     echo recaptcha_get_html($publickey, $error);
-     ?>
-
-     
+      <label class="col-sm-4">Captcha:</label>
+     <div class="col-sm-8">
+        <input type="text" class="form-control" id="captcha" name="captcha" value="" placeholder="captcha" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el contenido de la imagen de abajo.">
+        <br>
+        <img src="captcha/generaCaptcha.php">
+     </div>
+      
+          
+     <br><br><br><br>
      <br><br>
 
      <div class="form-group" align="center">
