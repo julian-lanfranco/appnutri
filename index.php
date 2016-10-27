@@ -1,19 +1,24 @@
 <?php
 
-
+session_start();
  require_once('controller/controllerClubes.php');
  require_once('controller/controllerDivisiones.php');
  require_once('controller/controllerPacientes.php');
  require_once('controller/controllerAnamnesis.php');
  require_once('controller/controllerMedicionesSimples.php');
  require_once('controller/controllerEstudioLaboratorio.php');
-require_once('controller/controllerRecordatorio24.php');
+ require_once('controller/controllerRecordatorio24.php');
+ require_once('controller/controllerMedicionesAntropometricas.php');
+ require_once('controller/controllerUsuario.php');
+ 
 
-
-
+ 
+ 
+if (!empty($_SESSION['user'])){
+    
   if (isset($_REQUEST['modulo'])) 
     {
-
+        
     switch ($_REQUEST['modulo']) 
     {
         case 'clubes' : {
@@ -60,7 +65,15 @@ require_once('controller/controllerRecordatorio24.php');
 
                                 break;
                               }
-                              
+        
+        case 'medicionesAntropometricas' : {
+
+                                $mvc = new controllerMedicionesAntropometricas($_REQUEST);
+
+                                $mvc->router();
+
+                                break;
+                              }                              
         case 'estudioLaboratorio' : {
 
 
@@ -81,18 +94,36 @@ require_once('controller/controllerRecordatorio24.php');
 
 
                                 break;
-                              }                      
+                              }                
+      case 'usuarios' : {
+
+
+                                $mvc = new controllerUsuario($_REQUEST);
+
+                                $mvc->router();
+
+
+
+                                break;
+                              }                              
         
     }
 }
 
 else {
+    
     $_REQUEST['modulo']="clubes";
     $mvc = new controllerClubes($_REQUEST);
                   $mvc->router();
-
 }
 
+
+}
+else{
+    
+  echo "<script language='javascript'>window.location='login.php'</script>"; 
+
+}
 
 
 

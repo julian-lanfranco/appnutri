@@ -18,6 +18,35 @@
                             });
                 });
 
+        $('#btnMostrarMigrarJugadores').click(function(){
+                      
+                    
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=mostrarMigrarJugadores",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                            
+                });
+                $('#btnMostrarMigrarJugadoresSeleccion').click(function(){
+                      
+                    
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=mostrarMigrarJugadoresSeleccion",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                            
+                });
+        
 
 		$('#btnMostrarNuevoClub').click(function(){
 
@@ -133,12 +162,37 @@
 
         
 
-                $('#btnNuevaMedicionSimple').click(function(){
+                $('#btnNuevaMedicionAntro').click(function(){
                     var idPaciente=$("#idPaciente").val();
                       $.ajax({
                         type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=medicionesSimples&idPaciente="+idPaciente,
-                        data: "accion=mostrarNuevoMedicionesSimples",
+                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
+                        data: "accion=mostrarNuevoMedicionesAntropometricas",
+                        success: function(a) {
+                                            $('#central').html(a); 
+                                             }
+                            });
+                });
+                
+                $('#btnlistarMedicionAntro').click(function(){
+                    var idPaciente=$("#idPaciente").val();
+                      $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
+                        data: "accion=listarMedicionesAntropometricas",
+                        success: function(a) {
+                                            $('#central').html(a); 
+                                             }
+                            });
+                });
+                
+                
+                $('#btnGraficasMedicionAntro').click(function(){
+                    var idPaciente=$("#idPaciente").val();
+                      $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
+                        data: "accion=graficarMedicionesAntropometricas",
                         success: function(a) {
                                             $('#central').html(a); 
                                              }
@@ -147,19 +201,6 @@
 
 
 
-
-        $('#btnMostrarTablaMedicionesSimples').click(function(){
-
-                    var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=medicionesSimples&idPaciente="+idPaciente,
-                        data: "accion=listarMedicionesSimples",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
 
 
         $('#btnNuevoEstudioLaboratorio').click(function(){
@@ -263,10 +304,32 @@
                 });
 
 
+        $('#btnCerrarSesion').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=usuarios",
+                        data: "accion=CerrarSesion",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
 
 
-
-
+        $('#btnCambiarPassword').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=usuarios",
+                        data: "accion=mostrarActualizarUsuario",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
 
 
 $.getScript( "js/clubes/funcionesModuloClubes.js" )
@@ -291,10 +354,16 @@ $.getScript( "js/anamnesis/funcionesModuloAnamnesis.js" )
     alert( "Triggered ajaxError handler 4." );
 });
 
-$.getScript( "js/medicionesSimples/funcionesModuloMedicionesSimples.js" )
+$.getScript( "js/medicionesAntropometricas/funcionesModuloMedicionesAntropometricas.js" )
   .fail(function( jqxhr, settings, exception ) {
     alert( "Triggered ajaxError handler 5." );
 });
+
+$.getScript( "js/usuarios/funcionesModuloUsuarios.js" )
+  .fail(function( jqxhr, settings, exception ) {
+    alert( "Triggered ajaxError handler 5." );
+});
+
 
 $.getScript( "js/estudiosLaboratorio/funcionesModuloEstudioLaboratorio.js" )
   .fail(function( jqxhr, settings, exception ) {

@@ -35,6 +35,7 @@ class controllerClubes {
     $smarty->compile_dir = 'vistas/smarty/templates_c/';
     $smarty->config_dir = 'vistas/smarty/configs/';
     $smarty->cache_dir = 'vistas/smarty/cache/';
+    $smarty->assign('usuario',$_SESSION['user']);
     $smarty->display('home.tpl');
    }
 //

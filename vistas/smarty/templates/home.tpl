@@ -19,7 +19,13 @@
 
   <div class="panel-group" id="accordion">
 
-    
+
+      <div class="panel panel-default" style="background-color:lavender;">
+          <h4> 
+              Bienvenido: {$usuario}
+          </h4>
+     
+    </div>      
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -55,7 +61,9 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
       <a href="#" id="btnMostrarTablaDivisiones">Listar Divisiones</a><br>
-      <a href="#" id="btnMostrarNuevoDivision">Nueva Division</a>  
+      <a href="#" id="btnMostrarNuevoDivision">Nueva Division</a> <br>
+      <a href="#" id="btnMostrarMigrarJugadores">Migracion de Jugadores</a>
+
       </div>
     </div>
 
@@ -73,16 +81,16 @@
       </div>
     </div>
 
-        <div class="panel panel-default">
+    <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Mediciones Simples</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Mediciones Antropometricas</a>
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
-          <a href="#" id="btnNuevaMedicionSimple">Nueva Medicion</a> <br>
-          <a href="#" id="btnMostrarTablaMedicionesSimples">Listar Mediciones</a>  <br>
-          <a href="#" id="btnMostarEstadisticaMedicionSimple">Consultar Estadistica</a>  
+          <a href="#" id="btnNuevaMedicionAntro">Nueva Med. Antropometricas</a> <br>
+          <a href="#" id="btnlistarMedicionAntro">Listar Med. Antropometricas</a> <br>
+          <a href="#" id="btnGraficasMedicionAntro">Generar Graficas</a> <br>
       </div>
     </div>
 
@@ -111,6 +119,19 @@
       </div>
     </div>    
 
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Mi Cuenta</a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+
+            <a href="#" id="btnCambiarPassword">Cambiar Contraseña</a> <br>
+            <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
+      </div>
+    </div>     
+      
 
   </div>
 
