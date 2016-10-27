@@ -1,7 +1,3 @@
-function cabecera() {
-    return "<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th>   <th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr>   <tbody style='display: block;  overflow-y: auto;float: left;height: 250px; width:100%'></tbody></table>";              
-}
-
 //Funciones Js del Modulo Pacientes
 $("#central").on("click", "#imgSeleccionarPaciente", function(){
         
@@ -55,7 +51,6 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                 data: "accion=consultarPaciente&idPaciente="+idPaciente,
 
                                 success: function(b) {
-
                                                     $('#central').html(b); 
                                                         }
                             });
@@ -63,8 +58,6 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
     
 
         });
-
-
  
 
 //listeners para filtrado de divisiones de clubes
@@ -105,8 +98,6 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                             });
         
         });
-
-
 
 
         $("#central").on("change", "#cadenaPaciente", function(){
@@ -187,76 +178,9 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                             $('#selectorDeDeportes').html(a);
                                              }
                         });
-});
-
-        $("#central").on("change","#seleccionClubesOrigen", function(){
-
-                
-                var idClub=$("#seleccionClubesOrigen").val();
-                var tipo_form=$("#tipo_form").val();
-
-
-
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarDeportesXClubMigracion&idClub="+idClub+"&tipo_form="+tipo_form,
-                        
-                        success: function(a) {
-                                            var deportes=JSON.parse(a);
-                                            var deportesSelect="<div class='col-sm-2'><select name='seleccionDeportesOrigen' class='form-control' id='seleccionDeportesOrigen'>";
-                                            deportesSelect=deportesSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";       
-                                            for(var i in deportes)
-                                                        {
-                                                            deportesSelect=deportesSelect+"<option>"+deportes[i]+"</option>";
-                                                        }
-                                            deportesSelect=deportesSelect+"</select></div>";
-                                            $('#selectorDeDeportesOrigen').html(deportesSelect);
-                                             }
-                        });
 
         
         });
-
-
-
-        $("#central").on("change","#seleccionClubesDestino", function(){
-
-                
-                var idClub=$("#seleccionClubesDestino").val();
-                
-                //var idDivision=$("#seleccionDivisionesModPacientes").val();
-
-                
-                
-                //alert("id Club: "+idClub+"  idDivision:  "+idDivision+" id Seleccion: "+idSeleccion+" idSelDivision: "+idSelDivision);
-  
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarDeportesXClubMigracion&idClub="+idClub,
-                
-                        success: function(a) {
-
-                                            //$('#central').html(a); 
-                                            var deportes=JSON.parse(a);
-                                            var deportesSelect="<div class='col-sm-2'><select name='seleccionDeportesDestino' class='form-control' id='seleccionDeportesDestino'>";
-                                            deportesSelect=deportesSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";       
-                                            for(var i in deportes)
-                                                        {
-                                                            deportesSelect=deportesSelect+"<option>"+deportes[i]+"</option>";
-                                                        }
-                                            deportesSelect=deportesSelect+"</select></div>";
-                                            $('#selectorDeDeportesDestino').html(deportesSelect);
-                                             }
-                        });
-
-        
-        });
-
-
     $("#central").on("change", "#seleccionDeportesModPacientes", function(){
 
                 
@@ -284,77 +208,6 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
 
         
         });
-
-
-        $("#central").on("change", "#seleccionDeportesOrigen", function(){
-
-                
-                var deporte=$("#seleccionDeportesOrigen").val();
-                var idClub=$("#seleccionClubesOrigen").val();
-  
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarSexoXDeportesXClubMigracion&deporte="+deporte+"&idClub="+idClub,
-                
-                        success: function(a) {
-
-                                            var sexos=JSON.parse(a);
-                                            var sexoSelect="<div class='col-sm-2'><select name='seleccionSexoOrigen' class='form-control' id='seleccionSexoOrigen'>";
-                                            sexoSelect=sexoSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";       
-                                            for(var i in sexos)
-                                                        {
-                                                            sexoSelect=sexoSelect+"<option>"+sexos[i]+"</option>";
-                                                        }
-                                            sexoSelect=sexoSelect+"</select></div>";
-                                            $
-                                             
-                                            $('#selectorDeSexoOrigen').html(sexoSelect);
-                                            
-                                             }
-                        });
-
-        
-        });
-
-$("#central").on("change", "#seleccionDeportesDestino", function(){
-
-                
-                var deporte=$("#seleccionDeportesDestino").val();
-                var idClub=$("#seleccionClubesDestino").val();
-                
-                //var idDivision=$("#seleccionDivisionesModPacientes").val();
-
-                
-                
-                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
-  
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarSexoXDeportesXClubMigracion&deporte="+deporte+"&idClub="+idClub,
-                
-                        success: function(a) {
-
-                                            var sexos=JSON.parse(a);
-                                            var sexoSelect="<div class='col-sm-2'><select name='seleccionSexoDestino' class='form-control' id='seleccionSexoDestino'>";
-                                            sexoSelect=sexoSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";       
-                                            for(var i in sexos)
-                                                        {
-                                                            sexoSelect=sexoSelect+"<option>"+sexos[i]+"</option>";
-                                                        }
-                                            sexoSelect=sexoSelect+"</select></div>";
-                                            $
-                                             
-                                            $('#selectorDeSexoDestino').html(sexoSelect);
-                                             }
-                        });
-
-        
-        });
-
 
     $("#central").on("change", "#seleccionSexoModPacientes", function(){
 
@@ -385,124 +238,6 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
         
         });
 
-    $("#central").on("change", "#seleccionSexoOrigen", function(){
-
-                
-                var deporte=$("#seleccionDeportesOrigen").val();
-                var idClub=$("#seleccionClubesOrigen").val();
-                var sexo=$("#seleccionSexoOrigen").val();
-                
-                //var idDivision=$("#seleccionDivisionesModPacientes").val();
-
-                
-                
-                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
-  
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarDivisionesXSexoXDeportesXClubMigracion&deporte="+deporte+"&idClub="+idClub+"&sexo="+sexo,
-                
-                        success: function(a) {
-
-                                            var divisiones=JSON.parse(a);
-                                            var divisionSelect="<div class='col-sm-2'><select name='seleccionDivisionesOrigen' class='form-control' id='seleccionDivisionesOrigen'>";
-                                            divisionSelect=divisionSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";      
-                                            for(var i in divisiones)
-                                                        {
-                                                            divisionSelect=divisionSelect+"<option label='"+divisiones[i].id+"' value='"+divisiones[i].id+"'>"+divisiones[i].nombre+"</option>";
-                                                        }
-                                            divisionSelect=divisionSelect+"</select></div>";
-                                             
-                                            $('#selectorDeDivisionesOrigen').html(divisionSelect);
-
-                                             }
-                        });
-
-        
-        });
-
-
-    $("#central").on("change", "#seleccionSexoDestino", function(){
-
-                
-                var deporte=$("#seleccionDeportesDestino").val();
-                var idClub=$("#seleccionClubesDestino").val();
-                var sexo=$("#seleccionSexoDestino").val();
-                
-                //var idDivision=$("#seleccionDivisionesModPacientes").val();
-
-                
-                
-                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
-  
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarDivisionesXSexoXDeportesXClubMigracion&deporte="+deporte+"&idClub="+idClub+"&sexo="+sexo,
-                
-                        success: function(a) {
-
-                                            var divisiones=JSON.parse(a);
-                                            var divisionSelect="<div class='col-sm-2'><select name='seleccionDivisionesDestino' class='form-control' id='seleccionDivisionesDestino'>";
-                                            divisionSelect=divisionSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";      
-                                            for(var i in divisiones)
-                                                        {
-                                                            divisionSelect=divisionSelect+"<option label='"+divisiones[i].id+"' value='"+divisiones[i].id+"'>"+divisiones[i].nombre+"</option>";
-                                                        }
-                                            divisionSelect=divisionSelect+"</select></div>";
-                                             
-
-                                            $('#selectorDeDivisionesDestino').html(divisionSelect);
-                                             }
-                        });
-
-        
-        });
-
-    $("#central").on("change", "#seleccionDivisionesOrigen", function(){
-
-                
-                var division=$("#seleccionDivisionesOrigen").val();
-                
-                //var idDivision=$("#seleccionDivisionesModPacientes").val();
-
-                
-                
-                //alert("id Club: "+idClub+"  Deporte:  "+deporte);
-  
-
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarJugadoresXDivision&division="+division,
-                
-                        success: function(b) {
-
-                                            var juga=JSON.parse(b);
-                                            var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
-
-    
-                                            for(var i in juga)
-                                                        {
-                                                            jugadoresTabla=jugadoresTabla+"<tr style='width: 100%; display: inline-table;'><td style='width: 33%;    float: left;'>"
-                                                            +juga[i].id+"</td><td style='width: 33%;    float: left;'>"
-                                                            +juga[i].apellido+" "+juga[i].nombre+"</td><td style='width: 33%;    float: left;'><input type='checkbox' name='jugadorMigracion[]' value='"
-                                                            +juga[i].id+"' id='jugadorMigracion[]' align='CENTER'  style='cursor:pointer'  checked></td></tr>";
-                                                            
-                                                        }
-
-                                            jugadoresTabla=jugadoresTabla+"</tbody></table>";
-                                            //alert(jugadoresTabla);
-
-                                            $('#listadoJugadores').html(jugadoresTabla);
-                                             }
-                        });
-
-        
-        });
 
 
     $("#central").on("change", "#seleccionDivisionesModTablaPacientes", function(){

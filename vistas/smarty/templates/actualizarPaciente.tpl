@@ -62,9 +62,9 @@
     <select name="seleccionDivisionesModPacientes" class="form-control" id="seleccionDivisionesModPacientes">
     {foreach from=$listaDivisiones item=division}
     {if $division->id eq $divisionSeleccionada}
-    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre|upper}</option>
+    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre}|upper}</option>
     {else}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre|upper}</option>
+    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre}|upper}</option>
     {/if}
     {/foreach}
 </select>
@@ -85,9 +85,9 @@
      <option label="ninguno" value="ninguno">Ninguno</option>
     {foreach from=$listaSelecciones item=seleccion}
     {if $seleccion->id eq $clubSeleccionadoSel}
-    <option label="{$seleccion->nombre}"  value="{$seleccion->id}" selected>{$seleccion->nombre|upper}</option>
+    <option label="{$seleccion->nombre}"  value="{$seleccion->id}" selected>{$seleccion->nombre}|upper}</option>
     {else}
-    <option label="{$seleccion->nombre}"  value="{$seleccion->id}">{$seleccion->nombre|upper}</option>
+    <option label="{$seleccion->nombre}"  value="{$seleccion->id}">{$seleccion->nombre}|upper}</option>
     {/if}
     {/foreach}
 </select> 
@@ -130,9 +130,9 @@
     <select name="seleccionDivisionesSeleccionModPacientes" class="form-control" id="seleccionDivisionesSeleccionModPacientes">
     {foreach from=$listaDivisionesSel item=division}
     {if $division->id eq $divisionSeleccionadaSel}
-    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre|upper}</option>
+    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre}|upper}</option>
     {else}
-    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre|upper}</option>
+    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre}|upper}</option>
     {/if}
     {/foreach}
 </select>

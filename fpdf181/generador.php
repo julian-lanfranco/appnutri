@@ -263,7 +263,7 @@ $pdf->Output();
 
 }
 
-public function imprimirMedicionAntro($medicion,$nombre,$apellido){
+public function imprimirMedicionSimple($medicion,$nombre,$apellido){
 
 $pdf = new FPDF();
 
@@ -286,30 +286,27 @@ $pdf->Text(30,70,"Id de la Medicion: ".$medicion->id."                          
 
 
 
-$pdf->Text(30,80,"Datos Basicos : ");
-$pdf->Text(30,90,"Peso : ".$medicion->pesobruto."  Talla Corporal: ".$medicion->tallacorporal."  Talla Sentado: ".$medicion->tallasentado);
+$pdf->Text(30,80,"Peso : ".$medicion->peso."  Talla : ".$medicion->talla);
 
-$pdf->Text(30,100,"Diametros : ");
+$pdf->Text(30,90,"Talla Sentado : ".$medicion->tallasentado."  Circunferencia de Cintura : ".$medicion->circucintura);
 
-$pdf->Text(30,110,"Biacromial : ".$medicion->biacromial."  Torax Tranverso:".$medicion->toraxtranverso."  Toraz Anter-Posterio: ".$medicion->toraxantero);
+$pdf->Text(30,100,"Circunferencia de Brazo : ".$medicion->circubrazo);
 
-$pdf->Text(30,120,"Bi-iliocrestideo: ".$medicion->biiliocrestideo."  Humeral: ".$medicion->humeral."  Femoral: ".$medicion->femoral);
+$pdf->Text(30,110,"Pliegues:");
 
-$pdf->Text(30,130,"Perimetros: ");
+$pdf->Text(30,120,"Tricipital: ".$medicion->plieguetricipital);
 
-$pdf->Text(30,140,"Cabeza: ".$medicion->cabeza."  Brazo Relajado: ".$medicion->brazorelajado."  Brazo Flexionado en tension: ".$medicion->brazoflexionado);
+$pdf->Text(30,130,"Sub Escapular: ".$medicion->plieguesubescapular);
 
-$pdf->Text(30,150,"Antebrazo Maximo: ".$medicion->antebrazomaximo."  Torax Mesoesternal: ".$medicion->toraxmesoesternal."  Cintura: ".$medicion->cintura);
+$pdf->Text(30,140,"Supra Espinal: ".$medicion->plieguesupraespinal);
 
-$pdf->Text(30,160,"Cadera (maximo): ".$medicion->cadera."  Muslo (maximo): ".$medicion->muslomax."  Muslo (medial): ".$medicion->muslomed);
+$pdf->Text(30,150,"Abdominal: ".$medicion->pliegueabdominal);
 
-$pdf->Text(30,170,"Pantorrilla (maximo): ".$medicion->pantorrilla);
+$pdf->Text(30,160,"Muslo Medio: ".$medicion->plieguemuslomedio);
 
-$pdf->Text(30,180,"Pliegues Cutaneos (mm): ");
+$pdf->Text(30,170,"Pantorrilla: ".$medicion->plieguepantorrilla);
 
-$pdf->Text(30,190,"Triceps: ".$medicion->triceps."  Subescapular: ".$medicion->subescapular."  Subpraespinal: ".$medicion->subpraespinal);
-
-$pdf->Text(30,200,"Abdominal: ".$medicion->abdominal."  Muslo(medial): ".$medicion->muslomed2."  Pantorrilla (maxima): ".$medicion->pantorrilla2);
+$pdf->Text(30,180,"Sumatoria Sies (6) Pliegues: ".$medicion->sumatoria6);
 
 $pdf->Output();
 
