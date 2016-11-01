@@ -9,11 +9,16 @@
 </head>
 <body>
 
-<img name="{$paciente}" id="imgMostrarConsultarAnamnesis"  src="graficas/evolucionPesoBruto.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
+<img   src="graficas/evolucionPesoBruto.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
 
-<img name="{$paciente}" id="imgMostrarConsultarAnamnesis"  src="graficas/evolucionTallaCorporal.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
+<img   src="graficas/evolucionTallaCorporal.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
 
-<img name="{$paciente}" id="imgMostrarConsultarAnamnesis"  src="graficas/evolucionTallaSentado.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
+<img   src="graficas/evolucionTallaSentado.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
+
+<img   src="graficas/graficaSomatocarta.php?idPaciente={$paciente}}" align="middle" />
+
+
+
 
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/funciones.js"></script>
