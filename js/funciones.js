@@ -5,6 +5,21 @@
 
 
 
+        $('#btnCrearRespaldo').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=sistema",
+                        data: "accion=mostrarCrearRespaldo",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+
 		$('#btnMostrarTablaClubes').click(function(){
                       
                     

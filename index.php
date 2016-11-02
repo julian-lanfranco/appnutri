@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+ session_start();
  require_once('controller/controllerClubes.php');
  require_once('controller/controllerDivisiones.php');
  require_once('controller/controllerPacientes.php');
@@ -10,6 +10,7 @@ session_start();
  require_once('controller/controllerRecordatorio24.php');
  require_once('controller/controllerMedicionesAntropometricas.php');
  require_once('controller/controllerUsuario.php');
+ require_once('controller/controllerSistema.php');
  
 
  
@@ -105,7 +106,18 @@ if (!empty($_SESSION['user'])){
 
 
                                 break;
+                              } 
+      case 'sistema' : {
+
+
+                                $mvc = new controllerSistema($_REQUEST);
+
+                                $mvc->router();
+
+
+                                break;
                               }                              
+                                     
         
     }
 }

@@ -122,6 +122,20 @@
        <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Respaldos</a>
+        </h4>
+      </div>
+      
+      <div id="collapse8" class="panel-collapse collapse">
+
+            <a href="#" id="btnCrearRespaldo">Crear Respaldo</a> <br>
+            <a href="#" id="btnRestaurarRespaldo">Restaurar Respaldo</a>  
+      </div>
+    </div>  
+
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Mi Cuenta</a>
         </h4>
       </div>
