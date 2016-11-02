@@ -21,11 +21,14 @@
 
 
       <div class="panel panel-default" style="background-color:lavender;">
-          <h4> 
-              Bienvenido: {$usuario}
-          </h4>
-     
-    </div>      
+         <div class="panel-heading">
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><h4>Bienvenido: {$usuario}</h4></a>
+         </div>
+         <div id="collapse8" class="panel-collapse collapse">
+            <a href="#" id="btnCambiarPassword">Cambiar Contraseña</a> <br>
+            <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
+         </div>
+     </div>      
       <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -33,9 +36,9 @@
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
-        <a href="#" id="btnMostrarTablaPacientes">__Seleccionar Paciente</a><br>
-        <a href="#" id="btnMostrarNuevoPaciente">__Nuevo Paciente</a><br>
-        <a href="#" id="btnMostrarModificarPaciente">__Modificar Paciente</a>     
+        <a href="#" id="btnMostrarTablaPacientes">Seleccionar Paciente</a><br>
+        <a href="#" id="btnMostrarNuevoPaciente">Nuevo Paciente</a><br>
+        <a href="#" id="btnMostrarModificarPaciente">Modificar Paciente</a>     
       </div>
     </div>
 
@@ -119,6 +122,7 @@
       </div>
     </div>    
 
+<<<<<<< HEAD
        <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -145,6 +149,9 @@
             <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
       </div>
     </div>     
+=======
+  
+>>>>>>> origin/master
       
 
   </div>
