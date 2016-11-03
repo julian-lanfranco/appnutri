@@ -5,7 +5,22 @@
 
 
 
-		$('#btnMostrarTablaClubes').click(function(){
+		      $('#btnNuevoPlan').click(function(){
+
+                      var idPaciente=$("#idPaciente").val();
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=planes&idPaciente="+idPaciente,
+                        data: "accion=mostrarNuevoPlan",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+        $('#btnMostrarTablaClubes').click(function(){
                       
                     
                     $.ajax({
@@ -255,6 +270,18 @@
                             });
                 });
 
+        $('#btnlistarPlanes').click(function(){
+
+                    var idPaciente=$("#idPaciente").val();
+                      $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=planes&idPaciente="+idPaciente,
+                        data: "accion=mostrarTablaPlanes",
+                        success: function(a) {
+                                            $('#central').html(a); 
+                                             }
+                            });
+                });
 
 
 
@@ -375,7 +402,10 @@ $.getScript( "js/funcionesModuloRecordatorio24.js" )
     alert( "Triggered ajaxError handler 7." );
 });
 
-  
+$.getScript( "js/funcionesModuloPlanes.js" )
+  .fail(function( jqxhr, settings, exception ) {
+    alert( "Triggered ajaxError handler 7." );
+});
 
 });
 

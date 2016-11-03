@@ -13,8 +13,8 @@ $(document).ready(function() {
 
       $.ajax({
                         type: "POST",
-                        url: "http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=traerGraficaRecordatorio",
-                        data: $("#recordatorio").serialize(), 
+                        url: "http://"+ambito+"/appnutri/?modulo=planes&accion=traerGraficaRecordatorio",
+                        data: $("#plan").serialize(), 
                         success: function(data) {
 
                                 $('#graficaRecordatorio').html(data);
@@ -87,8 +87,8 @@ $(document).ready(function() {
       
       $.ajax({
                         type: "POST",
-                        url: "http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=traerGraficaRecordatorio",
-                        data: $("#recordatorio").serialize(), 
+                        url: "http://"+ambito+"/appnutri/?modulo=planes&accion=traerGraficaRecordatorio",
+                        data: $("#plan").serialize(), 
                         success: function(data) {
 
                                 $('#graficaRecordatorio').html(data);
@@ -102,12 +102,12 @@ $(document).ready(function() {
 
 
 
-$("#recordatorio").submit(function(e) {
+$("#plan").submit(function(e) {
 
     $.ajax({
            type: "POST",
-           url: "http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=btnCreaRecordatorio24",
-           data: $("#recordatorio").serialize(), // serializes the form's elements.
+           url: "http://"+ambito+"/appnutri/?modulo=planes&accion=crearPlan",
+           data: $("#plan").serialize(), // serializes the form's elements.
            success: function(data)
            {
                $('#central').html(data); 
@@ -116,6 +116,6 @@ $("#recordatorio").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 });
-                  
+                
 
 });

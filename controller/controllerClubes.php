@@ -36,7 +36,7 @@ class controllerClubes {
     $smarty->config_dir = 'vistas/smarty/configs/';
     $smarty->cache_dir = 'vistas/smarty/cache/';
     $smarty->assign('usuario',$_SESSION['user']);
-    $smarty->display('home.tpl');
+    $smarty->display('home.html');
    }
 //
 
@@ -54,22 +54,7 @@ class controllerClubes {
 //
   
 // crearClub
-  public function crearClub()
-   {
-       //ACCESO A DATOS
 
-    $club = new Club('clubes');
-
-    
-    $club->nombre=$this->request['nombre'];
-    $club->tipo=$this->request['tipo'];
-    $club->telefono=$this->request['telefono'];
-    $club->direccion=$this->request['direccion'];
-    $club->contacto=$this->request['personaContacto'];
-    $club->mail=$this->request['correoElectronico'];
-    $club->save();
-
-   }
 //
 // elimnarClub   
    public function eliminarClub($idClub)

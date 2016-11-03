@@ -15,4 +15,5 @@
       <div class="col-sm-2">
       <input type="text" class="form-control" id="nombreclub" value="{$nombreClub}" disabled="true">
       </div>
-<br><br>  
+<br> 
+<br>

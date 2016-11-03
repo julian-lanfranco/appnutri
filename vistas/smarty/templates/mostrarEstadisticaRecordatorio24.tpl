@@ -5,15 +5,9 @@
      <tr style="">
       <td style="width: 100%;    float: left;" >
 
-      <div class="form-group">    
-         <label class="col-sm-10 control-label">Calorias Totales:
-
-         <input type="text" class="form-control" id="horadespertado" value="{$ktotales}" disabled>
-          </label>
-          </div>
 
  <!-- <form id="formClub"> -->
-<img src="graficas/pagina-que-genera-la-grafica.php?hdc={$hdc}&proteinas={$proteinas}&lipidos={$lipidos}"  height="300" width="400"'>
+<img src="graficas/pagina-que-genera-la-grafica.php?hdc={$hdc}&proteinas={$proteinas}&lipidos={$lipidos}&ktotales={$ktotales}"  height="300" width="400"'>
 
 </td>
 </tr>

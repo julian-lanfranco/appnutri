@@ -16,17 +16,17 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
 
          });
 
-        $("#central").on("click", "#imgMostrarEliminarRecordatorio24", function(){
-        recordatorio = $(this).attr('name');
+        $("#central").on("click", "#imgMostrarEliminarPlan", function(){
+        plan = $(this).attr('name');
          var idPaciente=$("#idPaciente").val();
-             if (confirm("Esta seguro que desea eliminar el Recordatorio ?"))
+             if (confirm("Esta seguro que desea eliminar el Plan?"))
         
         
                  $.ajax({
                                
                             type: "GET",
-                                url: "http://"+ambito+"/appnutri/?modulo=recordatorio24",
-                                data: "accion=eliminarRecordatorio24&idPaciente="+idPaciente+"&idRecordatorio24="+recordatorio,
+                                url: "http://"+ambito+"/appnutri/?modulo=planes",
+                                data: "accion=eliminarPlan&idPaciente="+idPaciente+"&idPlan="+plan,
                                 success: function(a) {
                                                     $('#central').html(a); 
                                                         }
@@ -276,17 +276,11 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
         }); 
 
 
-        $("#central").on("click", "#btnCreaRecordatorio24", function(){
+
+        $("#btnCrearPlan").on("click", function(){
         
 
-            $("#recordatorio").submit();
-
-        }); 
-
-        $("#central").on("click", "#btnCrearPlan", function(){
-        
-
-            $("#recordatorio").submit();
+            $("#plan").submit();
 
         }); 
 
