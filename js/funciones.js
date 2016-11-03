@@ -19,6 +19,34 @@
                 });
 
 
+        $('#btnListarRespaldos').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=sistema",
+                        data: "accion=listarRespaldos",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+        $('#btnMostrarSubirRespaldo').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=sistema",
+                        data: "accion=mostrarSubirRespaldo",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
 
 		$('#btnMostrarTablaClubes').click(function(){
                       
@@ -386,6 +414,11 @@ $.getScript( "js/estudiosLaboratorio/funcionesModuloEstudioLaboratorio.js" )
 });
 
 $.getScript( "js/funcionesModuloRecordatorio24.js" )
+  .fail(function( jqxhr, settings, exception ) {
+    alert( "Triggered ajaxError handler 7." );
+});
+
+$.getScript( "js/sistema/funcionesModuloSistema.js" )
   .fail(function( jqxhr, settings, exception ) {
     alert( "Triggered ajaxError handler 7." );
 });

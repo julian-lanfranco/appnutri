@@ -5,15 +5,16 @@ $(document).ready(function() {
 
 
 
-$("#migrarJugadores").submit(function(e) {
+$("#formSubirRespaldo").submit(function(e) {
 
     $.ajax({
+
            type: "POST",
-           url: "http://"+ambito+"/appnutri/?modulo=pacientes&accion=migrarJugadores",
-           data: $("#migrarJugadores").serialize(), // serializes the form's elements.
+           url: "http://"+ambito+"/appnutri/?modulo=sistema&accion=subirRespaldo",
+           data: $("#formSubirRespaldo").serialize(), // serializes the form's elements.
            success: function(data)
            {
-               $('#listadoJugadores').html(cabecera()); 
+               //$('#listadoJugadores').html(cabecera()); 
                 alert("Migracion Exitosa");
 
            }

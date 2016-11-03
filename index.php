@@ -13,7 +13,7 @@
  require_once('controller/controllerSistema.php');
  
 
- 
+
  
 if (!empty($_SESSION['user'])){
     
@@ -110,7 +110,7 @@ if (!empty($_SESSION['user'])){
       case 'sistema' : {
 
 
-                                $mvc = new controllerSistema($_REQUEST);
+                                $mvc = new controllerSistema($_REQUEST,$_FILES);
 
                                 $mvc->router();
 

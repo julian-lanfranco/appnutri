@@ -22,9 +22,9 @@
 
       <div class="panel panel-default" style="background-color:lavender;">
          <div class="panel-heading">
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><h4>Bienvenido: {$usuario}</h4></a>
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse9"><h4>Bienvenido: {$usuario}</h4></a>
          </div>
-         <div id="collapse8" class="panel-collapse collapse">
+         <div id="collapse9" class="panel-collapse collapse">
             <a href="#" id="btnCambiarPassword">Cambiar Contraseña</a> <br>
             <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
          </div>
@@ -122,7 +122,7 @@
       </div>
     </div>    
 
-<<<<<<< HEAD
+
        <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -133,26 +133,11 @@
       <div id="collapse8" class="panel-collapse collapse">
 
             <a href="#" id="btnCrearRespaldo">Crear Respaldo</a> <br>
-            <a href="#" id="btnRestaurarRespaldo">Restaurar Respaldo</a>  
+            <a href="#" id="btnMostrarSubirRespaldo">Subir Respaldo</a> <br>  
+            <a href="#" id="btnListarRespaldos">Listar Respaldos</a> <br>  
       </div>
     </div>  
 
-       <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Mi Cuenta</a>
-        </h4>
-      </div>
-      <div id="collapse8" class="panel-collapse collapse">
-
-            <a href="#" id="btnCambiarPassword">Cambiar Contraseña</a> <br>
-            <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
-      </div>
-    </div>     
-=======
-  
->>>>>>> origin/master
-      
 
   </div>
 
