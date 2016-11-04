@@ -200,6 +200,17 @@
                 });
 
 
+                $('#btnGraficaSomatocarta').click(function(){
+                    var idPaciente=$("#idPaciente").val();
+                      $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
+                        data: "accion=graficarSomatocarta",
+                        success: function(a) {
+                                            $('#central').html(a); 
+                                             }
+                            });
+                });
 
 
 

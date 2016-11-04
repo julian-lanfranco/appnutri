@@ -59,7 +59,7 @@ $graph->SetScale("intint", -10, 16, -8, 8);
 //somatocartab
 //$graph->img->SetMargin(58,60, 70, 35);
 
-$graph->img->SetMargin(75,80, 160, 118);
+$graph->img->SetMargin(75,80, 130, 60);
 $graph->SetShadow();
  
 
