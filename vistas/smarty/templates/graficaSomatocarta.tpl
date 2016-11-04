@@ -9,11 +9,9 @@
 </head>
 <body>
 
-<img   src="graficas/evolucionPesoBruto.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
 
-<img   src="graficas/evolucionTallaCorporal.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
+<img   src="graficas/graficaSomatocarta.php?idPaciente={$idPaciente}}" align="middle" />
 
-<img   src="graficas/evolucionTallaSentado.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
 
 
 

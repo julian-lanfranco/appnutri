@@ -93,7 +93,8 @@
       <div id="collapse5" class="panel-collapse collapse">
           <a href="#" id="btnNuevaMedicionAntro">Nueva Med. Antropometricas</a> <br>
           <a href="#" id="btnlistarMedicionAntro">Listar Med. Antropometricas</a> <br>
-          <a href="#" id="btnGraficasMedicionAntro">Generar Graficas</a> <br>
+          <a href="#" id="btnGraficasMedicionAntro">Graficas Evolutivas</a> <br>
+          <a href="#" id="btnGraficaSomatocarta">Grafica Somatocarta</a> <br>
       </div>
     </div>
 
