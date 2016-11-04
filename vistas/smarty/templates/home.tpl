@@ -94,7 +94,7 @@
           <a href="#" id="btnNuevaMedicionAntro">Nueva Med. Antropometricas</a> <br>
           <a href="#" id="btnlistarMedicionAntro">Listar Med. Antropometricas</a> <br>
           <a href="#" id="btnGraficasMedicionAntro">Graficas Evolutivas</a> <br>
-          <a href="#" id="btnGraficaSomatocarta">Grafica Somatocarta</a> <br>
+          <a href="#" id="btnGraficarSomatocarta">Graficar Somatocarta</a> <br>
       </div>
     </div>
 
