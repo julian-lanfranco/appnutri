@@ -10,18 +10,6 @@ $(document).ready(function() {
     var FieldCount = x-1; //para el seguimiento de los campos
 
     $(AddButton).click(function (e) {
-
-      $.ajax({
-                        type: "POST",
-                        url: "http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=traerGraficaRecordatorio",
-                        data: $("#recordatorio").serialize(), 
-                        success: function(data) {
-
-                                $('#graficaRecordatorio').html(data);
-
-                                                }
-      });
-
         if(x <= MaxInputs) //max input box allowed
         {
             FieldCount++;
@@ -37,42 +25,36 @@ $(document).ready(function() {
                                '<option label="cena" value="cena">CENA</option>'+
                                 '</select>'+  
                                 '<select name="alimento[]" id="alimento[]">'+
-      '<option label="leche" value="lacteosEnteros">LACT. ENTE.</option>'+
-      '<option label="harina" value="lacteosDescremados">LACT. DESC.</option>'+
+      '<option label="leche" value="lacteosEnteros">LACTEOS ENTEROS</option>'+
+      '<option label="harina" value="lacteosDescremados">LACTEOS DESCREMADOS</option>'+
       '<option label="cereales" value="quesos">QUESOS</option>'+
      '<option label="huevos" value="huevos">HUEVOs</option>'+
-      '<option label="carneGrasa" value="carneGrasa">CARNE GRASA</option>'+
+      '<option label="carneGrasa" value="carneGrasa">CARNE CON GRASA</option>'+
       '<option label="carneMagra" value="carneMagra">CARNE MAGRA</option>'+
-      '<option label="vegetalesA" value="vegetalesA">VEGET. A</option>'+
-      '<option label="vegetalesB" value="vegetalesB">VEGET. B</option>'+
-      '<option label="vegetalesC" value="vegetalesC">VEGET. C</option>'+
+      '<option label="vegetalesA" value="vegetalesA">VEGETALES A</option>'+
+      '<option label="vegetalesB" value="vegetalesB">VEGETALES B</option>'+
+      '<option label="vegetalesC" value="vegetalesC">VEGETALES C</option>'+
       '<option label="frutas" value="frutas">FRUTAS</option>'+
-      '<option label="frutasSecas" value="frutasSecas">FRUT. SECAS</option>'+
-      '<option label="granosCereales" value="granosCereales">GRAN./CERE</option>'+
+      '<option label="frutasSecas" value="frutasSecas">FRUTAS SECAS</option>'+
+      '<option label="granosCereales" value="granosCereales">GRANOS Y CEREALES</option>'+
       '<option label="legumbres" value="legumbres">LEGUMBRES</option>'+
       '<option label="panSinGrasa" value="panSinGrasa">PAN SIN GRASA</option>'+
       '<option label="pangalle" value="pangalle">PAN / GALLE</option>'+
       '<option label="carboGrasa" value="carboGrasa">CARBOGRASAS</option>'+
       '<option label="azucar" value="azucar">AZUCAR</option>'+
-      '<option label="dulcesMielMermelada" value="dulcesMielMermelada">DULCES</option>'+
-      '<option label="gaseosasJugo" value="gaseosasJugo">GASE./JUGO</option>'+
+      '<option label="dulcesMielMermelada" value="dulcesMielMermelada">DULCES/MIEL/MERMELADA</option>'+
+      '<option label="gaseosasJugo" value="gaseosasJugo">GASEOSAS JUGO</option>'+
       '<option label="aceite" value="aceite">ACEITE</option>'+
-      '<option label="cremaMantecaMayo" value="cremaMantecaMayo">CREMA</option>'+
+      '<option label="cremaMantecaMayo" value="cremaMantecaMayo">CREMA / MANTENCA / MAYO</option>'+
       '</select>'+
 
                                 
-                                '<input type="text" name="cantidad[]" id="cantidad[]" placeholder="gramos" size="2"  />'+
-                                '<input type="text" name="hora[]" id="hora[]" placeholder="hora" size="2"/>'+
+                                '<input type="text" name="cantidad[]" id="cantidad[]" placeholder="gramos"/>'+
+                                '<input type="text" name="hora[]" id="hora[]" placeholder="hora"/>'+
                                 '<a href="#" class="eliminar">&times;</a>'+
                                 '</div>');
             x++; //text box increment
-
-
-
-
-
         }
-
         return false;
     });
 
@@ -80,24 +62,8 @@ $(document).ready(function() {
         if( x > 1 ) {
             $(this).parent('div').remove(); //eliminar el campo
             x--;
-
         }
-
-      $('#graficaRecordatorio').html('<img src="/appnutri/img/loading.gif"/>');
-      
-      $.ajax({
-                        type: "POST",
-                        url: "http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=traerGraficaRecordatorio",
-                        data: $("#recordatorio").serialize(), 
-                        success: function(data) {
-
-                                $('#graficaRecordatorio').html(data);
-
-                                                }
-      });
-
-        //return false;
-
+        return false;
     });
 
 

@@ -15,16 +15,16 @@
 </div>
   <div class="row">
 
-  <div class="col-sm-1 " style="background-color:lavender;">
+  <div class="col-sm-2 " style="background-color:lavender;">
 
   <div class="panel-group" id="accordion">
 
 
       <div class="panel panel-default" style="background-color:lavender;">
          <div class="panel-heading">
-             <a data-toggle="collapse" data-parent="#accordion" href="#collapse9"><h4>Bienvenido: {$usuario}</h4></a>
+             <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><h4>Bienvenido: {$usuario}</h4></a>
          </div>
-         <div id="collapse9" class="panel-collapse collapse">
+         <div id="collapse8" class="panel-collapse collapse">
             <a href="#" id="btnCambiarPassword">Cambiar Contraseña</a> <br>
             <a href="#" id="btnCerrarSesion">Cerrar Sesion</a>  
          </div>
@@ -121,40 +121,10 @@
             <a href="#" id="btnNuevoRecordatorio24">Nuevo Recordatorio 24</a> <br>
             <a href="#" id="btnlistarRecordatorio24">Listar Recordatorio 24</a>  
       </div>
-    </div>   
+    </div>    
 
-
-          <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Planes</a>
-        </h4>
-      </div>
-      <div id="collapse9" class="panel-collapse collapse">
-
-            <a href="#" id="btnNuevoPlan">Nuevo Plan</a> <br>
-            <a href="#" id="btnlistarPlanes">Listar Planes</a>  
-      </div>
-    </div>
-
-
-
-
-       <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Respaldos</a>
-        </h4>
-      </div>
+  
       
-      <div id="collapse8" class="panel-collapse collapse">
-
-            <a href="#" id="btnCrearRespaldo">Crear Respaldo</a> <br>
-            <a href="#" id="btnMostrarSubirRespaldo">Subir Respaldo</a> <br>  
-            <a href="#" id="btnListarRespaldos">Listar Respaldos</a> <br>  
-      </div>
-    </div>  
-
 
   </div>
 
@@ -190,7 +160,7 @@
       <br><br>
     </div>
 
-     <div id="central" class="col-sm-10">
+     <div id="central">
       <h4>Pagina principal</h4>
       <p>Contenido de la página principal</p>
       </div>
