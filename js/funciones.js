@@ -344,6 +344,36 @@
                 });
 
 
+              $('#btnNuevoPlan').click(function(){
+
+                      var idPaciente=$("#idPaciente").val();
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=planes&idPaciente="+idPaciente,
+                        data: "accion=mostrarNuevoPlan",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+                $('#btnlistarPlanes').click(function(){
+
+                    var idPaciente=$("#idPaciente").val();
+                      $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=planes&idPaciente="+idPaciente,
+                        data: "accion=mostrarTablaPlanes",
+                        success: function(a) {
+                                            $('#central').html(a); 
+                                             }
+                            });
+                });
+
+
+
 $.getScript( "js/clubes/funcionesModuloClubes.js" )
   .fail(function( jqxhr, settings, exception ) {
     alert( "Triggered ajaxError handler 1." );

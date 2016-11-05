@@ -10,6 +10,8 @@ session_start();
  require_once('controller/controllerRecordatorio24.php');
  require_once('controller/controllerMedicionesAntropometricas.php');
  require_once('controller/controllerUsuario.php');
+ require_once('controller/controllerPlanes.php');
+
  
 
  
@@ -105,7 +107,19 @@ if (!empty($_SESSION['user'])){
 
 
                                 break;
-                              }                              
+                              } 
+      case 'planes' : {
+
+
+                                $mvc = new controllerPlanes($_REQUEST);
+
+                                $mvc->router();
+
+
+
+                                break;
+                              } 
+                             
         
     }
 }

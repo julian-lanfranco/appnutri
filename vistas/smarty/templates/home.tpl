@@ -123,7 +123,19 @@
       </div>
     </div>    
 
-  
+            <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Planes</a>
+        </h4>
+      </div>
+      <div id="collapse9" class="panel-collapse collapse">
+
+            <a href="#" id="btnNuevoPlan">Nuevo Plan</a> <br>
+            <a href="#" id="btnlistarPlanes">Listar Planes</a>  
+      </div>
+    </div>
+
       
 
   </div>
