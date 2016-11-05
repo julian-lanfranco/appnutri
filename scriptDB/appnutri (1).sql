@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2016 a las 12:53:25
+-- Tiempo de generación: 05-11-2016 a las 15:37:11
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -64,6 +64,13 @@ CREATE TABLE `anamnesis` (
   `frecuencia` varchar(255) DEFAULT NULL,
   `paciente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `anamnesis`
+--
+
+INSERT INTO `anamnesis` (`id`, `fecha`, `obesidad`, `diabetes`, `hipertension`, `cardiacas`, `otras`, `diagnosticada`, `medicamentos`, `toma`, `acidez`, `reflujo`, `abdominal`, `constipacion`, `diarrea`, `fuma`, `dietas`, `dolor`, `pesomax`, `pesomin`, `picotea`, `preferencias`, `alimentosnogustan`, `alimentosnotolera`, `alimentosprefiere`, `cocina`, `compras`, `horarios`, `desayuna`, `almuerza`, `merienda`, `cena`, `suplementos`, `actividad`, `frecuencia`, `paciente`) VALUES
+(1, '2016-11-05', 'SI', 'SI', 'SI', 'SI', 'no', 'no', 'SI', '-', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NUNCA HICE', 'SI', '100', '100', 'SI', 'SI', 'ninguno', 'ninguno', 'salados', 'SI', 'SI', '8-18', 'SI', 'SI', 'SI', 'SI', 'no', 'SI', 'DIARIAMENTE', 4);
 
 -- --------------------------------------------------------
 
@@ -195,6 +202,44 @@ CREATE TABLE `ingesta` (
   `recordatorio` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `ingesta`
+--
+
+INSERT INTO `ingesta` (`id`, `tipodeingesta`, `hora`, `alimento`, `cantidad`, `recordatorio`) VALUES
+(1, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(2, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(3, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(4, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(5, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(6, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(7, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(8, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(9, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(10, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(11, 'desayuno', '', 'lacteosEnteros', 7, NULL),
+(12, 'desayuno', '', 'lacteosEnteros', 7, NULL),
+(13, 'desayuno', '', 'lacteosEnteros', 7, NULL),
+(14, 'desayuno', '', 'lacteosEnteros', 222, NULL),
+(15, 'desayuno', '', 'lacteosEnteros', 44, NULL),
+(16, 'desayuno', '', 'lacteosEnteros', 4, NULL),
+(17, 'desayuno', '', 'lacteosEnteros', 33, NULL),
+(18, 'desayuno', '', 'lacteosEnteros', 33, NULL),
+(19, 'desayuno', '', 'lacteosEnteros', 66, NULL),
+(20, 'desayuno', '', 'lacteosEnteros', 66, NULL),
+(21, 'desayuno', '', 'lacteosEnteros', 6, NULL),
+(22, 'desayuno', '', 'lacteosEnteros', 0, NULL),
+(23, 'desayuno', '', 'lacteosEnteros', 0, NULL),
+(24, 'desayuno', '', 'lacteosEnteros', 0, NULL),
+(25, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(26, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(27, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(28, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(29, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(30, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(31, 'desayuno', '', 'lacteosEnteros', 3, NULL),
+(32, 'desayuno', '', 'lacteosEnteros', 2, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -241,7 +286,9 @@ INSERT INTO `medicionesantropometricas` (`id`, `fecha`, `pesobruto`, `tallacorpo
 (6, '2016-10-06', 80, 175, 75, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 30, 30, 30, 30, 30, 30, 39),
 (7, '2016-10-02', 75, 66, 80, 22, 22, 22, 22, 55, 22, 44, 44, 44, 44, 22, 22, 44, 44, 44, 44, 88, 88, 88, 88, 88, 11, 40),
 (15, '2016-10-08', 78, 150, 80, 50, 50, 50, 50, 50, 50, 20, 30, 20, 20, 20, 30, 20, 20, 20, 20, 30, 33, 33, 33, 33, 33, 39),
-(16, '2016-10-08', 76, 140, 78, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 33, 33, 33, 33, 33, 33, 39);
+(16, '2016-10-08', 76, 140, 78, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 33, 33, 33, 33, 33, 33, 39),
+(17, '2016-11-02', 90, 180, 150, 20, 20, 20, 20, 20, 20, 30, 30, 30, 20, 20, 50, 50, 50, 50, 50, 30, 30, 30, 30, 30, 30, 5),
+(18, '2016-11-03', 85, 180, 150, 20, 20, 20, 20, 20, 20, 30, 25, 30, 20, 20, 25, 50, 50, 50, 50, 25, 25, 25, 25, 25, 25, 5);
 
 -- --------------------------------------------------------
 
@@ -266,6 +313,69 @@ CREATE TABLE `medicionessimples` (
   `sumatoria6` float DEFAULT NULL,
   `paciente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_semanal`
+--
+
+CREATE TABLE `menu_semanal` (
+  `id` int(11) NOT NULL,
+  `lunes_desayuno` varchar(255) DEFAULT NULL,
+  `lunes_med_maniana` varchar(255) DEFAULT NULL,
+  `lunes_almuerzo` varchar(255) DEFAULT NULL,
+  `lunes_merienda` varchar(255) DEFAULT NULL,
+  `lunes_cena` varchar(255) DEFAULT NULL,
+  `lunes_colacion` varchar(255) DEFAULT NULL,
+  `martes_almuerzo` varchar(255) DEFAULT NULL,
+  `martes_cena` varchar(255) DEFAULT NULL,
+  `martes_colacion` varchar(255) DEFAULT NULL,
+  `martes_desayuno` varchar(255) DEFAULT NULL,
+  `martes_med_maniana` varchar(255) DEFAULT NULL,
+  `martes_merienda` varchar(255) DEFAULT NULL,
+  `miercoles_almuerzo` varchar(255) DEFAULT NULL,
+  `miercoles_cena` varchar(255) DEFAULT NULL,
+  `miercoles_colacion` varchar(255) DEFAULT NULL,
+  `miercoles_desayuno` varchar(255) DEFAULT NULL,
+  `miercoles_med_maniana` varchar(255) DEFAULT NULL,
+  `miercoles_merienda` varchar(255) DEFAULT NULL,
+  `jueves_almuerzo` varchar(255) DEFAULT NULL,
+  `jueves_cena` varchar(255) DEFAULT NULL,
+  `jueves_colacion` varchar(255) DEFAULT NULL,
+  `jueves_desayuno` varchar(255) DEFAULT NULL,
+  `jueves_med_maniana` varchar(255) DEFAULT NULL,
+  `jueves_merienda` varchar(255) DEFAULT NULL,
+  `viernes_almuerzo` varchar(255) DEFAULT NULL,
+  `viernes_cena` varchar(255) DEFAULT NULL,
+  `viernes_colacion` varchar(255) DEFAULT NULL,
+  `viernes_desayuno` varchar(255) DEFAULT NULL,
+  `viernes_med_maniana` varchar(255) DEFAULT NULL,
+  `viernes_merienda` varchar(255) DEFAULT NULL,
+  `sabado_almuerzo` varchar(255) DEFAULT NULL,
+  `sabado_cena` varchar(255) DEFAULT NULL,
+  `sabado_colacion` varchar(255) DEFAULT NULL,
+  `sabado_desayuno` varchar(255) DEFAULT NULL,
+  `sabado_med_maniana` varchar(255) DEFAULT NULL,
+  `sabado_merienda` varchar(255) DEFAULT NULL,
+  `domingo_almuerzo` varchar(255) DEFAULT NULL,
+  `domingo_cena` varchar(255) DEFAULT NULL,
+  `domingo_colacion` varchar(255) DEFAULT NULL,
+  `domingo_desayuno` varchar(255) DEFAULT NULL,
+  `domingo_med_maniana` varchar(255) DEFAULT NULL,
+  `domingo_merienda` varchar(255) DEFAULT NULL,
+  `plan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `menu_semanal`
+--
+
+INSERT INTO `menu_semanal` (`id`, `lunes_desayuno`, `lunes_med_maniana`, `lunes_almuerzo`, `lunes_merienda`, `lunes_cena`, `lunes_colacion`, `martes_almuerzo`, `martes_cena`, `martes_colacion`, `martes_desayuno`, `martes_med_maniana`, `martes_merienda`, `miercoles_almuerzo`, `miercoles_cena`, `miercoles_colacion`, `miercoles_desayuno`, `miercoles_med_maniana`, `miercoles_merienda`, `jueves_almuerzo`, `jueves_cena`, `jueves_colacion`, `jueves_desayuno`, `jueves_med_maniana`, `jueves_merienda`, `viernes_almuerzo`, `viernes_cena`, `viernes_colacion`, `viernes_desayuno`, `viernes_med_maniana`, `viernes_merienda`, `sabado_almuerzo`, `sabado_cena`, `sabado_colacion`, `sabado_desayuno`, `sabado_med_maniana`, `sabado_merienda`, `domingo_almuerzo`, `domingo_cena`, `domingo_colacion`, `domingo_desayuno`, `domingo_med_maniana`, `domingo_merienda`, `plan`) VALUES
+(24, 'erwerwer', 'werwe', 'rwer', 'werwe', 'werwer', 'rwer', 'werwe', 'werwer', 'ewr', 'werwe', 'rwer', 'rwer', 'erwe', 'rwerwer', 'wer', 'rwerwerw', 'rwer', 'werw', 'werw', 'werwe', 'rwer', 'erwe', 'rwer', 'erwe', 'werwe', 'wer', 'ewr', 'wer', 'wer', 'rwer', 'rwe', 'rwer', 'werwe', 'werwe', 'rwer', 'rwe', 'rwer', 'wee', 'wer', 'rwe', 'rwe', 'wer', 35),
+(0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
+(0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
+(0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -295,13 +405,35 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `dni`, `direccion`, `obra`, `telefono`, `nacimiento`, `correo`, `medico`, `motivo`, `ocupacion`, `division`, `divisionseleccion`) VALUES
-(4, 'MARIA INES', 'MANGIONI', '28562489', 'AV LAS AMERICAS 23', 'IOSPER', '47454849', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'RIOS NAHUEL', '                     VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     ', 'DOCENTE', 28, 29),
+(4, 'MARIA INES', 'MANGIONI', '28562489', 'AV LAS AMERICAS 23', 'IOSPER', '4243056', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'RIOS NAHUEL', '                               VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ', 'DOCENTE', 17, NULL),
 (5, 'GIOVANNI', 'PETTERIN', '123486498', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', 'vENGO POR CONTROLA\r\n ', 'EMPLEADO', 17, NULL),
 (6, 'JULIAN', 'LANFRANCO', '30558609', 'SAN AGUSTIN 4554', 'OSECAC', '13432423', '05/11/1983', 'JFIODJFOIJSDF@FDFDSIJF.COM', 'SWHARTZ JORGE', 'VENGO PARA SUPERAR MIS MARCAS.- \r\n ', 'ESTUDIANTE', NULL, 29),
 (7, 'RIOS', 'NAHUEL', '32518745', 'CARBO 23', 'IOSPER', '154292724', '05/7/1986', 'BLAQUI@HOTMAIL.COM', 'BOROCOTO', ' VENGO PARA LLEGAR AL VERANO.\r\n ', 'EMPLEADO', 27, 25),
 (9, 'LEOPOLDO', 'BARRIOS', '28562489', 'AV SAN MARTIN 44', 'IOSPER', '154292724', '12/09/1970', 'IRIS@GMAIL.COM', 'RAITIERI PEDRO', ' veNGO POR LAS DUDAS.-\r\n ', 'DOCENTE', 17, 18),
 (10, 'JULIAN', 'PONS', '28562489', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/11/1983', 'GIO@GMAIL.COM', 'RIOS NAHUEL', ' VENGO POR UNA CONTROL.-\r\n ', 'DOCENTE', 23, 25),
 (11, 'GIOVANNI', 'DIAZ', '205456789', 'COLONIA AVELLANEDA', 'IOSPER', '1651515', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'SWHARTZ JORGE', ' VENGO POR CONTROL.-\r\n ', 'EMPLEADO', 17, 29);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `planes`
+--
+
+CREATE TABLE `planes` (
+  `id` int(11) NOT NULL,
+  `fecha` date DEFAULT NULL,
+  `paciente` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `planes`
+--
+
+INSERT INTO `planes` (`id`, `fecha`, `paciente`) VALUES
+(35, '2016-10-31', 5),
+(0, NULL, NULL),
+(0, NULL, NULL),
+(0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -332,6 +464,26 @@ CREATE TABLE `recordatorios` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `respaldos`
+--
+
+CREATE TABLE `respaldos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `detalle` varchar(255) DEFAULT NULL,
+  `fecha` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `respaldos`
+--
+
+INSERT INTO `respaldos` (`id`, `nombre`, `detalle`, `fecha`) VALUES
+(36, 'respaldo_03-11-2016-1478213064.sql', 'ewerwer', '2016-11-03');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -350,7 +502,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `ultimoacceso`, `fechaalta`, `fechamodificacion`) VALUES
-(1, 'admin', 'admin', 1, '2016-10-27', '2016-10-21', '2016-10-25');
+(1, 'admin', 'admin', 1, '2016-11-05', '2016-10-21', '2016-10-25');
 
 --
 -- Índices para tablas volcadas
@@ -419,6 +571,12 @@ ALTER TABLE `recordatorios`
   ADD KEY `paciente` (`paciente`);
 
 --
+-- Indices de la tabla `respaldos`
+--
+ALTER TABLE `respaldos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -432,7 +590,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `anamnesis`
 --
 ALTER TABLE `anamnesis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `clubes`
 --
@@ -452,12 +610,12 @@ ALTER TABLE `estudiolaboratorio`
 -- AUTO_INCREMENT de la tabla `ingesta`
 --
 ALTER TABLE `ingesta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `medicionesantropometricas`
 --
 ALTER TABLE `medicionesantropometricas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `medicionessimples`
 --
@@ -472,7 +630,12 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT de la tabla `recordatorios`
 --
 ALTER TABLE `recordatorios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT de la tabla `respaldos`
+--
+ALTER TABLE `respaldos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
