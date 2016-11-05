@@ -5,6 +5,7 @@ require_once ("jpgraph/src/jpgraph_pie.php");
 $hdc=$_GET['hdc'];
 $proteinas=$_GET['proteinas'];
 $lipidos=$_GET['lipidos'];
+$kotales=$_GET['ktotales'];
 
  
 // Se define el array de valores y el array de la leyenda
@@ -15,7 +16,7 @@ $leyenda = array("Hdc","Proteinas","Lipidos");
 $grafico = new PieGraph(450,300);
  
 //Definimos el titulo
-$grafico->title->Set("Distribucion de Calorias por Hdc, Proteinas y Lipidos por dia.");
+$grafico->title->Set("Calorias Totales:  ".$kotales);
 $grafico->title->SetFont(FF_FONT1,FS_BOLD);
  
 //Añadimos el titulo y la leyenda

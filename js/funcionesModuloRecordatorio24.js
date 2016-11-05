@@ -257,7 +257,7 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
 
 
 
-           $("#central").on("click", "#imgMostrarTablaRecordatorio24", function(){
+        $("#central").on("click", "#imgMostrarTablaRecordatorio24", function(){
         
          var idPaciente = $(this).attr('name');
 
@@ -273,7 +273,25 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
                             });
 
 
-        });  
+        }); 
+
+
+        $("#central").on("click", "#btnCreaRecordatorio24", function(){
+        
+
+            $("#recordatorio").submit();
+
+        }); 
+
+        $("#central").on("click", "#btnCrearPlan", function(){
+        
+
+            $("#recordatorio").submit();
+
+        }); 
+
+
+
 
         
                         
