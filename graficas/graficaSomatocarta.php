@@ -11,25 +11,11 @@ require_once('../modelos/medicionesAntropometricas.php');
 require_once('../modelos/conexion.php');
  
 //Recibimos el id del paciente
-$idPaciente=$_REQUEST['idPaciente'];
+$idMedicion=$_REQUEST['idMedicion'];
 //Creamos el objeto
 $mediciones = new MedicionesAntropometricas('medicionesantropometricas');
+$mediciones->Load("id=".$idMedicion);
 
-//Acceso a datos
- $db = getConexion();
- $res = $db->Execute("select id from medicionesantropometricas where paciente = '".$idPaciente."' order by id desc limit 1");
- 
- 
- //Recuperamos los valores en un arreglo y los pasamos a variables
-    $arr = $res->getarray();
- 
-    if(count($arr)>0){
-        
-       if (count($arr)==1){ 
-          $med1 = array_shift($arr[0]);
-          $mediciones->Load("id=".$med1);
-       }
-    }
 //Calculamos los somatotipos
 
 $mesomorfismo = ($mediciones->humeral * 0.858 + 0.601 * $mediciones->femoral + 0.188 * ($mediciones->brazorelajado - $mediciones->triceps) + 0.161 * ($mediciones->pantorrilla - $mediciones->pantorrilla2)) - (($mediciones->tallacorporal * 0.131) + 4.5);       
@@ -49,6 +35,8 @@ $x = $ectomorfismo - $endomorfismo;
 
 $y = (2 * $mesomorfismo) - ($ectomorfismo + $endomorfismo);
 
+
+
 $datax = array($x);
 $datay = array($y);
  
@@ -57,7 +45,6 @@ $graph->SetScale("intint", -10, 16, -8, 8);
 
 
 //somatocartab
-//$graph->img->SetMargin(58,60, 70, 35);
 
 $graph->img->SetMargin(75,80, 130, 60);
 $graph->SetShadow();

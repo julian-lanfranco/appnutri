@@ -1,6 +1,25 @@
 //Funciones Js del Modulo Mediciones Antropometricas
 
 
+//Imagen de grafica para realizar la grafica de la somatocarta
+        $("#central").on("click", "#imgMostrarGraficaSomatocarta", function(){
+        
+         medicion = $(this).attr('name');
+        
+                 $.ajax({
+                                type: "GET",
+                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
+                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
+
+                                success: function(b) {
+                                                    $('#central').html(b); 
+                                                        }
+                            });
+     
+    
+
+        });
+
 //Boton cancelar, formulario de actualizacion de medicions antropometrica
 $("#central").on("click", "#btnCancelarModMedicionAntropometricas", function(){
         

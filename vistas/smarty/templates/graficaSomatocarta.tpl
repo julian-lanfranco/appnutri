@@ -10,7 +10,7 @@
 <body>
 
 
-<img   src="graficas/graficaSomatocarta.php?idPaciente={$idPaciente}}" align="middle" />
+<img   src="graficas/graficaSomatocarta.php?idMedicion={$idMedicion}" align="middle" />
 
 
 

@@ -188,7 +188,7 @@
                 
                 
                 $('#btnGraficasMedicionAntro').click(function(){
-                    var idPaciente=$("#idPaciente").val();
+                     var idPaciente=$("#idPaciente").val();
                       $.ajax({
                         type: "GET",
                         url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
@@ -200,16 +200,17 @@
                 });
 
 
-                $('#btnGraficaSomatocarta').click(function(){
+                $('#btnGraficarSomatocarta').click(function(){
                     var idPaciente=$("#idPaciente").val();
                       $.ajax({
                         type: "GET",
                         url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
-                        data: "accion=graficarSomatocarta",
+                        data: "accion=listaMedicionesAGraficar",
                         success: function(a) {
                                             $('#central').html(a); 
                                              }
                             });
+                    
                 });
 
 

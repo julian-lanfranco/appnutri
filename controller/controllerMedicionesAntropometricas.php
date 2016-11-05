@@ -311,7 +311,7 @@ class controllerMedicionesAntropometricas {
        
    }
    
-   public  function mostrarGraficaSomatocarta($idPaciente){
+   public  function mostrarGraficaSomatocarta($idMedicion){
                  //ACCESO A DATOS
     
      //PRESENTACION
@@ -322,12 +322,41 @@ class controllerMedicionesAntropometricas {
     $smarty->cache_dir = 'vistas/smarty/cache/';
     
 
-    $smarty->assign('idPaciente',$idPaciente);
+    $smarty->assign('idMedicion',$idMedicion);
     
     $smarty->display('graficaSomatocarta.tpl');
           
    }
+   
+// tabla para listar tabla de mediciones antropometricas a graficar en Somatocarta
+   public function generarListadoMedicionesAGraficarSomatocarta($idPaciente)
+   {
 
+       //ACCESO A DATOS
+    $medi = new MedicionesAntropometricas('medicionesantropometricas');
+    $mediarray=$medi->Find("paciente='".$idPaciente."' order by id"); 
+
+    $paciente = new Paciente('pacientes');
+    $paciente->load("id=".$idPaciente);
+
+
+     //PRESENTACION
+    $smarty = new Smarty;
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+    
+    $smarty->assign('nombre',$paciente->nombre);
+
+    $smarty->assign('paciente',$idPaciente);
+
+    $smarty->assign('mediciones',$mediarray);
+
+    $smarty->display('ListaMedAntroAGraficar.tpl');
+
+   }
+   
    //Genera las graficas de la mediciones antropometricas
       public function generarEstadisticaMedicionAntro($idPaciente )
    {
@@ -469,8 +498,8 @@ if (isset($_REQUEST['modulo']))
     }                             
 
        case 'graficarSomatocarta': {
-        
-                                $this->mostrarGraficaSomatocarta($this->request['idPaciente']);
+           
+                               $this->mostrarGraficaSomatocarta($this->request['idMedicion']);
                                 break;
     }                             
      
@@ -481,7 +510,11 @@ if (isset($_REQUEST['modulo']))
                                 break;
                                 }
     
-
+    case 'listaMedicionesAGraficar': {     
+                                $this->generarListadoMedicionesAGraficarSomatocarta($this->request['idPaciente']);
+                                
+                                break;
+                                }
                           
                           
                           
