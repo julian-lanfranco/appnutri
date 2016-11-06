@@ -136,6 +136,22 @@
       </div>
     </div>
 
+         <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">Respaldos</a>
+        </h4>
+      </div>
+      
+      <div id="collapse10" class="panel-collapse collapse">
+
+            <a href="#" id="btnCrearRespaldo">Crear Respaldo</a> <br>
+            <a href="#" id="btnMostrarSubirRespaldo">Subir Respaldo</a> <br>  
+            <a href="#" id="btnListarRespaldos">Listar Respaldos</a> <br>  
+      </div>
+    </div>  
+
+
       
 
   </div>

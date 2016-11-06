@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2016 a las 15:37:11
+-- Tiempo de generación: 06-11-2016 a las 02:41:22
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -135,7 +135,8 @@ INSERT INTO `divisiones` (`id`, `nombre`, `deporte`, `sexo`, `correo`, `entrenad
 (26, 'M15', 'basquet', 'masculino', 'JFIODJFOIJSDF@FDFDSIJF.COM', 'MIGUEL HERNANDEZ', 'MARTIN FALICO', '47454849', 'LUIS SEGURO', 76),
 (27, 'MAYORES', 'basquet', 'femenino', 'IRIS@GMAIL.COM', 'PEDRO RIOS', 'LUCERO GABRIEL', '154292724', 'LUIS SEGURO', 76),
 (28, 'PLANTEL PROFESIONAL', 'futbol', 'femenino', 'GIO@GMAIL.COM', 'PATRICIA MENDEZ', 'LUCERO GABRIEL', '47454849', 'RIOS NAHUEL', 78),
-(29, 'MAYORES', 'rugby', 'masculino', 'IRIS@GMAIL.COM', 'PEDRO RIOS', 'TOLEDO JUAN MANUEL', '154292724', 'LUIS SEGURO', 75);
+(29, 'MAYORES', 'rugby', 'masculino', 'IRIS@GMAIL.COM', 'PEDRO RIOS', 'TOLEDO JUAN MANUEL', '154292724', 'LUIS SEGURO', 75),
+(32, 'MAYORES', 'basquet', 'masculino', 'MARCE@HOTMAIL.COM', 'GUILERMO DIAZ', 'LUCERO GABRIEL', '1651515', 'FELIZ ORTIZ', 74);
 
 -- --------------------------------------------------------
 
@@ -238,7 +239,42 @@ INSERT INTO `ingesta` (`id`, `tipodeingesta`, `hora`, `alimento`, `cantidad`, `r
 (29, 'desayuno', '', 'lacteosEnteros', 3, NULL),
 (30, 'desayuno', '', 'lacteosEnteros', 3, NULL),
 (31, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(32, 'desayuno', '', 'lacteosEnteros', 2, NULL);
+(32, 'desayuno', '', 'lacteosEnteros', 2, NULL),
+(33, 'desayuno', '', 'lacteosEnteros', 3, 24),
+(34, 'desayuno', '', 'lacteosEnteros', 3, 24);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ingesta_planes`
+--
+
+CREATE TABLE `ingesta_planes` (
+  `id` int(11) NOT NULL,
+  `tipodeingesta` varchar(255) DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `hora` date DEFAULT NULL,
+  `alimento` varchar(255) DEFAULT NULL,
+  `plan` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ingesta_planes`
+--
+
+INSERT INTO `ingesta_planes` (`id`, `tipodeingesta`, `cantidad`, `hora`, `alimento`, `plan`) VALUES
+(19, 'desayuno', 323, '0000-00-00', 'lacteosEnteros', 35),
+(20, 'desayuno', 323, '0000-00-00', 'vegetalesA', 35),
+(21, 'desayuno', 3232, '0000-00-00', 'lacteosEnteros', 35),
+(22, 'desayuno', 3232, '0000-00-00', 'vegetalesC', 35),
+(23, 'desayuno', 3232, '0000-00-00', 'lacteosEnteros', 35),
+(24, 'desayuno', 3232, '0000-00-00', 'panSinGrasa', 35),
+(25, 'desayuno', 3232, '0000-00-00', 'lacteosEnteros', 35),
+(26, 'desayuno', 3, '0000-00-00', 'lacteosEnteros', 36),
+(27, 'desayuno', 3, '0000-00-00', 'quesos', 36),
+(28, 'desayuno', 3, '0000-00-00', 'lacteosEnteros', 37),
+(29, 'desayuno', 3, '0000-00-00', 'lacteosEnteros', 37),
+(30, 'desayuno', 23, '0000-00-00', 'lacteosEnteros', NULL);
 
 -- --------------------------------------------------------
 
@@ -288,7 +324,7 @@ INSERT INTO `medicionesantropometricas` (`id`, `fecha`, `pesobruto`, `tallacorpo
 (15, '2016-10-08', 78, 150, 80, 50, 50, 50, 50, 50, 50, 20, 30, 20, 20, 20, 30, 20, 20, 20, 20, 30, 33, 33, 33, 33, 33, 39),
 (16, '2016-10-08', 76, 140, 78, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 33, 33, 33, 33, 33, 33, 39),
 (17, '2016-11-02', 90, 180, 150, 20, 20, 20, 20, 20, 20, 30, 30, 30, 20, 20, 50, 50, 50, 50, 50, 30, 30, 30, 30, 30, 30, 5),
-(18, '2016-11-03', 85, 180, 150, 20, 20, 20, 20, 20, 20, 30, 25, 30, 20, 20, 25, 50, 50, 50, 50, 25, 25, 25, 25, 25, 25, 5);
+(18, '2016-11-05', 85, 180, 150, 20, 20, 20, 20, 20, 20, 30, 25, 30, 20, 20, 25, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 5);
 
 -- --------------------------------------------------------
 
@@ -373,9 +409,8 @@ CREATE TABLE `menu_semanal` (
 
 INSERT INTO `menu_semanal` (`id`, `lunes_desayuno`, `lunes_med_maniana`, `lunes_almuerzo`, `lunes_merienda`, `lunes_cena`, `lunes_colacion`, `martes_almuerzo`, `martes_cena`, `martes_colacion`, `martes_desayuno`, `martes_med_maniana`, `martes_merienda`, `miercoles_almuerzo`, `miercoles_cena`, `miercoles_colacion`, `miercoles_desayuno`, `miercoles_med_maniana`, `miercoles_merienda`, `jueves_almuerzo`, `jueves_cena`, `jueves_colacion`, `jueves_desayuno`, `jueves_med_maniana`, `jueves_merienda`, `viernes_almuerzo`, `viernes_cena`, `viernes_colacion`, `viernes_desayuno`, `viernes_med_maniana`, `viernes_merienda`, `sabado_almuerzo`, `sabado_cena`, `sabado_colacion`, `sabado_desayuno`, `sabado_med_maniana`, `sabado_merienda`, `domingo_almuerzo`, `domingo_cena`, `domingo_colacion`, `domingo_desayuno`, `domingo_med_maniana`, `domingo_merienda`, `plan`) VALUES
 (24, 'erwerwer', 'werwe', 'rwer', 'werwe', 'werwer', 'rwer', 'werwe', 'werwer', 'ewr', 'werwe', 'rwer', 'rwer', 'erwe', 'rwerwer', 'wer', 'rwerwerw', 'rwer', 'werw', 'werw', 'werwe', 'rwer', 'erwe', 'rwer', 'erwe', 'werwe', 'wer', 'ewr', 'wer', 'wer', 'rwer', 'rwe', 'rwer', 'werwe', 'werwe', 'rwer', 'rwe', 'rwer', 'wee', 'wer', 'rwe', 'rwe', 'wer', 35),
-(0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0),
-(0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+(25, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 36),
+(26, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 37);
 
 -- --------------------------------------------------------
 
@@ -388,6 +423,7 @@ CREATE TABLE `pacientes` (
   `nombre` varchar(255) DEFAULT NULL,
   `apellido` varchar(255) DEFAULT NULL,
   `dni` varchar(255) DEFAULT NULL,
+  `sexo` varchar(255) DEFAULT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `obra` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
@@ -404,14 +440,17 @@ CREATE TABLE `pacientes` (
 -- Volcado de datos para la tabla `pacientes`
 --
 
-INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `dni`, `direccion`, `obra`, `telefono`, `nacimiento`, `correo`, `medico`, `motivo`, `ocupacion`, `division`, `divisionseleccion`) VALUES
-(4, 'MARIA INES', 'MANGIONI', '28562489', 'AV LAS AMERICAS 23', 'IOSPER', '4243056', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'RIOS NAHUEL', '                               VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ', 'DOCENTE', 17, NULL),
-(5, 'GIOVANNI', 'PETTERIN', '123486498', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', 'vENGO POR CONTROLA\r\n ', 'EMPLEADO', 17, NULL),
-(6, 'JULIAN', 'LANFRANCO', '30558609', 'SAN AGUSTIN 4554', 'OSECAC', '13432423', '05/11/1983', 'JFIODJFOIJSDF@FDFDSIJF.COM', 'SWHARTZ JORGE', 'VENGO PARA SUPERAR MIS MARCAS.- \r\n ', 'ESTUDIANTE', NULL, 29),
-(7, 'RIOS', 'NAHUEL', '32518745', 'CARBO 23', 'IOSPER', '154292724', '05/7/1986', 'BLAQUI@HOTMAIL.COM', 'BOROCOTO', ' VENGO PARA LLEGAR AL VERANO.\r\n ', 'EMPLEADO', 27, 25),
-(9, 'LEOPOLDO', 'BARRIOS', '28562489', 'AV SAN MARTIN 44', 'IOSPER', '154292724', '12/09/1970', 'IRIS@GMAIL.COM', 'RAITIERI PEDRO', ' veNGO POR LAS DUDAS.-\r\n ', 'DOCENTE', 17, 18),
-(10, 'JULIAN', 'PONS', '28562489', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/11/1983', 'GIO@GMAIL.COM', 'RIOS NAHUEL', ' VENGO POR UNA CONTROL.-\r\n ', 'DOCENTE', 23, 25),
-(11, 'GIOVANNI', 'DIAZ', '205456789', 'COLONIA AVELLANEDA', 'IOSPER', '1651515', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'SWHARTZ JORGE', ' VENGO POR CONTROL.-\r\n ', 'EMPLEADO', 17, 29);
+INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `dni`, `sexo`, `direccion`, `obra`, `telefono`, `nacimiento`, `correo`, `medico`, `motivo`, `ocupacion`, `division`, `divisionseleccion`) VALUES
+(4, 'MARIA INES', 'MANGIONI', '28562487', 'masculino', 'masculino', 'IOSPER', '4243056', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'RIOS NAHUEL', '                                                                       VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ', 'DOCENTE', NULL, NULL),
+(5, 'GIOVANNI', 'PETTERIN', '123486498', NULL, 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', 'vENGO POR CONTROLA\r\n ', 'EMPLEADO', 17, NULL),
+(6, 'JULIAN', 'LANFRANCO', '30558609', NULL, 'SAN AGUSTIN 4554', 'OSECAC', '13432423', '05/11/1983', 'JFIODJFOIJSDF@FDFDSIJF.COM', 'SWHARTZ JORGE', 'VENGO PARA SUPERAR MIS MARCAS.- \r\n ', 'ESTUDIANTE', NULL, 18),
+(7, 'RIOS', 'NAHUEL', '32518745', NULL, 'CARBO 23', 'IOSPER', '154292724', '05/7/1986', 'BLAQUI@HOTMAIL.COM', 'BOROCOTO', ' VENGO PARA LLEGAR AL VERANO.\r\n ', 'EMPLEADO', 27, 25),
+(9, 'LEOPOLDO', 'BARRIOS', '28562489', NULL, 'AV SAN MARTIN 44', 'IOSPER', '154292724', '12/09/1970', 'IRIS@GMAIL.COM', 'RAITIERI PEDRO', ' veNGO POR LAS DUDAS.-\r\n ', 'DOCENTE', 17, 18),
+(10, 'JULIAN', 'PONS', '28562488', NULL, 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/11/1983', 'GIO@GMAIL.COM', 'RIOS NAHUEL', ' VENGO POR UNA CONTROL.-\r\n ', 'DOCENTE', 23, 25),
+(11, 'GIOVANNI', 'DIAZ', '205456789', NULL, 'COLONIA AVELLANEDA', 'IOSPER', '1651515', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'SWHARTZ JORGE', ' VENGO POR CONTROL.-\r\n ', 'EMPLEADO', 17, 29),
+(25, 'GIOVANNI', 'DIAZ', '12', 'femenino', 'AV SAN MARTIN 44', 'UOSIMRA', '154292724', '05/4/1980', 'IRIS@GMAIL.COM', 'RIOS NAHUEL', ' \r\n fewfwef', 'EMPLEADO', 17, 24),
+(29, 'GIOVANNI', 'MANGIONI', '127', 'femenino', 'AV LAS AMERICAS 23', 'UOSIMRA', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', '      \r\n fdfsdf\r\n     ', 'EMPLEADO', NULL, NULL),
+(30, 'GIOVANNI', 'PONS', '123582', 'masculino', 'AV SAN MARTIN 44', 'IOSPER', '47454849', '05/4/1980', 'IRIS@GMAIL.COM', 'RIOS NAHUEL', ' \r\n ', 'DOCENTE', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -431,9 +470,8 @@ CREATE TABLE `planes` (
 
 INSERT INTO `planes` (`id`, `fecha`, `paciente`) VALUES
 (35, '2016-10-31', 5),
-(0, NULL, NULL),
-(0, NULL, NULL),
-(0, NULL, NULL);
+(36, '2016-11-05', 5),
+(37, '2016-11-05', 5);
 
 -- --------------------------------------------------------
 
@@ -461,6 +499,13 @@ CREATE TABLE `recordatorios` (
   `paciente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `recordatorios`
+--
+
+INSERT INTO `recordatorios` (`id`, `fecha`, `horadespertado`, `horadesayuno`, `desayuno`, `horamediamanana`, `mediamanana`, `horaalmuerzo`, `almuerzo`, `horamerienda`, `merienda`, `horacolacion`, `colacion`, `horacena`, `cena`, `horadormido`, `paciente`) VALUES
+(24, '2016-11-05', '7', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -479,7 +524,7 @@ CREATE TABLE `respaldos` (
 --
 
 INSERT INTO `respaldos` (`id`, `nombre`, `detalle`, `fecha`) VALUES
-(36, 'respaldo_03-11-2016-1478213064.sql', 'ewerwer', '2016-11-03');
+(38, 'respaldo_06-11-2016-1478389210.sql', 'respaldo luego de una carga grande en el club echague.', '2016-11-06');
 
 -- --------------------------------------------------------
 
@@ -502,7 +547,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `ultimoacceso`, `fechaalta`, `fechamodificacion`) VALUES
-(1, 'admin', 'admin', 1, '2016-11-05', '2016-10-21', '2016-10-25');
+(1, 'admin', '12345678', 1, '2016-11-06', '2016-10-21', '2016-11-05');
 
 --
 -- Índices para tablas volcadas
@@ -543,6 +588,13 @@ ALTER TABLE `ingesta`
   ADD KEY `recordatorio` (`recordatorio`);
 
 --
+-- Indices de la tabla `ingesta_planes`
+--
+ALTER TABLE `ingesta_planes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `plan` (`plan`);
+
+--
 -- Indices de la tabla `medicionesantropometricas`
 --
 ALTER TABLE `medicionesantropometricas`
@@ -556,12 +608,27 @@ ALTER TABLE `medicionessimples`
   ADD KEY `paciente` (`paciente`);
 
 --
+-- Indices de la tabla `menu_semanal`
+--
+ALTER TABLE `menu_semanal`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `plan` (`plan`);
+
+--
 -- Indices de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `dni` (`dni`),
   ADD KEY `division` (`division`),
   ADD KEY `divisionseleccion` (`divisionseleccion`);
+
+--
+-- Indices de la tabla `planes`
+--
+ALTER TABLE `planes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `paciente` (`paciente`);
 
 --
 -- Indices de la tabla `recordatorios`
@@ -600,7 +667,7 @@ ALTER TABLE `clubes`
 -- AUTO_INCREMENT de la tabla `divisiones`
 --
 ALTER TABLE `divisiones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `estudiolaboratorio`
 --
@@ -610,7 +677,12 @@ ALTER TABLE `estudiolaboratorio`
 -- AUTO_INCREMENT de la tabla `ingesta`
 --
 ALTER TABLE `ingesta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+--
+-- AUTO_INCREMENT de la tabla `ingesta_planes`
+--
+ALTER TABLE `ingesta_planes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT de la tabla `medicionesantropometricas`
 --
@@ -622,20 +694,30 @@ ALTER TABLE `medicionesantropometricas`
 ALTER TABLE `medicionessimples`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `menu_semanal`
+--
+ALTER TABLE `menu_semanal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+--
+-- AUTO_INCREMENT de la tabla `planes`
+--
+ALTER TABLE `planes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT de la tabla `recordatorios`
 --
 ALTER TABLE `recordatorios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `respaldos`
 --
 ALTER TABLE `respaldos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
@@ -676,11 +758,23 @@ ALTER TABLE `medicionessimples`
   ADD CONSTRAINT `medi-paci` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Filtros para la tabla `menu_semanal`
+--
+ALTER TABLE `menu_semanal`
+  ADD CONSTRAINT `plan-menu` FOREIGN KEY (`plan`) REFERENCES `planes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
   ADD CONSTRAINT `paci-div` FOREIGN KEY (`division`) REFERENCES `divisiones` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `paci-divSeleccion` FOREIGN KEY (`divisionseleccion`) REFERENCES `divisiones` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `planes`
+--
+ALTER TABLE `planes`
+  ADD CONSTRAINT `paciente-plan` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `recordatorios`

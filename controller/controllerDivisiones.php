@@ -72,6 +72,7 @@ class controllerDivisiones {
   $division->telefono = $divisionAct->telefono;
   $division->club = $divisionAct->club;
   $division->deporte = $divisionAct->deporte;
+  $division->sexo = $divisionAct->sexo;
 
     $division->save();
     
@@ -219,6 +220,7 @@ class controllerDivisiones {
 
     $smarty->assign('entrenador',$division->entrenador);
     $smarty->assign('preparador',$division->preparador);
+    $smarty->assign('sexoDivision',$division->sexo);
 
 
     $smarty->display('actualizarDivision.tpl');
@@ -269,7 +271,7 @@ class controllerDivisiones {
   $division->telefono = $divisionAct->telefono;
   $division->club = $divisionAct->club;
   $division->deporte = $divisionAct->deporte;
-
+  $division->sexo = $divisionAct->sexo;
 
   //echo("personaContacto: ".$club->personaContacto." correoElectronico: ".$club->correoElectronico);
   $division->replace();
@@ -342,6 +344,7 @@ if (isset($_REQUEST['modulo']))
                                 $divisionAct->preparador=$this->request['preparador'];
                                 $divisionAct->entrenador=$this->request['entrenador'];
                                 $divisionAct->deporte=$this->request['deporte'];
+                                $divisionAct->sexo=$this->request['sexo'];
 
                                 $this->actualizarDivision($divisionAct);
                                 
@@ -364,6 +367,7 @@ if (isset($_REQUEST['modulo']))
                                 $divisionAct->correo=$this->request['correo'];
                                 $divisionAct->entrenador=$this->request['entrenador'];
                                 $divisionAct->preparador=$this->request['preparador'];
+                                $divisionAct->sexo=$this->request['sexo'];
                                 
 
 

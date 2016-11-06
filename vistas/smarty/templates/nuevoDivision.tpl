@@ -32,6 +32,15 @@
 </div>  
 <br><br><br>
 
+<label class="col-sm-4">Sexo:</label>
+<div class="col-sm-8">
+<select name=sexo class="form-control" id="sexo">
+    <option label="masculino" value="masculino">MASCULINO</option>
+    <option label="femenino" value="femenino">FEMENINO</option>
+</select>
+</div>  
+<br><br><br>
+
 <label class="col-sm-4">Contacto:</label>
 <div class="col-sm-8">
 <input type="text" class="form-control" id="contacto" name="contacto" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese la nombre de la persona de contacto">

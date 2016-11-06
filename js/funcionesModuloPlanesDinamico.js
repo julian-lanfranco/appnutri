@@ -101,7 +101,6 @@ $(document).ready(function() {
     });
 
 
-
 $("#plan").submit(function(e) {
 
     $.ajax({

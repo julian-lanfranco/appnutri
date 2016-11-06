@@ -201,6 +201,20 @@
       <div class="col-sm-3">
       <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="{$ocupacion}" required pattern="^[a-zA-Z-\s]+" title="Ingrese la ocupacion. Solo letras">
       </div>
+
+      <label class="col-sm-1">Sexo:</label>
+      <div class="col-sm-3"> 
+    <select name="sexo" class="form-control" id="sexo">
+    {if $sexoPaciente eq "masculino"}
+    <option label="Masculino"  value="masculino" selected>Masculino</option>
+    <option label="Femenino"  value="femenino">Femenino</option>
+    {/if}
+    {if $sexoPaciente eq "femenino"}
+    <option label="Masculino"  value="masculino">Masculino</option>
+    <option label="Femenino"  value="femenino" selected>Femenino</option>
+    {/if}
+</select>
+</div>
  <br><br><br><br>      
       <label class="col-sm-1">Motivo de la Consulta:</label>
       <div class="col-sm-2">

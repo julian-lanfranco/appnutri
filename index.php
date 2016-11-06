@@ -11,6 +11,7 @@ session_start();
  require_once('controller/controllerMedicionesAntropometricas.php');
  require_once('controller/controllerUsuario.php');
  require_once('controller/controllerPlanes.php');
+ require_once('controller/controllerSistema.php');
 
  
 
@@ -119,6 +120,17 @@ if (!empty($_SESSION['user'])){
 
                                 break;
                               } 
+          case 'sistema' : {
+
+
+                                $mvc = new controllerSistema($_REQUEST,$_FILES);
+
+                                $mvc->router();
+
+
+                                break;
+                              }                              
+                                 
                              
         
     }

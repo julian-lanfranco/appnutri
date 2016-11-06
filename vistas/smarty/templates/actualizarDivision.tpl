@@ -53,7 +53,23 @@
         </select>   
 </div>   
 <br><br><br>      
-      
+ 
+
+       <label class="col-sm-4">Sexo:</label>
+      <div class="col-sm-8"> 
+    <select name="sexo" class="form-control" id="sexo">
+    {if $sexoDivision eq "masculino"}
+    <option label="Masculino"  value="masculino" selected>Masculino</option>
+    <option label="Femenino"  value="femenino">Femenino</option>
+    {/if}
+    {if $sexoDivision eq "femenino"}
+    <option label="Masculino"  value="masculino">Masculino</option>
+    <option label="Femenino"  value="femenino" selected>Femenino</option>
+    {/if}
+</select>
+</div>     
+
+<br><br><br> 
 
 <label class="col-sm-4">Contacto:</label>
 <div class="col-sm-8">

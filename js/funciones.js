@@ -5,7 +5,49 @@
 
 
 
-		$('#btnMostrarTablaClubes').click(function(){
+		        $('#btnCrearRespaldo').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=sistema",
+                        data: "accion=mostrarCrearRespaldo",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+        $('#btnListarRespaldos').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=sistema",
+                        data: "accion=listarRespaldos",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+        $('#btnMostrarSubirRespaldo').click(function(){
+                      
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=sistema",
+                        data: "accion=mostrarSubirRespaldo",
+                        success: function(a) {
+                                $('#central').html(a); 
+                                                }
+                            });
+                });
+
+
+        $('#btnMostrarTablaClubes').click(function(){
                       
                     
                     $.ajax({
@@ -417,7 +459,11 @@ $.getScript( "js/funcionesModuloRecordatorio24.js" )
     alert( "Triggered ajaxError handler 7." );
 });
 
-  
+ $.getScript( "js/sistema/funcionesModuloSistema.js" )
+  .fail(function( jqxhr, settings, exception ) {
+    alert( "Triggered ajaxError handler 7." );
+});
+ 
 
 });
 

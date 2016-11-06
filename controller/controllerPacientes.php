@@ -65,7 +65,9 @@ class controllerPacientes {
        //ACCESO A DATOS
 
     $paci = new Paciente('pacientes');
-    
+
+
+
     $paci->nombre=$this->request['nombre'];
     $paci->apellido=$this->request['apellido'];
     $paci->dni=$this->request['dni'];
@@ -77,27 +79,39 @@ class controllerPacientes {
     $paci->ocupacion=$this->request['ocupacion'];
     $paci->motivo=$this->request['motivo'];
     $paci->direccion=$this->request['direccion'];
+    $paci->sexo=$this->request['sexo'];
 
 
  
-   if (isset($_REQUEST['seleccionDivisionesModPacientes']) && !($_REQUEST['seleccionDivisionesModPacientes']=='ninguno')) 
+   if (isset($_REQUEST['seleccionDivisionesModPacientes']) && 
+    !($_REQUEST['seleccionDivisionesModPacientes']=='ninguno')) 
                                                                 {
 
                                                                   $paci->division=$this->request['seleccionDivisionesModPacientes'];
                                                                 }
                                 else {$paci->division=NULL;}
                                 
-                                if (isset($_REQUEST['seleccionDivisionesSeleccionModPacientes']) && !($_REQUEST['seleccionDivisionesSeleccionModPacientes']=='ninguno')) 
+  if (isset($_REQUEST['seleccionDivisionesSeleccionModPacientes']) && 
+    !($_REQUEST['seleccionDivisionesSeleccionModPacientes']=='ninguno')) 
                                                     {
                                   $paci->divisionseleccion=$_REQUEST['seleccionDivisionesSeleccionModPacientes'];
                                                     }
                                 else {$paci->divisionseleccion=NULL;}
              
 
-    IF ($paci->save()) {echo ("sin error");}
-    else {echo ("division: ".$paci->division."  seleccion: ".$paci->divisionseleccion);
+    if ($paci->save()) {echo "
+                              <script language='javascript' type='text/javascript'> 
+                              alert('Paciente creado con exito.'); 
+                              </script>  
+                              ";
+                        }
+    else {echo "
+                              <script language='javascript' type='text/javascript'> 
+                              alert('No se pudo dar de alta el paciente.".var_dump($paci)." Verifique DNI.'); 
+                              </script>  
+                              ";
  
-   }
+          }
    }
 //
 // elimnarClub   
@@ -1023,6 +1037,7 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
     $smarty->assign('medico',$paciente->medico);
     $smarty->assign('motivo',$paciente->motivo);
     $smarty->assign('ocupacion',$paciente->ocupacion);
+    $smarty->assign('sexoPaciente',$paciente->sexo);
 
 
 //evio de seleccionados clubes
@@ -1213,6 +1228,7 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
     $paci->medico=$paciente->medico;
     $paci->ocupacion=$paciente->ocupacion;
     $paci->motivo=$paciente->motivo;
+    $paci->sexo=$paciente->sexo;
     $paci->direccion=$paciente->direccion;
     $paci->division=$paciente->division;
     $paci->divisionseleccion=$paciente->divisionseleccion;
@@ -1552,6 +1568,7 @@ if (isset($_REQUEST['modulo']))
                                 $paci->ocupacion=$this->request['ocupacion'];
                                 $paci->motivo=$this->request['motivo'];
                                 $paci->direccion=$this->request['direccion'];
+                                $paci->sexo=$this->request['sexo'];
 
 
                                 if (isset($_REQUEST['seleccionDivisionesModPacientes']) && !($_REQUEST['seleccionDivisionesModPacientes']=='ninguno')) 

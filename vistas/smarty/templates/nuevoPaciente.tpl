@@ -19,7 +19,7 @@
 <div class="col-sm-2" >
 
     <select name="seleccionClubesModPacientes" class="form-control" id="seleccionClubesModPacientes">
-    <option label="ninguno" value="ninguno">Ninguno</option>
+    <option label="ninguno" value="ninguno" >Ninguno</option>
     {foreach from=$clubes item=club}
     {if $club->id eq $clubSeleccionado}
     <option label="{$club->nombre}" value="{$club->id}" selected>{$club->nombre}</option>
@@ -75,6 +75,7 @@
     <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre}-{$division->deporte|upper}</option>
     {/if}
     {/foreach}
+    <option label="ninguno" value="ninguno" selected>Ninguno</option>
 </select>
 </div>
 </div>
@@ -130,6 +131,7 @@
 <div id=selectorDeDivisionesSelecciones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesSeleccionesModPacientes" class="form-control" id="seleccionDivisionesSeleccionesModPacientes">
+    <option label="ninguno" value="ninguno">Ninguno</option>
     {foreach from=$divisiones item=division}
     <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre|upper}</option>
     {/foreach}
@@ -155,7 +157,8 @@
  <div class="col-sm-2">
      <input type="text" class="form-control" id="dni" name="dni"  value=""  required pattern="^[0-9]+" title="Ingrese el DNI. Solo numeros">
  </div>
-</div>
+
+
 <br><br><br>
 <div class="form-group"> 
  <label class="col-sm-1">Direccion:</label>
@@ -194,6 +197,13 @@
  <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese la ocupacion. Solo letras">
  </div>
 
+<label class="col-sm-1">Sexo:</label>
+<div class="col-sm-2">
+    <select name="sexo" class="form-control" id="sexo">
+    <option label="Masculino"  value="masculino">Masculino</option>
+    <option label="Femenino"  value="femenino">Femenino</option>
+</select>
+</div>
 
  <label class="col-sm-1">Motivo de la Consulta:</label>
  <div class="col-sm-3">
