@@ -67,7 +67,21 @@ class controllerClubes {
     $club->direccion=$this->request['direccion'];
     $club->contacto=$this->request['personaContacto'];
     $club->mail=$this->request['correoElectronico'];
-    $club->save();
+    
+    
+    if ($club->save()) {echo "
+                              <script language='javascript' type='text/javascript'> 
+                              alert('Club creado con exito.'); 
+                              </script>  
+                              ";
+                        }
+    else {echo "
+                <script language='javascript' type='text/javascript'> 
+                alert('No se pudo dar de alta el club.".var_dump($club)." Verifique nombre.'); 
+                </script>  
+               ";
+ 
+          }
 
    }
 //
