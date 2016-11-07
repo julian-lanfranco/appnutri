@@ -323,6 +323,8 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
    public function mostrarTablaPacientes($idClub,$idDivision,$cadenaPaciente)
    {
 
+    $divisionesArray=NULL;
+    $pacientesArray=NULL;    
     $club=new Club('clubes');
 
     $clubesArray= $club->Find("1 order by id"); 
