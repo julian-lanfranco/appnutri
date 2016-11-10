@@ -34,15 +34,13 @@
 <br><br>
 <label class="col-sm-2">Seleccione una division:</label>
 <div class="col-sm-4">  
-  <select name="seleccionDivisionesModTablaPacientes" 
-          class="form-control" id="seleccionDivisionesModTablaPacientes" title="Seleccione una Division">
-  
+  <select name="seleccionDivisionesModTablaPacientes" class="form-control" id="seleccionDivisionesModTablaPacientes" title="Seleccione una Division">
 
   {foreach from=$divisiones item=division}
   {if $division->id eq $divisionSeleccionado}
-  <option label="{$division->nombre}" value="{$division->id}" selected>{$division->nombre}</option>
+  }<option value="{$division->id}" selected>{$division->nombre|upper} - {$division->deporte|upper} - {$division->sexo|upper}</option>
   {else}
-  <option label="{$division->nombre}" value="{$division->id}">{$division->nombre}</option>
+  <option value="{$division->id}">{$division->nombre|upper} - {$division->deporte|upper} - {$division->sexo|upper}</option>
   {/if}
   {/foreach}
   </select>

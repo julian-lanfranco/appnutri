@@ -114,7 +114,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                 var cadenaPaciente=$("#cadenaPaciente").val();
                 var idClub=$("#seleccionClubesModTablaPacientes").val();
                 var idDivision=$("#seleccionDivisionesModTablaPacientes").val();
-                alert(cadenaPaciente);
+                
 
 
                  $.ajax({
@@ -216,6 +216,39 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                              }
                         });
 
+
+                          $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarJugadoresXClub&club="+idClub,
+                
+                        success: function(b) {
+
+                                          
+
+                                            var juga=JSON.parse(b);
+                                            var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
+
+    
+                                            for(var i in juga)
+                                                        {
+                                                            jugadoresTabla=jugadoresTabla+"<tr style='width: 100%; display: inline-table;'><td style='width: 33%;    float: left;'>"
+                                                            +juga[i].id+"</td><td style='width: 33%;    float: left;'>"
+                                                            +juga[i].apellido+" "+juga[i].nombre+"</td><td style='width: 33%;    float: left;'><input type='checkbox' name='jugadorMigracion[]' value='"
+                                                            +juga[i].id+"' id='jugadorMigracion[]' align='CENTER'  style='cursor:pointer'  checked></td></tr>";
+                                                            
+                                                        }
+
+                                            jugadoresTabla=jugadoresTabla+"</tbody></table>";
+                                            //alert(jugadoresTabla);
+
+                                            $('#listadoJugadores').html(jugadoresTabla);
+                                             }
+                        });
+
+
+
+
         
         });
 
@@ -315,6 +348,36 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                              }
                         });
 
+                        $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                        data: "accion=buscarJugadoresXClubXDeporte&deporte="+deporte+"&club="+idClub,
+                
+                        success: function(b) {
+
+                                          
+
+                                            var juga=JSON.parse(b);
+                                            var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
+
+    
+                                            for(var i in juga)
+                                                        {
+                                                            jugadoresTabla=jugadoresTabla+"<tr style='width: 100%; display: inline-table;'><td style='width: 33%;    float: left;'>"
+                                                            +juga[i].id+"</td><td style='width: 33%;    float: left;'>"
+                                                            +juga[i].apellido+" "+juga[i].nombre+"</td><td style='width: 33%;    float: left;'><input type='checkbox' name='jugadorMigracion[]' value='"
+                                                            +juga[i].id+"' id='jugadorMigracion[]' align='CENTER'  style='cursor:pointer'  checked></td></tr>";
+                                                            
+                                                        }
+
+                                            jugadoresTabla=jugadoresTabla+"</tbody></table>";
+                                            //alert(jugadoresTabla);
+
+                                            $('#listadoJugadores').html(jugadoresTabla);
+                                             }
+                        });
+
+
         
         });
 
@@ -387,7 +450,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
     $("#central").on("change", "#seleccionSexoOrigen", function(){
 
-                
+   ///////////////////////////             
                 var deporte=$("#seleccionDeportesOrigen").val();
                 var idClub=$("#seleccionClubesOrigen").val();
                 var sexo=$("#seleccionSexoOrigen").val();
@@ -419,7 +482,33 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
                                              }
                         });
+                        
+                        $.ajax({
+                            type: "GET",
+                            url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                            data: "accion=buscarJugadoresXClubXDeporteXSexo&club="+idClub+"&sexo="+sexo+"&deporte="+deporte,
+                    
+                            success: function(b) {
 
+                                                var juga=JSON.parse(b);
+                                                var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
+
+        
+                                                for(var i in juga)
+                                                            {
+                                                                jugadoresTabla=jugadoresTabla+"<tr style='width: 100%; display: inline-table;'><td style='width: 33%;    float: left;'>"
+                                                                +juga[i].id+"</td><td style='width: 33%;    float: left;'>"
+                                                                +juga[i].apellido+" "+juga[i].nombre+"</td><td style='width: 33%;    float: left;'><input type='checkbox' name='jugadorMigracion[]' value='"
+                                                                +juga[i].id+"' id='jugadorMigracion[]' align='CENTER'  style='cursor:pointer'  checked></td></tr>";
+                                                                
+                                                            }
+
+                                                jugadoresTabla=jugadoresTabla+"</tbody></table>";
+                                                //alert(jugadoresTabla);
+
+                                                $('#listadoJugadores').html(jugadoresTabla);
+                                                 }
+                            });
         
         });
 
@@ -474,32 +563,32 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                 //alert("id Club: "+idClub+"  Deporte:  "+deporte);
   
 
-                        $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=buscarJugadoresXDivision&division="+division,
-                
-                        success: function(b) {
+                            $.ajax({
+                            type: "GET",
+                            url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                            data: "accion=buscarJugadoresXDivision&division="+division,
+                    
+                            success: function(b) {
 
-                                            var juga=JSON.parse(b);
-                                            var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
+                                                var juga=JSON.parse(b);
+                                                var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
 
-    
-                                            for(var i in juga)
-                                                        {
-                                                            jugadoresTabla=jugadoresTabla+"<tr style='width: 100%; display: inline-table;'><td style='width: 33%;    float: left;'>"
-                                                            +juga[i].id+"</td><td style='width: 33%;    float: left;'>"
-                                                            +juga[i].apellido+" "+juga[i].nombre+"</td><td style='width: 33%;    float: left;'><input type='checkbox' name='jugadorMigracion[]' value='"
-                                                            +juga[i].id+"' id='jugadorMigracion[]' align='CENTER'  style='cursor:pointer'  checked></td></tr>";
-                                                            
-                                                        }
+        
+                                                for(var i in juga)
+                                                            {
+                                                                jugadoresTabla=jugadoresTabla+"<tr style='width: 100%; display: inline-table;'><td style='width: 33%;    float: left;'>"
+                                                                +juga[i].id+"</td><td style='width: 33%;    float: left;'>"
+                                                                +juga[i].apellido+" "+juga[i].nombre+"</td><td style='width: 33%;    float: left;'><input type='checkbox' name='jugadorMigracion[]' value='"
+                                                                +juga[i].id+"' id='jugadorMigracion[]' align='CENTER'  style='cursor:pointer'  checked></td></tr>";
+                                                                
+                                                            }
 
-                                            jugadoresTabla=jugadoresTabla+"</tbody></table>";
-                                            //alert(jugadoresTabla);
+                                                jugadoresTabla=jugadoresTabla+"</tbody></table>";
+                                                //alert(jugadoresTabla);
 
-                                            $('#listadoJugadores').html(jugadoresTabla);
-                                             }
-                        });
+                                                $('#listadoJugadores').html(jugadoresTabla);
+                                                 }
+                            });
 
         
         });

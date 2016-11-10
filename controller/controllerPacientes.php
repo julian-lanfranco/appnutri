@@ -311,6 +311,72 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
         return $pacientesArray;
    }
 
+     public function traerPacientesXClub($club)
+   {
+        $divisiones = new Division('divisiones');
+  
+        $divisionesArray = $divisiones->Find("club='".$club."' order by id"); 
+
+        $paciente = new Paciente('pacientes');
+
+        $pacientesFiltrados = array();
+
+        foreach ($divisionesArray as $div) {
+          # code...
+           $pacientesArray = $paciente->Find("(division='".$div->id."') or (divisionseleccion='".$div->id."') order by id");
+           $pacientesFiltrados=array_merge($pacientesFiltrados,$pacientesArray);
+        }
+    
+       return $pacientesFiltrados;
+
+
+   }
+
+        public function traerPacientesXClubXDeporteXSexo($club,$deporte,$sexo)
+   {
+        $divisiones = new Division('divisiones');
+  
+        $divisionesArray = $divisiones->Find("(club='".$club."') and (deporte='".$deporte."') and (sexo='".$sexo."') order by id"); 
+
+        $paciente = new Paciente('pacientes');
+
+        $pacientesFiltrados = array();
+
+        foreach ($divisionesArray as $div) {
+          # code...
+           $pacientesArray = $paciente->Find("(division='".$div->id."') or (divisionseleccion='".$div->id."') order by id");
+           $pacientesFiltrados=array_merge($pacientesFiltrados,$pacientesArray);
+        }
+    
+       return $pacientesFiltrados;
+
+
+
+   }
+
+           public function traerPacientesXClubXDeporte($club,$deporte)
+   {
+        $divisiones = new Division('divisiones');
+  
+        $divisionesArray = $divisiones->Find("(club='".$club."') and (deporte='".$deporte."') order by id"); 
+
+        $paciente = new Paciente('pacientes');
+
+        $pacientesFiltrados = array();
+
+        foreach ($divisionesArray as $div) {
+          # code...
+           $pacientesArray = $paciente->Find("(division='".$div->id."') or (divisionseleccion='".$div->id."') order by id");
+           $pacientesFiltrados=array_merge($pacientesFiltrados,$pacientesArray);
+        }
+    
+       return $pacientesFiltrados;
+
+
+
+   }
+
+
 
   public function traerDivisiones()
    {
@@ -322,6 +388,7 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
 
    public function mostrarTablaPacientes($idClub,$idDivision,$cadenaPaciente)
    {
+    echo($idClub."  ".$idDivision."  ");
 
     $club=new Club('clubes');
 
@@ -421,11 +488,11 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
                     if ($cadenaPaciente==NULL) {
                                             if ($club->tipo == "normal")
                                                 {
-                                                $pacientesArray = $paciente->Find("division ='".$divisionesArray[0]->id."' order by id"); 
+                                                $pacientesArray = $paciente->Find("division ='".$idDivision."' order by id"); 
                                                 }
                                             if ($club->tipo == "seleccion") 
                                                 {
-                                                $pacientesArray = $paciente->Find("divisionseleccion ='".$divisionesArray[0]->id."' order by id");
+                                                $pacientesArray = $paciente->Find("divisionseleccion ='".$idDivision."' order by id");
                                                  } 
                                               }
                     else {
@@ -448,6 +515,9 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
 
 
     //PRESENTACION
+
+
+
     $smarty = new Smarty;
     $smarty->template_dir = 'vistas/smarty/templates/';
     $smarty->compile_dir = 'vistas/smarty/templates_c/';
@@ -1487,6 +1557,42 @@ if (isset($_REQUEST['modulo']))
                                 break;
                                 }
 
+    case 'buscarJugadoresXClubXDeporteXSexo': 
+                                  {
+                                  
+                                  $juga=$this->traerPacientesXClubXDeporteXSexo($_REQUEST['club'],$_REQUEST['deporte'],$_REQUEST['sexo']);
+
+                                  echo json_encode($juga);
+
+                                  //$this->cargarListadoJugadores($jugadores);
+
+
+                                break;
+                                }
+    case 'buscarJugadoresXClubXDeporte': 
+                                  {
+                                  
+                                  $juga=$this->traerPacientesXClubXDeporte($_REQUEST['club'],$_REQUEST['deporte']);
+
+                                  echo json_encode($juga);
+
+                                  //$this->cargarListadoJugadores($jugadores);
+
+
+                                break;
+                                }
+    case 'buscarJugadoresXClub': 
+                                  {
+                                  
+                                  $juga=$this->traerPacientesXClub($_REQUEST['club']);
+
+                                  echo json_encode($juga);
+
+                                  //$this->cargarListadoJugadores($jugadores);
+
+
+                                break;
+                                }
     
 
     case 'buscarDivisionesXSexoXDeportesXSeleccion': 
