@@ -378,6 +378,26 @@ $pdf->Output();
 
 }
 
+function  imprimirGraficaSomatocarta($idMedicion){
+    
+  // Display the graph
+
+$pdf = new FPDF();
+
+$pdf=new FPDF('L','mm','A4');
+
+$ambito='localhost';
+
+$pdf->AddPage();
+
+$pdf->SetFont('Arial', 'B', 12);
+
+$pdf->Image('http://'.$ambito.'/appnutri/graficas/graficaSomatocarta.php?idMedicion='.$idMedicion.'.png',40,5,90);
+    
+$pdf->Output();
+
+}
+
 
 }
 

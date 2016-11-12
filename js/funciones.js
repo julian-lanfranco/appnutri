@@ -130,35 +130,7 @@
                             });
                 });
 
-        $('#btnMostrarNuevoPaciente').click(function(){
-
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data: "accion=btnMostrarNuevoPaciente",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
                        
-        $('#btnMostrarModificarPaciente').click(function(){
-        
-
-         var idPaciente=$("#idPaciente").val();
-       
-
-         $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                        data:"accion=mostrarActualizarPaciente&idPaciente="+idPaciente,
-
-                        success: function(b) {
-                                            $('#central').html(b); 
-                                                }
-                    });
-
-         });
 
         $('#btnMostrarTablaPacientes').click(function(){
                       
@@ -172,20 +144,6 @@
                                                 }
                             });
                 });
-
-
-        $('#btnNuevaAnamnesis').click(function(){
-                    var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=anamnesis&idPaciente="+idPaciente,
-                        data: "accion=mostrarNuevoAnamnesis",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
-
 
 
 
@@ -204,17 +162,7 @@
 
         
 
-                $('#btnNuevaMedicionAntro').click(function(){
-                    var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
-                        data: "accion=mostrarNuevoMedicionesAntropometricas",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
+             
                 
                 $('#btnlistarMedicionAntro').click(function(){
                     var idPaciente=$("#idPaciente").val();
@@ -228,47 +176,7 @@
                             });
                 });
                 
-                
-                $('#btnGraficasMedicionAntro').click(function(){
-                     var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
-                        data: "accion=graficarMedicionesAntropometricas",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
 
-
-                $('#btnGraficarSomatocarta').click(function(){
-                    var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&idPaciente="+idPaciente,
-                        data: "accion=listaMedicionesAGraficar",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                    
-                });
-
-
-
-        $('#btnNuevoEstudioLaboratorio').click(function(){
-
-                    var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=estudioLaboratorio&idPaciente="+idPaciente,
-                        data: "accion=mostrarNuevoEstudioLaboratorio",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
 
         $('#btnlistarEstudioLaboratorio').click(function(){
 
@@ -283,18 +191,7 @@
                             });
                 });
 
-        $('#btnNuevoRecordatorio24').click(function(){
-
-                    var idPaciente=$("#idPaciente").val();
-                      $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=recordatorio24&idPaciente="+idPaciente,
-                        data: "accion=mostrarNuevoRecordatorio24",
-                        success: function(a) {
-                                            $('#central').html(a); 
-                                             }
-                            });
-                });
+     
 
         $('#btnlistarRecordatorio24').click(function(){
 
@@ -386,19 +283,6 @@
                 });
 
 
-              $('#btnNuevoPlan').click(function(){
-
-                      var idPaciente=$("#idPaciente").val();
-                    
-                    $.ajax({
-                        type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=planes&idPaciente="+idPaciente,
-                        data: "accion=mostrarNuevoPlan",
-                        success: function(a) {
-                                $('#central').html(a); 
-                                                }
-                            });
-                });
 
 
                 $('#btnlistarPlanes').click(function(){
@@ -458,7 +342,10 @@ $.getScript( "js/funcionesModuloRecordatorio24.js" )
   .fail(function( jqxhr, settings, exception ) {
     alert( "Triggered ajaxError handler 7." );
 });
-
+$.getScript( "js/funcionesModuloPlanes.js" )
+  .fail(function( jqxhr, settings, exception ) {
+    alert( "Triggered ajaxError handler 7." );
+});
  $.getScript( "js/sistema/funcionesModuloSistema.js" )
   .fail(function( jqxhr, settings, exception ) {
     alert( "Triggered ajaxError handler 7." );

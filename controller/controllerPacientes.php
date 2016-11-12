@@ -388,7 +388,9 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
 
    public function mostrarTablaPacientes($idClub,$idDivision,$cadenaPaciente)
    {
-    echo($idClub."  ".$idDivision."  ");
+         $divisionesArray=NULL;
+         $pacientesArray=NULL;    
+       
 
     $club=new Club('clubes');
 

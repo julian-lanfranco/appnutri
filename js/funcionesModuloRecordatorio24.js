@@ -1,5 +1,18 @@
 //Funciones Js del Modulo Recordatorios
+$("#central").on("click", "#imgMostrarNuevoRecordatorio24", function(){
+        
+         paciente = $(this).attr('name');
+         $.ajax({
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=recordatorio24",
+                        data: "accion=mostrarNuevoRecordatorio24&idPaciente="+paciente,
 
+                        success: function(b) {
+                                            $('#central').html(b); 
+                                                }
+                    });
+
+         });
 
 $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
         
