@@ -9,13 +9,12 @@ require_once ('jpgraph/src/jpgraph_scatter.php');
 require_once ('jpgraph/src/jpgraph_line.php');
 require_once('../modelos/medicionesAntropometricas.php');
 require_once('../modelos/conexion.php');
- 
+
 //Recibimos el id del paciente
 $idMedicion=$_REQUEST['idMedicion'];
 //Creamos el objeto
 $mediciones = new MedicionesAntropometricas('medicionesantropometricas');
 $mediciones->Load("id=".$idMedicion);
-
 //Calculamos los somatotipos
 
 $mesomorfismo = ($mediciones->humeral * 0.858 + 0.601 * $mediciones->femoral + 0.188 * ($mediciones->brazorelajado - $mediciones->triceps) + 0.161 * ($mediciones->pantorrilla - $mediciones->pantorrilla2)) - (($mediciones->tallacorporal * 0.131) + 4.5);       
@@ -60,7 +59,9 @@ $graph->SetBackgroundImage("soma.jpg", BGIMG_FILLFRAME);
 
 
 $sp1 = new ScatterPlot($datay,$datax);
- 
+ $sp1->mark->SetType(MARK_FILLEDCIRCLE);
+$sp1->mark->SetFillColor("red");
+$sp1->mark->SetWidth(8);
 $graph->Add($sp1);
 $graph->Stroke();
 

@@ -19,13 +19,12 @@ $("#central").on("click", "#imgMostarActualizarAnamnesis", function(){
 
 
 
-$("#central").on("click", "#btnNuevaAnamnesis", function(){
+$("#central").on("click", "#imgMostrarNuevoAnamnesis", function(){
         
-            var idPaciente=$("#idPaciente").val();
-
+         paciente = $(this).attr('name');
          $.ajax({
                         type: "GET",
-                        url: "http://"+ambito+"/appnutri/?modulo=anamnesis&idPaciente="+idPaciente,
+                        url: "http://"+ambito+"/appnutri/?modulo=anamnesis&idPaciente="+paciente,
                         data: "accion=mostrarNuevoAnamnesis",
 
                         success: function(b) {

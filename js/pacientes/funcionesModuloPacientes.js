@@ -45,14 +45,14 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
         });
 
 
-        $("#central").on("click", "#imgMostrarConsultarPaciente", function(){
+        $("#central").on("click", "#imgMostrarEditarPaciente", function(){
         
          var idPaciente = $(this).attr('name');
         
                  $.ajax({
                                 type: "GET",
                                 url: "http://"+ambito+"/appnutri/?modulo=pacientes",
-                                data: "accion=consultarPaciente&idPaciente="+idPaciente,
+                                data: "accion=mostrarActualizarPaciente&idPaciente="+idPaciente,
 
                                 success: function(b) {
 
@@ -63,8 +63,24 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
     
 
         });
+  
+       $("#central").on("click", "#imgMostrarNuevoPaciente", function(){
+        
+                
+                 $.ajax({
+                                type: "GET",
+                                url: "http://"+ambito+"/appnutri/?modulo=pacientes",
+                                data: "accion=btnMostrarNuevoPaciente",
 
+                                success: function(b) {
 
+                                                    $('#central').html(b); 
+                                                        }
+                            });
+     
+    
+
+        });
  
 
 //listeners para filtrado de divisiones de clubes

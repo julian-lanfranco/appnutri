@@ -438,7 +438,19 @@ class controllerMedicionesAntropometricas {
     $repo->imprimirEstadisticaMedicionSimple($idPaciente);
    }
 
+   public function imprimirGrafSoma($idMedicion)
+   {
 
+  
+   //Creamos el objeto
+   $medicion = new MedicionesAntropometricas('medicionesantropometricas');
+   $medicion->Load("id=".$idMedicion);
+     //PRESENTACION
+    
+    $repo = new Reportes();
+
+    $repo->imprimirGraficaSomatocarta($medicion);
+   }
 
 
 
