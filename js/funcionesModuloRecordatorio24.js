@@ -13,6 +13,25 @@ $("#central").on("click", "#imgMostrarNuevoRecordatorio24", function(){
                     });
 
          });
+         
+//boton imprime grafica         
+        $("#central").on("click", "#btnImprimirGraficaRecordatorio24", function(){
+        
+         recordatorio = $(this).attr('name');
+        window.open ("http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=imprimeGrafica&idRecordatorio="+recordatorio);
+//                 $.ajax({
+//                                type: "GET",
+//                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
+//                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
+//
+//                                success: function(b) {
+//                                                    $('#central').html(b); 
+//                                                        }
+//                            });
+     
+    
+
+        });         
 
 $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
         
@@ -71,16 +90,19 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
         $("#central").on("click", "#imgMostrarEstadisticaRecordatorio24", function(){
         
          recordatorio = $(this).attr('name');
+         
+         
+        window.open ("http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=mostrarEstadisticaRecordatorio24&idRecordatorio="+recordatorio);
         
-                 $.ajax({
-                                type: "GET",
-                                url: "http://"+ambito+"/appnutri/?modulo=recordatorio24",
-                                data: "accion=mostrarEstadisticaRecordatorio24&idRecordatorio="+recordatorio,
-
-                                success: function(b) {
-                                                    $('#central').html(b); 
-                                                        }
-                            });
+//                 $.ajax({
+//                                type: "GET",
+//                                url: "http://"+ambito+"/appnutri/?modulo=recordatorio24",
+//                                data: "accion=mostrarEstadisticaRecordatorio24&idRecordatorio="+recordatorio,
+//
+//                                success: function(b) {
+//                                                    $('#central').html(b); 
+//                                                        }
+//                            });
      
     
 

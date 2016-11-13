@@ -5,16 +5,16 @@
         $("#central").on("click", "#imgMostrarGraficaSomatocarta", function(){
         
          medicion = $(this).attr('name');
-        
-                 $.ajax({
-                                type: "GET",
-                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
-                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
-
-                                success: function(b) {
-                                                    $('#central').html(b); 
-                                                        }
-                            });
+        window.open ("http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&accion=graficarSomatocarta&idMedicion="+medicion);
+//                 $.ajax({
+//                                type: "GET",
+//                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
+//                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
+//
+//                                success: function(b) {
+//                                                    $('#central').html(b); 
+//                                                        }
+//                            });
      
     
 
