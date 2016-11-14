@@ -14,7 +14,7 @@
     </tbody>  
   </table> 
 <div align="center">
-    <button id="btnImprimirGraficaRecordatorio24-" class="btn btn-default">Imprimir</button>
+    <button id="btnImprimirGraficaRecordatorio24" class="btn btn-default">Imprimir</button>
     <button id="btnCancelarActualizarRecordatorio24" class="btn btn-default">Volver</button>
 </div>
  <!-- </form> -->

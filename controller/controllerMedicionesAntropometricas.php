@@ -310,24 +310,7 @@ class controllerMedicionesAntropometricas {
     $smarty->display('graficaMedicionAntro.tpl');
        
    }
-   
-   public  function mostrarGraficaSomatocarta($idMedicion){
-                 //ACCESO A DATOS
-    
-     //PRESENTACION
-    $smarty = new Smarty;
-    $smarty->template_dir = 'vistas/smarty/templates/';
-    $smarty->compile_dir = 'vistas/smarty/templates_c/';
-    $smarty->config_dir = 'vistas/smarty/configs/';
-    $smarty->cache_dir = 'vistas/smarty/cache/';
-    
-
-    $smarty->assign('idMedicion',$idMedicion);
-    
-    $smarty->display('graficaSomatocarta.tpl');
-          
-   }
-   
+  
 // tabla para listar tabla de mediciones antropometricas a graficar en Somatocarta
    public function generarListadoMedicionesAGraficarSomatocarta($idPaciente)
    {
@@ -438,7 +421,17 @@ class controllerMedicionesAntropometricas {
     $repo->imprimirEstadisticaMedicionSimple($idPaciente);
    }
 
+   
+   //imprime grafica somatocarta solicita servicio
+   public function imprimirGrafSoma($idMedicion)
+   {
 
+  
+    
+    $repo = new Reportes();
+
+    $repo->imprimirGraficaSomatocarta($idMedicion);
+   }
 
 
 
@@ -499,7 +492,7 @@ if (isset($_REQUEST['modulo']))
 
        case 'graficarSomatocarta': {
            
-                               $this->mostrarGraficaSomatocarta($this->request['idMedicion']);
+                                $this->imprimirGrafSoma($this->request['idMedicion']);
                                 break;
     }                             
      

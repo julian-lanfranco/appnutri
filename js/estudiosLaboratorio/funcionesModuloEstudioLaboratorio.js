@@ -64,7 +64,7 @@ $("#central").on("click", "#imgMostrarListarEstudioLaboratorio", function(){
 
 
 
-        $("#central").on("click", "#imgMostarNuevoEstudioLaboratorio", function(){
+        $("#central").on("click", "#imgMostraNuevoEstudioLaboratorio", function(){
         
                     var idPaciente = $(this).attr('name');
 
