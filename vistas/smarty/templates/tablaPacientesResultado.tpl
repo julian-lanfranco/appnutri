@@ -1,5 +1,5 @@
 
-  <h2>Seleccione un paciente:</h2> 
+  <h4>Seleccione un paciente:</h4> 
 
   <table class="table table-striped header-fixed" style="width: 100%;">
   <tr style="">

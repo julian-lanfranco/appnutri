@@ -1,10 +1,10 @@
 <h2>Nuevo Club</h2>
 <table class="table table-striped header-fixed" style="width: 100%;" >
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 5000px; width:600px">
      <tr style="">
       <td style="width: 100%;    float: left;" >
           
- 
+<div class="form-group"> 
 <form  id="club" method="post"> 
     
       <label class="col-sm-4">Nombre:</label>
@@ -63,4 +63,5 @@
    </tbody>  
   </table> 
 </form>
+</div>
 <script type="text/javascript" src="js/clubes/funcionesAltaClubDinamico.js"></script>

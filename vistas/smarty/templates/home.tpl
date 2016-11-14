@@ -36,12 +36,12 @@
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
-        <a href="#" id="btnMostrarTablaPacientes">Paciente</a><br>
-        <a href="#" id="btnMostrarTablaAnamnesis">Anamnesis</a><br>
-        <a href="#" id="btnlistarMedicionAntro">Mediciones</a><br>
-        <a href="#" id="btnlistarEstudioLaboratorio">Estudios</a><br>
-        <a href="#" id="btnlistarRecordatorio24">Recordatorios</a><br>
-        <a href="#" id="btnlistarPlanes">Planes</a>
+          <span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarTablaPacientes">Paciente</a><br>
+          <span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarTablaAnamnesis">Anamnesis</a><br>
+          <span lang="es-ar">&nbsp;</span><a href="#" id="btnlistarMedicionAntro">Mediciones</a><br>
+          <span lang="es-ar">&nbsp;</span><a href="#" id="btnlistarEstudioLaboratorio">Estudios</a><br>
+          <span lang="es-ar">&nbsp;</span><a href="#" id="btnlistarRecordatorio24">Recordatorios</a><br>
+          <span lang="es-ar">&nbsp;</span><a href="#" id="btnlistarPlanes">Planes</a>
       </div>
     </div>
 
@@ -52,8 +52,8 @@
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse ">
-      <a href="#" id="btnMostrarNuevoClub">Nuevo Clubes</a><br>
-      <a href="#" id="btnMostrarTablaClubes">Listar Clubes</a> 
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarNuevoClub">Nuevo Clubes</a><br>
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarTablaClubes">Listar Clubes</a> 
        
       </div>
       </div>
@@ -62,27 +62,24 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Divisiones</a>
+          <span lang="es-ar">&nbsp;</span><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Divisiones</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
-      <a href="#" id="btnMostrarTablaDivisiones">Listar Divisiones</a><br>
-      <a href="#" id="btnMostrarNuevoDivision">Nueva Division</a> <br>
-      <a href="#" id="btnMostrarMigrarJugadores">Migracion de Jugadores</a>
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarTablaDivisiones">Listar Divisiones</a><br>
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarNuevoDivision">Nueva Division</a> <br>
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarMigrarJugadores">Migracion de Jugadores</a>
 
       </div>
     </div>
 
 
-
-        
-
-
-         <div class="panel panel-default">
+      <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
+          <span lang="es-ar">&nbsp;</span>
+
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">Respaldos</a>
-        </h4>
       </div>
       
       <div id="collapse10" class="panel-collapse collapse">
@@ -93,6 +90,18 @@
       </div>
     </div>  
 
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <span lang="es-ar">&nbsp;</span><a data-toggle="collapse" data-parent="#accordion" href="#collapse11">Acerca de</a>
+      </div>
+      
+      <div id="collapse11" class="panel-collapse collapse">
+
+            <a href="#" id="btnAcerca">Acerca de</a> <br>
+ 
+      </div>
+    </div>  
 
       
 

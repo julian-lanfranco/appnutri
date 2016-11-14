@@ -21,7 +21,6 @@
 
   <input type="checkbox" name="clubChk" id="clubChk" value="true" checked>Posee club?<br>
 
-<br>
   <br>
   <div id=filtros>
     <h4>Filtros</h4><br>
@@ -70,7 +69,7 @@
   <div id=resultado>
   <h2>Seleccione un paciente:</h2> 
   <div style="text-align: center">
-  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer"/>
+  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="32" width="32"/>
   </div>
   <table class="table table-striped header-fixed" style="width: 100%;">
   <tr style="">
