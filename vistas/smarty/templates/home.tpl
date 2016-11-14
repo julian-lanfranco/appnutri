@@ -36,9 +36,12 @@
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
-        <a href="#" id="btnMostrarTablaPacientes">Seleccionar Paciente</a><br>
-        <a href="#" id="btnMostrarNuevoPaciente">Nuevo Paciente</a><br>
-        <a href="#" id="btnMostrarModificarPaciente">Modificar Paciente</a>     
+        <a href="#" id="btnMostrarTablaPacientes">Paciente</a><br>
+        <a href="#" id="btnMostrarTablaAnamnesis">Anamnesis</a><br>
+        <a href="#" id="btnlistarMedicionAntro">Mediciones</a><br>
+        <a href="#" id="btnlistarEstudioLaboratorio">Estudios</a><br>
+        <a href="#" id="btnlistarRecordatorio24">Recordatorios</a><br>
+        <a href="#" id="btnlistarPlanes">Planes</a>
       </div>
     </div>
 
@@ -71,70 +74,9 @@
     </div>
 
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Anamnesis</a>
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse">
-          <a href="#" id="btnNuevaAnamnesis">Nueva Anamnesis</a> <br>
-          <a href="#" id="btnMostrarTablaAnamnesis">Listar Anamnesis</a> 
 
-      </div>
-    </div>
+        
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Mediciones Antropometricas</a>
-        </h4>
-      </div>
-      <div id="collapse5" class="panel-collapse collapse">
-          <a href="#" id="btnNuevaMedicionAntro">Nueva Med. Antropometricas</a> <br>
-          <a href="#" id="btnlistarMedicionAntro">Listar Med. Antropometricas</a> <br>
-          <a href="#" id="btnGraficasMedicionAntro">Graficas Evolutivas</a> <br>
-          <a href="#" id="btnGraficarSomatocarta">Graficar Somatocarta</a> <br>
-      </div>
-    </div>
-
-      <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Estudios Laboratorio</a>
-        </h4>
-      </div>
-      <div id="collapse6" class="panel-collapse collapse">
-          <a href="#" id="btnNuevoEstudioLaboratorio">Nuevo Estudio Laboratorio</a> <br>
-          <a href="#" id="btnlistarEstudioLaboratorio">Listar Estudios de Laboratorio</a>  <br>  
-      </div>
-    </div>
-
-      <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Recordatorio 24</a>
-        </h4>
-      </div>
-      <div id="collapse7" class="panel-collapse collapse">
-
-            <a href="#" id="btnNuevoRecordatorio24">Nuevo Recordatorio 24</a> <br>
-            <a href="#" id="btnlistarRecordatorio24">Listar Recordatorio 24</a>  
-      </div>
-    </div>    
-
-            <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Planes</a>
-        </h4>
-      </div>
-      <div id="collapse9" class="panel-collapse collapse">
-
-            <a href="#" id="btnNuevoPlan">Nuevo Plan</a> <br>
-            <a href="#" id="btnlistarPlanes">Listar Planes</a>  
-      </div>
-    </div>
 
          <div class="panel panel-default">
       <div class="panel-heading">

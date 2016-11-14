@@ -1,13 +1,15 @@
 <?php
 require_once('fpdf.php');
 
-
 require_once ('graficas/jpgraph/src/jpgraph.php');
 require_once ('graficas/jpgraph/src/jpgraph_line.php');
+require_once ('graficas/jpgraph/src/jpgraph_scatter.php');
+require_once ("graficas/jpgraph/src/jpgraph_pie.php");
+require_once('modelos/medicionesAntropometricas.php');
+require_once('modelos/conexion.php');
 
 
-
-class Reportes {
+class Reportes extends FPDF{
 
 public function imprimirClub($club){
 
@@ -378,6 +380,138 @@ $pdf->Output();
 
 }
 
+function generaGraficaSomatocarta($idMedicion){
+    //Recibimos el id del paciente
+$idMedicion=$_REQUEST['idMedicion'];
+//Creamos el objeto
+$mediciones = new MedicionesAntropometricas('medicionesantropometricas');
+$mediciones->Load("id=".$idMedicion);
+
+//Calculamos los somatotipos
+
+$mesomorfismo = ($mediciones->humeral * 0.858 + 0.601 * $mediciones->femoral + 0.188 * ($mediciones->brazorelajado - $mediciones->triceps) + 0.161 * ($mediciones->pantorrilla - $mediciones->pantorrilla2)) - (($mediciones->tallacorporal * 0.131) + 4.5);       
+ 
+$PC = ($mediciones->triceps + $mediciones->subescapular + $mediciones->subpraespinal) * ( 170.18 / $mediciones->tallacorporal);
+
+
+$endomorfismo = -0.7182 + 0.1451 * $PC - 0.00068 * pow($PC,2) + .00000014 * pow($PC, 3); 
+
+$CAP = ($mediciones->tallacorporal / pow($mediciones->pesobruto, 1/3));
+
+if ($CAP >= 40.75) $ectomorfismo = 0.732 * $CAP - 28.5;
+if ($CAP < 40.75 && $CAP > 38.25) $ectomorfismo = 0.463 * $CAP - 17.63;
+if ($CAP < 38.25) $ectomorfismo = 0.1;
+
+$x = $ectomorfismo - $endomorfismo;
+
+$y = (2 * $mesomorfismo) - ($ectomorfismo + $endomorfismo);
+
+
+
+$datax = array($x);
+$datay = array($y);
+ 
+$graph = new Graph(600,600);
+$graph->SetScale("intint", -10, 16, -8, 8);
+
+
+//somatocartab
+
+$graph->img->SetMargin(75,80, 130, 60);
+$graph->SetShadow();
+ 
+
+
+$graph->yaxis->HideZeroLabel();
+$graph->yaxis->HideLine(true);
+$graph->yaxis->HideTicks(true,true);
+$graph->ygrid->SetFill(false);
+
+$graph->SetBackgroundImage('img/soma.jpg', BGIMG_FILLFRAME);
+
+
+$sp1 = new ScatterPlot($datay,$datax);
+ $sp1->mark->SetType(MARK_FILLEDCIRCLE);
+$sp1->mark->SetFillColor("red");
+$sp1->mark->SetWidth(8);
+$graph->Add($sp1);
+$graph->Stroke('img/temp/Somatocarta.png');
+$this->Image('img/temp/Somatocarta.png');
+    
+}
+function  imprimirGraficaSomatocarta($idMedicion){
+    
+  // Borramos la imagen anterior
+    if (file_exists('img/temp/Somatocarta.png')){
+        unlink('img/temp/Somatocarta.png');
+    }
+$pdf = new Reportes();
+
+$pdf=new Reportes('L','mm','A4');
+
+$pdf->AddPage();
+
+$pdf->SetFont('Arial', 'B', 12);
+
+//comentamos la funcion que genera la grafica
+$pdf->generaGraficaSomatocarta($idMedicion);
+
+
+
+$pdf->Output();
+
+}
+
+function generaGraficaRecordatorio($hdc, $proteinas, $lipidos, $kotales){
+    
+
+
+ 
+// Se define el array de valores y el array de la leyenda
+$datos = array($hdc,$proteinas,$lipidos);
+$leyenda = array("Hdc","Proteinas","Lipidos");
+ 
+//Se define el grafico
+$grafico = new PieGraph(400,600);
+ 
+//Definimos el titulo
+$grafico->title->Set("Calorias Totales:  ".$kotales);
+$grafico->title->SetFont(FF_FONT1,FS_BOLD);
+ 
+//Añadimos el titulo y la leyenda
+$p1 = new PiePlot($datos);
+$p1->SetLegends($leyenda);
+$p1->SetCenter(.1);
+ 
+//Se muestra el grafico
+$grafico->Add($p1);
+$grafico->Stroke('img/temp/graficaPieRecordatorio.png');
+$this->Image('img/temp/graficaPieRecordatorio.png');
+    
+}
+function  imprimirGraficaPieRecordatorio($hdc, $proteinas, $lipidos, $kotales){
+  
+    
+  // Borramos la imagen anterior
+    if (file_exists('img/temp/graficaPieRecordatorio.png')){
+        unlink('img/temp/graficaPieRecordatorio.png');
+    }
+$pdf = new Reportes();
+
+$pdf=new Reportes('L','mm','A4');
+
+$pdf->AddPage();
+
+$pdf->SetFont('Arial', 'B', 12);
+
+//comentamos la funcion que genera la grafica
+$pdf->generaGraficaRecordatorio($hdc, $proteinas, $lipidos, $kotales);
+
+
+
+$pdf->Output();
+
+}
 
 }
 

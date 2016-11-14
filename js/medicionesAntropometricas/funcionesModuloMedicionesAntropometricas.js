@@ -5,11 +5,30 @@
         $("#central").on("click", "#imgMostrarGraficaSomatocarta", function(){
         
          medicion = $(this).attr('name');
+        window.open ("http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&accion=graficarSomatocarta&idMedicion="+medicion);
+//                 $.ajax({
+//                                type: "GET",
+//                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
+//                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
+//
+//                                success: function(b) {
+//                                                    $('#central').html(b); 
+//                                                        }
+//                            });
+     
+    
+
+        });
+ 
+//Imagen de grafica para graficar la evolucion de los datos basicos
+        $("#central").on("click", "#imgMostrarGraficaEvolutiva", function(){
+        
+         paciente = $(this).attr('name');
         
                  $.ajax({
                                 type: "GET",
                                 url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
-                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
+                                data: "accion=graficarMedicionesAntropometricas&idPaciente="+paciente,
 
                                 success: function(b) {
                                                     $('#central').html(b); 
@@ -19,7 +38,26 @@
     
 
         });
+                                
+        
+   //Imagen para crear una nueva medicion antropometrica     
+        $("#central").on("click", "#imgMostrarNuevoMedAntro", function(){
+        
+         paciente = $(this).attr('name');
+        
+                 $.ajax({
+                                type: "GET",
+                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
+                                data: "accion=mostrarNuevoMedicionesAntropometricas&idPaciente="+paciente,
 
+                                success: function(b) {
+                                                    $('#central').html(b); 
+                                                        }
+                            });
+     
+    
+
+        });
 //Boton cancelar, formulario de actualizacion de medicions antropometrica
 $("#central").on("click", "#btnCancelarModMedicionAntropometricas", function(){
         

@@ -137,7 +137,6 @@ class controllerRecordatorio24 {
     */
 
 
-
    }
 //
 // eliminarRecordatorio24hs   
@@ -366,7 +365,16 @@ class controllerRecordatorio24 {
     $repo->imprimirRecordatorio24($rec);
    }
 
-     public function mostrarTablaPacientes($idClub,$idDivision)
+   //imprimir grafica de recordatorio 
+   public function imprimirGrafica($hdc, $proteinas, $lipidos, $kotales){
+       
+    $repo = new Reportes();
+
+    $repo->imprimirGraficaPieRecordatorio($hdc, $proteinas, $lipidos, $kotales);
+   } 
+   
+   
+   public function mostrarTablaPacientes($idClub,$idDivision)
    {
     //ACCESO A DATOS
     $club=new Club('clubes');
@@ -690,21 +698,25 @@ public function traerGraficaRecordatorio(){
     $acuProteinas=$acuProteinas*4;
     $acuLipidos=$acuLipidos*7;
     $total=$acuLipidos+$acuProteinas+$acuHdc;
+    
+    
+    //Agregamos la funcion para que imprima la grafica
+    $this->imprimirGrafica($acuHdc, $acuProteinas, $acuLipidos, $total);
 
-    $smarty = new Smarty;
-
-    $smarty->template_dir = 'vistas/smarty/templates/';
-    $smarty->compile_dir = 'vistas/smarty/templates_c/';
-    $smarty->config_dir = 'vistas/smarty/configs/';
-    $smarty->cache_dir = 'vistas/smarty/cache/';
-
-    $smarty->assign('hdc',$acuHdc);
-    $smarty->assign('ktotales',$total);
-    $smarty->assign('proteinas',$acuProteinas);
-    $smarty->assign('lipidos',$acuLipidos);
-
-
-    $smarty->display('mostrarEstadisticaRecordatorio24.tpl');
+//    $smarty = new Smarty;
+//
+//    $smarty->template_dir = 'vistas/smarty/templates/';
+//    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+//    $smarty->config_dir = 'vistas/smarty/configs/';
+//    $smarty->cache_dir = 'vistas/smarty/cache/';
+//
+//    $smarty->assign('hdc',$acuHdc);
+//    $smarty->assign('ktotales',$total);
+//    $smarty->assign('proteinas',$acuProteinas);
+//    $smarty->assign('lipidos',$acuLipidos);
+//
+//
+//    $smarty->display('mostrarEstadisticaRecordatorio24.tpl');
    }
    
 
@@ -792,7 +804,7 @@ if (isset($_REQUEST['modulo']))
                                 $this->imprimirRecordatorio24($this->request['idRecordatorio']);
                                 break;
                                 }
-
+       
     case 'buscarClubesPorCadena': {     
                                 $this->buscarClubesPorCadena($this->request['cadenaClub']);
                                 break;
