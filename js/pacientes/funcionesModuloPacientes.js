@@ -1,7 +1,41 @@
 function cabecera() {
     return "<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th>   <th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr>   <tbody style='display: block;  overflow-y: auto;float: left;height: 250px; width:100%'></tbody></table>";              
 }
+function validar(){
 
+    var sexoClub=$("#seleccionSexoModPacientes").val();
+    var sexoSeleccion=$("#seleccionSexoSeleccionesModPacientes").val();
+    var sexoPaciente=$("#sexo").val();
+
+    //alert("sexo club: "+sexoClub+" sexo seleccion: "+sexoSeleccion+" sexo paciente: "+sexoPaciente);
+
+    if ((sexoPaciente=="masculino") && (sexoClub=="masculino") && (sexoSeleccion=="femenino")) {return false;}
+    if ((sexoPaciente=="masculino") && (sexoClub=="femenino") && (sexoSeleccion=="masculino")) {return false;}
+    if ((sexoPaciente=="masculino") && (sexoClub=="femenino") && (sexoSeleccion=="femenino")) {return false;}
+    if ((sexoPaciente=="femenino") && (sexoClub=="masculino") && (sexoSeleccion=="femenino")) {return false;}
+    if ((sexoPaciente=="femenino") && (sexoClub=="femenino") && (sexoSeleccion=="masculino")) {return false;}
+    if ((sexoPaciente=="femenino") && (sexoClub=="masculino") && (sexoSeleccion=="masculino")) {return false;}
+    if ((sexoPaciente=="masculino") && (sexoClub=="ninguno") && (sexoSeleccion=="femenino")) {return false;}
+    if ((sexoPaciente=="masculino") && (sexoClub=="femenino") && (sexoSeleccion=="ninguno")) {return false;}
+    if ((sexoPaciente=="femenino") && (sexoClub=="ninguno") && (sexoSeleccion=="masculino")) {return false;}
+    if ((sexoPaciente=="femenino") && (sexoClub=="masculino") && (sexoSeleccion=="ninguno")) {return false;}
+    return true;
+
+}
+
+function validarMigracion(){
+
+    var selOrigen=$("#seleccionSexoOrigen").val();
+    var selDestino=$("#seleccionSexoDestino").val();
+
+    //alert("sexo club: "+sexoClub+" sexo seleccion: "+sexoSeleccion+" sexo paciente: "+sexoPaciente);
+
+    if ((selOrigen=="masculino") && (selDestino=="femenino")) {return false;}
+    if ((selOrigen=="femenino") && (selDestino=="masculino")) {return false;}
+
+    return true;
+
+}
 //Funciones Js del Modulo Pacientes
 $("#central").on("click", "#imgSeleccionarPaciente", function(){
         
@@ -106,42 +140,80 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
         
         });
 
+function busquedaPacientes()
+{
+                var pacienteNombre=$("#pacienteNombre").val();
+                var pacienteDni=$("#pacienteDni").val();
+                var pacienteSexo=$("#pacienteSexo").val();
+                var club=$("#filtroClub").val();
+                var division=$("#filtroDivision").val();
+                var deporte=$("#filtroDeporte").val();
+                var sexoDivision=$("#filtroSexo").val(); 
+                //alert("division :"+division+" deporte: "+deporte);
+                $.ajax({   
+                        type: "GET",
+                        url: "http://"+ambito+"/appnutri/?modulo=pacientes&pacienteNombre="+pacienteNombre+
+                                "&pacienteSexo="+pacienteSexo+"&pacienteDni="
+                                +pacienteDni+"&club="+club+"&division="+division+"&sexoDivision="+sexoDivision+"&deporte="+deporte,
+                        data: "accion=buscarPacientesPorCriterios",
+                        success: function(a)    {
+                                                $('#resultado').html(a);
+                                                }
+                        });
+
+}
 
 
+        $("#central").on("change", "#pacienteNombre", function(){
+            busquedaPacientes();
 
-        $("#central").on("change", "#cadenaPaciente", function(){
+        });
         
-                var cadenaPaciente=$("#cadenaPaciente").val();
-                var idClub=$("#seleccionClubesModTablaPacientes").val();
-                var idDivision=$("#seleccionDivisionesModTablaPacientes").val();
-                
+        $("#central").on("change", "#pacienteDni", function(){
 
+                        busquedaPacientes();
+        });
+        $("#central").on("change", "#pacienteSexo", function(){
 
-                 $.ajax({
-                               
-                            type: "GET",
-                                url: "http://"+ambito+"/appnutri/?modulo=pacientes&cadenaPaciente="+cadenaPaciente+
-                                "&idClub="+idClub+"&idDivision="+idDivision,
-                                data: "accion=mostrarTablaPacientes",
-                                success: function(a) {
-
-                                                    $('#central').html(a); 
-
-                                                    var textbox = document.getElementById("cadenaPaciente");   
-                                                    textbox.focus();
-
-
-                                                  
-
-                                                        }
-
-                            });
-
-
-
-        
+                        busquedaPacientes();
         });
 
+        $("#central").on("change", "#filtroClub", function(){
+
+                        busquedaPacientes();
+        });
+
+        $("#central").on("change", "#filtroDivision", function(){
+
+                        busquedaPacientes();
+        });
+        $("#central").on("change", "#filtroDeporte", function(){
+
+                        busquedaPacientes();
+        });
+        $("#central").on("change", "#filtroSexo", function(){
+
+                        busquedaPacientes();
+        });
+        
+
+         $("#central").on("change", "#clubChk", function(){
+                if($(this).prop("checked")) {
+                                            $("#filtroClub").val("todos").change();
+                                            $('#filtros').show();
+                                           
+                                            busquedaPacientes();
+                                            } 
+                else {
+                        $('#filtros').hide();
+                        $("#filtroClub").val("ninguno").change();
+                      
+                        busquedaPacientes();
+
+                       
+
+                    }
+        });
 
      $("#central").on("change", "#seleccionClubesModTablaPacientes", function(){
         
@@ -216,7 +288,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                              }
                         });
 
-
+/*
                           $.ajax({
                         type: "GET",
                         url: "http://"+ambito+"/appnutri/?modulo=pacientes",
@@ -245,6 +317,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                             $('#listadoJugadores').html(jugadoresTabla);
                                              }
                         });
+                        */
 
 
 
@@ -347,7 +420,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                             
                                              }
                         });
-
+/*
                         $.ajax({
                         type: "GET",
                         url: "http://"+ambito+"/appnutri/?modulo=pacientes",
@@ -377,7 +450,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                              }
                         });
 
-
+*/
         
         });
 
@@ -421,7 +494,9 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
     $("#central").on("change", "#seleccionSexoModPacientes", function(){
 
-                
+                var validacion=validar();
+                if (validacion)
+                {
                 var deporte=$("#seleccionDeportesModPacientes").val();
                 var idClub=$("#seleccionClubesModPacientes").val();
                 var sexo=$("#seleccionSexoModPacientes").val();
@@ -444,13 +519,21 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                             $('#selectorDeDivisiones').html(a);
                                              }
                         });
+                    }
+                    else {alert("revise los generos");
+                            $("#seleccionSexoModPacientes").val("ninguno").change();
+                            }
 
         
         });
 
     $("#central").on("change", "#seleccionSexoOrigen", function(){
 
-   ///////////////////////////             
+   ///////////////////////////   
+                var validacion=validarMigracion();
+                var sexoAnterior=$("#seleccionSexoOrigen").val();
+                if (validacion)
+                {          
                 var deporte=$("#seleccionDeportesOrigen").val();
                 var idClub=$("#seleccionClubesOrigen").val();
                 var sexo=$("#seleccionSexoOrigen").val();
@@ -482,7 +565,13 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
                                              }
                         });
-                        
+                                    }
+                else    {  
+                        alert("revise los generos");
+                        if (sexoAnterior=="masculino") { $("#seleccionSexoOrigen").val("femenino").change();}
+                        if (sexoAnterior=="femenino") { $("#seleccionSexoOrigen").val("masculino").change();}
+                        }
+                        /*
                         $.ajax({
                             type: "GET",
                             url: "http://"+ambito+"/appnutri/?modulo=pacientes",
@@ -509,13 +598,17 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                                 $('#listadoJugadores').html(jugadoresTabla);
                                                  }
                             });
+                            */
         
         });
 
 
     $("#central").on("change", "#seleccionSexoDestino", function(){
 
-                
+                var validacion=validarMigracion();
+                var sexoAnterior=$("#seleccionSexoDestino").val();
+                if (validacion)
+                {      
                 var deporte=$("#seleccionDeportesDestino").val();
                 var idClub=$("#seleccionClubesDestino").val();
                 var sexo=$("#seleccionSexoDestino").val();
@@ -547,6 +640,12 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                             $('#selectorDeDivisionesDestino').html(divisionSelect);
                                              }
                         });
+                                    }
+                else    {  
+                        alert("revise los generos");
+                        if (sexoAnterior=="masculino") { $("#sseleccionSexoDestino").val("femenino").change();}
+                        if (sexoAnterior=="femenino") { $("#seleccionSexoDestino").val("masculino").change();}
+                        }
 
         
         });
@@ -677,7 +776,9 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
     $("#central").on("change", "#seleccionSexoSeleccionesModPacientes", function(){
 
-                
+                var validacion=validar();
+                if (validacion)
+                {
                 var deporte=$("#seleccionDeportesSeleccionModPacientes").val();
                 var idSeleccion=$("#seleccionSeleccionesModPacientes").val();
                 var sexo=$("#seleccionSexoSeleccionesModPacientes").val();
@@ -700,10 +801,30 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                             $('#selectorDeDivisionesSelecciones').html(a);
                                              }
                         });
+                                            }
+                else {alert("revise los generos");
+                            $("#seleccionSexoSeleccionesModPacientes").val("ninguno").change();
+                            }
 
         
         });
 
+    $("#central").on("change", "#sexo", function(){
+
+                var sexoAnterior=$("#sexo").val();
+                var validacion=validar();
+                if (validacion)
+                {
+
+                }
+                else    {  
+                        alert("revise los generos");
+                        if (sexoAnterior=="masculino") { $("#sexo").val("femenino").change();}
+                        if (sexoAnterior=="femenino") { $("#sexo").val("masculino").change();}
+                        }
+
+        
+        });
 
     //fin de de los listener para la busqueda de divisiones en selecciones
 

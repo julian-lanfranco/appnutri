@@ -37,14 +37,9 @@
 <div id=selectorDeDeportes>
 <div class="col-sm-2">
     <select name="seleccionDeportesModPacientes" class="form-control" id="seleccionDeportesModPacientes">
-    {foreach from=$divisiones item=division}
-    {if $division->id eq $divisionSeleccionado}
-    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre}-{$division->deporte|upper}</option>
-    {else}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre}-{$division->deporte|upper}</option>
-    {/if}
-    {/foreach}
-</select>
+    <option value="ninguno" selected>ninguno</option>
+    </select>
+
 </div>
 
 
@@ -52,14 +47,8 @@
 <div id=selectorDeSexo>
 <div class="col-sm-2">
     <select name="seleccionSexoModPacientes" class="form-control" id="seleccionSexoModPacientes">
-    {foreach from=$divisiones item=division}
-    {if $division->id eq $divisionSeleccionado}
-    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre}-{$division->deporte|upper}</option>
-    {else}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre}-{$division->deporte|upper}</option>
-    {/if}
-    {/foreach}
-</select>
+    <option value="ninguno" selected>ninguno</option>
+    </select>
 </div>
 
 
@@ -68,15 +57,8 @@
 <div id=seelctorDeDivisiones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesModPacientes" class="form-control" id="seleccionDivisionesModPacientes">
-    {foreach from=$divisiones item=division}
-    {if $division->id eq $divisionSeleccionado}
-    <option label="{$division->nombre}"  value="{$division->id}" selected>{$division->nombre}-{$division->deporte|upper}</option>
-    {else}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre}-{$division->deporte|upper}</option>
-    {/if}
-    {/foreach}
-    <option label="ninguno" value="ninguno" selected>Ninguno</option>
-</select>
+    <option value="ninguno" selected>ninguno</option>
+    </select>
 </div>
 </div>
 </div>
@@ -107,10 +89,8 @@
 <div id=selectorDeDeportesSeleccion>
 <div class="col-sm-2">
     <select name="seleccionDeportesSeleccionModPacientes" class="form-control" id="seleccionDeportesSeleccionModPacientes">
-    {foreach from=$divisiones item=division}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre|upper}</option>
-    {/foreach}
-</select>
+    <option value="ninguno" selected>ninguno</option>
+    </select>
 </div>
 
 
@@ -118,11 +98,8 @@
 <div id=selectorDeSexoSelecciones>
 <div class="col-sm-2">
     <select name="seleccionSexoSeleccionesModPacientes" class="form-control" id="seleccionSexoSeleccionesModPacientes">
-    <option label="ninguno" value="ninguno">Ninguno</option>
-    {foreach from=$divisiones item=division}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre|upper}</option>
-    {/foreach}
-</select>
+    <option value="ninguno" selected>ninguno</option>
+    </select>
 </div>
 
 
@@ -131,11 +108,8 @@
 <div id=selectorDeDivisionesSelecciones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesSeleccionesModPacientes" class="form-control" id="seleccionDivisionesSeleccionesModPacientes">
-    <option label="ninguno" value="ninguno">Ninguno</option>
-    {foreach from=$divisiones item=division}
-    <option label="{$division->nombre}"  value="{$division->id}">{$division->nombre|upper}</option>
-    {/foreach}
-</select>
+    <option value="ninguno" selected>ninguno</option>
+    </select>
 </div>
 </div>
 </div>
@@ -202,6 +176,7 @@
     <select name="sexo" class="form-control" id="sexo">
     <option label="Masculino"  value="masculino">Masculino</option>
     <option label="Femenino"  value="femenino">Femenino</option>
+    </select>
 </select>
 </div>
 

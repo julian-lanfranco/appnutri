@@ -5,6 +5,7 @@ require_once('modelos/conexion.php');
 require_once('modelos/club.php');
 require_once('modelos/divisiones.php');
 require_once('modelos/paciente.php');
+require_once('modelos/deporte.php');
 require_once('fpdf181/generador.php');
 
 
@@ -279,6 +280,183 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
         return $divisiones;
    }
 
+  public function traerPacientesPorCriterios($pacienteNombre,$pacienteDni,$pacienteSexo,$club,$division,$deporte,$sexoDivision)
+   {
+        
+        if ($pacienteSexo=="todos") {
+                                      $pacienteSexo="";
+                                    }
+
+        $paciente = new Paciente('pacientes');
+
+      $pacientesFiltrados = $paciente->Find("(
+                        (nombre LIKE '%".$pacienteNombre."%') and 
+                        (dni LIKE '%".$pacienteDni."%') and 
+                        (sexo LIKE '%".$pacienteSexo."%')
+                        ) order by id");
+
+
+//filtro club
+
+      $divisiones = new Division('divisiones');
+
+       if (($club=="todos") and ($division=="todos") 
+                           and ($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("1  order by id");
+                          }
+       if (($club=="todos") and ($division=="todos") 
+                           and ($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("sexo='".$sexoDivision."'  order by id");
+                          }
+
+       if (($club=="todos") and ($division=="todos") 
+                           and !($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."'  order by id");
+                          }
+       if (($club=="todos") and ($division=="todos") 
+                           and !($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."' and
+                                                                sexo='".$sexoDivision."'  order by id");
+                          }
+
+       if (($club=="todos") and !($division=="todos") 
+                           and ($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("nombre='".$division."' order by id");
+                          }
+       if (($club=="todos") and !($division=="todos") 
+                           and ($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("sexo='".$sexoDivision."' and 
+                                                                nombre='".$division."' order by id");
+                          }
+      if (($club=="todos") and !($division=="todos") 
+                           and !($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."' and 
+                                                                nombre='".$division."' order by id");
+                          }
+      if (($club=="todos") and !($division=="todos") 
+                           and !($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."' and 
+                                                                nombre='".$division."' and 
+                                                                sexo='".$sexoDivision."' order by id");
+                          } 
+//comienzo no club
+       if (!($club=="todos") and ($division=="todos") 
+                           and ($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("club='".$club."'  order by id");
+                          }
+       if (!($club=="todos") and ($division=="todos") 
+                           and ($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("sexo='".$sexoDivision."'  and
+                                                                club='".$club."' order by id");
+                          }
+
+       if (!($club=="todos") and ($division=="todos") 
+                           and !($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."'  and
+                                                                 club='".$club."' order by id");
+                          }
+       if (!($club=="todos") and ($division=="todos") 
+                           and !($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."' and
+                                                                sexo='".$sexoDivision."'  and 
+                                                                club='".$club."' order by id");
+                          }
+
+       if (!($club=="todos") and !($division=="todos") 
+                           and ($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("nombre='".$division."' and 
+                                                                club='".$club."' order by id");
+                          }
+       if (!($club=="todos") and !($division=="todos") 
+                           and ($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("sexo='".$sexoDivision."' and 
+                                                                nombre='".$division."' and 
+                                                                club='".$club."' order by id");
+                          }
+      if (!($club=="todos") and !($division=="todos") 
+                           and !($deporte=="todos") 
+                           and ($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."' and 
+                                                                nombre='".$division."' and 
+                                                                club='".$club."' order by id");
+                          }
+      if (!($club=="todos") and !($division=="todos") 
+                           and !($deporte=="todos") 
+                           and !($sexoDivision=="todos"))
+                          {
+                          $divisionesArray = $divisiones->Find("deporte='".$deporte."' and 
+                                                                nombre='".$division."' and 
+                                                                sexo='".$sexoDivision."' and 
+                                                                club='".$club."' order by id");
+                          }                        
+
+
+          # code...
+        $c=0;
+              foreach ($pacientesFiltrados as $pas) 
+              {
+                $eliminar=true;
+                foreach ($divisionesArray as $div) 
+                  {
+                    if ((($pas->division==$div->id)) or
+                    (($pas->divisionseleccion==$div->id))) 
+                        {$eliminar=false;}
+                  }
+                  if ($eliminar) {unset($pacientesFiltrados[$c]);}
+                  $c++;
+
+                # code...
+              }
+     
+if ($club=="ninguno") {
+                        $pacientesFiltrados = $paciente->Find("(
+                        (nombre LIKE '%".$pacienteNombre."%') and 
+                        (dni LIKE '%".$pacienteDni."%') and 
+                        (sexo LIKE '%".$pacienteSexo."%') and
+                        (division is NULL) and
+                        (divisionseleccion is NULL)) order by id");
+                      }
+else {
+
+      }
+    
+
+        return $pacientesFiltrados;
+
+
+   }
+
+
+
      public function traerDivisionesXSexoXDeporteXSeleccion($idDivision,$deporte,$sexo)
    {
         $division = new Division('divisiones');
@@ -386,132 +564,29 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
    }
 
 
-   public function mostrarTablaPacientes($idClub,$idDivision,$cadenaPaciente)
+   public function mostrarTablaPacientes()
    {
-    echo($idClub."  ".$idDivision."  ");
 
-    $club=new Club('clubes');
+        
 
-    $clubesArray= $club->Find("1 order by id"); 
+        $club = new Club('clubes');
+        $clubesArray = $club->Find("1 order by id"); 
 
-    if ($idClub=="ninguno") 
-        {
-         $divisionesArray=NULL;
-         $pacientesArray=NULL; 
-         $paciente = new Paciente('pacientes');
-         
-         if (!$cadenaPaciente==NULL) 
-                  {
-                  $pacientesArray =$paciente->Find("division is NULL and nombre LIKE '%".$cadenaPaciente."%' order by id");
-                  } 
-        else  {
-              $pacientesArray =$paciente->Find("division is NULL order by id");
-              }                    
+        $division = new Division('divisiones');
+        $divisionesArray = $division->Find("1 order by id"); 
+
+        $deporte = new Deporte('deportes');
+        $deportesArray = $deporte->Find("1 order by id"); 
+
+        foreach ($divisionesArray as $div) {
+
+          $nombresDivisiones[]=$div->nombre;
+          //echo $div->nombre;
+          # code...
         }
 
-    else if ($idClub=="todos") 
-                {
-                $divisionesArray=NULL;
-                $pacientesArray=NULL; 
-                $paciente = new Paciente('pacientes');
-                if (!$cadenaPaciente==NULL) 
-                  {
-                  $pacientesArray =$paciente->Find("nombre LIKE '%".$cadenaPaciente."%' order by id");
-                  } 
-                 else {
-
-                    $pacientesArray =$paciente->Find("1 order by id");
-                 }                     
-        }
-
-     //si selecciono un club entonces ->   
-     else if (!$cadenaPaciente==NULL) {
-                                       $division = new Division('divisiones');
-                                       $divisionesArray =$division->Find("club ='".$idClub."' order by id");
-                                       $paciente = new Paciente('pacientes');
-                                       $club->Load("id=".$idClub);
-                                       
-                                       
-                                      //si selecciono una division entonces ->
-                                      if (!$idDivision==NULL) 
-                                              {
-                                              if ($club->tipo == "normal")
-                                              {
-                                              $pacientesArray = $paciente->Find("division ='".$idDivision."' 
-                                                and nombre LIKE '%".$cadenaPaciente."%' order by id");
-                                              }
-                                              if ($club->tipo == "seleccion")
-                                              {
-                                              $pacientesArray = $paciente->Find("divisionseleccion ='".$idDivision."' 
-                                                and nombre LIKE '%".$cadenaPaciente."%' order by id");
-                                              }
-                                              }
-                                      else 
-                                        {
-                                        if ($club->tipo == "normal")
-                                          {
-                                            $pacientesArray = $paciente->Find("nombre LIKE '%".$cadenaPaciente."%' order by id");
-                                            }
-                                        if ($club->tipo == "seleccion")
-                                          {
-                                            $pacientesArray = $paciente->Find("nombre LIKE '%".$cadenaPaciente."%' order by id");
-                                            }
-                                        
-                                      }
-     }
-     else {
-            $division = new Division('divisiones');
-            $paciente = new Paciente('pacientes');
-
-            $club->Load("id=".$idClub);
-            $divisionesArray = $division->Find("club ='".$idClub."' order by id");
-
-            if ($idDivision==NULL)  
-                    {
-                      $pacientesArray=NULL;  
-                      if (!empty($divisionesArray[0]->id)) 
-                                  {
-                                    if ($club->tipo == "normal")
-                                        {
-                                         $pacientesArray = $paciente->Find("division ='".$divisionesArray[0]->id."' order by id"); 
-                                        }
-                                    if ($club->tipo == "seleccion") 
-                                         {
-                                       $pacientesArray = $paciente->Find("divisionseleccion ='".$divisionesArray[0]->id."' order by id");
-                                         }
-                                    }
-                    }
-
-            else    {
-
-
-                    if ($cadenaPaciente==NULL) {
-                                            if ($club->tipo == "normal")
-                                                {
-                                                $pacientesArray = $paciente->Find("division ='".$idDivision."' order by id"); 
-                                                }
-                                            if ($club->tipo == "seleccion") 
-                                                {
-                                                $pacientesArray = $paciente->Find("divisionseleccion ='".$idDivision."' order by id");
-                                                 } 
-                                              }
-                    else {
-                          
-                        if ($club->tipo == "normal")
-                                {
-                                 $pacientesArray = $paciente->Find("division ='".$idDivision."' and nombre LIKE '%".$cadenaPaciente."%' order by id");
-                                }
-                       if ($club->tipo == "seleccion") 
-                                {
-                                  $pacientesArray = $paciente->Find("divisionseleccion ='".$idDivision."' and nombre LIKE '%".$cadenaPaciente."%' order by id");
-                                }
-                             
-                          }
-                    }
-          }  
-    
- 
-    
+        $resultado = array_unique($nombresDivisiones);
+      
 
 
     //PRESENTACION
@@ -524,18 +599,46 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
     $smarty->config_dir = 'vistas/smarty/configs/';
     $smarty->cache_dir = 'vistas/smarty/cache/';
 
-    $smarty->assign('clubSeleccionado',$idClub);
-    $smarty->assign('divisionSeleccionado',$idDivision);
-    $smarty->assign('cadenaPaciente',$cadenaPaciente);
+
     $smarty->assign('clubes',$clubesArray);
-    $smarty->assign('divisiones',$divisionesArray);
-    $smarty->assign('pacientes',$pacientesArray);
+    $smarty->assign('divisiones',$resultado);
+    $smarty->assign('deportes',$deportesArray);
+
 
     $smarty->display('tablaPacientes.tpl');
 
 
 
-   } 
+   }
+
+
+      public function mostrarTablaResultadoPacientes($pacientes)
+   {
+
+        
+      
+
+
+    //PRESENTACION
+
+
+
+    $smarty = new Smarty;
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+
+    $smarty->assign('pacientes',$pacientes);
+
+
+
+    $smarty->display('tablaPacientesResultado.tpl');
+
+
+
+   }  
 
 
 
@@ -1370,16 +1473,8 @@ if (isset($_REQUEST['modulo']))
  switch ($this->accion) 
   {
     case 'mostrarTablaPacientes' : {
-                                    if (isset($_REQUEST['idClub'])) {$idClub=$_REQUEST['idClub'];}
-                                      else {$idClub=NULL;}
 
-                                    if (isset($_REQUEST['idDivision'])) {$idDivision=$_REQUEST['idDivision'];}
-                                      else {$idDivision=NULL;}
-
-                                    if (isset($_REQUEST['cadenaPaciente'])) {$cadenaPaciente=$_REQUEST['cadenaPaciente'];}
-                                      else {$cadenaPaciente=NULL;}
-
-                                    $this->mostrarTablaPacientes($idClub,$idDivision,$cadenaPaciente);
+                                    $this->mostrarTablaPacientes();
 
                                     break;
                           }
@@ -1540,6 +1635,17 @@ if (isset($_REQUEST['modulo']))
 
                                   $this->cargarSelectorDivisionesMigracionDestino($divisiones);
 
+
+                                break;
+                                }
+
+    case 'buscarPacientesPorCriterios': 
+                                  {
+                                  
+                                  $pacientes=$this->traerPacientesPorCriterios($_REQUEST['pacienteNombre'],$_REQUEST['pacienteDni'],$_REQUEST['pacienteSexo'],
+                                    $_REQUEST['club'],$_REQUEST['division'],$_REQUEST['deporte'],$_REQUEST['sexoDivision']);
+
+                                  $this->mostrarTablaResultadoPacientes($pacientes);
 
                                 break;
                                 }
