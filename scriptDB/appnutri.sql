@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2016 a las 18:15:59
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.23
+-- Servidor: localhost
+-- Tiempo de generación: 14-11-2016 a las 22:57:09
+-- Versión del servidor: 5.5.24-log
+-- Versión de PHP: 5.4.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `appnutri`
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `anamnesis`
 --
 
-CREATE TABLE `anamnesis` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `anamnesis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` date DEFAULT NULL,
   `obesidad` varchar(255) DEFAULT NULL,
   `diabetes` varchar(255) DEFAULT NULL,
@@ -62,8 +62,10 @@ CREATE TABLE `anamnesis` (
   `suplementos` varchar(255) DEFAULT NULL,
   `actividad` varchar(255) DEFAULT NULL,
   `frecuencia` varchar(255) DEFAULT NULL,
-  `paciente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paciente` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paciente` (`paciente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `anamnesis`
@@ -78,15 +80,16 @@ INSERT INTO `anamnesis` (`id`, `fecha`, `obesidad`, `diabetes`, `hipertension`, 
 -- Estructura de tabla para la tabla `clubes`
 --
 
-CREATE TABLE `clubes` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `clubes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
   `tipo` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `contacto` varchar(255) DEFAULT NULL,
-  `mail` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `mail` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
 
 --
 -- Volcado de datos para la tabla `clubes`
@@ -105,10 +108,11 @@ INSERT INTO `clubes` (`id`, `nombre`, `tipo`, `telefono`, `direccion`, `contacto
 -- Estructura de tabla para la tabla `deportes`
 --
 
-CREATE TABLE `deportes` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `deportes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `deportes`
@@ -128,8 +132,8 @@ INSERT INTO `deportes` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `divisiones`
 --
 
-CREATE TABLE `divisiones` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `divisiones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) DEFAULT NULL,
   `deporte` varchar(255) DEFAULT NULL,
   `sexo` varchar(255) DEFAULT NULL,
@@ -138,8 +142,10 @@ CREATE TABLE `divisiones` (
   `preparador` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
   `contacto` varchar(255) DEFAULT NULL,
-  `club` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `club` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `club` (`club`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Volcado de datos para la tabla `divisiones`
@@ -167,8 +173,8 @@ INSERT INTO `divisiones` (`id`, `nombre`, `deporte`, `sexo`, `correo`, `entrenad
 -- Estructura de tabla para la tabla `estudiolaboratorio`
 --
 
-CREATE TABLE `estudiolaboratorio` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `estudiolaboratorio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` date NOT NULL,
   `paciente` int(11) NOT NULL,
   `globulosrojos` float DEFAULT NULL,
@@ -208,8 +214,10 @@ CREATE TABLE `estudiolaboratorio` (
   `frecuenciacardiomax` float DEFAULT NULL,
   `minutos` float DEFAULT NULL,
   `testdetenido` varchar(255) DEFAULT NULL,
-  `conclusion` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `conclusion` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paciente` (`paciente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -217,14 +225,16 @@ CREATE TABLE `estudiolaboratorio` (
 -- Estructura de tabla para la tabla `ingesta`
 --
 
-CREATE TABLE `ingesta` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `ingesta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipodeingesta` varchar(255) DEFAULT NULL,
   `hora` varchar(255) DEFAULT NULL,
   `alimento` varchar(255) DEFAULT NULL,
   `cantidad` float DEFAULT NULL,
-  `recordatorio` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `recordatorio` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `recordatorio` (`recordatorio`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 --
 -- Volcado de datos para la tabla `ingesta`
@@ -274,14 +284,17 @@ INSERT INTO `ingesta` (`id`, `tipodeingesta`, `hora`, `alimento`, `cantidad`, `r
 -- Estructura de tabla para la tabla `ingesta_planes`
 --
 
-CREATE TABLE `ingesta_planes` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `ingesta_planes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipodeingesta` varchar(255) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
   `hora` date DEFAULT NULL,
   `alimento` varchar(255) DEFAULT NULL,
-  `plan` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `plan` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `plan` (`plan`),
+  KEY `plan_2` (`plan`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Volcado de datos para la tabla `ingesta_planes`
@@ -309,8 +322,8 @@ INSERT INTO `ingesta_planes` (`id`, `tipodeingesta`, `cantidad`, `hora`, `alimen
 -- Estructura de tabla para la tabla `medicionesantropometricas`
 --
 
-CREATE TABLE `medicionesantropometricas` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `medicionesantropometricas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` date DEFAULT NULL,
   `pesobruto` float DEFAULT NULL,
   `tallacorporal` float DEFAULT NULL,
@@ -337,21 +350,24 @@ CREATE TABLE `medicionesantropometricas` (
   `abdominal` float DEFAULT NULL,
   `muslomed2` float DEFAULT NULL,
   `pantorrilla2` float DEFAULT NULL,
-  `paciente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paciente` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paciente` (`paciente`),
+  KEY `paciente_2` (`paciente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Volcado de datos para la tabla `medicionesantropometricas`
 --
 
 INSERT INTO `medicionesantropometricas` (`id`, `fecha`, `pesobruto`, `tallacorporal`, `tallasentado`, `biacromial`, `toraxtranverso`, `toraxantero`, `biiliocrestideo`, `humeral`, `femoral`, `cabeza`, `brazorelajado`, `brazoflexionado`, `antebrazomaximo`, `toraxmesoesternal`, `cintura`, `cadera`, `muslomax`, `muslomed`, `pantorrilla`, `triceps`, `subescapular`, `subpraespinal`, `abdominal`, `muslomed2`, `pantorrilla2`, `paciente`) VALUES
-(5, '2016-10-02', 66, 66, 66, 55, 55, 55, 55, 55, 55, 55, 55, 22, 22, 22, 22, 22, 22, 22, 22, 13, 11, 11, 11, 11, 11, 5),
-(6, '2016-10-06', 80, 175, 75, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 30, 30, 30, 30, 30, 30, 5),
-(7, '2016-10-02', 75, 66, 80, 22, 22, 22, 22, 55, 22, 44, 44, 44, 44, 22, 22, 44, 44, 44, 44, 88, 88, 88, 88, 88, 11, 5),
-(15, '2016-10-08', 78, 150, 80, 50, 50, 50, 50, 50, 50, 20, 30, 20, 20, 20, 30, 20, 20, 20, 20, 30, 33, 33, 33, 33, 33, 5),
-(16, '2016-10-08', 76, 140, 78, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 33, 33, 33, 33, 33, 33, 5),
-(17, '2016-11-02', 90, 180, 150, 20, 20, 20, 20, 20, 20, 30, 30, 30, 20, 20, 50, 50, 50, 50, 50, 30, 30, 30, 30, 30, 30, 5),
-(18, '2016-11-05', 85, 180, 150, 20, 20, 20, 20, 20, 20, 30, 25, 30, 20, 20, 25, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 5);
+(5, '2016-10-02', 75, 170, 70, 18, 22, 22, 15, 22, 14, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5),
+(6, '2016-10-06', 78, 170, 70, 18, 22, 22, 15, 22, 11, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5),
+(7, '2016-10-02', 70, 170, 70, 18, 22, 22, 15, 22, 11, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5),
+(15, '2016-10-08', 68, 170, 70, 18, 22, 22, 15, 22, 11, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5),
+(16, '2016-10-08', 65, 170, 70, 18, 22, 22, 15, 22, 11, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5),
+(17, '2016-11-02', 85, 170, 70, 18, 22, 22, 15, 22, 11, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5),
+(18, '2016-11-05', 85, 170, 70, 18, 22, 22, 15, 22, 11, 16, 11, 14, 13, 13, 26, 26, 21, 21, 21, 4, 3, 2, 2, 5, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -359,8 +375,8 @@ INSERT INTO `medicionesantropometricas` (`id`, `fecha`, `pesobruto`, `tallacorpo
 -- Estructura de tabla para la tabla `menu_semanal`
 --
 
-CREATE TABLE `menu_semanal` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `menu_semanal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `lunes_desayuno` varchar(255) DEFAULT NULL,
   `lunes_med_maniana` varchar(255) DEFAULT NULL,
   `lunes_almuerzo` varchar(255) DEFAULT NULL,
@@ -403,8 +419,10 @@ CREATE TABLE `menu_semanal` (
   `domingo_desayuno` varchar(255) DEFAULT NULL,
   `domingo_med_maniana` varchar(255) DEFAULT NULL,
   `domingo_merienda` varchar(255) DEFAULT NULL,
-  `plan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `plan` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `plan` (`plan`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Volcado de datos para la tabla `menu_semanal`
@@ -423,8 +441,8 @@ INSERT INTO `menu_semanal` (`id`, `lunes_desayuno`, `lunes_med_maniana`, `lunes_
 -- Estructura de tabla para la tabla `pacientes`
 --
 
-CREATE TABLE `pacientes` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pacientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) DEFAULT NULL,
   `apellido` varchar(255) DEFAULT NULL,
   `dni` varchar(255) DEFAULT NULL,
@@ -438,8 +456,12 @@ CREATE TABLE `pacientes` (
   `motivo` varchar(255) DEFAULT NULL,
   `ocupacion` varchar(255) NOT NULL,
   `division` int(11) DEFAULT NULL,
-  `divisionseleccion` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `divisionseleccion` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `dni` (`dni`),
+  KEY `division` (`division`),
+  KEY `divisionseleccion` (`divisionseleccion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Volcado de datos para la tabla `pacientes`
@@ -463,11 +485,13 @@ INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `dni`, `sexo`, `direccion`,
 -- Estructura de tabla para la tabla `planes`
 --
 
-CREATE TABLE `planes` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `planes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` date DEFAULT NULL,
-  `paciente` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paciente` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paciente` (`paciente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `planes`
@@ -486,8 +510,8 @@ INSERT INTO `planes` (`id`, `fecha`, `paciente`) VALUES
 -- Estructura de tabla para la tabla `recordatorios`
 --
 
-CREATE TABLE `recordatorios` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `recordatorios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fecha` date DEFAULT NULL,
   `horadespertado` varchar(255) DEFAULT NULL,
   `horadesayuno` varchar(255) DEFAULT NULL,
@@ -503,8 +527,10 @@ CREATE TABLE `recordatorios` (
   `horacena` varchar(255) DEFAULT NULL,
   `cena` varchar(255) DEFAULT NULL,
   `horadormido` varchar(255) DEFAULT NULL,
-  `paciente` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paciente` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paciente` (`paciente`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Volcado de datos para la tabla `recordatorios`
@@ -520,12 +546,13 @@ INSERT INTO `recordatorios` (`id`, `fecha`, `horadespertado`, `horadesayuno`, `d
 -- Estructura de tabla para la tabla `respaldos`
 --
 
-CREATE TABLE `respaldos` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `respaldos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) DEFAULT NULL,
   `detalle` varchar(255) DEFAULT NULL,
-  `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fecha` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Volcado de datos para la tabla `respaldos`
@@ -540,15 +567,16 @@ INSERT INTO `respaldos` (`id`, `nombre`, `detalle`, `fecha`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `estado` tinyint(4) NOT NULL,
   `ultimoacceso` date NOT NULL,
   `fechaalta` date NOT NULL,
-  `fechamodificacion` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fechamodificacion` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -557,182 +585,6 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `ultimoacceso`, `fechaalta`, `fechamodificacion`) VALUES
 (1, 'admin', '12345678', 1, '2016-11-14', '2016-10-21', '2016-11-05');
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `anamnesis`
---
-ALTER TABLE `anamnesis`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `paciente` (`paciente`);
-
---
--- Indices de la tabla `clubes`
---
-ALTER TABLE `clubes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `deportes`
---
-ALTER TABLE `deportes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `divisiones`
---
-ALTER TABLE `divisiones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `club` (`club`);
-
---
--- Indices de la tabla `estudiolaboratorio`
---
-ALTER TABLE `estudiolaboratorio`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `paciente` (`paciente`);
-
---
--- Indices de la tabla `ingesta`
---
-ALTER TABLE `ingesta`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `recordatorio` (`recordatorio`);
-
---
--- Indices de la tabla `ingesta_planes`
---
-ALTER TABLE `ingesta_planes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `plan` (`plan`),
-  ADD KEY `plan_2` (`plan`);
-
---
--- Indices de la tabla `medicionesantropometricas`
---
-ALTER TABLE `medicionesantropometricas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `paciente` (`paciente`),
-  ADD KEY `paciente_2` (`paciente`);
-
---
--- Indices de la tabla `menu_semanal`
---
-ALTER TABLE `menu_semanal`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `plan` (`plan`);
-
---
--- Indices de la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `dni` (`dni`),
-  ADD KEY `division` (`division`),
-  ADD KEY `divisionseleccion` (`divisionseleccion`);
-
---
--- Indices de la tabla `planes`
---
-ALTER TABLE `planes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `paciente` (`paciente`);
-
---
--- Indices de la tabla `recordatorios`
---
-ALTER TABLE `recordatorios`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `paciente` (`paciente`);
-
---
--- Indices de la tabla `respaldos`
---
-ALTER TABLE `respaldos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `anamnesis`
---
-ALTER TABLE `anamnesis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT de la tabla `clubes`
---
-ALTER TABLE `clubes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
---
--- AUTO_INCREMENT de la tabla `deportes`
---
-ALTER TABLE `deportes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT de la tabla `divisiones`
---
-ALTER TABLE `divisiones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT de la tabla `estudiolaboratorio`
---
-ALTER TABLE `estudiolaboratorio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `ingesta`
---
-ALTER TABLE `ingesta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
---
--- AUTO_INCREMENT de la tabla `ingesta_planes`
---
-ALTER TABLE `ingesta_planes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
---
--- AUTO_INCREMENT de la tabla `medicionesantropometricas`
---
-ALTER TABLE `medicionesantropometricas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
---
--- AUTO_INCREMENT de la tabla `menu_semanal`
---
-ALTER TABLE `menu_semanal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
---
--- AUTO_INCREMENT de la tabla `pacientes`
---
-ALTER TABLE `pacientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
---
--- AUTO_INCREMENT de la tabla `planes`
---
-ALTER TABLE `planes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
---
--- AUTO_INCREMENT de la tabla `recordatorios`
---
-ALTER TABLE `recordatorios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
---
--- AUTO_INCREMENT de la tabla `respaldos`
---
-ALTER TABLE `respaldos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
