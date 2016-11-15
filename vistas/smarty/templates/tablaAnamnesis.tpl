@@ -1,7 +1,7 @@
   <h2>Listado de Anamnesis</h2>
 
    <div style="text-align: center">
-  <img name="{$paciente}" id="imgMostrarNuevoAnamnesis"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer"/>
+  <img name="{$paciente}" id="imgMostrarNuevoAnamnesis"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
   </div>
 
   <table class="table table-striped header-fixed" style="width: 100%;">
@@ -15,8 +15,8 @@
       {foreach from=$anamnesis item=anam}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 50%;    float: left;" > {$anam->fecha|date_format:" %d/%m/%y"}    </td>
-        <td style="width: 50%;    float: left;"><img name="{$anam->id}" id="imgMostarActualizarAnamnesis" src="img/consultar.png" align="JUSTIFY" style="cursor:pointer"/>
-         <img name="{$anam->id}" id="imgMostrarEliminarAnamnesis"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer"/>
+        <td style="width: 50%;    float: left;"><img name="{$anam->id}" id="imgMostarActualizarAnamnesis" src="img/consultar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
+         <img name="{$anam->id}" id="imgMostrarEliminarAnamnesis"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
          
         </td>
       </tr>

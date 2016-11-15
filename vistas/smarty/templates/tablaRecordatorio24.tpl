@@ -1,7 +1,7 @@
   <h2>Listado de Recordatorios 24 hs</h2>
 
    <div style="text-align: center">
-  <img name="{$paciente}" id="imgMostrarNuevoRecordatorio24"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer"/>
+  <img name="{$paciente}" id="imgMostrarNuevoRecordatorio24"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
   </div>
   <table class="table table-striped header-fixed" style="width: 100%;">
       <tr style="">
@@ -15,9 +15,9 @@
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 50%;    float: left;" > {$rec->fecha|date_format:" %d/%m/%y"}    </td>
         <td style="width: 50%;    float: left;">
-            <img name="{$rec->id}" id="imgMostrarConsultarRecordatorio24"  src="img/consultar.png" align="JUSTIFY" style="cursor:pointer"/>
-            <img name="{$rec->id}" id="imgMostrarEstadisticaRecordatorio24"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer"/>
-            <img name="{$rec->id}" id="imgMostrarEliminarRecordatorio24"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer"/>
+            <img name="{$rec->id}" id="imgMostrarConsultarRecordatorio24"  src="img/consultar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
+            <img name="{$rec->id}" id="imgMostrarEstadisticaRecordatorio24"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
+            <img name="{$rec->id}" id="imgMostrarEliminarRecordatorio24"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
         </td>
       </tr>
       {/foreach}

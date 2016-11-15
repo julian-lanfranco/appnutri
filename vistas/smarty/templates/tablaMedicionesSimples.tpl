@@ -20,9 +20,9 @@
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 33%;    float: left;" > {$medi->id}    </td>
         <td style="width: 33%;    float: left;" > {$medi->fecha|date_format:" %d/%m/%y"}    </td>
-        <td style="width: 33%;    float: left;"><img name="{$medi->id}" id="imgMostarActualizarMedicionSimple" src="img/editar.png" align="JUSTIFY" style="cursor:pointer">
-            <img name="{$medi->id}" id="imgMostrarEliminarMedicionesSimples"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer"/>
-            <img name="{$medi->id}" id="imgMostrarConsultarMedicionesSimples"  src="img/consultar.png" align="JUSTIFY" style="cursor:pointer"/>
+        <td style="width: 33%;    float: left;"><img name="{$medi->id}" id="imgMostarActualizarMedicionSimple" src="img/editar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35">
+            <img name="{$medi->id}" id="imgMostrarEliminarMedicionesSimples"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
+            <img name="{$medi->id}" id="imgMostrarConsultarMedicionesSimples"  src="img/consultar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
             
 
         </td>
