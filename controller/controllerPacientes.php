@@ -290,7 +290,7 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
         $paciente = new Paciente('pacientes');
 
       $pacientesFiltrados = $paciente->Find("(
-                        (nombre LIKE '%".$pacienteNombre."%') and 
+                        (nombre LIKE '%".$pacienteNombre."%') or (apellido LIKE '%".$pacienteNombre."%') and 
                         (dni LIKE '%".$pacienteDni."%') and 
                         (sexo LIKE '%".$pacienteSexo."%')
                         ) order by id");

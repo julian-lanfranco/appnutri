@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2016 a las 18:15:59
+-- Tiempo de generación: 15-11-2016 a las 17:06:52
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -148,7 +148,7 @@ CREATE TABLE `divisiones` (
 INSERT INTO `divisiones` (`id`, `nombre`, `deporte`, `sexo`, `correo`, `entrenador`, `preparador`, `telefono`, `contacto`, `club`) VALUES
 (17, 'M15', 'rugby', 'masculino', 'GIO@GMAIL.COM', 'PATRICIA MENDEZ', 'MARTIN FALICO', '1651515', 'FELIZ ORTIZ', 74),
 (18, 'M15', 'rugby', 'masculino', 'BLAQUI@HOTMAIL.COM', 'PEDRO RIOS', 'LUCERO GABRIEL', '13432423', 'JORGE LUIS BORGES', 75),
-(19, 'm21', 'rugby', 'femenino', 'TORRI@GMAIL.COM', 'FELIZA MICHELLI', 'TORIBIO ORTIZ', '424654654', 'MARTIN TORRES', 74),
+(19, 'M21', 'rugby', 'femenino', 'TORRI@GMAIL.COM', 'FELIZA MICHELLI', 'TORIBIO ORTIZ', '424654654', 'MARTIN TORRES', 74),
 (20, 'MAYORES', 'futbol', 'femenino', 'GIO@GMAIL.COM', 'PEDRO RIOS', 'MARTIN FALICO', '154292724', 'JORGE LUIS BORGES', 74),
 (21, 'MAYORES', 'futbol', 'femenino', 'BLAQUI@HOTMAIL.COM', 'GUILERMO DIAZ', 'TOLEDO JUAN MANUEL', '13432423', 'LUIS SEGURO', 75),
 (22, 'M21', 'rugby', 'masculino', 'JUANPI@GMAIL.COM', 'PABLO LENCINA', 'RUPERTO PEREZ', '45128622', 'JUAN PABLO AMARILLO', 75),
@@ -555,7 +555,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `ultimoacceso`, `fechaalta`, `fechamodificacion`) VALUES
-(1, 'admin', '12345678', 1, '2016-11-14', '2016-10-21', '2016-11-05');
+(1, 'admin', '12345678', 1, '2016-11-15', '2016-10-21', '2016-11-05');
 
 --
 -- Índices para tablas volcadas

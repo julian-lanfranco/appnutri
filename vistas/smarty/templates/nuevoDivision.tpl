@@ -1,8 +1,8 @@
 <h2>Nueva Division</h2>
 <table class="table table-striped header-fixed" style="width: 100%;" >
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:1000px">
      <tr style="">
-      <td style="width: 100%;    float: left;" >
+      <td style="width: 100%;    float: left; height: 500px; width:800px">
           
  
 <form  id="division" method="post">   

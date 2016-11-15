@@ -1,6 +1,8 @@
 
   <h4>Seleccione un paciente:</h4> 
-
+  <div style="text-align: center">
+  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="80" width="80"/>
+  </div>
   <table class="table table-striped header-fixed" style="width: 100%;">
   <tr style="">
    <th style="width: 33%; float: left;">Dni</th>
