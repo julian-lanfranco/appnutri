@@ -7,67 +7,67 @@
  
 <form  id="division" method="post">   
    
-<label class="col-sm-4">Nombre:</label>
-<div class="col-sm-8">
+<label class="col-sm-6">Nombre:</label>
+<div class="col-sm-6">
    <input type="text" class="form-control" id="nombre" name="nombre" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la division.">
 </div>
-<br><br><br>     
- <label class="col-sm-4">Club:</label>
-<div class="col-sm-8">
+<br><br>    
+ <label class="col-sm-6">Club:</label>
+<div class="col-sm-6">
 <select name=clubes class="form-control" id="clubes" required>
     {foreach from=$clubes item=club}
     <option label="{$club->nombre}" value="{$club->id}">{$club->nombre}</option>
     {/foreach}
 </select>
 </div>  
-<br><br><br>
+<br><br>
 
-<label class="col-sm-4">Deporte:</label>
-<div class="col-sm-8">
+<label class="col-sm-6">Deporte:</label>
+<div class="col-sm-6">
 <select name=deporte class="form-control" id="deporte" required>
     <option label="futbol" value="futbol">FUTBOL</option>
     <option label="basquet" value="basquet">BASQUET</option>
     <option label="rugby" value="rugby">RUGBY</option>
 </select>
 </div>  
-<br><br><br>
+<br><br>
 
-<label class="col-sm-4">Sexo:</label>
-<div class="col-sm-8">
+<label class="col-sm-6">Sexo:</label>
+<div class="col-sm-6">
 <select name=sexo class="form-control" id="sexo">
     <option label="masculino" value="masculino">MASCULINO</option>
     <option label="femenino" value="femenino">FEMENINO</option>
 </select>
 </div>  
-<br><br><br>
+<br><br>
 
-<label class="col-sm-4">Contacto:</label>
-<div class="col-sm-8">
+<label class="col-sm-6">Contacto:</label>
+<div class="col-sm-6">
 <input type="text" class="form-control" id="contacto" name="contacto" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese la nombre de la persona de contacto">
 </div>
-<br><br><br>
+<br><br>
 
-<label class="col-sm-4">Telefono de Contacto:</label>
-<div class="col-sm-8">
+<label class="col-sm-6">Telefono de Contacto:</label>
+<div class="col-sm-6">
 <input type="text" class="form-control" id="telefono" name="telefono" value="" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros">
 </div>
-<br><br><br>
+<br><br>
 
-<label class="col-sm-4">Correo de Contacto:</label>
-<div class="col-sm-8">
+<label class="col-sm-6">Correo de Contacto:</label>
+<div class="col-sm-6">
 <input type="email" class="form-control" id="correo" name="correo" value="" required  title="Ingrese el correo electronico">
 </div>
-<br><br><br>
-<label class="col-sm-4">Entrenador:</label>
-<div class="col-sm-8">
+<br><br>
+<label class="col-sm-6">Entrenador:</label>
+<div class="col-sm-6">
 <input type="text" class="form-control" id="entrenador" name="entrenador" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese el nombre del entrenador. Solo letras">
 </div>
-<br><br><br>
-<label class="col-sm-4">Preparador Fisico:</label>
-<div class="col-sm-8">
+<br><br>
+<label class="col-sm-6">Preparador Fisico:</label>
+<div class="col-sm-6">
 <input type="text" class="form-control" id="preparador" name="preparador" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese el nombre de preparador fisico. Solo letras">
 </div>
-<br><br><br>
+<br><br>
      
 
 <div class="form-group" align="center">

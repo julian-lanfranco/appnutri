@@ -13,9 +13,9 @@
         <td style="width: 33%;    float: left;" >{$paciente->dni}    </td>
         <td style="width: 33%;    float: left;" >{$paciente->apellido}  {$paciente->nombre}</td>
         <td style="width: 33%;    float: left;">
-          <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgMostrarConsultarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer"/>
+          <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
+          <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
+          <img name="{$paciente->id}" id="imgMostrarConsultarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
         </td>
       </tr>
       {/foreach}

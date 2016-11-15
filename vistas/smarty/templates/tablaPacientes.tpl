@@ -69,7 +69,7 @@
   <div id=resultado>
   <h2>Seleccione un paciente:</h2> 
   <div style="text-align: center">
-  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="32" width="32"/>
+  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
   </div>
   <table class="table table-striped header-fixed" style="width: 100%;">
   <tr style="">
@@ -83,9 +83,9 @@
         <td style="width: 25%;    float: left;" >{$paciente->apellido}  {$paciente->nombre}</td>
         <td style="width: 25%;    float: left;" >{$paciente->dni}</td>
         <td style="width: 50%;    float: left;">
-          <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgMostrarEditarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer"/>
+          <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
+          <img name="{$paciente->id}" id="imgMostrarEditarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
+          <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
         </td>
       </tr>
       {/foreach}

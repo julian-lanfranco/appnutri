@@ -2,8 +2,8 @@
 
   
   <div style="text-align: center">
-  <img name="{$paciente}" id="imgMostrarNuevoMedAntro"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer"/>
-  <img name="{$paciente}" id="imgMostrarGraficaEvolutiva"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer"/>
+  <img name="{$paciente}" id="imgMostrarNuevoMedAntro"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="35" width="35"/>
+  <img name="{$paciente}" id="imgMostrarGraficaEvolutiva"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
   </div>
   <table class="table table-striped header-fixed" style="width: 100%;">
       <tr style="">
@@ -24,9 +24,9 @@
         <td style="width: 12%;    float: left;" > {$medi->pesobruto}    </td>
         <td style="width: 12%;    float: left;" > {$medi->tallacorporal}    </td>
         <td style="width: 12%;    float: left;" > {$medi->tallasentado}    </td>
-        <td style="width: 48%;    float: left;"><img name="{$medi->id}" id="imgMostarActualizarMedicionAntro" src="img/consultar.png" align="JUSTIFY" style="cursor:pointer">
-            <img name="{$medi->id}" id="imgMostrarGraficaSomatocarta"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer"/>
-            <img name="{$medi->id}" id="imgMostrarEliminarMedicionesAntro"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer"/>
+        <td style="width: 48%;    float: left;"><img name="{$medi->id}" id="imgMostarActualizarMedicionAntro" src="img/consultar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35">
+            <img name="{$medi->id}" id="imgMostrarGraficaSomatocarta"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
+            <img name="{$medi->id}" id="imgMostrarEliminarMedicionesAntro"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer" height="35" width="35"/>
             
   
             
