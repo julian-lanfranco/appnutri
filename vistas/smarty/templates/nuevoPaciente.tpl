@@ -1,8 +1,11 @@
 <form  id="paciente" method="post">
-<h2>Nuevo Paciente</h2>
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
 
+<h4>Nuevo Paciente</h4>
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; width:100%">
      <tr style="">
       <td style="width: 100%;    float: left;" >
           
@@ -11,7 +14,14 @@
     
 <input type="hidden" class="form-control" id="modulo" name="modulo" value="pacientes">
 <input type="hidden" class="form-control" id="accion" name="accion" value="btnCrearPaciente">     
-    
+
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">   
+
 <label class="col-sm-1">Club:</label>
 
 <div id=selectorDeClubes>
@@ -64,11 +74,13 @@
 </div>
 </div>
 </div>
-
-
-<br><br><br>
-
-
+</div>
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">   
 
 <label class="col-sm-1">Seleccion:</label>
 
@@ -115,9 +127,15 @@
 </div>
 </div>
 </div>
-<br><br><br>
+</div>
 
 
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">   
 <div class="form-group">
  <label class="col-sm-1">Nombre:</label>
  <div class="col-sm-3">
@@ -186,17 +204,22 @@
  </textarea>
  </div>
 </div>
-<br><br><br>
-<br><br>
-<div class="form-group" align="center">
-    
-    <input type="submit" id="btnCrearPaciente" name="btnCrearPaciente" class="btn btn-default" value="Crear" />
-    <input  type="button" id="btnCancelarCrearPaciente" name="btnCancelarCrearPaciente" class="btn btn-default" value="Cancelar" />
 </div>
+
+
 
          </td>
       </tr>
    </tbody>  
   </table> 
+<div class="form-group" align="center">
+    
+    <input type="submit" id="btnCrearPaciente" name="btnCrearPaciente" class="btn btn-default" value="Crear" />
+    <input  type="button" id="btnCancelarCrearPaciente" name="btnCancelarCrearPaciente" class="btn btn-default" value="Cancelar" />
+    </div>
+
+ </div>
+</div>
+</div>   
 </form>
 <script type="text/javascript" src="js/pacientes/funcionesAltaPacientesDinamico.js"></script>

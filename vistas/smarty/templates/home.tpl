@@ -8,17 +8,24 @@
     <script src="\appnutri\lib\jquery-1.12.4.min.js"></script>
 </head>
 <body>
+<div class="container-fluid" style="background-color:white;
+                          padding-top: 1px;
+                          padding-right: 1px;
+                          padding-bottom: 1px;
+                          padding-left: 1px;
+                          margin: 1px;">
   <div class="row">
-    <div class="col-sm-12" style="">
- 
+    <div class="col-md-12" style="">
+      <div class="row" style="text-align:center;">
+        <h4>GnUtri V1.0</h4>
+      </div>
+  </div>
 </div>
-</div>
-  <div class="row">
 
+  <div class="row">
   <div class="col-sm-2 " style="background-color:lavender;">
 
   <div class="panel-group" id="accordion">
-
 
       <div class="panel panel-default" style="background-color:lavender;">
          <div class="panel-heading">
@@ -89,59 +96,42 @@
             <a href="#" id="btnListarRespaldos">Listar Respaldos</a> <br>  
       </div>
     </div>  
-
-      <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <span lang="es-ar">&nbsp;</span><a data-toggle="collapse" data-parent="#accordion" href="#collapse11">Acerca de</a>
-      </div>
-      
-      <div id="collapse11" class="panel-collapse collapse">
-
-            <a href="#" id="btnAcerca">Acerca de</a> <br>
- 
-      </div>
-    </div>  
-
-      
-
   </div>
-
-
 </div>
 
 
-    <div class="col-sm-10" style="background-color:lavender;">
+    <div class="col-md-10" style="background-color:lavender;">
     
-    <div id="pacienteSeleccionado" style="
-    border: 5px solid grey;
-    padding: 10px;
-    margin: 2px;">
-    
-    <h4>Paciente Seleccionado:</h4>
+    <div id="pacienteSeleccionado" hidden="">
+
+      <div class="row" style="background-color:white;
+                          padding-top: 20px;
+                          padding-right: 10px;
+                          padding-bottom: 20px;
+                          padding-left: 10px;
+                          margin: 10px;">
+
      
-      <label class="col-sm-1">Nombre:</label>
+      <label class="col-sm-1">Nombre </label>
       <div class="col-sm-3">
       <input type="hidden" class="form-control" id="idPaciente" value="Seleccione un paciente"" disabled="true">
       <input type="text" class="form-control" id="nombrePaciente" value="Seleccione un paciente"" disabled="true">
       </div>
       
-      <label class="col-sm-1">Division:</label>   
+      <label class="col-sm-1">Division </label>   
       <div class="col-sm-2">
       <input type="text" class="form-control" id="nombreDivision" value="-" disabled="true">
       </div>
 
-      <label class="col-sm-1">Club:</label>   
+      <label class="col-sm-1">Club</label>   
       <div class="col-sm-2">
       <input type="text" class="form-control" id="nombreclub" value="-" disabled="true">
       </div>
-      
-      <br><br>
+
+    </div>
     </div>
 
      <div id="central">
-      <h4>Pagina principal</h4>
-      <p>Contenido de la página principal</p>
       </div>
     </div>
   </div>

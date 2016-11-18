@@ -1,9 +1,12 @@
 <form  id="anamnesi" method="post">
-<div class="col-sm-10 " style="background-color:lavender;">
-<h2>Nueva Anamnesis Paciente: {$nombre} </h2>
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
 
-<table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 300px; ">
+<h4>Nueva Anamnesis</h4>
+
+<table class="table table-striped header-fixed">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">
      <tr style="">
       <td style="width: 100%;    float: left;" >
  
@@ -12,7 +15,12 @@
 <input type="hidden" class="form-control" id="nombre"      name="nombre"     value="{$nombre}">
 <input type="hidden" class="form-control" id="idClub"      name="idClub"     value="{$club}">
 <input type="hidden" class="form-control" id="idDivision"  name="idDivision" value="{$division}">
-
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
 <h3> Antecedentes Familiares</h3>
 
 <label class="col-sm-2">Obesidad: </label>
@@ -38,7 +46,7 @@
     <option label="NO" value="NO">NO</option>
 </select>
 </div>
-<br><br>
+
 <label class="col-sm-2">Enfermedad Cardiacas: </label>
 <div class="col-sm-2">
 <select name=cardiacas class="form-control" id="cardiacas" required>
@@ -51,8 +59,13 @@
 <div class="col-sm-6">
 <input type="text" class="form-control" id="otras" name="otras" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese otro antecedente. Solo letras">
 </div>
-
-<br><br><br>
+</div>
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 
 
@@ -168,8 +181,14 @@
     <option label="NO" value="NO">NO</option>
 </select>
 </div>
+</div>
 
-<br><br><br>
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
 <h3>Habitos Alimentarios</h3>
 
 <label class="col-sm-2">Preferencias:</label>
@@ -277,6 +296,7 @@
     <option label="EXPORADICAMENTE" value="EXPORADICAMENTE">EXPORADICAMENTE</option>
 </select>
 </div>
+</div>
 </td>
 </tr>
     </tbody>  
@@ -289,6 +309,7 @@
 </div>
 
 </div>
-
+</div>
+</div>
 </form>
 <script type="text/javascript" src="js/anamnesis/funcionesAltaAnamnesisDinamico.js"></script>

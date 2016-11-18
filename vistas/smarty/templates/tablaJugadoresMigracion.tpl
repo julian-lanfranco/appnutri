@@ -1,5 +1,11 @@
   
-
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
   <table class="table table-striped header-fixed" style="width: 100%;">
   <tr style="">
    <th style="width: 33%; float: left;">Id</th>
@@ -20,6 +26,8 @@
       {/foreach}
     </tbody>  
   </table>
+  </div>
+  </div>
 
 
 

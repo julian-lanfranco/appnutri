@@ -50,8 +50,10 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
                                             $('#pacienteSeleccionado').html(b);
                                             alert("Paciente Seleccionado!"); 
                                             $('#central').html("");
+                                            $('#pacienteSeleccionado').show();
                                             }
                     });
+
 
          });
 
@@ -509,7 +511,6 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
 
     $("#central").on("change", "#seleccionSexoModPacientes", function(){
-
                 var validacion=validar();
                 if (validacion)
                 {
@@ -533,11 +534,14 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
                                             //$('#central').html(a); 
                                             $('#selectorDeDivisiones').html(a);
+                                            
                                              }
                         });
                     }
                     else {alert("revise los generos");
                             $("#seleccionSexoModPacientes").val("ninguno").change();
+                            $('#seleccionDivisionesModPacientes').val("ninguno").change();
+
                             }
 
         
@@ -686,7 +690,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                             success: function(b) {
 
                                                 var juga=JSON.parse(b);
-                                                var jugadoresTabla="<table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
+                                                var jugadoresTabla=" <div class='row' style='background-color:white;padding-top:0px;padding-right:10px;padding-bottom: 0px;padding-left: 10px;margin: 10px;'><div class='col-md-12'><table class='table table-striped header-fixed' style='width: 100%;'><tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr><tbody style='display: block;  overflow-y: auto; float: left;height: 250px; width:100%'>";
 
         
                                                 for(var i in juga)
@@ -698,7 +702,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                                                 
                                                             }
 
-                                                jugadoresTabla=jugadoresTabla+"</tbody></table>";
+                                                jugadoresTabla=jugadoresTabla+"</tbody></table></div></div>";
                                                 //alert(jugadoresTabla);
 
                                                 $('#listadoJugadores').html(jugadoresTabla);

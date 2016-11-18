@@ -45,6 +45,7 @@
 <div id=selectorDeSexo>
 <div class="col-sm-2">
     <select name="seleccionSexoModPacientes" class="form-control" id="seleccionSexoModPacientes">
+    <option value="ninguno">ninguno</option>
     {foreach from=$listaSexos item=sexo}
     {if $sexo eq $sexoSeleccionado}
     <option label="{$sexo}"  value="{$sexo}" selected>{$sexo|upper}</option>
@@ -112,6 +113,7 @@
 <div id=selectorDeSexoSelecciones>
 <div class="col-sm-2">
     <select name="seleccionSexoSeleccionesModPacientes" class="form-control" id="seleccionSexoSeleccionesModPacientes">
+    <option value="ninguno">ninguno</option>
     {foreach from=$listaSexosSel item=sexo}
     {if $sexo eq $sexoSeleccionadoSel}
     <option label="{$sexo}"  value="{$sexo}" selected>{$sexo|upper}</option>

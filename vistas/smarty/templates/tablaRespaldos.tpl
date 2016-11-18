@@ -1,4 +1,4 @@
-  <h2>Listado de Respaldos</h2>
+  <h4>Listado de Respaldos</h4>
 
   
   <p>Seleccione un respaldo para restaurar:</p>            
@@ -28,10 +28,9 @@
           </textarea>
         </td>
         <td style="width: 20%;    float: left;">
-            <img name="{$respaldo->id}" id="imgRestaurarRespaldo"  src="img/respaldo.png" align="CENTER" style="cursor:pointer"/>
-            <img name="{$respaldo->id}" id="imgEliminarRespaldo"  src="img/eliminar.png" align="CENTER" style="cursor:pointer"/>
+            <img name="{$respaldo->id}" id="imgEliminarRespaldo"  src="img/eliminar.png" align="CENTER" style="cursor:pointer" height="30" width="30"/>
            <a href="/appnutri/respaldos/{$respaldo->nombre}"> 
-           <img name="{$respaldo->id}" id="imgDescargarRespaldo"  src="img/descargar.png" align="CENTER" style="cursor:pointer"/>
+           <img name="{$respaldo->id}" id="imgDescargarRespaldo"  src="img/descargar.png" align="CENTER" style="cursor:pointer" height="30" width="30"/>
            </a>
 
         </td>

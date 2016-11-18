@@ -1,13 +1,18 @@
+<form  id="migrarJugadores" method="post"> 
 <h4>Migracion de Jugadores</h4>
-<table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
 
-<form  id="migrarJugadores" method="post">  
 <input type="hidden" name="tipo_form" id="tipo_form" value="form_clubes">
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <br>
+
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">   
 
 <label class="col-sm-1">Origen:</label>
 
@@ -57,11 +62,14 @@
 </select>
 </div>
 </div>
+</div>
 
-
-
-
-<br><br><br>
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">   
 
 <label class="col-sm-1">Destino:</label>
 
@@ -111,11 +119,17 @@
 </select>
 </div>
 </div>
-
-<br><br><br>
-
+</div>
   <p>Seleccione Jugadores a migrar:</p> 
   <div id=listadoJugadores>
+  
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
   <table class="table table-striped header-fixed" style="width: 100%;">
   <tr style="">
    <th style="width: 33%; float: left;">Id</th>
@@ -123,7 +137,7 @@
    <th style="width: 33%; float: left;">Migrar</th>
   </tr>
    <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
-      {foreach from=$jugadoresSinDivision item=paciente}
+      {foreach from=$jugadores item=paciente}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 33%;    float: left;" >{$paciente->id} </td>
         <td style="width: 33%;    float: left;" >{$paciente->apellido}  {$paciente->nombre}</td>
@@ -136,14 +150,12 @@
       {/foreach}
     </tbody>  
   </table>
+  </div>
+  </div>
 
 
 </div>
-
-
-
-<br><br><br>
- <br><br>         
+    
 
 
 <div class="form-group" align="center">
@@ -151,10 +163,9 @@
     <input type="button" id="btnCancelarMigrarJugadores" name="btnCancelarMigrarJugadores" class="btn btn-default" value="Cancelar" />
 </div>    
 
-       </td>
-      </tr>
-   </tbody>  
-  </table> 
+</div>
+</div>
+</div>
 
 <script type="text/javascript" src="js/pacientes/funcionesModPacientesDinamico.js"> </script>
 </form>

@@ -1,5 +1,11 @@
-  <h4>Listado de Pacientes</h4>
+
 <div id=busqueda>
+<div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                           margin: 10px;">
   <label class="col-sm-2">Buscar Paciente:</label>
   <div class="col-sm-2">
       <input type="text" class="form-control" id="pacienteNombre" name="pacienteNombre"  title="Ingrese un Paciente"  pattern="[A-Za-z]">
@@ -21,9 +27,15 @@
 
   <input type="checkbox" name="clubChk" id="clubChk" value="true" checked>Posee club?<br>
 
-  <br>
+  </div>
   <div id=filtros>
-    <h4>Filtros</h4><br>
+  <div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+
   <label class="col-sm-1">Club:</label>
   <div class="col-sm-2">
       <select name="filtroClub" class="form-control" id="filtroClub" title="Seleccion un Club">
@@ -36,7 +48,7 @@
   </div>
 
 <label class="col-sm-1">Division:</label>
-<div class="col-sm-2">  
+<div class="col-sm-2" >  
   <select name="filtroDivision" class="form-control" id="filtroDivision" title="Seleccione una Division">
     <option  value="todos" selected>TODOS</option>  
   {foreach from=$divisiones item=division}
@@ -64,18 +76,34 @@
   </select>
 </div>     
 </div>
-<br><br> 
+</div> 
 </div>
+
   <div id=resultado>
-  <h2>Seleccione un paciente:</h2> 
-  <div style="text-align: center">
-  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer" height="80" width="80"/>
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-10" >
   </div>
-  <table class="table table-striped header-fixed" style="width: 100%;">
-  <tr style="">
-   <th style="width: 25%; float: left;">Nombre</th>
-   <th style="width: 25%; float: left;">DNI</th>
-   <th style="width: 50%; float: left;">Accion</th>
+  <div div class="col-md-2">
+  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="right"  style="cursor:pointer" height="80" width="80"/>
+  </div>
+  </div>
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 0px;
+                          padding-bottom: 0px;
+                          padding-left: 00px;
+                          margin: 10px;">
+
+  <table class="table  header-fixed" style="width: 100%;">
+  <tr>
+   <th style="width: 25%; float: left;text-align: center;">Nombre</th>
+   <th style="width: 25%; float: left;text-align: center;">DNI</th>
+   <th style="width: 50%; float: left;text-align: center;">Accion</th>
   </tr>
    <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
       {foreach from=$pacientes item=paciente}
@@ -85,12 +113,15 @@
         <td style="width: 50%;    float: left;">
           <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer"/>
           <img name="{$paciente->id}" id="imgMostrarEditarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer"/>
+          <img name="{$paciente->id}" id="imgPdfPaciente"  src="img/pdf.png" align="CENTER"  style="cursor:pointer"/>
           <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer"/>
+
         </td>
       </tr>
       {/foreach}
     </tbody>  
   </table>
+  </div>
   </div>
 
 
