@@ -65,8 +65,8 @@
 
 
 <div class="form-group" align="center">
-    <input type="submit" id="btnGraficaMedicionAntropometricas" name="btnGraficaMedicionAntropometricas" disabled class="btn btn-default" value="Graficar" />
+    <input type="button" id="btnGraficaMedicionAntropometricas" name="btnGraficaMedicionAntropometricas" disabled class="btn btn-default" value="Graficar" />
     <input  type="button" id="btnCancelarGraficaMedicionAntropometricas" name="btnCancelarGraficaMedicionAntropometricas" class="btn btn-default" value="Cancelar" />
 </div>  
 </form>
-<script type="text/javascript" src="js/medicionesAntropometricas/funcionesGrafMedicionesAntroDinamico.js"></script>
+

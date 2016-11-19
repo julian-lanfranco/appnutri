@@ -55,7 +55,7 @@ $graph->yaxis->HideLine(true);
 $graph->yaxis->HideTicks(true,true);
 $graph->ygrid->SetFill(false);
 
-$graph->SetBackgroundImage("soma.jpg", BGIMG_FILLFRAME);
+$graph->SetBackgroundImage('soma.jpg', BGIMG_FILLFRAME);
 
 
 $sp1 = new ScatterPlot($datay,$datax);

@@ -1,21 +1,28 @@
 //Funciones Js del Modulo Mediciones Antropometricas
 
+//boton para graficar, graficas evolutivas
+        $("#central").on("click", "#btnGraficaMedicionAntropometricas", function(){
+        var idPaciente =$("#idPaciente").val();
+        var seleccionFechaDesde =$("#seleccionFechaDesde").val();
+        var seleccionFechaHasta =$("#seleccionFechaHasta").val();
+        document.getElementById('seleccionFechaDesde').value= '';
+        document.getElementById('seleccionFechaHasta').value= '';
+        document.getElementById('btnGraficaMedicionAntropometricas').disabled=true;
+         
+      window.open ("http://localhost/appnutri/?modulo=medicionesAntropometricas&accion=generarGraficaMedicionAntro&idPaciente="+idPaciente+"&seleccionFechaDesde="+seleccionFechaDesde+"&seleccionFechaHasta="+seleccionFechaHasta);
+     
+    
+
+        });
+
 
 //Imagen de grafica para realizar la grafica de la somatocarta
         $("#central").on("click", "#imgMostrarGraficaSomatocarta", function(){
         
          medicion = $(this).attr('name');
-        window.open ("http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&accion=graficarSomatocarta&idMedicion="+medicion);
-//                 $.ajax({
-//                                type: "GET",
-//                                url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
-//                                data: "accion=graficarSomatocarta&idMedicion="+medicion,
-//
-//                                success: function(b) {
-//                                                    $('#central').html(b); 
-//                                                        }
-//                            });
-     
+         
+         window.open ("http://localhost/appnutri/graficas/graficaSomatocarta.php?idMedicion="+medicion);
+
     
 
         });
@@ -24,7 +31,7 @@
         $("#central").on("click", "#imgMostrarGraficaEvolutiva", function(){
         
          paciente = $(this).attr('name');
-        
+      
                  $.ajax({
                                 type: "GET",
                                 url: "http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas",
