@@ -25,7 +25,7 @@ foreach ($mediarray as $valor) {
 
 
 // Setup the graph
-$graph = new Graph(600,600);
+$graph = new Graph(700,700);
 
 $graph->SetScale("textint");
 
@@ -47,9 +47,10 @@ $p1 = new LinePlot($datos);
 $graph->Add($p1);
 
 
-// Use an image of favourite car as marker
-$p1->mark->SetType(MARK_IMG,'punto.jpg',0.8);
-$p1->SetColor('#aadddd');
+// Use an image of favourite car as marker$p1->SetColor('#aadddd');
+$p1->mark->SetType(MARK_FILLEDCIRCLE);
+$p1->mark->SetFillColor("red");
+$p1->mark->SetWidth(6);
 $p1->value->SetFormat('%d');
 $p1->value->Show();
 $p1->value->SetColor('#55bbdd');
