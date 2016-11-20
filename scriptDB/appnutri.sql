@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2016 a las 17:06:52
+-- Tiempo de generación: 20-11-2016 a las 20:19:44
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -70,7 +70,12 @@ CREATE TABLE `anamnesis` (
 --
 
 INSERT INTO `anamnesis` (`id`, `fecha`, `obesidad`, `diabetes`, `hipertension`, `cardiacas`, `otras`, `diagnosticada`, `medicamentos`, `toma`, `acidez`, `reflujo`, `abdominal`, `constipacion`, `diarrea`, `fuma`, `dietas`, `dolor`, `pesomax`, `pesomin`, `picotea`, `preferencias`, `alimentosnogustan`, `alimentosnotolera`, `alimentosprefiere`, `cocina`, `compras`, `horarios`, `desayuna`, `almuerza`, `merienda`, `cena`, `suplementos`, `actividad`, `frecuencia`, `paciente`) VALUES
-(1, '2016-11-05', 'SI', 'SI', 'SI', 'SI', 'no', 'no', 'SI', '-', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NUNCA HICE', 'SI', '100', '100', 'SI', 'SI', 'ninguno', 'ninguno', 'salados', 'SI', 'SI', '8-18', 'SI', 'SI', 'SI', 'SI', 'no', 'SI', 'DIARIAMENTE', 4);
+(1, '2016-11-05', 'SI', 'SI', 'SI', 'SI', 'no', 'no', 'SI', '-', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NUNCA HICE', 'SI', '100', '100', 'SI', 'SI', 'ninguno', 'ninguno', 'salados', 'SI', 'SI', '8-18', 'SI', 'SI', 'SI', 'SI', 'no', 'SI', 'DIARIAMENTE', 4),
+(2, '2016-11-18', 'SI', 'SI', 'SI', 'SI', 'no', 'no', 'SI', 'no', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NUNCA HICE', 'SI', '85', '90', 'SI', 'SI', 'no', 'no', 'no', 'SI', 'SI', 'no', 'SI', 'SI', 'SI', 'SI', 'no', 'SI', 'DIARIAMENTE', 30),
+(3, '2016-11-18', 'NO', 'NO', 'NO', 'NO', 'dfsdf', 'fdfsdf', 'NO', 'fdfs', 'NO', 'NO', 'NO', 'NO', 'SI', 'NO', 'NUNCA HICE', 'SI', '78', '45', 'SI', 'SI', '-', '-', '-', 'SI', 'SI', '-', 'SI', 'SI', 'SI', 'SI', '-', 'SI', 'DIARIAMENTE', 30),
+(4, '2016-11-18', 'SI', 'SI', 'SI', 'SI', 'y', 'y', 'SI', 'y', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NUNCA HICE', 'SI', 'y', 'y', 'SI', 'SI', 'y', 'y', 'y', 'SI', 'SI', 'y', 'SI', 'SI', 'SI', 'SI', 'y', 'SI', 'DIARIAMENTE', 6),
+(5, '2016-11-18', 'SI', 'SI', 'SI', 'SI', 'r', 'r', 'SI', 'r', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NUNCA HICE', 'SI', 'r', 'r', 'SI', 'SI', 'r', 'r', 'r', 'SI', 'SI', 'r', 'SI', 'SI', 'SI', 'SI', 'r', 'SI', 'DIARIAMENTE', 6),
+(6, '2016-11-19', 'NO', 'NO', 'NO', 'NO', 'ninguna', 'no', 'SI', 'no tomo', 'SI', 'SI', 'SI', 'SI', 'SI', 'SI', 'NEUTRALES', 'SI', '120', '100', 'NO', 'NO', 'no', 'no', '-', 'SI', 'SI', '-', 'SI', 'SI', 'SI', 'SI', 'no', 'SI', 'DIARIAMENTE', 4);
 
 -- --------------------------------------------------------
 
@@ -211,6 +216,15 @@ CREATE TABLE `estudiolaboratorio` (
   `conclusion` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `estudiolaboratorio`
+--
+
+INSERT INTO `estudiolaboratorio` (`id`, `fecha`, `paciente`, `globulosrojos`, `globulosblancos`, `plaquetas`, `hemoglobina`, `hematocrito`, `corpuscularmedio`, `hbcorpuscularmedio`, `hbcm`, `neutrofilosenca`, `neutrofilosseg`, `eocinifilos`, `basofilos`, `linfocitos`, `monocitos`, `glucemia`, `uremia`, `uricemia`, `acidourico`, `creatininemia`, `proteinastotales`, `albuminas`, `colesteroltotal`, `ldl`, `hdl`, `colesterolhdl`, `trigliceridos`, `presionarterial`, `hergometria`, `frecuenciacardiaca`, `frecuenciacardiacamaxima`, `presionarterialmaxima`, `vo2basal`, `vo2maximo`, `protocolo`, `frecuenciacardiomax`, `minutos`, `testdetenido`, `conclusion`) VALUES
+(1, '2016-11-19', 11, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 88, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 88, 8, 8, 8, 8, 8, 8, 8, 8, '8', 8, 8, '8', '8'),
+(2, '2016-11-19', 6, 7, 7, 7, 7, 7, 7, 7, 77, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, '7', 7, 7, '7', 'oihhhuihuui'),
+(3, '2016-11-19', 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, '2', 2, 2, '2', 'todo normal.-');
+
 -- --------------------------------------------------------
 
 --
@@ -231,42 +245,13 @@ CREATE TABLE `ingesta` (
 --
 
 INSERT INTO `ingesta` (`id`, `tipodeingesta`, `hora`, `alimento`, `cantidad`, `recordatorio`) VALUES
-(1, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(2, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(3, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(4, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(5, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(6, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(7, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(8, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(9, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(10, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(11, 'desayuno', '', 'lacteosEnteros', 7, NULL),
-(12, 'desayuno', '', 'lacteosEnteros', 7, NULL),
-(13, 'desayuno', '', 'lacteosEnteros', 7, NULL),
-(14, 'desayuno', '', 'lacteosEnteros', 222, NULL),
-(15, 'desayuno', '', 'lacteosEnteros', 44, NULL),
-(16, 'desayuno', '', 'lacteosEnteros', 4, NULL),
-(17, 'desayuno', '', 'lacteosEnteros', 33, NULL),
-(18, 'desayuno', '', 'lacteosEnteros', 33, NULL),
-(19, 'desayuno', '', 'lacteosEnteros', 66, NULL),
-(20, 'desayuno', '', 'lacteosEnteros', 66, NULL),
-(21, 'desayuno', '', 'lacteosEnteros', 6, NULL),
-(22, 'desayuno', '', 'lacteosEnteros', 0, NULL),
-(23, 'desayuno', '', 'lacteosEnteros', 0, NULL),
-(24, 'desayuno', '', 'lacteosEnteros', 0, NULL),
-(25, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(26, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(27, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(28, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(29, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(30, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(31, 'desayuno', '', 'lacteosEnteros', 3, NULL),
-(32, 'desayuno', '', 'lacteosEnteros', 2, NULL),
-(33, 'desayuno', '', 'lacteosEnteros', 3, 24),
-(34, 'desayuno', '', 'lacteosEnteros', 3, 24),
-(35, 'desayuno', '', 'lacteosEnteros', 50, 25),
-(36, 'desayuno', '', 'lacteosEnteros', 0, 25);
+(631, 'desayuno', '07:10', 'lacteosEnteros', 45, 45),
+(632, 'desayuno', '07:10', 'quesos', 30, 45),
+(633, 'desayuno', '07:10', 'frutasSecas', 30, 45),
+(634, 'mediaManiana', '10:00', 'frutas', 60, 45),
+(635, 'almuerzo', '13:00', 'carneGrasa', 150, 45),
+(636, 'almuerzo', '13:00', 'vegetalesC', 150, 45),
+(637, 'cena', '21:30', 'lacteosEnteros', 200, 45);
 
 -- --------------------------------------------------------
 
@@ -278,7 +263,7 @@ CREATE TABLE `ingesta_planes` (
   `id` int(11) NOT NULL,
   `tipodeingesta` varchar(255) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `hora` date DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
   `alimento` varchar(255) DEFAULT NULL,
   `plan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -288,20 +273,16 @@ CREATE TABLE `ingesta_planes` (
 --
 
 INSERT INTO `ingesta_planes` (`id`, `tipodeingesta`, `cantidad`, `hora`, `alimento`, `plan`) VALUES
-(19, 'desayuno', 323, '0000-00-00', 'lacteosEnteros', 35),
-(20, 'desayuno', 323, '0000-00-00', 'vegetalesA', 35),
-(21, 'desayuno', 3232, '0000-00-00', 'lacteosEnteros', 35),
-(22, 'desayuno', 3232, '0000-00-00', 'vegetalesC', 35),
-(23, 'desayuno', 3232, '0000-00-00', 'lacteosEnteros', 35),
-(24, 'desayuno', 3232, '0000-00-00', 'panSinGrasa', 35),
-(25, 'desayuno', 3232, '0000-00-00', 'lacteosEnteros', 35),
-(26, 'desayuno', 3, '0000-00-00', 'lacteosEnteros', 36),
-(27, 'desayuno', 3, '0000-00-00', 'quesos', 36),
-(28, 'desayuno', 3, '0000-00-00', 'lacteosEnteros', 37),
-(29, 'desayuno', 3, '0000-00-00', 'lacteosEnteros', 37),
-(30, 'desayuno', 23, '0000-00-00', 'lacteosEnteros', NULL),
-(31, 'desayuno', 50, '0000-00-00', 'lacteosEnteros', 38),
-(35, 'desayuno', 50, '0000-00-00', 'lacteosEnteros', 40);
+(83, 'desayuno', 3, '07:07', 'lacteosEnteros', 55),
+(87, 'desayuno', 100, '07:10', 'lacteosEnteros', 56),
+(88, 'desayuno', 50, '07:10', 'quesos', 56),
+(89, 'desayuno', 50, '07:10', 'lacteosDescremados', 56),
+(107, 'desayuno', 5, '07:00', 'lacteosEnteros', 54),
+(138, 'desayuno', 7, '07:10', 'lacteosEnteros', 53),
+(139, 'desayuno', 7, '07:10', 'lacteosDescremados', 53),
+(140, 'desayuno', 7, '07:10', 'quesos', 53),
+(141, 'desayuno', 789, '14:01', 'lacteosEnteros', 53),
+(142, 'desayuno', 74, '21:15', 'gaseosasJugo', 53);
 
 -- --------------------------------------------------------
 
@@ -345,13 +326,9 @@ CREATE TABLE `medicionesantropometricas` (
 --
 
 INSERT INTO `medicionesantropometricas` (`id`, `fecha`, `pesobruto`, `tallacorporal`, `tallasentado`, `biacromial`, `toraxtranverso`, `toraxantero`, `biiliocrestideo`, `humeral`, `femoral`, `cabeza`, `brazorelajado`, `brazoflexionado`, `antebrazomaximo`, `toraxmesoesternal`, `cintura`, `cadera`, `muslomax`, `muslomed`, `pantorrilla`, `triceps`, `subescapular`, `subpraespinal`, `abdominal`, `muslomed2`, `pantorrilla2`, `paciente`) VALUES
-(5, '2016-10-02', 66, 66, 66, 55, 55, 55, 55, 55, 55, 55, 55, 22, 22, 22, 22, 22, 22, 22, 22, 13, 11, 11, 11, 11, 11, 5),
-(6, '2016-10-06', 80, 175, 75, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 30, 30, 30, 30, 30, 30, 5),
-(7, '2016-10-02', 75, 66, 80, 22, 22, 22, 22, 55, 22, 44, 44, 44, 44, 22, 22, 44, 44, 44, 44, 88, 88, 88, 88, 88, 11, 5),
-(15, '2016-10-08', 78, 150, 80, 50, 50, 50, 50, 50, 50, 20, 30, 20, 20, 20, 30, 20, 20, 20, 20, 30, 33, 33, 33, 33, 33, 5),
-(16, '2016-10-08', 76, 140, 78, 50, 50, 50, 50, 50, 50, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 33, 33, 33, 33, 33, 33, 5),
-(17, '2016-11-02', 90, 180, 150, 20, 20, 20, 20, 20, 20, 30, 30, 30, 20, 20, 50, 50, 50, 50, 50, 30, 30, 30, 30, 30, 30, 5),
-(18, '2016-11-05', 85, 180, 150, 20, 20, 20, 20, 20, 20, 30, 25, 30, 20, 20, 25, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 5);
+(1, '2016-11-19', 76.5, 167.6, 89.9, 39.2, 27.5, 21.5, 26, 7.5, 10, 55.6, 34.3, 36.2, 29.4, 102.5, 80.9, 95.3, 60.2, 56.3, 35.2, 6, 10, 8, 17, 6, 5, 11),
+(2, '2016-11-17', 90, 170, 98, 38.7, 28, 19.2, 29, 7.7, 10.5, 57.6, 32.5, 35.5, 28.5, 90.5, 80.6, 99.5, 57, 52.1, 36.4, 6.5, 9, 7.5, 2, 14.5, 6, 11),
+(3, '2016-11-19', 94, 180, 150, 50, 50, 50, 52, 10, 10, 50, 30, 30, 10, 10, 10, 10, 10, 10, 10, 5, 5, 55, 10, 5, 5, 6);
 
 -- --------------------------------------------------------
 
@@ -411,11 +388,10 @@ CREATE TABLE `menu_semanal` (
 --
 
 INSERT INTO `menu_semanal` (`id`, `lunes_desayuno`, `lunes_med_maniana`, `lunes_almuerzo`, `lunes_merienda`, `lunes_cena`, `lunes_colacion`, `martes_almuerzo`, `martes_cena`, `martes_colacion`, `martes_desayuno`, `martes_med_maniana`, `martes_merienda`, `miercoles_almuerzo`, `miercoles_cena`, `miercoles_colacion`, `miercoles_desayuno`, `miercoles_med_maniana`, `miercoles_merienda`, `jueves_almuerzo`, `jueves_cena`, `jueves_colacion`, `jueves_desayuno`, `jueves_med_maniana`, `jueves_merienda`, `viernes_almuerzo`, `viernes_cena`, `viernes_colacion`, `viernes_desayuno`, `viernes_med_maniana`, `viernes_merienda`, `sabado_almuerzo`, `sabado_cena`, `sabado_colacion`, `sabado_desayuno`, `sabado_med_maniana`, `sabado_merienda`, `domingo_almuerzo`, `domingo_cena`, `domingo_colacion`, `domingo_desayuno`, `domingo_med_maniana`, `domingo_merienda`, `plan`) VALUES
-(24, 'erwerwer', 'werwe', 'rwer', 'werwe', 'werwer', 'rwer', 'werwe', 'werwer', 'ewr', 'werwe', 'rwer', 'rwer', 'erwe', 'rwerwer', 'wer', 'rwerwerw', 'rwer', 'werw', 'werw', 'werwe', 'rwer', 'erwe', 'rwer', 'erwe', 'werwe', 'wer', 'ewr', 'wer', 'wer', 'rwer', 'rwe', 'rwer', 'werwe', 'werwe', 'rwer', 'rwe', 'rwer', 'wee', 'wer', 'rwe', 'rwe', 'wer', 35),
-(25, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 36),
-(26, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 37),
-(27, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 38),
-(29, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 40);
+(43, 'pollo', 'verdura', 'papa', 'te', 'pescado', 'coliflor', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 55),
+(45, 'lunes desayuno\r\n', '  lunes media maÃ±ana', 'calabaza\r\n', '   lunes merienda\r\n', '   lunes cena\r\n', '   lunes colacion\r\n', '   martes almuer\r\n', '   marte cena\r\n', '   martes cola\r\n', '   martes desatuno\r\n', '   martes medi maÃ±an\r\n', '   martes meri\r\n', '   mier almu\r\n', '   mier cena\r\n', '   mier col\r\n', '   mier desa\r\n', '   mier media\r\n', '   mier merienda\r\n', '   ju almu\r\n', '   ju cena\r\n', '   ju cola\r\n', '   ju desa\r\n', '   ju medi\r\n', '   ju meri\r\n', '   vier almu\r\n', '   vier cena\r\n', '   vier cola\r\n', '   vier desa\r\n', '   vier medi\r\n', '   vier meri\r\n', '   sabado almu\r\n', '   saba cena\r\n', '   saba cola\r\n', '   sabado desa\r\n', '   sabado medi\r\n', '   saba meri\r\n', '   domi almu\r\n', '   domi cena\r\n', '   domi cola\r\n', '   dom almu\r\n', '   domi medi\r\n', '   domi meri\r\n', 56),
+(50, 'fsdfsdfsd\r\n', '  ', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   ravioles\r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', '   \r\n', 54),
+(57, 'milanessas con pure\r\n\r\n\r\n\r\n', '    cafe con leche', '      peras al vino\r\n\r\n\r\n', '      vino negro\r\n\r\n', '      sopa\r\n\r\n', '      hamburguesas de lenteja\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', '                ravioles           \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n', 53);
 
 -- --------------------------------------------------------
 
@@ -446,15 +422,13 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id`, `nombre`, `apellido`, `dni`, `sexo`, `direccion`, `obra`, `telefono`, `nacimiento`, `correo`, `medico`, `motivo`, `ocupacion`, `division`, `divisionseleccion`) VALUES
-(4, 'MARIA INES', 'MANGIONI', '28562487', 'masculino', 'masculino', 'IOSPER', '4243056', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'RIOS NAHUEL', '                                                                       VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ', 'DOCENTE', 28, NULL),
-(5, 'GIOVANNI', 'PETTERIN', '123486498', 'masculino', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', 'vENGO POR CONTROLA\r\n ', 'EMPLEADO', 19, NULL),
-(6, 'JULIAN', 'LANFRANCO', '30558609', 'masculino', 'SAN AGUSTIN 4554', 'OSECAC', '13432423', '05/11/1983', 'JFIODJFOIJSDF@FDFDSIJF.COM', 'SWHARTZ JORGE', 'VENGO PARA SUPERAR MIS MARCAS.- \r\n ', 'ESTUDIANTE', 26, 18),
+(4, 'MARIA INES', 'MANGIONI', '28562487', 'masculino', 'masculino', 'IOSPER', '4243056', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'RIOS NAHUEL', '                                                                            VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ', 'empleado', 28, NULL),
+(6, 'JULIAN', 'LANFRANCO', '30558609', 'femenino', 'SAN AGUSTIN 4554', 'OSECAC', '13432423', '05/11/1983', 'JFIODJFOIJSDF@FDFDSIJF.COM', 'SWHARTZ JORGE', '                              VENGO PARA SUPERAR MIS MARCAS.- \r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ', 'ESTUDIANTE', 20, NULL),
 (7, 'RIOS', 'NAHUEL', '32518745', 'masculino', 'CARBO 23', 'IOSPER', '154292724', '05/7/1986', 'BLAQUI@HOTMAIL.COM', 'BOROCOTO', ' VENGO PARA LLEGAR AL VERANO.\r\n ', 'EMPLEADO', 27, 25),
-(9, 'LEOPOLDO', 'BARRIOS', '28562489', 'masculino', 'AV SAN MARTIN 44', 'IOSPER', '154292724', '12/09/1970', 'IRIS@GMAIL.COM', 'RAITIERI PEDRO', ' veNGO POR LAS DUDAS.-\r\n ', 'DOCENTE', NULL, 18),
-(10, 'JULIAN', 'PONS', '28562488', 'masculino', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/11/1983', 'GIO@GMAIL.COM', 'RIOS NAHUEL', ' VENGO POR UNA CONTROL.-\r\n ', 'DOCENTE', 23, 25),
+(10, 'JULIAN', 'PONS', '28562488', 'masculino', 'AV LAS AMERICAS 23', 'IOSPER', '154292724', '05/11/1983', 'GIO@GMAIL.COM', 'RIOS NAHUEL', '      VENGO POR UNA CONTROL.-\r\n \r\n     ', 'DOCENTE', 23, 25),
 (11, 'GIOVANNI', 'DIAZ', '205456789', 'masculino', 'COLONIA AVELLANEDA', 'IOSPER', '1651515', '05/4/1980', 'BLAQUI@HOTMAIL.COM', 'SWHARTZ JORGE', ' VENGO POR CONTROL.-\r\n ', 'EMPLEADO', 17, 29),
 (25, 'GIOVANNI', 'DIAZ', '12', 'femenino', 'AV SAN MARTIN 44', 'UOSIMRA', '154292724', '05/4/1980', 'IRIS@GMAIL.COM', 'RIOS NAHUEL', ' \r\n fewfwef', 'EMPLEADO', 17, 24),
-(29, 'GIOVANNI', 'MANGIONI', '127', 'femenino', 'AV LAS AMERICAS 23', 'UOSIMRA', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', '      \r\n fdfsdf\r\n     ', 'EMPLEADO', 17, NULL),
+(29, 'GIOVANNI', 'MANGIONI', '127', 'femenino', 'AV LAS AMERICAS 23', 'UOSIMRA', '154292724', '05/4/1980', 'GIO@GMAIL.COM', 'RIOS NAHUEL', '      \r\n fdfsdf\r\n     ', 'EMPLEADO', 23, NULL),
 (30, 'GIOVANNI', 'PONS', '123582', 'masculino', 'AV SAN MARTIN 44', 'IOSPER', '47454849', '05/4/1980', 'IRIS@GMAIL.COM', 'RIOS NAHUEL', ' \r\n ', 'DOCENTE', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -474,11 +448,10 @@ CREATE TABLE `planes` (
 --
 
 INSERT INTO `planes` (`id`, `fecha`, `paciente`) VALUES
-(35, '2016-10-31', 5),
-(36, '2016-11-05', 5),
-(37, '2016-11-05', 5),
-(38, '2016-11-14', 6),
-(40, '2016-11-14', 6);
+(53, '2016-11-20', 6),
+(54, '2016-11-20', 6),
+(55, '2016-11-20', 6),
+(56, '2016-11-20', 6);
 
 -- --------------------------------------------------------
 
@@ -511,8 +484,7 @@ CREATE TABLE `recordatorios` (
 --
 
 INSERT INTO `recordatorios` (`id`, `fecha`, `horadespertado`, `horadesayuno`, `desayuno`, `horamediamanana`, `mediamanana`, `horaalmuerzo`, `almuerzo`, `horamerienda`, `merienda`, `horacolacion`, `colacion`, `horacena`, `cena`, `horadormido`, `paciente`) VALUES
-(24, '2016-11-05', '7', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23', 5),
-(25, '2016-11-14', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 6);
+(45, '2016-11-20', '07:10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23:10', 6);
 
 -- --------------------------------------------------------
 
@@ -532,7 +504,13 @@ CREATE TABLE `respaldos` (
 --
 
 INSERT INTO `respaldos` (`id`, `nombre`, `detalle`, `fecha`) VALUES
-(38, 'respaldo_06-11-2016-1478389210.sql', 'respaldo luego de una carga grande en el club echague.', '2016-11-06');
+(38, 'respaldo_06-11-2016-1478389210.sql', 'respaldo luego de una carga grande en el club echague.', '2016-11-06'),
+(39, 'respaldo_15-11-2016-1479226112.sql', 'probando crear respaldo-', '2016-11-15'),
+(40, 'respaldo_15-11-2016-1479226112.sql', 'probando subir un respaldo.-\r\n', '2016-11-15'),
+(41, 'respaldo_15-11-2016-1479241668.sql', 'repaldo realiado por sonia', '2016-11-15'),
+(42, 'respaldo_15-11-2016-1479241668.sql', 'subiendi rewspaldo de sonia\r\n', '2016-11-15'),
+(43, 'respaldo_19-11-2016-1479572219.sql', 'yeryerye', '2016-11-19'),
+(44, 'respaldo_19-11-2016-1479572229.sql', 'yreyeryery', '2016-11-19');
 
 -- --------------------------------------------------------
 
@@ -555,7 +533,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `ultimoacceso`, `fechaalta`, `fechamodificacion`) VALUES
-(1, 'admin', '12345678', 1, '2016-11-15', '2016-10-21', '2016-11-05');
+(1, 'admin', '12345678', 1, '2016-11-20', '2016-10-21', '2016-11-05');
 
 --
 -- Índices para tablas volcadas
@@ -667,7 +645,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `anamnesis`
 --
 ALTER TABLE `anamnesis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `clubes`
 --
@@ -687,27 +665,27 @@ ALTER TABLE `divisiones`
 -- AUTO_INCREMENT de la tabla `estudiolaboratorio`
 --
 ALTER TABLE `estudiolaboratorio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `ingesta`
 --
 ALTER TABLE `ingesta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=638;
 --
 -- AUTO_INCREMENT de la tabla `ingesta_planes`
 --
 ALTER TABLE `ingesta_planes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 --
 -- AUTO_INCREMENT de la tabla `medicionesantropometricas`
 --
 ALTER TABLE `medicionesantropometricas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `menu_semanal`
 --
 ALTER TABLE `menu_semanal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
@@ -717,17 +695,17 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT de la tabla `planes`
 --
 ALTER TABLE `planes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT de la tabla `recordatorios`
 --
 ALTER TABLE `recordatorios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT de la tabla `respaldos`
 --
 ALTER TABLE `respaldos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --

@@ -1,11 +1,21 @@
+<form  id="actualizapaciente" method="post">
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
+
 <h2>Editar Paciente</h2>
 <table class="table table-striped header-fixed" style="width: 100%;">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
-<form  id="actualizapaciente" method="post">  
+<tr style="">
+<td style="width: 100%;    float: left;" >
+ 
 
-
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 <label class="col-sm-1">Club:</label>
 
 <div id=selectorDeClubes>
@@ -74,8 +84,14 @@
 </div>
 </div>
 </div>
+</div>
 
-<br><br><br>
+<div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 <label class="col-sm-1">Seleccion:</label>
 
@@ -143,11 +159,18 @@
 </div>
 </div>
 </div>
-<br><br><br>
+</div>
 
 
 
-   
+
+   <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+
       <label class="col-sm-1">Id del Paciente:</label>
       <div class="col-sm-3">
           <input type="text" class="form-control" id="idPaciente" name="idPaciente" value="{$idPaciente}" readonly>
@@ -233,7 +256,9 @@
 <div class="form-group" align="center">
     <input type="submit" id="btnActualizarPaciente" name="btnActualizarPaciente" class="btn btn-default" value="Actualizar"/>
     <input type="button" id="btnCancelarActualizarPaciente" name="btnCancelarActualizarPaciente" class="btn btn-default" value="Cancelar" />
-</div>    
+</div>  
+</div>
+  
 
        </td>
       </tr>

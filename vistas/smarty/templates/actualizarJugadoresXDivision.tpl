@@ -7,7 +7,7 @@
 <input type="hidden" name="tipo_form" id="tipo_form" value="form_clubes">
 <br>
 
-<div class="row" style="background-color:lightgrey;
+<div class="row" style="background-color:white;
                           padding-top: 10px;
                           padding-right: 10px;
                           padding-bottom: 10px;
@@ -64,7 +64,7 @@
 </div>
 </div>
 
-<div class="row" style="background-color:lightgrey;
+<div class="row" style="background-color:white;
                           padding-top: 10px;
                           padding-right: 10px;
                           padding-bottom: 10px;

@@ -5,6 +5,7 @@
                           padding-left: 10px;
                           margin: 10px;">
   <div class="col-md-10" >
+   <h2>Listado de Pacientes</h2>
   </div>
   <div div class="col-md-2">
   <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="right"  style="cursor:pointer" height="80" width="80"/>

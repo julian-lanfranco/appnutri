@@ -1,14 +1,16 @@
 
 <div id=busqueda>
+
 <div class="row" style="background-color:white;
                           padding-top: 10px;
                           padding-right: 10px;
                           padding-bottom: 10px;
                           padding-left: 10px;
                            margin: 10px;">
+
   <label class="col-sm-2">Buscar Paciente:</label>
   <div class="col-sm-2">
-      <input type="text" class="form-control" id="pacienteNombre" name="pacienteNombre"  title="Ingrese un Paciente"  pattern="[A-Za-z]">
+  <input type="text" class="form-control" id="pacienteNombre" name="pacienteNombre"  title="Ingrese un Paciente"  pattern="[A-Za-z]">
   </div>
 
 <label class="col-sm-1">Dni:</label>
@@ -24,10 +26,9 @@
     <option  value="femenino">FEMENINO</option>
    </select>
   </div>
-
   <input type="checkbox" name="clubChk" id="clubChk" value="true" checked>Posee club?<br>
-
   </div>
+
   <div id=filtros>
   <div class="row" style="background-color:white;
                           padding-top: 10px;
@@ -80,6 +81,7 @@
 </div>
 
   <div id=resultado>
+
   <div class="row" style="background-color:white;
                           padding-top: 0px;
                           padding-right: 10px;
@@ -87,11 +89,14 @@
                           padding-left: 10px;
                           margin: 10px;">
   <div class="col-md-10" >
+   <h2>Listado de Pacientes</h2>
   </div>
+
   <div div class="col-md-2">
-  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="right"  style="cursor:pointer" height="80" width="80"/>
+  <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="right"  style="cursor:pointer" height="80" width="80" title="Nuevo Paciente"/>
   </div>
   </div>
+  
   <div class="row" style="background-color:white;
                           padding-top: 0px;
                           padding-right: 0px;

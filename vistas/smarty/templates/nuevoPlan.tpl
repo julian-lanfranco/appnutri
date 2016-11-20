@@ -1,14 +1,31 @@
 <form  id="plan" name="plan" method="post"> 
-<div class="container-fluid">
 <div class="row">
-<h6>Nueva Plan Alimentario : {$nombre} </h6>
+<div class="col-md-12">
 
-<div  class="col-md-6">
+<div class="row" style="background-color:white  ;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;"> 
+
+<a id="agregarCampo" class="btn btn-success btn-block href="#">Agregar Ingesta</a>
+</div>
+
+<div class="row">
+<div class="container">
+<div  class="col-md-5 ">
 
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:1500px">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
+<tbody style="display: block;  overflow-y: auto;    float: left; height:300px; width:100%">
+<tr style="">
+<td style="width: 500px;    overflow-y: auto; float: left;
+                            background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 
 
@@ -17,9 +34,8 @@
 <input type="hidden" class="form-control" id="idClub" name ="idclub" value="{$club}">
 <input type="hidden" class="form-control" id="idDivision" name="idDivision" value="{$division}">
 <input type="hidden" class="form-control" id="modulo" name="modulo" value="planes">
-<h4>Alimentos</h4>
-<a id="agregarCampo" class="btn btn-info" href="#">Agregar Alimento</a>
 <div id="contenedor">
+
     <div class="added">
 
       <select name="tipoDeIngesta[]" id="tipoDeIngesta[]">
@@ -54,112 +70,119 @@
       <option label="cremaMantecaMayo" value="cremaMantecaMayo">CREMA/MANTE</option>
       </select>
         <input type="text" name="cantidad[]" id="cantidad[]" placeholder="gramos" size="2" />
-         <input type="text" name="hora[]" id="hora[]" placeholder="hora" size="2" />
-        <a href="#" class="eliminar">&times;</a></div></div></td></tr></tbody></table>    
-<br>
-<button id="btnCrearPlan">Crear</button>
-<button id="btnCancelarCrearRecordatorio24" >Cancelar</button>
+         <input type="time" name="hora[]" id="hora[]" placeholder="hora" size="2" />
+        <a href="#" class="eliminar">&times;</a>
+        </div>
+        </div>
+        </td>
+        </tr>
+        </tbody>
+        </table>    
+
+
 </div>
-<div  class="col-md-6">
+
+
+<div  class="col-md-5 col-md-offset-1">
 <div id="graficaRecordatorio">
-<img src="/appnutri/img/fondoBlanco.jpg"/>
+<img src="/appnutri/img/fondoBlanco.jpg" align="right"  style="cursor:pointer" height="300" width="100%" title="Nuevo Paciente"/>
 </div>
 </div>
 </div>
-<div class="row">
+</div>
+
+ <div class="row" style="background-color:lavender;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 <div class="col-md-12">
-<table class="table table-striped header-fixed" style="width: 100%;">
-      <tr style="">
-        <th style="width: 14%;
-    float: left;">#</th>
-        <th style="width: 14%;
-    float: left;">Desayuno</th>
-        <th style="width: 14%;
-    float: left;">Med. Mañana</th>
-            <th style="width: 14%;
-    float: left;">Almuerzo</th>
-        <th style="width: 14%;
-    float: left;">Merienda</th>
-        <th style="width: 14%;
-    float: left;">Colacion</th>
-        <th style="width: 14%;
-    float: left;">Cena</th>
-      </tr>
+   <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#lunes">Lunes</a></li>
+    <li><a data-toggle="tab" href="#martes">Martes</a></li>
+    <li><a data-toggle="tab" href="#miercoles">Miercoles</a></li>
+    <li><a data-toggle="tab" href="#jueves">Jueves</a></li>
+    <li><a data-toggle="tab" href="#viernes">Viernes</a></li>
+    <li><a data-toggle="tab" href="#sabado">Sabado</a></li>
+    <li><a data-toggle="tab" href="#domingo">Domingo</a></li>
+  </ul>
 
-    <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
+  <div class="tab-content">
+    <div id="lunes" class="tab-pane fade in active">
+<textarea name="lunes_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="lunes_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="lunes_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="lunes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="lunes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="lunes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
+    </div>
 
-      <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Lunes </td>
-        <td style="width: 14%;    float: left;" ><textarea name="lunes_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="lunes_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="lunes_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="lunes_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="lunes_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="lunes_cena" rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-
-        <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Martes </td>
-        <td style="width: 14%;    float: left;" ><textarea name="martes_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="martes_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="martes_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="martes_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="martes_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="martes_cena" rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-        <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Miercoles </td>
-        <td style="width: 14%;    float: left;" ><textarea name="miercoles_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="miercoles_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="miercoles_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="miercoles_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="miercoles_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="miercoles_cena" rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-      <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Jueves </td>
-        <td style="width: 14%;    float: left;" ><textarea name="jueves_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="jueves_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="jueves_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="jueves_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="jueves_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="jueves_cena" rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-
-        <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Viernes </td>
-        <td style="width: 14%;    float: left;" ><textarea name="viernes_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="viernes_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="viernes_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="viernes_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="viernes_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="viernes_cena" rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-        <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Sabado </td>
-        <td style="width: 14%;    float: left;" ><textarea name="sabado_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="sabado_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="sabado_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="sabado_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="sabado_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="sabado_cena"  rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-        <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 14%;    float: left;" >Domingo </td>
-        <td style="width: 14%;    float: left;" ><textarea name="domingo_desayuno" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="domingo_med_maniana" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="domingo_almuerzo" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="domingo_merienda" rows="2" cols="18" style="resize:none;"></textarea> </td>
-        <td style="width: 14%;    float: left;" ><textarea name="domingo_colacion" rows="2" cols="18" style="resize:none;"></textarea></td>
-        <td style="width: 14%;    float: left;"><textarea name="domingo_cena" rows="2" cols="18" style="resize:none;"></textarea> </td>
-      </tr>
-
-    </tbody>  
-  </table>
-
-     
+    <div id="martes" class="tab-pane fade">
+<textarea name="martes_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="martes_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="martes_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="martes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="martes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="martes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
+    </div>
+    <div id="miercoles" class="tab-pane fade">
+<textarea name="miercoles_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="miercoles_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="miercoles_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="miercoles_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="miercoles_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="miercoles_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
+    </div>
+    <div id="jueves" class="tab-pane fade">
+<textarea name="jueves_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="jueves_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="jueves_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="jueves_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="jueves_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="jueves_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
+    </div>
+    <div id="viernes" class="tab-pane fade">
+<textarea name="viernes_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="viernes_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="viernes_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="viernes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="viernes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="viernes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
+    </div>
+    <div id="sabado" class="tab-pane fade">
+<textarea name="sabado_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="sabado_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="sabado_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="sabado_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="sabado_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="sabado_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
+    </div>
+    <div id="domingo" class="tab-pane fade">
+<textarea name="domingo_desayuno" placeholder="desayuno" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="domingo_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="domingo_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="domingo_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="domingo_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="domingo_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
   </div>
+  </div>
+  </div>
+
+<div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;"> 
+<div class="col-md-6">
+<button id="btnCrearPlan" class="btn  btn-warning btn-block">Crear</button>
+</div>
+<div class="col-md-6">
+<button id="btnCancelarCrearRecordatorio24" class="btn  btn-danger btn-block">Cancelar</button>
+</div>
+</div>
 </div>
  </form>
 <script type="text/javascript" src="js/funcionesModuloPlanesDinamico.js"></script>

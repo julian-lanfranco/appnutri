@@ -1,41 +1,64 @@
-  <h2>Listado de Mediciones Antropometricas</h2>
-
-  
-  <div style="text-align: center">
-  <img name="{$paciente}" id="imgMostrarNuevoMedAntro"  src="img/nuevo.png" align="CENTER"  style="cursor:pointer"/>
-  <img name="{$paciente}" id="imgMostrarGraficaEvolutiva"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer"/>
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-10" >
+   <h2>Listado de Mediciones Antro.</h2>
   </div>
+
+  <div div class="col-md-2">
+
+
+  <img name="{$paciente}" id="imgMostrarNuevoMedAntro"  src="img/nuevaAnamnesis.png" align="CENTER"  style="cursor:pointer" height="60" width="60"/>
+
+  <img name="{$paciente}" id="imgMostrarGraficaEvolutiva"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer" height="60" width="60"/>
+
+  </div>
+
+  </div>
+
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 0px;
+                          padding-bottom: 0px;
+                          padding-left: 00px;
+                          margin: 10px;">
+
   <table class="table table-striped header-fixed" style="width: 100%;">
       <tr style="">
         <th style="width: 12%;
-    float: left;">Fecha de alta</th>
+    float: left;text-align: center;">Fecha de alta</th>
         <th style="width: 12%;
-    float: left;">Peso Bruto</th>
+    float: left;text-align: center;">Peso Bruto</th>
         <th style="width: 12%;
-    float: left;">Talla Corporal</th>
+    float: left;text-align: center;">Talla Corporal</th>
         <th style="width: 12%;
-    float: left;">Talla Sentado</th>
-        <th style="width: 48%; float: left;">Accion</th>
+    float: left;text-align: center;">Talla Sentado</th>
+        <th style="width: 48%; float: left;text-align: center;">Accion</th>
       </tr>
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
       {foreach from=$mediciones item=medi}
       <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 12%;    float: left;" > {$medi->fecha|date_format:" %d/%m/%y"}    </td>
-        <td style="width: 12%;    float: left;" > {$medi->pesobruto}    </td>
-        <td style="width: 12%;    float: left;" > {$medi->tallacorporal}    </td>
-        <td style="width: 12%;    float: left;" > {$medi->tallasentado}    </td>
-        <td style="width: 48%;    float: left;"><img name="{$medi->id}" id="imgMostarActualizarMedicionAntro" src="img/consultar.png" align="JUSTIFY" style="cursor:pointer">
-            <img name="{$medi->id}" id="imgMostrarGraficaSomatocarta"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer"/>
-            <img name="{$medi->id}" id="imgMostrarEliminarMedicionesAntro"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer"/>
+        <td style="width: 12%;    float: left;text-align: center;" > {$medi->fecha|date_format:" %d/%m/%y"}    </td>
+        <td style="width: 12%;    float: left;text-align: center;" > {$medi->pesobruto}    </td>
+        <td style="width: 12%;    float: left;text-align: center;" > {$medi->tallacorporal}    </td>
+        <td style="width: 12%;    float: left;text-align: center;" > {$medi->tallasentado}    </td>
+        <td style="width: 48%;    float: left;text-align: center;">
+
+        <img name="{$medi->id}" id="imgMostarActualizarMedicionAntro" src="img/consultar.png" align="JUSTIFY" style="cursor:pointer" height="30" width="30"/>
+        <img name="{$medi->id}" id="imgMostrarGraficaSomatocarta"  src="img/estadistica.png" align="JUSTIFY" style="cursor:pointer" height="30" width="30"/>
+        <img name="{$medi->id}" id="imgMostrarEliminarMedicionesAntro"  src="img/eliminar.png" align="JUSTIFY" style="cursor:pointer" height="30" width="30"/>
             
   
-            
-
         </td>
       </tr>
       {/foreach}
     </tbody>  
   </table>
+  </div>
+
 
 
 

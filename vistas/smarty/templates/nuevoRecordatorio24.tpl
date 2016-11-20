@@ -1,21 +1,38 @@
-<div class="container-fluid">
-<div class="row">
-<h6>Nuevo Recordatorio 24hrs. : {$nombre} </h6>
-<div  class="col-md-6">
-<table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:1500px">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
-
-
 <form  id="recordatorio" method="post"> 
 
-Hora Despertado:
-<input type="text"  id="horadespertado"  name="horadespertado" required>
-<br><br>
-Hora Acostado    :
-<input type="text"  id="horadormido" name="horadormido" required>
-<br>
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
+
+<div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;"> 
+<div class="col-md-6">
+Hora Despertado
+<input type="time"  id="horadespertado"  name="horadespertado" required>
+</div>
+<div class="col-md-6">
+Hora Acostado    
+<input type="time"  id="horadormido" name="horadormido" required>
+</div>
+</div>
+
+<div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;"> 
+<a id="agregarCampo" class="btn btn-success btn-block href="#">Agregar Ingesta</a>
+</div>
+
+<div class="row">
+<div class="container-fluid">
+<div  class="col-md-6">
+
 
 
 <input type="hidden" class="form-control" id="paciente" name="paciente" value="{$idPaciente}">
@@ -29,16 +46,27 @@ Hora Acostado    :
 -->
 
 
-<h4>Alimentos<h4>
-<a id="agregarCampo" class="btn btn-info" href="#">Agregar Alimento</a>
+
+
+<table class="table table-striped header-fixed" style="width: 100%;">
+<tbody style="display: block;  overflow-y: auto;    float: left; height:300px; width:100%">
+<tr style="">
+<td style="width: 500px;    overflow-y: auto; float: left;
+                            background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 <div id="contenedor">
+
     <div class="added">
 
       <select name="tipoDeIngesta[]" id="tipoDeIngesta[]">
       <option label="desayuno" value="desayuno">DESAYUNO</option>
-    <option label="mediaManiana" value="almuerzo">MEDIA MAÑANA</option>
+    <option label="mediaManiana" value="mediaManiana">MEDIA MAÑANA</option>
       <option label="almuerzo" value="almuerzo">ALMUERZO</option>
-      <option label="merienda" value="cena">MERIENDA</option>
+      <option label="merienda" value="merienda">MERIENDA</option>
   <option label="colacion" value="colacion">COLACION</option>
   <option label="cena" value="cena">CENA</option>
 
@@ -70,8 +98,8 @@ Hora Acostado    :
 
       </select>
 
-        <input type="text" name="cantidad[]" id="cantidad[]" placeholder="gramos" size="2" />
-         <input type="text" name="hora[]" id="hora[]" placeholder="hora" size="2" />
+        <input type="text" name="cantidad[]" id="cantidad[]" placeholder="gramos" size="2" required />
+         <input type="time" name="hora[]" id="hora[]" placeholder="hora" size="2" required/>
         <a href="#" class="eliminar">&times;</a>
 
     </div>
@@ -82,21 +110,27 @@ Hora Acostado    :
       </tr>
    </tbody>  
   </table>    
-
-
-
+</div>
      </form>
 
    <script type="text/javascript" src="js/funcionesRecordatorioDinamico.js"></script>
-   </div>
-<div  class="col-md-6">
+<div  class="col-md-5 col-md-offset-1">
 <div id="graficaRecordatorio">
-<img src="/appnutri/img/fondoBlanco.jpg"/>
-</div>
-  </div>
-
+<img src="/appnutri/img/fondoBlanco.jpg" align="right"  style="cursor:pointer" height="300px" width="100%" title="Nuevo Paciente"/>
 </div>
 </div>
-      <button id="btnCreaRecordatorio24"  type="submit" >Crear</button>
-
-      <button id="btnCancelarCrearRecordatorio24" >Cancelar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6" >
+      <button id="btnCreaRecordatorio24"  type="submit" class="btn  btn-warning btn-block" >Crear</button>
+</div>
+<div class="col-md-6">
+      <button id="btnCancelarCrearRecordatorio24" class="btn  btn-danger btn-block" >Cancelar</button>
+</div>
+</div>
+</div>
+</div>

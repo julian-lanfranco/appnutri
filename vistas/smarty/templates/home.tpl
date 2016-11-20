@@ -27,7 +27,7 @@
 
   <div class="panel-group" id="accordion">
 
-      <div class="panel panel-default" style="background-color:lavender;">
+      <div class="panel panel-default" style="background-color:white;">
          <div class="panel-heading">
              <a data-toggle="collapse" data-parent="#accordion" href="#collapse8"><h4>Bienvenido: {$usuario}</h4></a>
          </div>

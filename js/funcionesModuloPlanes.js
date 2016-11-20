@@ -35,3 +35,23 @@ $("#central").on("click", "#imgMostrarNuevoPlan", function(){
         
         });
 
+
+        $("#central").on("click", "#imgMostrarConsultarPlan", function(){
+        plan = $(this).attr('name');
+         var idPaciente=$("#idPaciente").val();
+        
+        
+                 $.ajax({
+                               
+                            type: "GET",
+                                url: "http://"+ambito+"/appnutri/?modulo=planes",
+                                data: "accion=mostrarActualizarPlan&idPaciente="+idPaciente+"&idPlan="+plan,
+                                success: function(a) {
+                                                    $('#central').html(a); 
+                                                        }
+
+                            });
+        
+        });
+
+

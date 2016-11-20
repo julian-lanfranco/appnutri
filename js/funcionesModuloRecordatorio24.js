@@ -318,12 +318,6 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
 
         }); 
 
-        $("#central").on("click", "#btnCrearPlan", function(){
-        
-
-            $("#recordatorio").submit();
-
-        }); 
 
 
 

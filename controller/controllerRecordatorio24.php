@@ -84,14 +84,18 @@ class controllerRecordatorio24 {
     if (isset($this->request['idRecordatorio']))
     {
     $rec->load("id=".$this->request['idRecordatorio']);
+    $db = getConexion();
+    $db->Execute("DELETE FROM ingesta WHERE recordatorio='".$rec->id."'");
+
     }
     
     $rec->fecha=date('Y-m-d');
     $rec->horadespertado=$this->request['horadespertado'];
     $rec->horadormido=$this->request['horadormido'];
     $rec->paciente=$this->request['paciente'];
-    $rec->save();
 
+    if ($rec->save()) {}
+      else {echo $rec->ErrorMsg();}
 
     $c=0;
     $hdc=0;
@@ -116,7 +120,9 @@ class controllerRecordatorio24 {
 
       $ingesta->recordatorio=$rec->id;
 
-      $ingesta->save();      
+  
+      $ok=$ingesta->save(); 
+     
 
       $c++;
       }
@@ -293,7 +299,8 @@ class controllerRecordatorio24 {
        //ACCESO A DATOS
     $rec = new Recordatorio24('recordatorios');
     $rec->load("id=".$this->request['idRecordatorio']);
-
+    $horaDespertado=$rec->horadespertado;
+    $horaDormido=$rec->horadormido;
 
     $ingesta = new Ingesta('ingesta');
     $ingestaArray = $ingesta->Find("recordatorio ='".$idRecordatorio."' order by id");
@@ -304,6 +311,143 @@ class controllerRecordatorio24 {
     $paciente = new Paciente('pacientes');
     $paciente->load("id=".$idPaciente);
 
+
+
+    ///////calculo de totales para la grafica
+    $ing = new Ingesta('ingesta');
+    $c=0;
+    $hdc=0;
+    $lipidos=0;
+    $prote=0;
+
+    $acuHdc=0;
+    $acuLipidos=0;
+    $acuProteinas=0;
+
+     
+
+    foreach ($ingestaArray as $tipo) {
+   
+
+      $ing->alimento = $tipo->alimento;
+      $ing->cantidad = $tipo->cantidad;
+
+
+              if ($ing->alimento=="lacteosEnteros") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*.05;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*.03; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*.03;                        
+                                          }
+              if ($ing->alimento=="lacteosDescremados") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*.05  ;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*.03; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0.005;                        
+                                          }  
+              if ($ing->alimento=="quesos") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*.25; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*.25;                        
+                                          }
+              if ($ing->alimento=="huevos") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*0;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*.12; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*.12;                        
+                                          }
+              if ($ing->alimento=="carneGrasa") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*0.20; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0.20;                        
+                                          }  
+              if ($ing->alimento=="carneMagra") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.20; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*0.10;                        
+                                          }
+              if ($ing->alimento=="vegetalesA") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*.05;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.05; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }
+              if ($ing->alimento=="vegetalesB") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.10;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*0.01; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }  
+              if ($ing->alimento=="vegetalesC") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.20;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.02; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*0;                        
+                                          }
+              if ($ing->alimento=="frutas") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*0.15;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.0075; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }
+              if ($ing->alimento=="frutasSecas") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.40;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*0.18; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0.57;                        
+                                          }  
+              if ($ing->alimento=="granosCereales") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.775;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.075; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*0;                        
+                                          }
+              if ($ing->alimento=="legumbres") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*0.50;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.20; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }
+              if ($ing->alimento=="panSinGrasa") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.60;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*0.10; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }  
+              if ($ing->alimento=="pangalle") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.65;
+                                           $acuLipidos=$acuLipidos+$ing->cantidad*0.10; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*0.8;                        
+                                          }
+              if ($ing->alimento=="carboGrasa") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*0.75;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.10; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0.11;                        
+                                          }
+              if ($ing->alimento=="azucar") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*1;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*0; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }  
+              if ($ing->alimento=="dulcesMielMermelada") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.70;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.03; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*0.02;                        
+                                          }
+              if ($ing->alimento=="gaseosasJugo") {
+                                            $acuHdc= $acuHdc+$ing->cantidad*0.10;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*0;                        
+                                          }
+              if ($ing->alimento=="aceite") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0;
+                                            $acuLipidos=$acuLipidos+$ing->cantidad*0; 
+                                            $acuProteinas= $acuProteinas+$ing->cantidad*1;                        
+                                          }  
+              if ($ing->alimento=="cremaMantecaMayo") {
+                                            $acuHdc=$acuHdc+$ing->cantidad*0.01;
+                                            $acuLipidos= $acuLipidos+$ing->cantidad*0.01; 
+                                            $acuProteinas=$acuProteinas+$ing->cantidad*0.60;                        
+                                          }
+      $c++;
+
+    }
+
+    $acuHdc=$acuHdc*4;
+    $acuProteinas=$acuProteinas*4;
+    $acuLipidos=$acuLipidos*7;
+    $total=$acuLipidos+$acuProteinas+$acuHdc;
+    ///////fin de calculo de totales
+
      //PRESENTACION
     $smarty = new Smarty;
 
@@ -312,11 +456,24 @@ class controllerRecordatorio24 {
     $smarty->config_dir = 'vistas/smarty/configs/';
     $smarty->cache_dir = 'vistas/smarty/cache/';
 
+
+
+    $smarty->assign('idRecordatorio',$rec->id);
+    $smarty->assign('idPaciente',$rec->paciente);
+
+    $smarty->assign('acuHdc',$acuHdc);
+    $smarty->assign('acuProteinas',$acuProteinas);
+    $smarty->assign('acuLipidos',$acuLipidos);
+    $smarty->assign('total',$total);
+
+    $smarty->assign('horaDespertado',$horaDespertado);
+    $smarty->assign('horaDormido',$horaDormido);
+
     $smarty->assign('nombre',$paciente->nombre);
     $smarty->assign('rec',$rec);
     $smarty->assign('ingestas',$ingestaArray);
 
-    $smarty->display('consultarRecordatorio24.tpl');
+    $smarty->display('actualizarRecordatorio24.tpl');
    }
 
 // actualizarRecordatorio 
@@ -563,7 +720,7 @@ public function traerGraficaRecordatorio(){
     $total=$acuLipidos+$acuProteinas+$acuHdc;
 
 
- return "<img src='http://localhost/appnutri/graficas/pagina-que-genera-la-grafica.php?hdc=".$acuHdc."&proteinas=".$acuProteinas."&lipidos=".$acuLipidos."&ktotales=".$total."'>";
+ return "<img src='http://localhost/appnutri/graficas/pagina-que-genera-la-grafica.php?hdc=".$acuHdc."&proteinas=".$acuProteinas."&lipidos=".$acuLipidos."&ktotales=".$total."' align='right'  style='cursor:pointer' height='300px' width='100%'>";
 
 }
 

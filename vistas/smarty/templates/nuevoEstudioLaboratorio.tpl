@@ -1,19 +1,27 @@
 <form  id="estudiolaboratorio" method="post">
-<h2>Nueva Estudio Laboratorio: {$nombre} {$idPaciente}</h2>
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
 
-<table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 300px; width:100%">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
+<h4>Nueva Estudio Laboratorio: {$nombre} {$idPaciente}</h4>
+
+<table class="table table-striped header-fixed">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 450px; ">
+<tr style="">
+<td style="width: 100%; float: left;" >
 
 <input type="hidden" class="form-control" id="idPaciente" name="idPaciente" value="{$idPaciente}">
 <input type="hidden" class="form-control" id="nombre" name="nombre" value="{$nombre}">
 <input type="hidden" class="form-control" id="idClub" name="idClub" value="{$club}">
 <input type="hidden" class="form-control" id="idDivision" name="idDivision" value="{$division}">
 
-
-<h3> Analisis de Sangre</h3><br>
-<h4> Hemograma</h4><br>
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+<h4> Hemograma</h4>
 <label class="col-sm-2">Globulos rojos:</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="globulosrojos" name="globulosrojos" value="" required title="F(3.800.000-5.200.000) M(4.400.000-5.900.000) u/lts">
@@ -59,7 +67,15 @@
     <input type="text" class="form-control" id="hbcm" name="hbcm" value="" title="Concentracion de HBCM (32-36) grs/dl">
 </div>
 
-<br><br><br>
+
+</div>
+
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 <h4> Formula Leucocitaria</h4><br>
 <label class="col-sm-2">Neutrofilos encayados:</label>
@@ -173,8 +189,14 @@
 <div class="col-sm-2">
     <input type="text" class="form-control" id="hergometria" name="hergometria" value="" title="HERGOMETRIA">
 </div>
+</div>
 
-<br><br><br>
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 <h4> DATOS CARDIOLOGICOS</h4><br>
 
@@ -227,26 +249,36 @@
     <input type="text" class="form-control" id="testdetenido" name="testdetenido" value="" title="TEST DETENIDO POR: (FIN DE PROTOCOLO-CANSANCIO, ETC)">
 </div>
 
-<br><br><br>
+</div>
+
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 
-<label class="col-sm-2">CONCLUSION:</label>
-<div class="col-sm-2">
+<label class="col-md-12">CONCLUSION:</label>
+<div class="col-md-12">
     <input type="text" class="form-control" id="conclusion" name="conclusion" value="" title="CONCLUSION">
 </div>
 
-
-<br><br><br>
-<br><br>
-<div class="form-group" align="center">
-    
-    <input type="submit" id="btnCrearEstudioLaboratorio" name="btnCrearEstudioLaboratorio" class="btn btn-default" value="Crear" />
-    <input  type="button" id="btnCancelarCrearEstudioLaboratorio" name="btnCancelarCrearEstudioLaboratorio" class="btn btn-default" value="Cancelar" />
 </div>
 
          </td>
       </tr>
    </tbody>  
   </table> 
+
+<div class="form-group" align="center">
+    
+    <input type="submit" id="btnCrearEstudioLaboratorio" name="btnCrearEstudioLaboratorio" class="btn btn-default" value="Crear" />
+    <input  type="button" id="btnCancelarCrearEstudioLaboratorio" name="btnCancelarCrearEstudioLaboratorio" class="btn btn-default" value="Cancelar" />
+</div>
+</div>
+</div>
+</div>
+
 </form>
 <script type="text/javascript" src="js/estudiosLaboratorio/funcionesAltaEstudiosLaboratorioDinamico.js"></script>

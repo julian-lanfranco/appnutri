@@ -62,7 +62,7 @@ $(document).ready(function() {
 
                                 
                                 '<input type="text" name="cantidad[]" id="cantidad[]" placeholder="gramos" size="2"  />'+
-                                '<input type="text" name="hora[]" id="hora[]" placeholder="hora" size="2"/>'+
+                                '<input type="time" name="hora[]" id="hora[]" placeholder="hora" size="2"/>'+
                                 '<a href="#" class="eliminar">&times;</a>'+
                                 '</div>');
             x++; //text box increment
@@ -72,6 +72,7 @@ $(document).ready(function() {
 
 
         }
+        else {alert("Numero de maximo de Ingestas alcanzado!")}
 
         return false;
     });

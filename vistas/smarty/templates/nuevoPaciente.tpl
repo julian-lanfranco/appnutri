@@ -6,8 +6,8 @@
 <h4>Nuevo Paciente</h4>
 <table class="table table-striped header-fixed" style="width: 100%;">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; width:100%">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
+<tr style="">
+<td style="width: 100%;    float: left;" >
           
  
  

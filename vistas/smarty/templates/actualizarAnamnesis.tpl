@@ -1,17 +1,30 @@
 <form  id="actualizaanamnesi" method="post">
-<div class="col-sm-10 " style="background-color:lavender;">
-<h2>Actualizar Anamnesis Paciente:</h2> 
-<h3>{$nombre} Fecha: {$anam->fecha|date_format:" %d/%m/%y"}</h3>
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
 
-<table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 300px;">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
 
 <input type="hidden" class="form-control" id="idPaciente" name="idPaciente" value="{$anam->paciente}">
 <input type="hidden" class="form-control" id="nombre" name="nombre" value="{$nombre}">
 <input type="hidden" class="form-control" id="idAnamnesis" name="idAnamnesis" value="{$anam->id}">
 
+<h4>Actualizar Anamnesis Paciente:</h4> 
+<h4>{$nombre} Fecha: {$anam->fecha|date_format:" %d/%m/%y"}</h4>
+
+<table class="table table-striped header-fixed">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">
+<tr style="">
+<td style="width: 100%; float: left;" >
+ 
+
+
+
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 <h3> Antecedentes Familiares</h3>
 
@@ -72,9 +85,15 @@
 <div  class="col-sm-3">
 <input type="text" class="form-control" id="otras" name="otras" value="{$anam->otras}" required pattern="^[a-zA-Z-\s]+" title="Ingrese otro antecedente. Solo letras">
 </div>
+</div>
 
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
-<br><br><br>
 <h3> Antecedentes Personales</h3>
 
 <label class="col-sm-4">Padece Enfermedad Diagnosticada:</label>
@@ -258,6 +277,14 @@
 </div>
 
 <br><br><br>
+</div>
+
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
 <h3>Habitos Alimentarios</h3>
 <br>
@@ -430,6 +457,7 @@
     {/if}
 </select>
 </div>
+</div>
 
 </td>
 </tr>
@@ -443,7 +471,8 @@
 </div>
 
 </div>
-
+</div>
+</div>
 </form>
 <script type="text/javascript" src="js/anamnesis/funcionesModAnamnesisDinamico.js"></script>
 

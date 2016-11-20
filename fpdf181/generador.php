@@ -217,7 +217,7 @@ $pdf->Output();
 
 
 }
-public function imprimirRecordatorio24($rec){
+public function imprimirGraficaPieRecordatorio($rec){
 
 $pdf = new FPDF();
 

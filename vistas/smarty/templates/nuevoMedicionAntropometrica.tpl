@@ -1,12 +1,17 @@
 <form  id="medicionantropometrica" method="post">
-<h2>Medicion Antropometrica:</h2><br>
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
+<div class="row">
+<h4>Medicion Antropometrica:</h4>
 <h4 class="col-sm-4">Nueva:</h4>
 <h4 class="col-sm-4">Ultima: {$medicion1->fecha|date_format:" %d/%m/%y"}</h4>
 <h4 class="col-sm-4">Penultima: {$medicion2->fecha|date_format:" %d/%m/%y"}</h4>
+</div>
 
 
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 300px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 450px; width:100%">
      <tr style="">
       <td style="width: 100%;    float: left;" >
 
@@ -19,8 +24,14 @@
 
 
 
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
-<h3>Datos Basicos</h3><br>
+<h3>Datos Basicos</h3>
 <label class="col-sm-2">Peso Brutos:</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="pesobruto" name="pesobruto" value="" required pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese el peso en kgs.">
@@ -48,10 +59,8 @@
 <div class="col-sm-2">
     <input type="text" class="form-control" id="tallacorporal2"  name="tallacorporal2" value="{$medicion2->tallacorporal}" disabled pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese la talla corporal en cms.">
 </div>
-
-
-
 <br><br><br>
+
 <label class="col-sm-2">Talla Sentado:</label>
 <div class="col-sm-2">
 <input type="text" class="form-control" id="tallasentado" name="tallasentado" value="" required pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese la talla sentado en cms.">
@@ -64,8 +73,16 @@
 <div class="col-sm-2">
     <input type="text" class="form-control" id="tallasentado2" name="tallasentado2" value="{$medicion2->tallasentado}" disabled  pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese la talla sentado en cms.">
 </div>
-<br><br><br>
-<h3>Diametros</h3><br>
+</div>
+
+
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+<h3>Diametros</h3>
 
 <label class="col-sm-2">Biacromial:</label>
 <div class="col-sm-2">
@@ -148,8 +165,15 @@
 <div class="col-sm-2">
     <input type="text" class="form-control" id="femoral2" name="femoral2" value="{$medicion2->femoral}" disabled pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese el diametro femoral (biepicodilar) en cms.">
 </div>
-<br><br><br><br>
-<h3>Perimetros</h3><br>
+</div>
+
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+<h3>Perimetros</h3>
 <label class="col-sm-2">Cabeza:</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="cabeza" name="cabeza" value="{$medicion1->cabeza}" required pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese el perimetro de la cabeza cms.">
@@ -280,11 +304,15 @@
 <div class="col-sm-2">
     <input type="text" class="form-control" id="pantorrilla22" name="pantorrilla22" value="{$medicion2->pantorrilla}" disabled pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese perimetro de la pantorrilla maxima en cms.">
 </div>
+</div>
 
-
-
-<br><br><br><br>
-<h3>Pliegues Cutaneos (mm)</h3><br>
+ <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+<h3>Pliegues Cutaneos (mm)</h3>
 <label class="col-sm-2">Triceps:</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="triceps" name="triceps" value="" required pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese el pliegue de triceps en cms.">
@@ -364,6 +392,7 @@
 <div class="col-sm-2">
     <input type="text" class="form-control" id="pantorrilla22" name="pantorrilla22" value="{$medicion2->pantorrilla2}" disabled pattern="^[0-9]+([.][0-9]+)?$" title="Ingrese el pliegue pantorrilla maximo en cms.">
 </div>
+</div>
 
 </td>
 </tr>
@@ -376,11 +405,9 @@
     <input type="submit" id="btnCrearMedicionAntropometricas" name="btnCrearMedicionAntropometricas" class="btn btn-default" value="Crear" />
     <input  type="button" id="btnCancelarCrearMedicionAntropometricas" name="btnCancelarCrearMedicionAntropometricas" class="btn btn-default" value="Cancelar" />
 </div>
-
-         </td>
-      </tr>
-   </tbody>  
-  </table> 
+</div>
+</div>
+</div>
 </form>
 <script type="text/javascript" src="js/medicionesAntropometricas/funcionesAltaMedicionesAntroDinamico.js"></script>
 

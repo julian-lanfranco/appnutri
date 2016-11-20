@@ -7,20 +7,22 @@
 
 <table class="table table-striped header-fixed">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">
-     <tr style="">
-      <td style="width: 100%;    float: left;" >
+<tr style="">
+<td style="width: 100%; float: left;" >
  
     
 <input type="hidden" class="form-control" id="idPaciente"  name="idPaciente" value="{$idPaciente}">
 <input type="hidden" class="form-control" id="nombre"      name="nombre"     value="{$nombre}">
 <input type="hidden" class="form-control" id="idClub"      name="idClub"     value="{$club}">
 <input type="hidden" class="form-control" id="idDivision"  name="idDivision" value="{$division}">
+
  <div class="row" style="background-color:lightgrey;
                           padding-top: 0px;
                           padding-right: 10px;
                           padding-bottom: 0px;
                           padding-left: 10px;
                           margin: 10px;">
+                          
 <h3> Antecedentes Familiares</h3>
 
 <label class="col-sm-2">Obesidad: </label>
