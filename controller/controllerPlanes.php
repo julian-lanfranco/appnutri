@@ -675,6 +675,16 @@ class controllerPlanes {
     $repo->imprimirClub($club);
    }
 
+   public function imprimirPlan($idPaciente,$idPlan)
+   {
+
+       //ACCESO A DATOS
+
+    
+    $repo = new Reportes();
+
+    $repo->imprimirPlan($idPaciente,$idPlan);
+   }
 
 // router
  public function router(){
@@ -740,7 +750,13 @@ if (isset($_REQUEST['modulo']))
                           $this->mostrarTablaPlanes($idPaciente);
                                 break;
                                 }                           
-                          
+   
+case 'imprimirPlan': {
+
+                          $this->imprimirPlan($_REQUEST['idPaciente'],$_REQUEST['idPlan']);
+                                break;
+                                }        
+
     case 'btnActualizarClub': {
                                 $clubAct = new Club('clubes');
                                 $clubAct->id=$this->request['idClub'];

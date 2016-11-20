@@ -35,7 +35,7 @@
         <td style="width: 50%;    float: left;text-align: center" > {$plan->fecha|date_format:" %d/%m/%y"}    </td>
         <td style="width: 50%;    float: left;text-align: center">
             <img name="{$plan->id}" id="imgMostrarConsultarPlan"  src="img/consultar.png" align="center" style="cursor:pointer" height="30" width="30"/>
-            <img name="{$plan->id}" id="imgMostrarEstadisticaPlan"  src="img/estadistica.png" align="center" style="cursor:pointer" height="30" width="30"/>
+            <img name="{$plan->id}" id="imgImprimirPlan"  src="img/pdf.png" align="center" style="cursor:pointer" height="30" width="30"/>
             <img name="{$plan->id}" id="imgMostrarEliminarPlan"  src="img/eliminar.png" align="center" style="cursor:pointer" height="30" width="30"/>
         </td>
       </tr>

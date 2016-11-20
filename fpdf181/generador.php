@@ -1,11 +1,12 @@
 <?php
 require_once('fpdf.php');
-
 require_once ('graficas/jpgraph/src/jpgraph.php');
 require_once ('graficas/jpgraph/src/jpgraph_line.php');
 require_once ('graficas/jpgraph/src/jpgraph_scatter.php');
 require_once ("graficas/jpgraph/src/jpgraph_pie.php");
 require_once('modelos/medicionesAntropometricas.php');
+require_once('modelos/plan.php');
+require_once('modelos/menu_semanal.php');
 require_once('modelos/conexion.php');
 
 
@@ -380,7 +381,272 @@ $pdf->Output();
 
 }
 
+function imprimirPlan($idPaciente,$idPlan){
 
+    $paciente = new Paciente('pacientes');
+    $paciente->load("id=".$idPaciente);
+
+
+    $menu_semanal = new MenuSemanal('menu_semanal');
+
+    $menu_semanal->load("plan=".$idPlan);
+  // Display the graph
+
+$pdf = new FPDF();
+
+$pdf=new FPDF('P','mm','A4');
+
+$ambito='localhost';
+
+$pdf->AddPage();
+
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Image('img/logonutri.png',120,5,70);
+
+$pdf->SetFont('Arial','B',12);
+
+$pdf->Text(10,25,"Lunes");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,30,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,30,$menu_semanal->lunes_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,35,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,35,$menu_semanal->lunes_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,40,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,40,$menu_semanal->lunes_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,45,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,45,$menu_semanal->lunes_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,50,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,50,$menu_semanal->lunes_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,55,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,55,$menu_semanal->lunes_cena);
+
+//martes
+$pdf->SetFont('Arial','b',12);
+$pdf->Text(10,60,"Martes");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,65,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,65,$menu_semanal->martes_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,70,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,70,$menu_semanal->martes_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,75,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,75,$menu_semanal->martes_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,80,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,80,$menu_semanal->martes_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,85,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,85,$menu_semanal->martes_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,90,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,90,$menu_semanal->martes_cena);
+
+//miercoles
+
+$pdf->SetFont('Arial','b',12);
+$pdf->Text(10,95,"Miercoles");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,100,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,100,$menu_semanal->miercoles_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,105,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,105,$menu_semanal->miercoles_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,110,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,110,$menu_semanal->miercoles_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,115,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,115,$menu_semanal->miercoles_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,120,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,120,$menu_semanal->miercoles_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,125,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,125,$menu_semanal->miercoles_cena);
+
+//jueves
+$pdf->SetFont('Arial','b',12);
+$pdf->Text(10,130,"jueves");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,135,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,135,$menu_semanal->jueves_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,140,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,140,$menu_semanal->jueves_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,145,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,145,$menu_semanal->jueves_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,150,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,150,$menu_semanal->jueves_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,155,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,155,$menu_semanal->jueves_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,160,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,160,$menu_semanal->jueves_cena);
+
+//viernes
+
+$pdf->SetFont('Arial','b',12);
+$pdf->Text(10,165,"viernes");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,170,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,170,$menu_semanal->viernes_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,175,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,175,$menu_semanal->viernes_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,180,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,180,$menu_semanal->viernes_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,185,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,185,$menu_semanal->viernes_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,190,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,190,$menu_semanal->viernes_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,195,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,195,$menu_semanal->viernes_cena);
+
+//sabado
+$pdf->SetFont('Arial','b',12);
+$pdf->Text(10,200,"sabado");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,205,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,205,$menu_semanal->sabado_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,210,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,210,$menu_semanal->sabado_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,215,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,215,$menu_semanal->sabado_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,220,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,220,$menu_semanal->sabado_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,225,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,225,$menu_semanal->sabado_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,230,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,230,$menu_semanal->sabado_cena);
+
+//domingo
+$pdf->SetFont('Arial','b',12);
+$pdf->Text(10,235,"domingo");
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,240,"Desayuno    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,240,$menu_semanal->domingo_desayuno);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,245,"Med. Maniana :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,245,$menu_semanal->domingo_med_maniana);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,250,"Almuerzo    :");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,250,$menu_semanal->domingo_almuerzo);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,255,"Merienda:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,255,$menu_semanal->domingo_merienda);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,260,"Colacion:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,260,$menu_semanal->domingo_colacion);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Text(10,265,"Cena:");
+$pdf->SetFont('Arial','',10);
+$pdf->Text(50,265,$menu_semanal->domingo_cena);
+
+
+$pdf->Output();
+
+}
 
 
 

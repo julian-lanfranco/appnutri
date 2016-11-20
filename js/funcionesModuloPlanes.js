@@ -54,4 +54,20 @@ $("#central").on("click", "#imgMostrarNuevoPlan", function(){
         
         });
 
+$("#central").on("click", "#imgImprimirPlan", function(){
+        plan = $(this).attr('name');
+         var idPaciente=$("#idPaciente").val();
+
+
+
+             if (confirm(" Esta seguro que desea imprimir el Plan ?"))
+            {
+       
+            window.open ("http://localhost/appnutri/?modulo=planes&accion=imprimirPlan&idPaciente="+idPaciente+"&idPlan="+plan);
+            
+            }
+     
+ });
+
+ 
 
