@@ -468,6 +468,7 @@
 <div class="form-group" align="center">
     <input type="submit" id="btnGuardarActualizarAnamnesis" name="btnGuardarActualizarAnamnesis" class="btn btn-default" value="Crear" />
     <input  type="button" id="btnCancelarGuardarActualizarAnamnesis" name="btnCancelarGuardarActualizarAnamnesis" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 
 </div>

@@ -25,14 +25,16 @@
   <table class="table header-fixed" style="width: 100%;">
 
       <tr>
-        <th style="width: 50%;float: left;text-align: center;">Fecha de alta</th>
-        <th style="width: 50%;float: left;text-align: center;">Accion</th>
+        <th style="width: 33%;float: left;text-align: center;">Id</th>
+        <th style="width: 33%;float: left;text-align: center;">Fecha de alta</th>
+        <th style="width: 34%;float: left;text-align: center;">Accion</th>
       </tr>
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
       {foreach from=$recordatorios item=rec}
       <tr style="width: 100%;     display: inline-table;text-align: center;">
-        <td style="width: 50%;    float: left;text-align: center;" > {$rec->fecha|date_format:" %d/%m/%y"}    </td>
-        <td style="width: 50%;    float: left;text-align: center;">
+      <td style="width: 33%;    float: left;text-align: center;" >{$rec->id} </td>
+        <td style="width: 33%;    float: left;text-align: center;" > {$rec->fecha|date_format:" %d/%m/%y"}    </td>
+        <td style="width: 34%;    float: left;text-align: center;">
             <img name="{$rec->id}" id="imgMostrarConsultarRecordatorio24"  src="img/consultar.png" align="center" style="cursor:pointer" height="30" width="30"/>
             <img name="{$rec->id}" id="imgMostrarEstadisticaRecordatorio24"  src="img/estadistica.png" align="center" style="cursor:pointer" height="30" width="30"/>
             <img name="{$rec->id}" id="imgMostrarEliminarRecordatorio24"  src="img/eliminar.png" align="center" style="cursor:pointer" height="30" width="30"/>

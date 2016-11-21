@@ -217,6 +217,7 @@
     
     <input type="submit" id="btnModMedicionAntropometricas" name="btnModMedicionAntropometricas" class="btn btn-default" value="Guardar" />
     <input  type="button" id="btnCancelarModMedicionAntropometricas" name="btnCancelarModMedicionAntropometricas" class="btn btn-default" value="Cancelar" />
+      <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 
          </td>

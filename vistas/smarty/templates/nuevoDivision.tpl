@@ -1,11 +1,22 @@
-<h2>Nueva Division</h2>
-<table class="table table-striped header-fixed" style="width: 100%;" >
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:1000px">
-     <tr style="">
-      <td style="width: 100%;    float: left; height: 500px; width:800px">
+<form  id="division" method="post">
+<div class="row">
+<div class="col-md-12">
+<div class="container-fluid">
+
+<h4>Nueva Division</h4>
+<table class="table table-striped header-fixed">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">
+<tr style="">
+<td style="width: 100%; float: left;" >
           
- 
-<form  id="division" method="post">   
+  <div class="row" style="background-color:lightgrey;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 30px;
+                          margin: 10px;
+                          width: 800px">
+
    
 <label class="col-sm-4">Nombre:</label>
 <div class="col-sm-8">
@@ -70,14 +81,20 @@
 <br><br><br>
      
 
-<div class="form-group" align="center">
-    <input type="submit" id="btnCrearDivision" name="btnCrearDivision" class="btn btn-default" value="Crear" />
-    <input  type="button" id="btnCancelarCrearDivision" name="btnCancelarCrearDivision" class="btn btn-default" value="Cancelar" />
-</div>
+
 
          </td>
       </tr>
    </tbody>  
   </table> 
+
+  <div class="form-group" align="center">
+    <input type="submit" id="btnCrearDivision" name="btnCrearDivision" class="btn btn-default" value="Crear" />
+    <input  type="button" id="btnCancelarCrearDivision" name="btnCancelarCrearDivision" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
+
+</div>
+</div>
+</div>
 </form>
 <script type="text/javascript" src="js/divisiones/funcionesAltaDivisionDinamico.js"></script>

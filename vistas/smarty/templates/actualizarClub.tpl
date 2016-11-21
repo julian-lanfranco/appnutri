@@ -74,6 +74,7 @@
  <div class="form-group" align="center">
     <input type="submit" id="btnActualizarClub" name="btnActualizarClub" class="btn btn-default" value="Actualizar" />
     <input  type="button" id="btnCancelarActualizarClub" name="btnCancelarActualizarClub" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 
          </td>

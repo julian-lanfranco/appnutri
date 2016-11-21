@@ -404,6 +404,7 @@
     
     <input type="submit" id="btnCrearMedicionAntropometricas" name="btnCrearMedicionAntropometricas" class="btn btn-default" value="Crear" />
     <input  type="button" id="btnCancelarCrearMedicionAntropometricas" name="btnCancelarCrearMedicionAntropometricas" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 </div>
 </div>

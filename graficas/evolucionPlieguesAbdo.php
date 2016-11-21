@@ -7,30 +7,48 @@ require_once('../modelos/medicionesAntropometricas.php');
 
 
 $idPaciente=$_REQUEST['idPaciente'];
+$fechaDesde=$_REQUEST['fechadesde'];
+$fechaHasta=$_REQUEST['fechahasta'];
 
-$medi = new MedicionesSimples('medicionessimples');
-$mediarray=$medi->Find("paciente ='".$idPaciente."' order by fecha");
+$medi = new MedicionesAntropometricas('medicionesantropometricas');
+$mediarray=$medi->Find("paciente ='".$idPaciente."' and fecha between '".$fechaDesde."' and '".$fechaHasta."' order by fecha");
+
 
 foreach ($mediarray as $valor) {
-	
-    $datos[]=$valor->sumatoria6;
+
+
+
+
+ 
+
+ 
+
+    
+
+    $datosPliegueMuslo[]=$valor->muslomed2;
+    /*
+
+    $datosPlieguePanto[]=$valor->pantorrilla2; 
+    */
+    
+
     $fecha = explode("-",$valor->fecha);
 
     $etiquetas[]=$fecha[2]."/".$fecha[1]."/".$fecha[0];
 
+
 }
 
-
-
 // Setup the graph
-$graph = new Graph(600,600);
+$graph = new Graph(700,700);
 
 $graph->SetScale("textint");
 
 $theme_class= new UniversalTheme;
+
 $graph->SetTheme($theme_class);
 
-$graph->title->Set("Evolucion de Sumatoria 6 Pliegues");
+$graph->title->Set("Evolucion de Pliegues Muslo Medio");
 
 $graph->SetBox(false);
 $graph->ygrid->SetFill(false);
@@ -41,21 +59,18 @@ $graph->yaxis->HideZeroLabel();
 $graph->xaxis->SetTickLabels($etiquetas);
 
 // Create the plot
-$p1 = new LinePlot($datos);
-$graph->Add($p1);
+$p1 = new LinePlot($datosPliegueMuslo);
 
-
-// Use an image of favourite car as marker
-$p1->mark->SetType(MARK_IMG,'punto.jpg',0.8);
-$p1->SetColor('#aadddd');
+$p1->mark->SetType(MARK_FILLEDCIRCLE);
+$p1->mark->SetFillColor("red");
+$p1->mark->SetWidth(6);
 $p1->value->SetFormat('%d');
 $p1->value->Show();
 $p1->value->SetColor('#55bbdd');
 
+$graph->Add($p1);
 
 $graph->Stroke();
-
-
 
 
 ?>  

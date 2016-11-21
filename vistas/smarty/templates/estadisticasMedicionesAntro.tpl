@@ -16,7 +16,6 @@
 <img   src="graficas/evolucionTallaSentado.php?idPaciente={$paciente}&fechadesde={$fechadesde}&fechahasta={$fechahasta}" align="middle" />
 
 
-
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/funciones.js"></script>
 </body>

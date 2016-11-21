@@ -360,6 +360,25 @@ class controllerMedicionesAntropometricas {
 
    }
 
+    public function generarEstadisticaMedicionAntroPliegues($idPaciente)
+   {
+
+    $smarty = new Smarty;
+    $smarty->template_dir = 'vistas/smarty/templates/';
+    $smarty->compile_dir = 'vistas/smarty/templates_c/';
+    $smarty->config_dir = 'vistas/smarty/configs/';
+    $smarty->cache_dir = 'vistas/smarty/cache/';
+
+    $fechadesde = $this->request['seleccionFechaDesde'];
+    $fechahasta = $this->request['seleccionFechaHasta'];
+    $smarty->assign('fechadesde', $fechadesde);
+    $smarty->assign('fechahasta', $fechahasta);
+    $smarty->assign('paciente',$idPaciente);
+
+    $smarty->display('estadisticasMedicionesAntroPliegues.tpl');
+
+   }
+
    public function traerPacientes()
    {
         $paciente = new Paciente('pacientes');
@@ -502,6 +521,14 @@ if (isset($_REQUEST['modulo']))
                                 
                                 break;
                                 }
+        case 'generarGraficaMedicionAntroPliegues': {     
+
+                                $this->generarEstadisticaMedicionAntroPliegues($this->request['idPaciente']);
+                                
+                                break;
+                                }
+
+
     
     case 'listaMedicionesAGraficar': {     
                                 $this->generarListadoMedicionesAGraficarSomatocarta($this->request['idPaciente']);

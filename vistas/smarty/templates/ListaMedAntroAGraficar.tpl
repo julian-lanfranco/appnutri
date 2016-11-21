@@ -1,3 +1,4 @@
+
 <h2>Graficar Somatocarta</h2>
 <form id="graficaSomatocarta" method="post">
 

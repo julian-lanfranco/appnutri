@@ -1,14 +1,37 @@
+  <form id="graficamedicionantro" method="post">
+  <div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+<div class="col-md-12" >
 <h2>Graficar Mediciones Antropometricas</h2>
-<form id="graficamedicionantro" method="post">
+</div>
+
+</div>
 
 <input type="hidden" class="form-control" id="idPaciente" name="idPaciente" value="{$idPaciente}">
+  <div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+   <div class="col-md-8" > 
+    <p>Recordatorio:Debe contar con dos o mas mediciones. La fecha desde debe ser menor a la fecha hasta
+          y no deben ser iguales, cumpliendo con esto se habilita el boton graficar.
+      </p> 
+      </div>  
+      </div>
+  </div>   
+    <div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 
-    
-    <p><b>Recordatorio: </b>
-          Debe contar con dos o mas mediciones.<br>
-          La fecha desde debe ser menor a la fecha hasta,<br>
-          y no deben ser iguales, cumpliendo con esto se habilita el <ins>boton graficar</ins>.
-      </p><br>      
 <label class="col-sm-2">Fecha Desde:</label>
   <div class="col-sm-4">
       <select name="seleccionFechaDesde" class="form-control" id="seleccionFechaDesde" title="Seleccion una fecha" required>
@@ -30,8 +53,9 @@
    {/foreach}
   </select>
 </div>  
+</div>
 
-<br><br><br><br> 
+
   
 <p>Listado de mediciones antropometrica:</p> 
   

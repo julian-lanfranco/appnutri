@@ -216,6 +216,7 @@
     
     <input type="submit" id="btnCrearPaciente" name="btnCrearPaciente" class="btn btn-default" value="Crear" />
     <input  type="button" id="btnCancelarCrearPaciente" name="btnCancelarCrearPaciente" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
     </div>
 
  </div>

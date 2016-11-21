@@ -213,7 +213,7 @@
     <input type="text" class="form-control" id="frecuenciacardiacamaxima" name="frecuenciacardiacamaxima" value="{$estudio->frecuenciacardiacamaxima}" title="FRECUENCIA CARDICA MAXIMA">
 </div>
 
-<label class="col-sm-2">PRESION ARTERIAL MAXIMA:</label>
+<label class="col-sm-2">PRESION ARTERIAL MAX.</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="presionarterialmaxima" name="presionarterialmaxima" value="{$estudio->presionarterialmaxima}" title="PRESION ARTERIAL MAXIMA">
 </div>
@@ -225,7 +225,7 @@
     <input type="text" class="form-control" id="vo2basal" name="vo2basal" value="{$estudio->vo2basal}" title="VO2 BASAL">
 </div>
 
-<label class="col-sm-2">VO2 MAXIMO:</label>
+<label class="col-sm-2">VO2 MAX.</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="vo2maximo" name="vo2maximo" value="{$estudio->vo2maximo}" title="VO2 MAXIMO">
 </div>
@@ -278,6 +278,7 @@
     
     <input type="submit" id="btnGuardarActualizarEstudioLaboratorio" name="btnGuardarActualizarEstudioLaboratorio" class="btn btn-default" value="Guardar" />
     <input  type="button" id="btnCancelarGuardarActualizarEstudioLaboratorio" name="btnCancelarGuardarActualizarEstudioLaboratorio" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 </div>
 </div>

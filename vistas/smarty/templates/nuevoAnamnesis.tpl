@@ -308,6 +308,7 @@
 <div class="form-group" align="center">
     <input type="submit" id="btnCrearAnamnesis" name="btnCrearAnamnesis" class="btn btn-default" value="Crear" />
     <input  type="button" id="btnCancelarCrearAnamnesis" name="btnCancelarCrearAnamnesis" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 
 </div>

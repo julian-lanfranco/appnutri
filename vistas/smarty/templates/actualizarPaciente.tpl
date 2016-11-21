@@ -3,7 +3,7 @@
 <div class="col-md-12">
 <div class="container-fluid">
 
-<h2>Editar Paciente</h2>
+<h4>Editar Paciente</h4>
 <table class="table table-striped header-fixed" style="width: 100%;">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
 <tr style="">
@@ -252,11 +252,6 @@
 <br><br><br>
  <br><br>         
 
-
-<div class="form-group" align="center">
-    <input type="submit" id="btnActualizarPaciente" name="btnActualizarPaciente" class="btn btn-default" value="Actualizar"/>
-    <input type="button" id="btnCancelarActualizarPaciente" name="btnCancelarActualizarPaciente" class="btn btn-default" value="Cancelar" />
-</div>  
 </div>
   
 
@@ -264,5 +259,10 @@
       </tr>
    </tbody>  
   </table> 
+  <div class="form-group" align="center">
+    <input type="submit" id="btnActualizarPaciente" name="btnActualizarPaciente" class="btn btn-default" value="Actualizar"/>
+    <input type="button" id="btnCancelarActualizarPaciente" name="btnCancelarActualizarPaciente" class="btn btn-default" value="Cancelar" />
+        <input  type="reset" class="btn btn-default" value="Restablecer" />
+</div> 
 </form>
 <script type="text/javascript" src="js/pacientes/funcionesModPacientesDinamico.js"> </script>

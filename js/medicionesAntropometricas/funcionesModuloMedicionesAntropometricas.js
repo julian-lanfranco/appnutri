@@ -10,6 +10,7 @@
         document.getElementById('btnGraficaMedicionAntropometricas').disabled=true;
          
       window.open ("http://localhost/appnutri/?modulo=medicionesAntropometricas&accion=generarGraficaMedicionAntro&idPaciente="+idPaciente+"&seleccionFechaDesde="+seleccionFechaDesde+"&seleccionFechaHasta="+seleccionFechaHasta);
+      window.open ("http://localhost/appnutri/?modulo=medicionesAntropometricas&accion=generarGraficaMedicionAntroPliegues&idPaciente="+idPaciente+"&seleccionFechaDesde="+seleccionFechaDesde+"&seleccionFechaHasta="+seleccionFechaHasta);
      
     
 

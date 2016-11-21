@@ -41,13 +41,15 @@
 <br><br><br>     
 <br><br>
 
- <div class="form-group" align="center">
-    <input type="submit" id="btnActualizarUsuario" name="btnActualizarUsuario" class="btn btn-default" value="Actualizar" />
-  </div>
+
 
          </td>
       </tr>
    </tbody>  
   </table> 
+   <div class="form-group" align="center">
+    <input type="submit" id="btnActualizarUsuario" name="btnActualizarUsuario" class="btn btn-default" value="Actualizar" />
+        <input  type="reset" class="btn btn-default" value="Restablecer" />
+  </div>
 </form>
 <script type="text/javascript" src="js/usuarios/funcionActualizaUsuario.js"></script>

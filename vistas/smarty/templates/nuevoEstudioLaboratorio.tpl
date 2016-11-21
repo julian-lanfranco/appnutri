@@ -200,51 +200,51 @@
 
 <h4> DATOS CARDIOLOGICOS</h4><br>
 
-<label class="col-sm-2">FRECUENCIA CARDICA BASAL:</label>
+<label class="col-sm-2">FRECUENCIA CARDICA BASAL</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="frecuenciacardiaca" name="frecuenciacardiaca" value="" title="FRECUENCIA CARDICA BASAL"> 
 </div>
 
-<label class="col-sm-2">FRECUENCIA CARDICA MAXIMA:</label>
+<label class="col-sm-2">FRECUENCIA CARDICA MAX</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="frecuenciacardiacamaxima" name="frecuenciacardiacamaxima" value="" title="FRECUENCIA CARDICA MAXIMA">
 </div>
 
-<label class="col-sm-2">PRESION ARTERIAL MAXIMA:</label>
+<label class="col-sm-2">PRESION ARTERIAL MAX</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="presionarterialmaxima" name="presionarterialmaxima" value="" title="PRESION ARTERIAL MAXIMA">
 </div>
 
 <br><br><br>
 
-<label class="col-sm-2">VO2 BASAL:</label>
+<label class="col-sm-2">VO2 BASAL</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="vo2basal" name="vo2basal" value="" title="VO2 BASAL">
 </div>
 
-<label class="col-sm-2">VO2 MAXIMO:</label>
+<label class="col-sm-2">VO2 MAXIMO</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="vo2maximo" name="vo2maximo" value="" title="VO2 MAXIMO">
 </div>
 
-<label class="col-sm-2">PROTOCOLO APLICADO:</label>
+<label class="col-sm-2">PROTOCOLO APLICADO</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="protocolo" name="protocolo" value="" title="PROTOCOLO APLICADO">
 </div>
 
 <br><br><br>
 
-<label class="col-sm-2">F. CARDIACA MAX. AL.:</label>
+<label class="col-sm-2">F. CARDIACA MAX. AL.</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="frecuenciacardiomax" name="frecuenciacardiomax" value="" title="FRECUENCIA CARDIACA MAXIMA ALCANZADA">
 </div>
 
-<label class="col-sm-2">MINUTOS EJERCITADOS:</label>
+<label class="col-sm-2">MINUTOS EJERCITADOS</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="minutos" name="minutos" value="" title="MINUTOS EJERCITADOS">
 </div>
 
-<label class="col-sm-2">TEST DETENIDO POR:</label>
+<label class="col-sm-2">TEST DETENIDO POR</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="testdetenido" name="testdetenido" value="" title="TEST DETENIDO POR: (FIN DE PROTOCOLO-CANSANCIO, ETC)">
 </div>
@@ -275,6 +275,7 @@
     
     <input type="submit" id="btnCrearEstudioLaboratorio" name="btnCrearEstudioLaboratorio" class="btn btn-default" value="Crear" />
     <input  type="button" id="btnCancelarCrearEstudioLaboratorio" name="btnCancelarCrearEstudioLaboratorio" class="btn btn-default" value="Cancelar" />
+    <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>
 </div>
 </div>

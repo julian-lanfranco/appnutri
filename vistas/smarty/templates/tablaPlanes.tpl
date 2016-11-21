@@ -25,15 +25,17 @@
   <table class="table header-fixed" style="width: 100%;">
 
       <tr>
-        <th style="width: 50%;float: left;text-align: center;">Fecha de alta</th>
-        <th style="width: 50%;float: left;text-align: center;">Accion</th>
+        <th style="width: 33%;float: left;text-align: center;">Id</th>
+        <th style="width: 33%;float: left;text-align: center;">Fecha de alta</th>
+        <th style="width: 34%;float: left;text-align: center;">Accion</th>
       </tr>
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
     
       {foreach from=$planes item=plan}
       <tr style="width: 100%;     display: inline-table;">
-        <td style="width: 50%;    float: left;text-align: center" > {$plan->fecha|date_format:" %d/%m/%y"}    </td>
-        <td style="width: 50%;    float: left;text-align: center">
+      <td style="width: 33%;    float: left;text-align: center" >{$plan->id} </td>
+        <td style="width: 33%;    float: left;text-align: center" > {$plan->fecha|date_format:" %d/%m/%y"}    </td>
+        <td style="width: 34%;    float: left;text-align: center">
             <img name="{$plan->id}" id="imgMostrarConsultarPlan"  src="img/consultar.png" align="center" style="cursor:pointer" height="30" width="30"/>
             <img name="{$plan->id}" id="imgImprimirPlan"  src="img/pdf.png" align="center" style="cursor:pointer" height="30" width="30"/>
             <img name="{$plan->id}" id="imgMostrarEliminarPlan"  src="img/eliminar.png" align="center" style="cursor:pointer" height="30" width="30"/>
