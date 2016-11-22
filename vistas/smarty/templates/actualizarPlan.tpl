@@ -444,7 +444,7 @@
 
 </div>
 <div class="col-md-4 " >
-      <input type="button" class="btn btn-default btn-block " id="btnCancelarCrearRecordatorio24" value="Cancelar">
+      <input type="button" class="btn btn-default btn-block " id="btnCancelarCrearPlan" value="Cancelar">
 </div>
 
 </div>

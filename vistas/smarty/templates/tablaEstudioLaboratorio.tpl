@@ -30,7 +30,7 @@
 <th style="width: 34%;float: left;text-align: center;">Accion</th>
   </tr>
 
-    <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
+    <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$estudios item=estu}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 33%;    float: left;text-align: center;" > {$estu->id}    </td>

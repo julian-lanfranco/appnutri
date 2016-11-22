@@ -9,7 +9,7 @@
                           margin: 10px;">
   <div class="col-md-12" >
 
-<h2>Editar Paciente</h2>
+<h3>Editar Paciente</h3>
 </div>
 </div>
   <div class="row" style="background-color:white;
@@ -19,7 +19,7 @@
                           padding-left: 10px;
                           margin: 10px;">
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 350px; width:100%">
 <tr style="">
 <td style="width: 100%;    float: left;" >
  

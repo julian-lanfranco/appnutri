@@ -6,6 +6,7 @@ require_once('vistas/smarty/libs/Smarty.class.php');
 require_once('modelos/conexion.php');
 require_once('modelos/club.php');
 require_once('modelos/divisiones.php');
+require_once('modelos/deporte.php');
 require_once('fpdf181/generador.php');
 
 
@@ -44,7 +45,7 @@ class controllerDivisiones {
 //
 
 // traerFormNuevoClub   
-   public function mostrarNuevoDivision($clubesArray)
+   public function mostrarNuevoDivision($clubesArray,$deportesArray)
       {
     //PRESENTACION
     $smarty = new Smarty;
@@ -52,6 +53,7 @@ class controllerDivisiones {
     $smarty->compile_dir = 'vistas/smarty/templates_c/';
     $smarty->config_dir = 'vistas/smarty/configs/';
     $smarty->cache_dir = 'vistas/smarty/cache/';
+    $smarty->assign('deportes',$deportesArray);
     $smarty->assign('clubes',$clubesArray);
     $smarty->display('nuevoDivision.tpl');
    }
@@ -98,6 +100,13 @@ class controllerDivisiones {
         $club = new Club('clubes');
         $clubesArray = $club->Find("1 order by id"); 
         return $clubesArray;
+   }
+
+      public function traerDeportes()
+   {
+        $deporte = new Deporte('deportes');
+        $deportesArray = $deporte->Find("1 order by id"); 
+        return $deportesArray;
    }
 
   public function traerDivisiones()
@@ -327,7 +336,8 @@ if (isset($_REQUEST['modulo']))
     case 'mostrarNuevoDivision': {
 
                                 $listaClubes = $this->traerClubes();
-                                $this->mostrarNuevoDivision($listaClubes);
+                                $listaDeportes = $this->traerDeportes();
+                                $this->mostrarNuevoDivision($listaClubes,$listaDeportes);
                                 break;
                                 }
                           

@@ -12,7 +12,7 @@
                           margin: 10px;">
   <div class="col-md-12" >
 
-<h2>Nuevo Recordatorio</h2>
+<h3>Nuevo Recordatorio</h3>
 </div>
 </div>
 

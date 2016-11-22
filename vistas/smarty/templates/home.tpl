@@ -23,7 +23,7 @@
 </div>
 
   <div class="row">
-  <div class="col-sm-2 " style="background-color:lavender; height: 800px;">
+  <div class="col-sm-2 " style="background-color:lavender; height:100%;">
 
   <div class="panel-group" id="accordion">
 
@@ -100,7 +100,7 @@
 </div>
 
 
-    <div class="col-md-10" style="background-color:lavender; height: 800px;">
+    <div class="col-md-10" style="background-color:lightblue; height: 100%;">
     
     <div id="pacienteSeleccionado" hidden="">
 
@@ -132,22 +132,24 @@
     </div>
 
      <div id="central">
+           <div class="row" style="text-align:center;
+                              background-color:lavender;
+                          padding-top: 50px;
+                          padding-right: 50px;
+                          padding-bottom: 50px;
+                          padding-left: 50px;
+                          margin: 50px;">
+    <div class="col-md-12" style="">
+                <img  src="img/logoGnu.png" align="CENTER" style="cursor:pointer" height="60" width="60" title="Licencia Gnu"/>
+<h3>
+        <p>GnUtri V1.0 es un Desarrollo Académico Gratuito y Libre <br> Cátedra Taller de Integración 2016 (FCyT-UADER)<br>
+Alumnos: Julián Lanfranco - Giovanni Petterín</p></h3>
+      </div>
+  </div>
       </div>
     </div>
   </div>
-    <div class="row">
-    <div class="col-md-12" style="">
-      <div class="row" style="text-align:center;
-                              background-color:white;
-                          padding-top: 10px;
-                          padding-right: 10px;
-                          padding-bottom: 10px;
-                          padding-left: 10px;
-                          margin: 0px;">
-        <p>GnUtri V1.0 es un Desarrollo Académico Gratuito y Libre <br> Cátedra Taller de Integración 2016 (FCyT-UADER)
-Alumnos: Julián Lanfranco - Giovanni Petterín
-      </div>
-  </div>
+
 </div>
 </div>
   <script src="\appnutri\lib\bootstrap\js\bootstrap.min.js"></script>

@@ -11,7 +11,7 @@
                           margin: 10px;">
   <div class="col-md-12" >
 
-<h2>Nuevo Plan</h2>
+<h3>Nuevo Plan</h3>
 </div>
 </div>
 <div>
@@ -28,7 +28,7 @@
 <a id="agregarCampo" class="btn btn-success btn-block href="#">Agregar Ingesta</a>
 </div>
 <table class="table table-striped header-fixed">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px;  width: 88%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px;  width: 90%">
 <tr style="">
 <td style="width: 100%; float: left;" >
 <div class="row">
@@ -195,9 +195,9 @@
   </div>
 
 <div class="row" style="background-color:lightgrey;
-                          padding-top: 10px;
+                          padding-top: 5px;
                           padding-right: 10px;
-                          padding-bottom: 10px;
+                          padding-bottom: 5px;
                           padding-left: 10px;
                           margin: 10px;">
 <div class="col-md-4 col-md-offset-2"  > 
@@ -206,7 +206,7 @@
 
 </div>
 <div class="col-md-4 " >
-      <input type="button" class="btn btn-default btn-block " id="btnCancelarCrearRecordatorio24" value="Cancelar">
+      <input type="button" class="btn btn-default btn-block " id="btnCancelarCrearPlan" value="Cancelar">
 </div>
 
 </div>

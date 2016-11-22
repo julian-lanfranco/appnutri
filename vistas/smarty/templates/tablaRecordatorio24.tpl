@@ -29,7 +29,7 @@
         <th style="width: 33%;float: left;text-align: center;">Fecha de alta</th>
         <th style="width: 34%;float: left;text-align: center;">Accion</th>
       </tr>
-    <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
+    <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$recordatorios item=rec}
       <tr style="width: 100%;     display: inline-table;text-align: center;">
       <td style="width: 33%;    float: left;text-align: center;" >{$rec->id} </td>

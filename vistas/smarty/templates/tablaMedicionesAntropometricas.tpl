@@ -40,7 +40,7 @@
     float: left;text-align: center;">Talla Sentado</th>
         <th style="width: 36%; float: left;text-align: center;">Accion</th>
       </tr>
-    <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
+    <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$mediciones item=medi}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 12%;    float: left;text-align: center;" > {$medi->id}    </td>

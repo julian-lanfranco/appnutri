@@ -34,7 +34,7 @@
         <th style="width: 30%;float: left;">Detalle</th>      
         <th style="width: 20%;float: left;">Accion</th>
       </tr>
-    <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; width:100%">
+    <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$respaldos item=respaldo}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 5%;    float: left;" >{$respaldo->id}</td>

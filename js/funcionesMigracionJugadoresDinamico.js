@@ -15,7 +15,10 @@ $("#migrarJugadores").submit(function(e) {
            success: function(data)
            {
                $('#listadoJugadores').html(cabecera()); 
-                alert("Migracion Exitosa");
+
+               if ($.trim(data)) { alert("No se pudo completar la migracion (revise los sexos)."); }
+                else {alert("Migracion Exitosa");}
+                
                 //$('#listadoJugadores').html(data); 
 
            }

@@ -51,7 +51,7 @@
                                     <input class="form-control" placeholder="contraseña" id="password" name="password" type="password" value="">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="captcha" id="captcha" name="captcha" type="password" value="">
+                                    <input class="form-control" placeholder="captcha" id="captcha" name="captcha" type="text" value="">
                                 </div>
                                 <div class="form-group" align="center">
                                     <img src="http://localhost/appnutri/captcha/generaCaptcha.php" />

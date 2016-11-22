@@ -54,6 +54,22 @@ $("#central").on("click", "#imgMostrarNuevoPlan", function(){
         
         });
 
+                $("#central").on("click", "#btnCancelarCrearPlan", function(){       
+
+                 var idPaciente =$("#idPaciente").val();
+                 $.ajax({
+                               
+                            type: "GET",
+                                url: "http://"+ambito+"/appnutri/?modulo=planes",
+                                data: "accion=mostrarTablaPlanes&idPaciente="+idPaciente,
+                                success: function(a) {
+                                                    $('#central').html(a); 
+                                                    }
+
+                            });
+        
+        });
+
 $("#central").on("click", "#imgImprimirPlan", function(){
         plan = $(this).attr('name');
          var idPaciente=$("#idPaciente").val();

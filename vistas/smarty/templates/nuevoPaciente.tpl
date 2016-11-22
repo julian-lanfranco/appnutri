@@ -20,7 +20,7 @@
                           margin: 10px;">
 
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 350px; width:100%">
 <tr style="">
 <td style="width: 100%;    float: left;" >
           

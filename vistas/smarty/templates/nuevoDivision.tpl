@@ -34,7 +34,7 @@
 <div class="col-sm-8">
 <select name=clubes class="form-control" id="clubes" required>
     {foreach from=$clubes item=club}
-    <option label="{$club->nombre}" value="{$club->id}">{$club->nombre}</option>
+    <option value="{$club->id}">{$club->nombre|upper}</option>
     {/foreach}
 </select>
 </div>  
@@ -42,19 +42,21 @@
 
 <label class="col-sm-4">Deporte:</label>
 <div class="col-sm-8">
+
 <select name=deporte class="form-control" id="deporte" required>
-    <option label="futbol" value="futbol">FUTBOL</option>
-    <option label="basquet" value="basquet">BASQUET</option>
-    <option label="rugby" value="rugby">RUGBY</option>
+    {foreach from=$deportes item=deporte}
+    <option  value="{$deporte->id}">{$deporte->nombre|upper}</option>
+    {/foreach}
 </select>
 </div>  
+
 <br><br><br>
 
 <label class="col-sm-4">Sexo:</label>
 <div class="col-sm-8">
 <select name=sexo class="form-control" id="sexo">
-    <option label="masculino" value="masculino">MASCULINO</option>
-    <option label="femenino" value="femenino">FEMENINO</option>
+    <option value="masculino">MASCULINO</option>
+    <option  value="femenino">FEMENINO</option>
 </select>
 </div>  
 <br><br><br>

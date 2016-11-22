@@ -110,7 +110,7 @@
    <th style="width: 25%; float: left;text-align: center;">DNI</th>
    <th style="width: 50%; float: left;text-align: center;">Accion</th>
   </tr>
-   <tbody style="display: block;  overflow-y: auto;    float: left;height: 350px; width:100%">
+   <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$pacientes item=paciente}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 25%;    float: left;" >{$paciente->apellido}  {$paciente->nombre}</td>

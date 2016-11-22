@@ -185,7 +185,6 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
     $clubOrigen->Load("id=".$divisionOrigen->club);
     $clubDestino->Load("id=".$divisionDestino->club);
 
-    
 
 
     foreach ($jugadores as $jugador) 
@@ -194,11 +193,16 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
         if ($jugador>0) {
                           
                           $paciente->Load("id=".$jugador);
+                          
 
                           if ($divOrigen=="ninguno") 
                             {
                               if ($divDestino=="ninguno") {}
                               else {
+                                    if (!($paciente->sexo==$divisionDestino->sexo)) 
+                                      {
+                                        echo("<script language='javascript' type='text/javascript'>alert('No se pudo migrar paciente".$paciente->apellido." ".$paciente->nombre." no coinciden los sexos');</script>");
+                                        continue;}
                                     if ($clubDestino->tipo=="normal") $paciente->division=$divDestino;
                                     if ($clubDestino->tipo=="seleccion") $paciente->divisionseleccion=$divDestino;
 
@@ -211,6 +215,11 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
                                     if ($clubOrigen->tipo=="seleccion") $paciente->divisionseleccion=NULL;  
                                     }
                                     else {
+                                         if (!($paciente->sexo==$divisionDestino->sexo)) 
+                                          { 
+                                            echo("wwww");
+                                            echo("<script language='javascript' type='text/javascript'>alert('No se pudo migrar paciente".$paciente->apellido." ".$paciente->nombre." no coinciden los sexos');</script>");
+                                            continue;}
                                           if ($clubDestino->tipo=="normal") $paciente->division=$divDestino;
                                           if ($clubDestino->tipo=="seleccion") $paciente->divisionseleccion=$divDestino;
                                           

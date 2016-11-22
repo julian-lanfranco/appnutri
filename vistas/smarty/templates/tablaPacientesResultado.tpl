@@ -5,7 +5,7 @@
                           padding-left: 10px;
                           margin: 10px;">
   <div class="col-md-10" >
-   <h2>Listado de Pacientes</h2>
+   <h3>Listado de Pacientes</h3>
   </div>
   <div div class="col-md-2">
   <img name="{$paciente->id}" id="imgMostrarNuevoPaciente"  src="img/nuevo.png" align="right"  style="cursor:pointer" height="80" width="80" title="Nuevo Paciente"/>
@@ -24,7 +24,7 @@
    <th style="width: 25%; float: left;text-align: center;">DNI</th>
    <th style="width: 50%; float: left;text-align: center;">Accion</th>
   </tr>
-   <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; width:100%">
+   <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$pacientes item=paciente}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 25%;    float: left;text-align: center;" >{$paciente->apellido}  {$paciente->nombre}</td>
