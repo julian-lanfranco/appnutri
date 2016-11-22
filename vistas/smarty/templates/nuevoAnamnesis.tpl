@@ -59,7 +59,7 @@
 
 <label class="col-sm-2">Otras:</label>
 <div class="col-sm-6">
-<input type="text" class="form-control" id="otras" name="otras" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese otro antecedente. Solo letras">
+<input type="text" class="form-control" id="otras" name="otras" value="" required  title="Ingrese otro antecedente. Solo letras">
 </div>
 </div>
  <div class="row" style="background-color:lightgrey;
@@ -75,7 +75,7 @@
 
 <label class="col-sm-4">Padece Enfermedad Diagnosticada:</label>
 <div class="col-sm-8">
-<input type="text" class="form-control" name="diagnosticada" id="diagnosticada" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese enfermedad diagnosticada. Solo letras">
+<input type="text" class="form-control" name="diagnosticada" id="diagnosticada" value="" required  title="Ingrese enfermedad diagnosticada. Solo letras">
 </div>
 <br><br><br>
 
@@ -89,7 +89,7 @@
 
 
 <label class="col-sm-2">Como los toma?:</label>
-<div class="col-sm-6"><input type="text" class="form-control" id="toma" name="toma" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese como toma los medicamentos. Solo letras">
+<div class="col-sm-6"><input type="text" class="form-control" id="toma" name="toma" value="" required  title="Ingrese como toma los medicamentos. Solo letras">
 </div>
 
 <br><br><br>
@@ -166,13 +166,13 @@
 
  <label class="col-sm-2">Peso Maximo en los ultimos 5 años:</label>
  <div class="col-sm-2">
- <input type="text" class="form-control" id="pesomax" name="pesomax" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el peso maximo.">
+ <input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomax" name="pesomax" value="" required  title="Ingrese el peso maximo.">
  </div>
 
 <br><br><br><br> 
 <label class="col-sm-2">Peso Mminimo en los ultimos 5 años:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="pesomin" name="pesomin" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el peso minimo.">
+<input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomin" name="pesomin" value="" required  title="Ingrese el peso minimo.">
 </div>
 
 
@@ -203,18 +203,18 @@
 
 <label class="col-sm-2">Alimentos que no le gustan:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosnogustan" name="alimentosnogustan" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese los alimentos que no le gustan. Solo letras">
+<input type="text" class="form-control" id="alimentosnogustan" name="alimentosnogustan" value="" required  title="Ingrese los alimentos que no le gustan. Solo letras">
 </div>
 
 <label class="col-sm-2">Alimentos que no tolera:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosnotolera" name="alimentosnotolera" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese los alimentos que no tolera. Solo letras">
+<input type="text" class="form-control" id="alimentosnotolera" name="alimentosnotolera" value="" required  title="Ingrese los alimentos que no tolera. Solo letras">
 </div>
 
 <br><br><br>
 <label class="col-sm-2">Alimentos que prefiere:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosprefiere" name="alimentosprefiere" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese los alimentos que prefiere. Solo letras">
+<input type="text" class="form-control" id="alimentosprefiere" name="alimentosprefiere" value="" required  title="Ingrese los alimentos que prefiere. Solo letras">
 </div>
 
 <label class="col-sm-2">Cocina?:</label>
@@ -236,7 +236,7 @@
 <br><br><br>
 <label class="col-sm-2">Horarios de Trabajo:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="horarios"  name="horarios" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el horario de trabajo.">
+<input type="text" class="form-control" id="horarios"  name="horarios" value="" required  title="Ingrese el horario de trabajo.">
 </div>
 
 
@@ -275,7 +275,7 @@
 
 <label class="col-sm-2">Ingiere Suplementos?:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="suplementos" name="suplementos" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese los suplementos que ingiere.">
+<input type="text" class="form-control" id="suplementos" name="suplementos" value="" required  title="Ingrese los suplementos que ingiere.">
 </div>
 
 

@@ -36,7 +36,6 @@
         <td style="width: 33%;    float: left;text-align: center;" > {$rec->fecha|date_format:" %d/%m/%y"}    </td>
         <td style="width: 34%;    float: left;text-align: center;">
             <img name="{$rec->id}" id="imgMostrarConsultarRecordatorio24"  src="img/consultar.png" align="center" style="cursor:pointer" height="30" width="30"/>
-            <img name="{$rec->id}" id="imgMostrarEstadisticaRecordatorio24"  src="img/estadistica.png" align="center" style="cursor:pointer" height="30" width="30"/>
             <img name="{$rec->id}" id="imgMostrarEliminarRecordatorio24"  src="img/eliminar.png" align="center" style="cursor:pointer" height="30" width="30"/>
         </td>
       </tr>

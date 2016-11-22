@@ -78,12 +78,9 @@ $(document).ready(function() {
     });
 
     $("body").on("click",".eliminar", function(e){ //click en eliminar campo
-        if( x > 1 ) {
+        if( x > 2 ) {
             $(this).parent('div').remove(); //eliminar el campo
             x--;
-
-        }
-
       $('#graficaRecordatorio').html('<img src="/appnutri/img/loading.gif"/>');
       
       $.ajax({
@@ -96,6 +93,10 @@ $(document).ready(function() {
 
                                                 }
       });
+
+        }
+
+
 
         //return false;
 

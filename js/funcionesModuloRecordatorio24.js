@@ -310,13 +310,14 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
 
         }); 
 
-
+/*
         $("#central").on("click", "#btnCreaRecordatorio24", function(){
         
 
             $("#recordatorio").submit();
 
         }); 
+        */
 
 
 

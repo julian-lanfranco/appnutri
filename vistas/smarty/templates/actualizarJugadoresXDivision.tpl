@@ -159,7 +159,7 @@
 
 
 <div class="form-group" align="center">
-    <button id="btnMigrarJugadores"  type="submit" form="migrarJugadores" class="btn btn-default">Migrar</button>
+    <input id="btnMigrarJugadores"  type="submit" name="Migrar" class="btn btn-default" value="Migrar" />
     <input type="button" id="btnCancelarMigrarJugadores" name="btnCancelarMigrarJugadores" class="btn btn-default" value="Cancelar" />
 </div>    
 
@@ -168,5 +168,6 @@
 </div>
 
 <script type="text/javascript" src="js/pacientes/funcionesModPacientesDinamico.js"> </script>
-</form>
+
 <script type="text/javascript" src="js/funcionesMigracionJugadoresDinamico.js"></script>
+</form>

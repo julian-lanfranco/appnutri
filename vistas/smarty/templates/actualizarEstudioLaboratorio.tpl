@@ -3,9 +3,8 @@
 <div class="col-md-12">
 <div class="container-fluid">
 
-<h4>Actualizar Estudio Laboratorio</h4>
-<h4>Paciente: {$nombre} </h4> 
-<h4>Fecha de Realizacion del Estudio: {$estudio->fecha|date_format:" %d/%m/%y"}</h4>
+<h4>Actualizar Estudio Laboratorio de fecha {$estudio->fecha|date_format:" %d/%m/%y"}</h4>
+
 
 <table class="table table-striped header-fixed">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">

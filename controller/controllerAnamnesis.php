@@ -255,7 +255,6 @@ class controllerAnamnesis {
     $smarty->assign('nombre',$paciente->nombre);
     $smarty->assign('anam',$anam);
 
-
     $smarty->display('actualizarAnamnesis.tpl');
 
    }

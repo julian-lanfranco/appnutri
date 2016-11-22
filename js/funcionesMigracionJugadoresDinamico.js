@@ -1,13 +1,7 @@
 function cabecera() {
-    return "<table class='table table-striped header-fixed'
-    style='width: 100%;'>
-    <tr style=''><th style='width: 33%; float: left;'>Id</th>   
-    <th style='width: 33%; float: left;'>Nombre</th>
-    <th style='width: 33%; float: left;'>Migrar</th>
-    </tr>   
-    <tbody style='display: block;  overflow-y: auto;float: left;height: 250px; width:100%'>
-    </tbody></table>";              
+    return "<table class='table table-striped header-fixed' style='width: 100%;'> <tr style=''><th style='width: 33%; float: left;'>Id</th><th style='width: 33%; float: left;'>Nombre</th><th style='width: 33%; float: left;'>Migrar</th></tr>    <tbody style='display: block;  overflow-y: auto;float: left;height: 250px; width:100%'></tbody></table>";              
 }
+
 $(document).ready(function() {
 
 
@@ -22,6 +16,7 @@ $("#migrarJugadores").submit(function(e) {
            {
                $('#listadoJugadores').html(cabecera()); 
                 alert("Migracion Exitosa");
+                //$('#listadoJugadores').html(data); 
 
            }
          });

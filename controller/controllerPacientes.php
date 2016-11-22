@@ -201,6 +201,7 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
                               else {
                                     if ($clubDestino->tipo=="normal") $paciente->division=$divDestino;
                                     if ($clubDestino->tipo=="seleccion") $paciente->divisionseleccion=$divDestino;
+
                                     }  
                             }
                             else {
@@ -289,11 +290,15 @@ public function migrarJugadores($jugadores,$divDestino,$divOrigen){
 
         $paciente = new Paciente('pacientes');
 
-      $pacientesFiltrados = $paciente->Find("(
-                        (nombre LIKE '%".$pacienteNombre."%') or (apellido LIKE '%".$pacienteNombre."%') and 
+      $pacientesFiltrados = $paciente->Find("
+                        ((nombre LIKE '%".$pacienteNombre."%')  and 
                         (dni LIKE '%".$pacienteDni."%') and 
-                        (sexo LIKE '%".$pacienteSexo."%')
-                        ) order by id");
+                        (sexo LIKE '%".$pacienteSexo."%')) or  
+
+                        ((apellido LIKE '%".$pacienteNombre."%')  and 
+                        (dni LIKE '%".$pacienteDni."%') and 
+                        (sexo LIKE '%".$pacienteSexo."%')) 
+                         order by id");
 
 
 //filtro club
@@ -1251,50 +1256,11 @@ else {
       public function mostrarMigrarJugadores()
    {
 
-    
-    //Buscar seleccionados Clubes
-    $clubSeleccionado=NULL;
-    $divisionSeleccionada=NULL;
-    $deporteSeleccionado=NULL;
-    $sexoSeleccionado=NULL;
-
-    //Buscar seleccionados selecciones
-    $clubSeleccionadoSel=NULL;
-    $divisionSeleccionadaSel=NULL;
-    $deporteSeleccionadoSel=NULL;
-    $sexoSeleccionadoSel=NULL;
-
 
     //Buscar lista de Clubes
     $listaClubes = $this->traerClubes();
 
-    //Buscar lista de deportes
-    $listaDeportes = $this->traerDeportesXClub($clubSeleccionado);
-
-    //Buscar lista de sexos
-    $listaSexos = $this->traerSexoXDeporteXClub($clubSeleccionado,$deporteSeleccionado);
-
-    //Buscar lista de Divisiones
-    $listaDivisiones = $this->traerDivisionesXSexoXDeporteXClub($clubSeleccionado,$deporteSeleccionado,$sexoSeleccionado);
-
-
-
-    //Buscar lista de selecciones
-    $listaSelecciones = $this->traerSelecciones();
-
-    //Buscar lista de deportes
-    $listaDeportesSel = $this->traerDeportesXClub($clubSeleccionadoSel);
-
-    //Buscar lista de sexos
-    $listaSexosSel = $this->traerSexoXDeporteXClub($clubSeleccionadoSel,$deporteSeleccionadoSel);
-
-    //Buscar lista de Divisiones
-    $listaDivisionesSel = $this->traerDivisionesXSexoXDeporteXClub($clubSeleccionadoSel,$deporteSeleccionadoSel,$sexoSeleccionadoSel);
-
-  //buscar jugadores sin division
-
-   $jugadoresSinDivision=$this->traerPacientesSinDivison();
-
+    $jugadoresSinDivision=$this->traerPacientesSinDivison();
 
      //PRESENTACION
     $smarty = new Smarty;
@@ -1307,34 +1273,12 @@ else {
 
 //evio de seleccionados clubes
 
-    $smarty->assign('clubSeleccionado',$clubSeleccionado);
-    $smarty->assign('divisionSeleccionada',$divisionSeleccionada);
-    $smarty->assign('deporteSeleccionado',$deporteSeleccionado);
-    $smarty->assign('sexoSeleccionado',$sexoSeleccionado);
 
 //envio de listas clubes
 
     $smarty->assign('listaClubes',$listaClubes);
-    $smarty->assign('listaDeportes',$listaDeportes);
-    $smarty->assign('listaSexos',$listaSexos);
-    $smarty->assign('listaDivisiones',$listaDivisiones);
+    $smarty->assign('jugadores',$jugadoresSinDivision);
 
-
-//evio de seleccionados selecciones
-
-    $smarty->assign('clubSeleccionadoSel',$clubSeleccionadoSel);
-    $smarty->assign('divisionSeleccionadaSel',$divisionSeleccionadaSel);
-    $smarty->assign('deporteSeleccionadoSel',$deporteSeleccionadoSel);
-    $smarty->assign('sexoSeleccionadoSel',$sexoSeleccionadoSel);
-
-
-//envio de listas selecciones
-
-    $smarty->assign('listaSelecciones',$listaSelecciones);
-    $smarty->assign('listaDeportesSel',$listaDeportesSel);
-    $smarty->assign('listaSexosSel',$listaSexosSel);
-    $smarty->assign('listaDivisionesSel',$listaDivisionesSel);
-    $smarty->assign('jugadoresSinDivision',$jugadoresSinDivision);
     
     $smarty->display('actualizarJugadoresXDivision.tpl');
 
@@ -1541,16 +1485,17 @@ if (isset($_REQUEST['modulo']))
                                 } 
 
     case 'migrarJugadores': {
-                                      
+   
                               $jugadores=$this->request['jugadorMigracion'];
                               $divisionDestino=$this->request['seleccionDivisionesDestino'];
                               $divisionOrigen=$this->request['seleccionDivisionesOrigen'];
 
-                              //echo($divisionDestino." ".$divisionOrigen);
+
                               $this->migrarJugadores($jugadores,$divisionDestino,$divisionOrigen);
 
 
                                 break;
+
                                 }  
   
 

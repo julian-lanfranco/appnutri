@@ -9,7 +9,6 @@
 <input type="hidden" class="form-control" id="idAnamnesis" name="idAnamnesis" value="{$anam->id}">
 
 <h4>Actualizar Anamnesis Paciente:</h4> 
-<h4>{$nombre} Fecha: {$anam->fecha|date_format:" %d/%m/%y"}</h4>
 
 <table class="table table-striped header-fixed">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">
@@ -32,11 +31,11 @@
 <div class="col-sm-2">
     <select name=obesidad class="form-control" id="obesidad" required>
 {if $anam->obesidad eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option value="SI" selected>SI</option>
+<option value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option value="SI">SI</option>
+<option value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -45,11 +44,11 @@
 <div class="col-sm-2">
 <select name=diabetes class="form-control" id="diabetes" required>
 {if $anam->diabetes eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option value="SI" selected>SI</option>
+<option value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -58,24 +57,24 @@
 <div class="col-sm-2">
 <select name=hipertension class="form-control" id="hipertension" required>
 {if $anam->hipertension eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
 <br><br>
-<label class="col-sm-2">Enfermedad Cardiacas :</label>
+<label class="col-sm-2">Enfermedad cardiacas :</label>
 <div class="col-sm-2">
 <select name=cardiacas class="form-control" id="cardiacas" required>
 {if $anam->cardiacas eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -83,7 +82,7 @@
 
 <label class="col-sm-2">Otras:</label>
 <div  class="col-sm-3">
-<input type="text" class="form-control" id="otras" name="otras" value="{$anam->otras}" required pattern="^[a-zA-Z-\s]+" title="Ingrese otro antecedente. Solo letras">
+<input type="text" class="form-control" id="otras" name="otras" value="{$anam->otras|upper}" required  title="Ingrese otro antecedente. Solo letras">
 </div>
 </div>
 
@@ -98,7 +97,7 @@
 
 <label class="col-sm-4">Padece Enfermedad Diagnosticada:</label>
 <div class="col-sm-8">
-<input type="text" class="form-control" id="diagnosticada" name="diagnosticada" value="{$anam->diagnosticada}" required pattern="^[a-zA-Z-\s]+" title="Ingrese enfermedad diagnosticada. Solo letras">
+<input type="text" class="form-control" id="diagnosticada" name="diagnosticada" value="{$anam->diagnosticada|upper}" required  title="Ingrese enfermedad diagnosticada. Solo letras">
 </div>
 
 <br><br><br>
@@ -107,11 +106,11 @@
 <div class="col-sm-2">
 <select name=medicamentos class="form-control" id="medicamentos" required>
 {if $anam->medicamentos eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -119,18 +118,18 @@
 
 <label class="col-sm-2">Como los toma?:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="toma" name="toma" value="{$anam->toma}" required pattern="^[a-zA-Z-\s]+" title="Ingrese como toma los medicamentos. Solo letras">
+<input type="text" class="form-control" id="toma" name="toma" value="{$anam->toma|upper}" required  title="Ingrese como toma los medicamentos. Solo letras">
 </div>
 
 <label class="col-sm-2">Acidez:</label>
 <div class="col-sm-2">
 <select name=acidez class="form-control" id="acidez" required>
 {if $anam->acidez eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -141,11 +140,11 @@
 <div class="col-sm-2">
 <select name=reflujo class="form-control" id="reflujo" required>
 {if $anam->reflujo eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -154,11 +153,11 @@
 <div class="col-sm-2">
 <select name=abdominal class="form-control" id="abdominal" required>
 {if $anam->abdominal eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -167,11 +166,11 @@
 <div class="col-sm-2">
 <select name=constipacion class="form-control" id="constipacion" required>
 {if $anam->constipacion eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -182,11 +181,11 @@
 <div class="col-sm-2">
 <select name=diarrea class="form-control" id="diarrea" required>
 {if $anam->diarrea eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -195,11 +194,11 @@
 <div class="col-sm-2">
 <select name=fuma class="form-control" id="fuma" required>
 {if $anam->fuma eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -209,28 +208,28 @@
 <div class="col-sm-2">
     <select name="dietas" class="form-control" id="dietas" required>
 {if $anam->dietas eq "NUNCA HICE"}
-    <option label="NUNCA HICE" value="NUNCA HICE" selected>NUNCA HICE</option>
-    <option label="POSITIVOS" value="POSITIVOS">RESULTADOS POSITIVOS</option>
-    <option label="NEUTRALES" value="NEUTRALES">RESULTADOS NEUTRALES</option>
-    <option label="NEGATIVOS" value="NEGATIVOS">RESULTADOS NEGATIVOS</option>
+    <option  value="NUNCA HICE" selected>NUNCA HICE</option>
+    <option  value="POSITIVOS">RESULTADOS POSITIVOS</option>
+    <option  value="NEUTRALES">RESULTADOS NEUTRALES</option>
+    <option  value="NEGATIVOS">RESULTADOS NEGATIVOS</option>
 {/if}
 {if $anam->dietas eq "POSITIVOS"}
-    <option label="NUNCA HICE" value="NUNCA HICE">NUNCA HICE</option>
-    <option label="POSITIVOS" value="POSITIVOS" selected>RESULTADOS POSITIVOS</option>
-    <option label="NEUTRALES" value="NEUTRALES">RESULTADOS NEUTRALES</option>
-    <option label="NEGATIVOS" value="NEGATIVOS">RESULTADOS NEGATIVOS</option>
+    <option  value="NUNCA HICE">NUNCA HICE</option>
+    <option  value="POSITIVOS" selected>RESULTADOS POSITIVOS</option>
+    <option  value="NEUTRALES">RESULTADOS NEUTRALES</option>
+    <option value="NEGATIVOS">RESULTADOS NEGATIVOS</option>
 {/if}
 {if $anam->dietas eq "NEUTRALES"}
-    <option label="NUNCA HICE" value="NUNCA HICE">NUNCA HICE</option>
-    <option label="POSITIVOS" value="POSITIVOS">RESULTADOS POSITIVOS</option>
-    <option label="NEUTRALES" value="NEUTRALES" selected>RESULTADOS NEUTRALES</option>
-    <option label="NEGATIVOS" value="NEGATIVOS">RESULTADOS NEGATIVOS</option>
+    <option  value="NUNCA HICE">NUNCA HICE</option>
+    <option  value="POSITIVOS">RESULTADOS POSITIVOS</option>
+    <option  value="NEUTRALES" selected>RESULTADOS NEUTRALES</option>
+    <option  value="NEGATIVOS">RESULTADOS NEGATIVOS</option>
 {/if}
 {if $anam->dietas eq "NEGATIVOS"}
-    <option label="NUNCA HICE" value="NUNCA HICE">NUNCA HICE</option>
-    <option label="POSITIVOS" value="POSITIVOS">RESULTADOS POSITIVOS</option>
-    <option label="NEUTRALES" value="NEUTRALES">RESULTADOS NEUTRALES</option>
-    <option label="NEGATIVOS" value="NEGATIVOS" selected>RESULTADOS NEGATIVOS</option>
+    <option  value="NUNCA HICE">NUNCA HICE</option>
+    <option  value="POSITIVOS">RESULTADOS POSITIVOS</option>
+    <option  value="NEUTRALES">RESULTADOS NEUTRALES</option>
+    <option  value="NEGATIVOS" selected>RESULTADOS NEGATIVOS</option>
 {/if}
 </select>
 </div>
@@ -241,11 +240,11 @@
 <div class="col-sm-2">
 <select name=dolor class="form-control" id="dolor" required>
 {if $anam->dolor eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -253,12 +252,12 @@
 
 <label class="col-sm-2">Peso Maximo en los ultimos 5 años:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="pesomax" name="pesomax" value="{$anam->pesomax}"  required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el peso maximo.">
+    <input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomax" name="pesomax" value="{$anam->pesomax}"  required  title="Ingrese el peso maximo.">
 </div>
 
 <label class="col-sm-2">Peso Mminimo en los ultimos 5 años:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="pesomin" name="pesomin" value="{$anam->pesomin}"  required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el peso minimo.">
+<input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomin" name="pesomin" value="{$anam->pesomin}"  required  title="Ingrese el peso minimo.">
 </div>
 
 
@@ -267,11 +266,11 @@
 <div class="col-sm-2">
 <select name=picotea class="form-control" id="picotea"  required>
 {if $anam->picotea eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -292,30 +291,30 @@
 <div class="col-sm-2">
 <select name=preferencias class="form-control" id="preferencias"  required>
 {if $anam->preferencias eq "DULCE"}
-    <option label="DULCE" value="SI" selected>DULCE</option>
-    <option label="SALADO" value="NO">SALADO</option>
+    <option  value="SI" selected>DULCE</option>
+    <option  value="NO">SALADO</option>
 {else}
-    <option label="DULCE" value="SI">DULCE</option>
-    <option label="SALADO" value="NO" selected>SALADO</option>
+    <option  value="SI">DULCE</option>
+    <option value="NO" selected>SALADO</option>
 {/if}
 </select>
 </div>
 
 <label class="col-sm-2">Alimentos que no le gustan:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="alimentosnogustan" name="alimentosnogustan" value="{$anam->alimentosnogustan}"  required pattern="^[a-zA-Z-\s]+" title="Ingrese los alimentos que no le gustan. Solo letras">
+    <input type="text" class="form-control" id="alimentosnogustan" name="alimentosnogustan" value="{$anam->alimentosnogustan|upper}"  required title="Ingrese los alimentos que no le gustan. Solo letras">
 </div>
 
 <label class="col-sm-2">Alimentos que no tolera:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosnotolera" name="alimentosnotolera" value="{$anam->alimentosnotolera}"  required pattern="^[a-zA-Z-\s]+" title="Ingrese los alimentos que no tolera. Solo letras">
+<input type="text" class="form-control" id="alimentosnotolera" name="alimentosnotolera" value="{$anam->alimentosnotolera|upper}"  required  title="Ingrese los alimentos que no tolera. Solo letras">
 </div>
 
 <br><br><br>
 
 <label class="col-sm-2">Alimentos que prefiere:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="alimentosprefiere" name="alimentosprefiere" value="{$anam->alimentosprefiere}"  required pattern="^[a-zA-Z-\s]+" title="Ingrese los alimentos que prefiere. Solo letras">
+    <input type="text" class="form-control" id="alimentosprefiere" name="alimentosprefiere" value="{$anam->alimentosprefiere|upper}"  required  title="Ingrese los alimentos que prefiere. Solo letras">
 </div>
 
 
@@ -323,11 +322,11 @@
 <div class="col-sm-2">
 <select name=cocina class="form-control" id="cocina"  required>
 {if $anam->cocina eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -336,11 +335,11 @@
 <div class="col-sm-2">
 <select name=compras class="form-control" id="compras"  required>
 {if $anam->compras eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -349,7 +348,7 @@
 
 <label class="col-sm-2">Horarios de Trabajo:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="horarios" name="horarios" value="{$anam->horarios}"  required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese el horario de trabajo.">
+    <input type="text" class="form-control" id="horarios" name="horarios" value="{$anam->horarios|upper}"  required  title="Ingrese el horario de trabajo.">
 </div>
 
 
@@ -357,11 +356,11 @@
 <div class="col-sm-2">
 <select name=desayuna class="form-control" id="desayuna"  required>
 {if $anam->desayuna eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -370,11 +369,11 @@
 <div class="col-sm-2">
 <select name=almuerza class="form-control" id="almuerza"  required>
 {if $anam->almuerza eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -385,11 +384,11 @@
 <div class="col-sm-2">
 <select name=merienda class="form-control" id="merienda"  required>
 {if $anam->merienda eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -398,18 +397,18 @@
 <div class="col-sm-2">
 <select name=cena class="form-control" id="cena" required>
 {if $anam->cena eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
 
 <label class="col-sm-2">Ingiere Suplementos?:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="suplementos" name="suplementos" value="{$anam->suplementos}"  required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese los suplementos que ingiere.">
+<input type="text" class="form-control" id="suplementos" name="suplementos" value="{$anam->suplementos|upper}"  required  title="Ingrese los suplementos que ingiere.">
 </div>
 
 <br><br><br>
@@ -418,11 +417,11 @@
 <div class="col-sm-2">
 <select name=actividad class="form-control" id="actividad" required>
 {if $anam->actividad eq "SI"}
-<option label="SI" value="SI" selected>SI</option>
-<option label="NO" value="NO">NO</option>
+<option  value="SI" selected>SI</option>
+<option  value="NO">NO</option>
 {else}
-<option label="SI" value="SI">SI</option>
-<option label="NO" value="NO" selected="">NO</option>
+<option  value="SI">SI</option>
+<option  value="NO" selected="">NO</option>
 {/if}
 </select>
 </div>
@@ -432,28 +431,28 @@
 <select name=frecuencia class="form-control" id="frecuencia"  required>
 
     {if $anam->frecuencia eq "DIARIAMENTE"}
-    <option label="DIARIAMENTE" value="DIARIAMENTE" selected>DIARIAMENTE</option>
-    <option label="SEMANALMENTE" value="SEMANALMENTE">SEMANALMENTE</option>
-    <option label="MENSUALMENTE" value="MENSUALMENTE">MENSUALMENTE</option>
-    <option label="EXPORADICAMENTE" value="EXPORADICAMENTE">EXPORADICAMENTE</option>
+    <option  value="DIARIAMENTE" selected>DIARIAMENTE</option>
+    <option  value="SEMANALMENTE">SEMANALMENTE</option>
+    <option  value="MENSUALMENTE">MENSUALMENTE</option>
+    <option  value="EXPORADICAMENTE">EXPORADICAMENTE</option>
     {/if}
     {if $anam->frecuencia eq "SEMANALMENTE"}
-    <option label="DIARIAMENTE" value="DIARIAMENTE" >DIARIAMENTE</option>
-    <option label="SEMANALMENTE" value="SEMANALMENTE" selected>SEMANALMENTE</option>
-    <option label="MENSUALMENTE" value="MENSUALMENTE">MENSUALMENTE</option>
-    <option label="EXPORADICAMENTE" value="EXPORADICAMENTE">EXPORADICAMENTE</option>
+    <option  value="DIARIAMENTE" >DIARIAMENTE</option>
+    <option  value="SEMANALMENTE" selected>SEMANALMENTE</option>
+    <option  value="MENSUALMENTE">MENSUALMENTE</option>
+    <option  value="EXPORADICAMENTE">EXPORADICAMENTE</option>
     {/if}
     {if $anam->frecuencia eq "MENSUALMENTE"}
-    <option label="DIARIAMENTE" value="DIARIAMENTE" >DIARIAMENTE</option>
-    <option label="SEMANALMENTE" value="SEMANALMENTE">SEMANALMENTE</option>
-    <option label="MENSUALMENTE" value="MENSUALMENTE" selected>MENSUALMENTE</option>
-    <option label="EXPORADICAMENTE" value="EXPORADICAMENTE">EXPORADICAMENTE</option>
+    <option  value="DIARIAMENTE" >DIARIAMENTE</option>
+    <option value="SEMANALMENTE">SEMANALMENTE</option>
+    <option  value="MENSUALMENTE" selected>MENSUALMENTE</option>
+    <option  value="EXPORADICAMENTE">EXPORADICAMENTE</option>
     {/if}
     {if $anam->frecuencia eq "EXPORADICAMENTE"}
-    <option label="DIARIAMENTE" value="DIARIAMENTE" >DIARIAMENTE</option>
-    <option label="SEMANALMENTE" value="SEMANALMENTE">SEMANALMENTE</option>
-    <option label="MENSUALMENTE" value="MENSUALMENTE">MENSUALMENTE</option>
-    <option label="EXPORADICAMENTE" value="EXPORADICAMENTE" selected>EXPORADICAMENTE</option>
+    <option value="DIARIAMENTE" >DIARIAMENTE</option>
+    <option  value="SEMANALMENTE">SEMANALMENTE</option>
+    <option  value="MENSUALMENTE">MENSUALMENTE</option>
+    <option  value="EXPORADICAMENTE" selected>EXPORADICAMENTE</option>
     {/if}
 </select>
 </div>
@@ -466,7 +465,7 @@
 
      
 <div class="form-group" align="center">
-    <input type="submit" id="btnGuardarActualizarAnamnesis" name="btnGuardarActualizarAnamnesis" class="btn btn-default" value="Crear" />
+    <input type="submit" id="btnGuardarActualizarAnamnesis" name="btnGuardarActualizarAnamnesis" class="btn btn-default" value="Actualizar" />
     <input  type="button" id="btnCancelarGuardarActualizarAnamnesis" name="btnCancelarGuardarActualizarAnamnesis" class="btn btn-default" value="Cancelar" />
     <input  type="reset" class="btn btn-default" value="Restablecer" />
 </div>

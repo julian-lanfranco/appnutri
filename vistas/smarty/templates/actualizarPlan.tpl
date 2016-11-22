@@ -402,18 +402,21 @@
   </div>
   </div>
 
-<div class="row" style="background-color:white;
+<div class="row" style="background-color:lightgrey;
                           padding-top: 10px;
                           padding-right: 10px;
                           padding-bottom: 10px;
                           padding-left: 10px;
-                          margin: 10px;"> 
-<div class="col-md-6">
-<button id="btnCrearPlan" class="btn  btn-warning btn-block">Actualizar</button>
+                          margin: 10px;">
+<div class="col-md-4 col-md-offset-2"  > 
+
+      <input id="btnCreaRecordatorio24"  class="btn btn-default btn-block "  type="submit"  value="Actualizar">
+
 </div>
-<div class="col-md-6">
-<button id="btnCancelarCrearRecordatorio24" class="btn  btn-danger btn-block">Cancelar</button>
+<div class="col-md-4 " >
+      <input type="button" class="btn btn-default btn-block " id="btnCancelarCrearRecordatorio24" value="Cancelar">
 </div>
+
 </div>
 </div>
  </form>
