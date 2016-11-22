@@ -1,11 +1,26 @@
 <form  id="paciente" method="post">
 <div class="row">
 <div class="col-md-12">
-<div class="container-fluid">
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
+  <h2>Nuevo Paciente</h2>
+  </div>
+  </div>
 
-<h4>Nuevo Paciente</h4>
+  <div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
 <tr style="">
 <td style="width: 100%;    float: left;" >
           
@@ -212,6 +227,7 @@
       </tr>
    </tbody>  
   </table> 
+  </div>
 <div class="form-group" align="center">
     
     <input type="submit" id="btnCrearPaciente" name="btnCrearPaciente" class="btn btn-default" value="Crear" />

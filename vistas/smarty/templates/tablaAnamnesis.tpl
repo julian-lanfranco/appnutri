@@ -37,8 +37,7 @@
         <td style="width: 34%;    float: left; text-align: center;">
           <img name="{$anam->id}" id="imgMostarActualizarAnamnesis"  src="img/consultar.png" align="CENTER"  style="cursor:pointer"
           height="30" width="30"/>
-          <img name="{$anam->id}" id="imgPdfAnamnesis"  src="img/pdf.png" align="CENTER"  style="cursor:pointer"
-          height="30" width="30"/>
+
           <img name="{$anam->id}" id="imgMostrarEliminarAnamnesis"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer"
           height="30" width="30"/>
         </td>

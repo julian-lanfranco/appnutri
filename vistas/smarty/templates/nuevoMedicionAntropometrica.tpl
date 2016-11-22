@@ -2,11 +2,17 @@
 <div class="row">
 <div class="col-md-12">
 <div class="container-fluid">
-<div class="row">
-<h4>Medicion Antropometrica:</h4>
-<h4 class="col-sm-4">Nueva:</h4>
-<h4 class="col-sm-4">Ultima: {$medicion1->fecha|date_format:" %d/%m/%y"}</h4>
-<h4 class="col-sm-4">Penultima: {$medicion2->fecha|date_format:" %d/%m/%y"}</h4>
+
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
+
+<h2>Nueva Medicion Antropometrica</h2>
+</div>
 </div>
 
 

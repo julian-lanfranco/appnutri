@@ -1,11 +1,17 @@
 <form  id="actualizaestudiolaboratorio" method="post">
 <div class="row">
 <div class="col-md-12">
-<div class="container-fluid">
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
 
-<h4>Actualizar Estudio Laboratorio de fecha {$estudio->fecha|date_format:" %d/%m/%y"}</h4>
-
-
+<h2>Consulta Estudio de Laboratorio</h2>
+</div>
+</div>
 <table class="table table-striped header-fixed">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">
 <tr style="">

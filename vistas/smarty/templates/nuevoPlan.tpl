@@ -2,6 +2,22 @@
 <div class="row">
 <div class="col-md-12">
 
+<div class="container-fluid">
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
+
+<h2>Nuevo Plan</h2>
+</div>
+</div>
+<div>
+
+
+
 <div class="row" style="background-color:white  ;
                           padding-top: 10px;
                           padding-right: 10px;
@@ -11,7 +27,10 @@
 
 <a id="agregarCampo" class="btn btn-success btn-block href="#">Agregar Ingesta</a>
 </div>
-
+<table class="table table-striped header-fixed">
+<tbody style="display: block;  overflow-y: auto;    float: left;height: 400px;  width: 88%">
+<tr style="">
+<td style="width: 100%; float: left;" >
 <div class="row">
 <div class="container">
 <div  class="col-md-5 ">
@@ -168,6 +187,11 @@
     </div>
   </div>
   </div>
+  </div>
+        </td>
+      </tr>
+   </tbody>  
+  </table> 
   </div>
 
 <div class="row" style="background-color:lightgrey;

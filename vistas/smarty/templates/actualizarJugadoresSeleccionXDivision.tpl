@@ -71,9 +71,9 @@
      <option label="ninguno" value="ninguno">Ninguno</option>
     {foreach from=$listaSelecciones item=club}
     {if $club->id eq $clubSeleccionadoSel}
-    <option label="{$club->nombre}"  value="{$club->id}" selected>{$club->nombre|upper}</option>
+    <option value="{$club->id}" selected>{$club->nombre|upper}</option>
     {else}
-    <option label="{$club->nombre}"  value="{$club->id}">{$club->nombre|upper}</option>
+    <option  value="{$club->id}">{$club->nombre|upper}</option>
     {/if}
     {/foreach}
 </select> 

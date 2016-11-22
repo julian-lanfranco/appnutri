@@ -23,7 +23,7 @@
 </div>
 
   <div class="row">
-  <div class="col-sm-2 " style="background-color:lavender;">
+  <div class="col-sm-2 " style="background-color:lavender; height: 800px;">
 
   <div class="panel-group" id="accordion">
 
@@ -100,7 +100,7 @@
 </div>
 
 
-    <div class="col-md-10" style="background-color:lavender;">
+    <div class="col-md-10" style="background-color:lavender; height: 800px;">
     
     <div id="pacienteSeleccionado" hidden="">
 
@@ -135,6 +135,20 @@
       </div>
     </div>
   </div>
+    <div class="row">
+    <div class="col-md-12" style="">
+      <div class="row" style="text-align:center;
+                              background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 0px;">
+        <p>GnUtri V1.0 es un Desarrollo Académico Gratuito y Libre <br> Cátedra Taller de Integración 2016 (FCyT-UADER)
+Alumnos: Julián Lanfranco - Giovanni Petterín
+      </div>
+  </div>
+</div>
 </div>
   <script src="\appnutri\lib\bootstrap\js\bootstrap.min.js"></script>
   <script type="text/javascript" src="js/funciones.js"></script>

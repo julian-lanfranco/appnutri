@@ -1,9 +1,18 @@
 <form  id="anamnesi" method="post">
 <div class="row">
 <div class="col-md-12">
-<div class="container-fluid">
 
-<h4>Nueva Anamnesis</h4>
+
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 0px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-10" >
+   <h2>Nuevo Anamnesis</h2>
+  </div>
+</div>
 
 <table class="table table-striped header-fixed">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">

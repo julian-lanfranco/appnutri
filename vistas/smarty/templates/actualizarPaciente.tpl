@@ -1,9 +1,23 @@
 <form  id="actualizapaciente" method="post">
 <div class="row">
 <div class="col-md-12">
-<div class="container-fluid">
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
 
-<h4>Editar Paciente</h4>
+<h2>Editar Paciente</h2>
+</div>
+</div>
+  <div class="row" style="background-color:white;
+                          padding-top: 10px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
 <table class="table table-striped header-fixed" style="width: 100%;">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 500px; width:100%">
 <tr style="">
@@ -259,6 +273,7 @@
       </tr>
    </tbody>  
   </table> 
+  </div>
   <div class="form-group" align="center">
     <input type="submit" id="btnActualizarPaciente" name="btnActualizarPaciente" class="btn btn-default" value="Actualizar"/>
     <input type="button" id="btnCancelarActualizarPaciente" name="btnCancelarActualizarPaciente" class="btn btn-default" value="Cancelar" />

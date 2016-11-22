@@ -4,6 +4,18 @@
 <div class="col-md-12">
 <div class="container-fluid">
 
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
+
+<h2>Nuevo Recordatorio</h2>
+</div>
+</div>
+
 <div class="row" style="background-color:white;
                           padding-top: 10px;
                           padding-right: 10px;

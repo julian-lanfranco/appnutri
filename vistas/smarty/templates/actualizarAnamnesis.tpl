@@ -1,14 +1,22 @@
 <form  id="actualizaanamnesi" method="post">
 <div class="row">
 <div class="col-md-12">
-<div class="container-fluid">
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
 
+<h2>Actualizar Anamnesis</h2>
+</div>
+</div>
 
 <input type="hidden" class="form-control" id="idPaciente" name="idPaciente" value="{$anam->paciente}">
 <input type="hidden" class="form-control" id="nombre" name="nombre" value="{$nombre}">
 <input type="hidden" class="form-control" id="idAnamnesis" name="idAnamnesis" value="{$anam->id}">
 
-<h4>Actualizar Anamnesis Paciente:</h4> 
 
 <table class="table table-striped header-fixed">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; ">

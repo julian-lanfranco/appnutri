@@ -1,9 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <h3>
-        Crear Respaldo.
-      </h3>
+<div class="row">
+<div class="col-md-12">
+
+
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 0px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-10" >
+   <h2>Nuevo Respaldo</h2>
+  </div>
+</div>
+
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;
+                          width: 900px">
       <form role="form" id="formRespaldar" name="formRespaldar">
         <div class="form-group">
            
@@ -27,5 +43,7 @@
       </form>
     </div>
   </div>
-</div
+</div>
+
+
 

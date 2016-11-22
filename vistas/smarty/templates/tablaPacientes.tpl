@@ -15,7 +15,7 @@
 
 <label class="col-sm-1">Dni:</label>
     <div class="col-sm-2">
-      <input type="text" class="form-control" id="pacienteDni" name="pacienteDni" title="Ingrese un Paciente">
+      <input type="text" class="form-control" id="pacienteDni" name="pacienteDni" title="Ingrese un Dni">
   </div>
 
   <label class="col-sm-1">Sexo:</label>
@@ -26,7 +26,7 @@
     <option  value="femenino">FEMENINO</option>
    </select>
   </div>
-  <input type="checkbox" name="clubChk" id="clubChk" value="true" checked>Posee club?<br>
+  <input type="checkbox" name="clubChk" id="clubChk" value="true" checked >Posee club?<br>
   </div>
 
   <div id=filtros>
@@ -70,7 +70,7 @@
 
 <label class="col-sm-1">Sexo:</label>
 <div class="col-sm-2">  
-  <select name="filtroSexo" class="form-control" id="filtroSexo" title="Seleccione una Division">
+  <select name="filtroSexo" class="form-control" id="filtroSexo" title="Sexo">
    <option value="todos" selected>TODOS</option> 
   <option value="femenino">FEMENINO</option>
   <option value="masculino">MASCULINO</option>
@@ -110,16 +110,15 @@
    <th style="width: 25%; float: left;text-align: center;">DNI</th>
    <th style="width: 50%; float: left;text-align: center;">Accion</th>
   </tr>
-   <tbody style="display: block;  overflow-y: auto;    float: left;height: 250px; width:100%">
+   <tbody style="display: block;  overflow-y: auto;    float: left;height: 350px; width:100%">
       {foreach from=$pacientes item=paciente}
       <tr style="width: 100%;     display: inline-table;">
         <td style="width: 25%;    float: left;" >{$paciente->apellido}  {$paciente->nombre}</td>
         <td style="width: 25%;    float: left;" >{$paciente->dni}</td>
         <td style="width: 50%;    float: left;">
-          <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgMostrarEditarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgPdfPaciente"  src="img/pdf.png" align="CENTER"  style="cursor:pointer"/>
-          <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer"/>
+          <img name="{$paciente->id}" id="imgSeleccionarPaciente"  src="img/seleccionar.png" align="CENTER"  style="cursor:pointer" title="Seleccionar Paciente"/>
+          <img name="{$paciente->id}" id="imgMostrarEditarPaciente"  src="img/consultar.png" align="CENTER"  style="cursor:pointer" title="consultar Paciente"/>
+          <img name="{$paciente->id}" id="imgMostrarEliminarPaciente"  src="img/eliminar.png" align="CENTER"  style="cursor:pointer" title="Eliminar Paciente"/>
 
         </td>
       </tr>

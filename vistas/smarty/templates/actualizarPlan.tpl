@@ -2,6 +2,21 @@
 <div class="row">
 <div class="col-md-12">
 
+<div class="container-fluid">
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
+
+<h4>Consulta Plan</h4>
+</div>
+</div>
+<div>
+
+
 <div class="row" style="background-color:white  ;
                           padding-top: 10px;
                           padding-right: 10px;
@@ -12,12 +27,22 @@
 <a id="agregarCampo" class="btn btn-success btn-block href="#">Agregar Ingesta</a>
 </div>
 
+<table class="table table-striped header-fixed">
+<tbody style="display: block;  overflow-y: auto;    float: left; height: 400px;  width: 88%">
+<tr style="">
+<td style="width: 100%; float: left;   background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 10px;
+                          padding-left: 10px;
+                          margin: 10px;"" >
+
 <div class="row">
 <div class="container">
 <div  class="col-md-5 ">
 
 <table class="table table-striped header-fixed" style="width: 100%;">
-<tbody style="display: block;  overflow-y: auto;    float: left; height:300px; width:100%">
+<tbody style="display: block;  overflow-y: auto;    float: left; height:300px; width:100%; ">
 <tr style="">
 <td style="width: 500px;    overflow-y: auto; float: left;
                             background-color:white;
@@ -241,7 +266,7 @@
 </div>
 
  <div class="row" style="background-color:lavender;
-                          padding-top: 10px;
+                          padding-top: 0px;
                           padding-right: 10px;
                           padding-bottom: 10px;
                           padding-left: 10px;
@@ -401,6 +426,11 @@
   </div>
   </div>
   </div>
+        </td>
+      </tr>
+   </tbody>  
+  </table> 
+  </div>
 
 <div class="row" style="background-color:lightgrey;
                           padding-top: 10px;
@@ -419,5 +449,8 @@
 
 </div>
 </div>
+</div>
+</div>
+
  </form>
 <script type="text/javascript" src="js/funcionesModuloPlanesDinamico.js"></script>

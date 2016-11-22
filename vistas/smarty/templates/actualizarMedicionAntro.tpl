@@ -1,12 +1,17 @@
 <form  id="actualizamedicionantro" method="post">
 <div class="row">
 <div class="col-md-12">
-<div class="container-fluid">
-<div class="row">    
-<h4>Actualizar Medicion Antropometrica</h4>
-<h4 class="col-md-12">Medicion creada el: {$medicion->fecha|date_format:" %d/%m/%y"}</h4>
+  <div class="row" style="background-color:white;
+                          padding-top: 0px;
+                          padding-right: 10px;
+                          padding-bottom: 0px;
+                          padding-left: 10px;
+                          margin: 10px;">
+  <div class="col-md-12" >
 
-
+<h2>Consulta Medicion Antropometrica</h2>
+</div>
+</div>
 
 <table class="table table-striped header-fixed" style="width: 100%;">
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 450px; width:100%">

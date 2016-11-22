@@ -577,7 +577,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                             divisionSelect=divisionSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";      
                                             for(var i in divisiones)
                                                         {
-                                                            divisionSelect=divisionSelect+"<option label='"+divisiones[i].id+"' value='"+divisiones[i].id+"'>"+divisiones[i].nombre+"</option>";
+                                                            divisionSelect=divisionSelect+"<option  value='"+divisiones[i].id+"'>"+divisiones[i].nombre+"</option>";
                                                         }
                                             divisionSelect=divisionSelect+"</select></div>";
                                              
@@ -652,7 +652,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                             divisionSelect=divisionSelect+"<option label='ninguno' value='ninguno'>Ninguno</option>";      
                                             for(var i in divisiones)
                                                         {
-                                                            divisionSelect=divisionSelect+"<option label='"+divisiones[i].id+"' value='"+divisiones[i].id+"'>"+divisiones[i].nombre+"</option>";
+                                                            divisionSelect=divisionSelect+"<option  value='"+divisiones[i].id+"'>"+divisiones[i].nombre+"</option>";
                                                         }
                                             divisionSelect=divisionSelect+"</select></div>";
                                              
