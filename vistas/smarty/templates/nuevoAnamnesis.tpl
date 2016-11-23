@@ -50,7 +50,7 @@
 </select>
 </div>
 
-<label class="col-sm-2">Hipertension: </label>
+<label class="col-sm-2">Hipertensión: </label>
 <div class="col-sm-2">
 <select name=hipertension class="form-control" id="hipertension" required>
     <option label="SI" value="SI">SI</option>
@@ -58,7 +58,7 @@
 </select>
 </div>
 
-<label class="col-sm-2">Enfermedad Cardiacas: </label>
+<label class="col-sm-2">Enfermedad Cardíacas: </label>
 <div class="col-sm-2">
 <select name=cardiacas class="form-control" id="cardiacas" required>
     <option label="SI" value="SI">SI</option>
@@ -97,7 +97,7 @@
 </div>
 
 
-<label class="col-sm-2">Como los toma?:</label>
+<label class="col-sm-2">Comó los toma?:</label>
 <div class="col-sm-6"><input type="text" class="form-control" id="toma" name="toma" value="" required  title="Ingrese como toma los medicamentos. Solo letras">
 </div>
 
@@ -130,7 +130,7 @@
 </div>
 <br><br><br>
 
-<label class="col-sm-2">Constipacion:</label>
+<label class="col-sm-2">Constipación:</label>
 <div class="col-sm-2">
     <select name=constipacion class="form-control" id="constipacion" required>
     <option label="SI" value="SI">SI</option>
@@ -173,15 +173,15 @@
     </select>
  </div>
 
- <label class="col-sm-2">Peso Maximo en los ultimos 5 años:</label>
+ <label class="col-sm-2">Peso Máximo en los ultimos 5 años:</label>
  <div class="col-sm-2">
- <input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomax" name="pesomax" value="" required  title="Ingrese el peso maximo.">
+ <input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomax" name="pesomax" value="" required  title="Ingrese el peso máximo.">
  </div>
 
 <br><br><br><br> 
-<label class="col-sm-2">Peso Mminimo en los ultimos 5 años:</label>
+<label class="col-sm-2">Peso Mínimo en los ultimos 5 años:</label>
 <div class="col-sm-2">
-<input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomin" name="pesomin" value="" required  title="Ingrese el peso minimo.">
+<input type="number" step="0.001" min="0" max="350" class="form-control" id="pesomin" name="pesomin" value="" required  title="Ingrese el peso mínimo.">
 </div>
 
 
@@ -210,20 +210,20 @@
 </select>
 </div>
 
-<label class="col-sm-2">Alimentos que no le gustan:</label>
+<label class="col-sm-2">Alimentos qué no le gustan:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosnogustan" name="alimentosnogustan" value="" required  title="Ingrese los alimentos que no le gustan. Solo letras">
+<input type="text" class="form-control" id="alimentosnogustan" name="alimentosnogustan" value="" required  title="Ingrese los alimentos qué no le gustan. Solo letras">
 </div>
 
-<label class="col-sm-2">Alimentos que no tolera:</label>
+<label class="col-sm-2">Alimentos qué no tolera:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosnotolera" name="alimentosnotolera" value="" required  title="Ingrese los alimentos que no tolera. Solo letras">
+<input type="text" class="form-control" id="alimentosnotolera" name="alimentosnotolera" value="" required  title="Ingrese los alimentos qué no tolera. Solo letras">
 </div>
 
 <br><br><br>
-<label class="col-sm-2">Alimentos que prefiere:</label>
+<label class="col-sm-2">Alimentos qué prefiere:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="alimentosprefiere" name="alimentosprefiere" value="" required  title="Ingrese los alimentos que prefiere. Solo letras">
+<input type="text" class="form-control" id="alimentosprefiere" name="alimentosprefiere" value="" required  title="Ingrese los alimentos qué prefiere. Solo letras">
 </div>
 
 <label class="col-sm-2">Cocina?:</label>
@@ -284,13 +284,13 @@
 
 <label class="col-sm-2">Ingiere Suplementos?:</label>
 <div class="col-sm-2">
-<input type="text" class="form-control" id="suplementos" name="suplementos" value="" required  title="Ingrese los suplementos que ingiere.">
+<input type="text" class="form-control" id="suplementos" name="suplementos" value="" required  title="Ingrese los suplementos qué ingiere.">
 </div>
 
 
 <br><br><br>
 
-<label class="col-sm-2">Hace Actividad Fisica?:</label>
+<label class="col-sm-2">Hace Actividad Física?:</label>
 <div class="col-sm-2">
     <select name=actividad class="form-control" id="actividad" required>
     <option label="SI" value="SI">SI</option>
@@ -298,7 +298,7 @@
 </select>
 </div>
 
-<label class="col-sm-2">Con que frecuencia?:</label>
+<label class="col-sm-2">Con qué frecuencia?:</label>
 <div class="col-sm-3">
     <select name=frecuencia class="form-control" id="frecuencia" required>
     <option label="DIARIAMENTE" value="DIARIAMENTE">DIARIAMENTE</option>

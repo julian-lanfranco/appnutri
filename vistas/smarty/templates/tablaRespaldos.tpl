@@ -32,7 +32,7 @@
       <th style="width: 15%;float: left;">Fecha</th>
         <th style="width: 30%;float: left;">Nombre</th>
         <th style="width: 30%;float: left;">Detalle</th>      
-        <th style="width: 20%;float: left;">Accion</th>
+        <th style="width: 20%;float: left;">Acción</th>
       </tr>
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$respaldos item=respaldo}
@@ -46,7 +46,7 @@
           </textarea>
         </td>
         <td style="width: 20%;    float: left;">
-            <img name="{$respaldo->id}" id="imgEliminarRespaldo"  src="img/eliminar.png" align="CENTER" style="cursor:pointer" height="30" width="30"/>
+
            <a href="/appnutri/respaldos/{$respaldo->nombre}"> 
            <img name="{$respaldo->id}" id="imgDescargarRespaldo"  src="img/descargar.png" align="CENTER" style="cursor:pointer" height="30" width="30"/>
            </a>

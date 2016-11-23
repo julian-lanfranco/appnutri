@@ -42,22 +42,22 @@
         <div class="col-md-8">
         <select name=tipo class="form-control" id="tipo" required>
         <option value="normal">NORMAL</option>
-        <option value="seleccion">SELECCION</option>
+        <option value="seleccion">SELECCIÓN</option>
         </select>
         </div>
 
 <br><br><br> 
 
-     <label class="col-md-4">Telefono</label>
+     <label class="col-md-4">Teléfono</label>
       <div class="col-md-8">
-     <input type="text" class="form-control" id="telefono" name="telefono" value="" required  title="Ingrese el telefono. Solo numeros">
+     <input type="text" class="form-control" id="telefono" name="telefono" value="" required  title="Ingrese el teléfono. Solo numeros">
      </div>
 
 
 <br><br><br> 
-   <label class="col-md-4">Direccion</label>
+   <label class="col-md-4">Dirección</label>
    <div class="col-md-8">
-   <input type="text" class="form-control" id="direccion" name="direccion" value="" required  title="Ingrese la direccion.">
+   <input type="text" class="form-control" id="direccion" name="direccion" value="" required  title="Ingrese la dirección.">
    </div>
 
 
@@ -68,9 +68,9 @@
      </div>
 <br><br><br> 
 
-     <label class="col-md-4">Correo Electronico</label>
+     <label class="col-md-4">Correo Electrónico</label>
      <div class="col-md-8">
-     <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" value="" required  title="Ingrese el correo electronico">
+     <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" value="" required  title="Ingrese el correo electrónico">
      </div>
 
 

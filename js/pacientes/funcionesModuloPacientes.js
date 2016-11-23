@@ -64,7 +64,7 @@ $("#central").on("click", "#imgSeleccionarPaciente", function(){
         var idClub=$("#seleccionClubesModTablaPacientes").val();
         var idDivision=$("#seleccionDivisionesModTablaPacientes").val();
 
-                 if (confirm("Esta seguro que desea eliminar el Paciente "+idPaciente))
+                 if (confirm("Esta seguro qué desea eliminar el Paciente "+idPaciente))
                  {
                             $.ajax({
                                         type: "GET",
@@ -538,7 +538,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                              }
                         });
                     }
-                    else {alert("revise los generos");
+                    else {alert("revise los géneros");
                             $("#seleccionSexoModPacientes").val("ninguno").change();
                             $('#seleccionDivisionesModPacientes').val("ninguno").change();
 
@@ -587,7 +587,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                         });
                                     }
                 else    {  
-                        alert("revise los generos");
+                        alert("revise los géneros");
                         if (sexoAnterior=="masculino") { $("#seleccionSexoOrigen").val("femenino").change();}
                         if (sexoAnterior=="femenino") { $("#seleccionSexoOrigen").val("masculino").change();}
                         }
@@ -662,7 +662,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                         });
                                     }
                 else    {  
-                        alert("revise los generos");
+                        alert("revise los géneros");
                         if (sexoAnterior=="masculino") { $("#sseleccionSexoDestino").val("femenino").change();}
                         if (sexoAnterior=="femenino") { $("#seleccionSexoDestino").val("masculino").change();}
                         }
@@ -822,7 +822,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
                                              }
                         });
                                             }
-                else {alert("revise los generos");
+                else {alert("revise los géneros");
                             $("#seleccionSexoSeleccionesModPacientes").val("ninguno").change();
                             }
 
@@ -838,7 +838,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
 
                 }
                 else    {  
-                        alert("revise los generos");
+                        alert("revise los géneros");
                         if (sexoAnterior=="masculino") { $("#sexo").val("femenino").change();}
                         if (sexoAnterior=="femenino") { $("#sexo").val("masculino").change();}
                         }
@@ -912,7 +912,7 @@ $("#central").on("change", "#seleccionDeportesDestino", function(){
             var url = "http://"+ambito+"/appnutri/?modulo=pacientes";
             var idPaciente=$("#idPaciente").val();
 
-             if (confirm(" Esta seguro que desea imprimir los datos del paciente :"+idPaciente+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir los datos del paciente :"+idPaciente+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=pacientes&accion=imprimirConsultaPaciente&idPaciente="+idPaciente);

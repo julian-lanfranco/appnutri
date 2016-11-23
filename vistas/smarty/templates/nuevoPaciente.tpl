@@ -78,7 +78,7 @@
 
 
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=seelctorDeDivisiones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesModPacientes" class="form-control" id="seleccionDivisionesModPacientes">
@@ -131,7 +131,7 @@
 
 
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=selectorDeDivisionesSelecciones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesSeleccionesModPacientes" class="form-control" id="seleccionDivisionesSeleccionesModPacientes">
@@ -177,9 +177,9 @@
   <input type="text" class="form-control" id="obra" name="obra" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese la obra social. Solo letras">
  </div>
 
- <label class="col-sm-1">Telefono:</label> 
+ <label class="col-sm-1">Teléfono:</label> 
  <div class="col-sm-2">
-   <input type="text" class="form-control" id="telefono" name="telefono" value="" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros">
+   <input type="text" class="form-control" id="telefono" name="telefono" value="" required pattern="^[0-9]+" title="Ingrese el teléfono. Solo numeros">
  </div>
 </div>
 <br><br>
@@ -188,20 +188,20 @@
  <div class="col-sm-3">
   <input type="date" class="form-control" id="nacimiento" name="nacimiento" value="" required  title="Ingrese la fecha de nacimiento">
  </div>
- <label class="col-sm-1">Correo Electronico:</label>
+ <label class="col-sm-1">Correo Electrónico:</label>
  <div class="col-sm-3">
-  <input type="email" class="form-control" id="correo" name="correo" value="" required title="Ingrese el correo electronico.">
+  <input type="email" class="form-control" id="correo" name="correo" value="" required title="Ingrese el correo electrónico.">
  </div>
- <label class="col-sm-1">Medico de Cabecera:</label>
+ <label class="col-sm-1">Médico de Cabecera:</label>
  <div class="col-sm-2">
-  <input type="text" class="form-control" id="medico" name="medico" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese el nombre del medico. Solo letras">
+  <input type="text" class="form-control" id="medico" name="medico" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese el nombre del médico. Solo letras">
  </div>
 </div>
 <br><br><br>
 <div class="form-group">
- <label class="col-sm-1">Ocupacion:</label>
+ <label class="col-sm-1">Ocupación:</label>
  <div class="col-sm-3">
- <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese la ocupacion. Solo letras">
+ <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="" required pattern="^[a-zA-Z-\s]+" title="Ingrese la ocupación. Solo letras">
  </div>
 
 <label class="col-sm-1">Sexo:</label>

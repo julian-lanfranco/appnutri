@@ -13,7 +13,7 @@
   </select>
  
 
-  <p>Seleccione una division:</p> 
+  <p>Seleccione una división:</p> 
   <select name="seleccionDivisionesModTablaRecordatorio24" 
                 class="form-control" id="seleccionDivisionesModTablaRecordatorio24">
   <option label="<--TODOS-->" value="defecto">todos</option>
@@ -33,7 +33,7 @@
   <tr style="">
    <th style="width: 33%; float: left;">Id</th>
    <th style="width: 33%; float: left;">Nombre</th>
-   <th style="width: 33%; float: left;">Accion</th>
+   <th style="width: 33%; float: left;">Acción</th>
   </tr>
    <tbody style="display: block;  overflow-y: auto;    float: left;height: 400px; width:100%">
       {foreach from=$pacientes item=paciente}

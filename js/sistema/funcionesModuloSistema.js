@@ -116,7 +116,7 @@
             var url = "http://"+ambito+"/appnutri/?modulo=clubes";
             var idClub=$("#idClub").val();
 
-             if (confirm(" Esta seguro que desea imprimir club :"+idClub+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir club :"+idClub+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=clubes&accion=imprimirConsultaClub&idClub="+idClub);

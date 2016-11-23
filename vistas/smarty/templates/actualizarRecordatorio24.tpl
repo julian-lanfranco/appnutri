@@ -84,9 +84,9 @@ Hora Acostado
     {/if}
 
     {if $ingesta->tipodeingesta eq "mediaManiana"}
-          <option label="{$ingesta->tipodeingesta}" value="{$ingesta->tipodeingesta}" selected>{$ingesta->tipodeingesta|upper}</option>
+          <option  value="{$ingesta->tipodeingesta}" selected>{$ingesta->tipodeingesta|upper}</option>
     {else}
-           <option label="mediaManiana" value="mediaManiana">MEDIA MAÑANA</option>
+           <option  value="mediaManiana">MEDIA MAÑANA</option>
     {/if}
 
     {if $ingesta->tipodeingesta eq "almuerzo"}
@@ -104,7 +104,7 @@ Hora Acostado
     {if $ingesta->tipodeingesta eq "colacion"}
           <option label="{$ingesta->tipodeingesta}" value="{$ingesta->tipodeingesta}" selected>{$ingesta->tipodeingesta|upper}</option>
     {else}
-        <option label="colacion" value="colacion">COLACION</option>
+         value="colacion">COLACIÓN</option>
     {/if}
 
     {if $ingesta->tipodeingesta eq "cena"}

@@ -19,7 +19,7 @@ $("#central").on("click", "#imgMostarActualizarClub", function(){
         $("#central").on("click", "#imgMostrarEliminarClub", function(){
         
          club = $(this).attr('name');
-                 if (confirm("Esta seguro que desea eliminar el Club : "+club+" JUNTO CON EL SE ELIMINARAN TODAS LA DIVISIONES!!"))
+                 if (confirm("Esta seguro qué desea eliminar el Club : "+club+" JUNTO CON EL SE ELIMINARAN TODAS LA DIVISIONES!!"))
                  {
                             $.ajax({
                                         type: "GET",
@@ -130,7 +130,7 @@ $("#central").on("click", "#imgMostarActualizarClub", function(){
             var url = "http://"+ambito+"/appnutri/?modulo=clubes";
             var idClub=$("#idClub").val();
 
-             if (confirm(" Esta seguro que desea imprimir club :"+idClub+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir club :"+idClub+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=clubes&accion=imprimirConsultaClub&idClub="+idClub);

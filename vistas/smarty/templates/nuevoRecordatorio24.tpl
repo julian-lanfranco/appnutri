@@ -76,10 +76,10 @@ Hora Acostado
 
       <select name="tipoDeIngesta[]" id="tipoDeIngesta[]">
       <option label="desayuno" value="desayuno">DESAYUNO</option>
-    <option label="mediaManiana" value="mediaManiana">MEDIA MAÑANA</option>
+    <option  value="mediaManiana">MEDIA MAÑANA</option>
       <option label="almuerzo" value="almuerzo">ALMUERZO</option>
       <option label="merienda" value="merienda">MERIENDA</option>
-  <option label="colacion" value="colacion">COLACION</option>
+  <option  value="colacion">COLACIÓN</option>
   <option label="cena" value="cena">CENA</option>
 
       </select>   

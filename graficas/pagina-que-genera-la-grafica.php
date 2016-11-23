@@ -10,13 +10,13 @@ $kotales=$_GET['ktotales'];
  
 // Se define el array de valores y el array de la leyenda
 $datos = array($hdc,$proteinas,$lipidos);
-$leyenda = array("Hdc","Proteinas","Lipidos");
+$leyenda = array("Hdc","Proteínas","Lípidos");
  
 //Se define el grafico
 $grafico = new PieGraph(450,300);
  
 //Definimos el titulo
-$grafico->title->Set("Calorias Totales:  ".$kotales);
+$grafico->title->Set("Calorías Totales:  ".$kotales);
 $grafico->title->SetFont(FF_FONT1,FS_BOLD);
  
 //Añadimos el titulo y la leyenda

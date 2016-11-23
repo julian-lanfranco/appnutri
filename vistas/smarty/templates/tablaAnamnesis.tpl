@@ -26,7 +26,7 @@
   <tr>
   <th style="width: 33%;  float: left;text-align: center;">Id</th>
   <th style="width: 33%;  float: left;text-align: center;">Fecha de alta</th>
-  <th style="width: 34%;  float: left;text-align: center;">Accion</th>
+  <th style="width: 34%;  float: left;text-align: center;">Acción</th>
   </tr>
 
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">

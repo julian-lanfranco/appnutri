@@ -22,7 +22,7 @@ $("#central").on("click", "#imgMostarActualizarDivision", function(){
         
         var idDivision = $(this).attr('name');
         var idClub=$("#seleccionClubes").val();
-                 if (confirm("Esta seguro que desea eliminar la Division "+idDivision+" del club "+idClub))
+                 if (confirm("Esta seguro qué desea eliminar la Division "+idDivision+" del club "+idClub))
                  {
                             $.ajax({
                                         type: "GET",
@@ -157,7 +157,7 @@ $("#central").on("click", "#imgMostarActualizarDivision", function(){
             var url = "http://"+ambito+"/appnutri/?modulo=divisiones";
             var idDivision=$("#idDivision").val();
 
-             if (confirm(" Esta seguro que desea imprimir la division :"+idDivision+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir la division :"+idDivision+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=divisiones&accion=imprimirConsultaDivision&idDivision="+idDivision);

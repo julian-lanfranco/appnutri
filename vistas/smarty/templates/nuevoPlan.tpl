@@ -59,10 +59,10 @@
 
       <select name="tipoDeIngesta[]" id="tipoDeIngesta[]">
       <option label="desayuno" value="desayuno">DESAYUNO</option>
-    <option label="mediaManiana" value="almuerzo">MEDIA MAÑANA</option>
+    <option  value="almuerzo">MEDIA MAÑANA</option>
       <option label="almuerzo" value="almuerzo">ALMUERZO</option>
       <option label="merienda" value="cena">MERIENDA</option>
-  <option label="colacion" value="colacion">COLACION</option>
+  <option value="colacion">COLACIÓN</option>
   <option label="cena" value="cena">CENA</option>
       </select>   
       <select name="alimento[]" id="alimento[]">      
@@ -120,10 +120,10 @@
    <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#lunes">Lunes</a></li>
     <li><a data-toggle="tab" href="#martes">Martes</a></li>
-    <li><a data-toggle="tab" href="#miercoles">Miercoles</a></li>
+    <li><a data-toggle="tab" href="#miercoles">Miércoles</a></li>
     <li><a data-toggle="tab" href="#jueves">Jueves</a></li>
     <li><a data-toggle="tab" href="#viernes">Viernes</a></li>
-    <li><a data-toggle="tab" href="#sabado">Sabado</a></li>
+    <li><a data-toggle="tab" href="#sabado">Sábado</a></li>
     <li><a data-toggle="tab" href="#domingo">Domingo</a></li>
   </ul>
 
@@ -133,7 +133,7 @@
 <textarea name="lunes_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="lunes_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="lunes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="lunes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="lunes_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="lunes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
 
@@ -142,7 +142,7 @@
 <textarea name="martes_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="martes_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="martes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="martes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="martes_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="martes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
     <div id="miercoles" class="tab-pane fade">
@@ -150,7 +150,7 @@
 <textarea name="miercoles_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="miercoles_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="miercoles_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="miercoles_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="miercoles_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="miercoles_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
     <div id="jueves" class="tab-pane fade">
@@ -158,7 +158,7 @@
 <textarea name="jueves_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="jueves_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="jueves_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="jueves_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="jueves_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="jueves_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
     <div id="viernes" class="tab-pane fade">
@@ -166,7 +166,7 @@
 <textarea name="viernes_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="viernes_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="viernes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="viernes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="viernes_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="viernes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
     <div id="sabado" class="tab-pane fade">
@@ -174,7 +174,7 @@
 <textarea name="sabado_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="sabado_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="sabado_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="sabado_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="sabado_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="sabado_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
     <div id="domingo" class="tab-pane fade">
@@ -182,7 +182,7 @@
 <textarea name="domingo_med_maniana" placeholder="media mañana" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="domingo_almuerzo" placeholder="almuerzo" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="domingo_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;"></textarea>
-<textarea name="domingo_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;"></textarea>
+<textarea name="domingo_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;"></textarea>
 <textarea name="domingo_cena" placeholder="cena" rows="5" cols="20" style="resize:none;"></textarea>
     </div>
   </div>

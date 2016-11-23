@@ -61,7 +61,7 @@ $("#central").on("click", "#imgMostrarConsultarAnamnesis", function(){
         var idPaciente=$("#idPaciente").val();
 
 
-                 if (confirm("Esta seguro que desea eliminar la Anamnesis "+idAnamnesis))
+                 if (confirm("Esta seguro qué desea eliminar la Anamnesis "+idAnamnesis))
                  {
                             $.ajax({
                                         type: "GET",
@@ -189,7 +189,7 @@ $("#central").on("click", "#imgMostrarConsultarAnamnesis", function(){
 
             var idAnamnesis=$("#idAnamnesis").val();
 
-             if (confirm(" Esta seguro que desea imprimir la Anamnesis :"+idAnamnesis+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir la Anamnesis :"+idAnamnesis+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=anamnesis&accion=imprimirConsultaAnamnesis&idAnamnesis="+idAnamnesis);

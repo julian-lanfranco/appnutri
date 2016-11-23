@@ -41,15 +41,15 @@
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Torax Tranverso:</label>
+<label class="col-sm-4">Tórax Tranverso:</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="toraxtranverso" name="toraxtranverso" value="{$medicion->toraxtranverso}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el diametro del torax tranverso en cms.">
+    <input type="text" class="form-control" id="toraxtranverso" name="toraxtranverso" value="{$medicion->toraxtranverso}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el diametro del tórax tranverso en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Torax Antero-Posterior:</label>
+<label class="col-sm-4">Tórax Antero-Posterior:</label>
 <div class="col-sm-4"> 
-<input type="text" class="form-control" id="toraxantero" name="toraxantero" value="{$medicion->toraxantero}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el diametro del torax anter-posterior en cms.">
+<input type="text" class="form-control" id="toraxantero" name="toraxantero" value="{$medicion->toraxantero}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el diametro del tórax anter-posterior en cms.">
 </div>
 <br><br><br>
 
@@ -71,72 +71,72 @@
 </div>
 <br><br><br><br>
 
-<h3>Perimetros</h3><br>
+<h3>Perímetros</h3><br>
 
 <label class="col-sm-4">Cabeza:</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="cabeza" name="cabeza" value="{$medicion->cabeza}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de la cabeza cms.">
+    <input type="text" class="form-control" id="cabeza" name="cabeza" value="{$medicion->cabeza}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de la cabeza cms.">
 </div>
 <br><br><br>
 
 <label class="col-sm-4">Brazo Relajado:</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="brazorelajado" name="brazorelajado" value="{$medicion->brazorelajado}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro del brazo relajado en cms.">
+    <input type="text" class="form-control" id="brazorelajado" name="brazorelajado" value="{$medicion->brazorelajado}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro del brazo relajado en cms.">
 </div>
 <br><br><br>
 
 <label class="col-sm-4">Brazo Flexionado en Tension:</label>
 <div class="col-sm-4">
-<input type="text" class="form-control" id="brazoflexionado" name="brazoflexionado" value="{$medicion->brazoflexionado}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de el brazo flexionado en cms.">
+<input type="text" class="form-control" id="brazoflexionado" name="brazoflexionado" value="{$medicion->brazoflexionado}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de el brazo flexionado en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Antebrazo Maximo:</label>
+<label class="col-sm-4">Antebrazo Máximo:</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="antebrazomaximo" name="antebrazomaximo" value="{$medicion->antebrazomaximo}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de el antebrazo maximo en cms.">
+    <input type="text" class="form-control" id="antebrazomaximo" name="antebrazomaximo" value="{$medicion->antebrazomaximo}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de el antebrazo máximo en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Torax Mesoesternal:</label>
+<label class="col-sm-4">Tórax Mesoesternal:</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="toraxmesoesternal" name="toraxmesoesternal" value="{$medicion->toraxmesoesternal}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro del torax mesoesternal en cms.">
+    <input type="text" class="form-control" id="toraxmesoesternal" name="toraxmesoesternal" value="{$medicion->toraxmesoesternal}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro del tórax mesoesternal en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Cintura (minima):</label>
+<label class="col-sm-4">Cintura (mínima):</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="cintura" name="cintura" value="{$medicion->cintura}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de la cintura en cms.">
+    <input type="text" class="form-control" id="cintura" name="cintura" value="{$medicion->cintura}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de la cintura en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Cadera (maximo):</label>
+<label class="col-sm-4">Cadera (máximo):</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="cadera" name="cadera" value="{$medicion->cadera}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de la cadera en cms.">
+    <input type="text" class="form-control" id="cadera" name="cadera" value="{$medicion->cadera}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de la cadera en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Muslo (maximo):</label>
+<label class="col-sm-4">Muslo (máximo):</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="muslomax" name="muslomax" value="{$medicion->muslomax}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de el muslo maximo en cms.">
+    <input type="text" class="form-control" id="muslomax" name="muslomax" value="{$medicion->muslomax}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de el muslo máximo en cms.">
 </div>
 <br><br><br>
 
 <label class="col-sm-4">Muslo (medial):</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="muslomed" name="muslomed" value="{$medicion->muslomed}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perimetro de el muslo medio en cms.">
+    <input type="text" class="form-control" id="muslomed" name="muslomed" value="{$medicion->muslomed}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el perímetro de el muslo medio en cms.">
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Pantorilla (maxima):</label>
+<label class="col-sm-4">Pantorilla (máxima):</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="pantorrilla" name="pantorrilla" value="{$medicion->pantorrilla}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese perimetro de la pantorrilla maxima en cms.">
+    <input type="text" class="form-control" id="pantorrilla" name="pantorrilla" value="{$medicion->pantorrilla}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese perímetro de la pantorrilla máxima en cms.">
 </div>
 <br><br><br><br>
 
 <h3>Pliegues Cutaneos (mm)</h3><br>
-<label class="col-sm-4">Triceps:</label>
+<label class="col-sm-4">Tríceps:</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="triceps" name="triceps" value="{$medicion->triceps}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el pliegue de triceps en cms.">
+    <input type="text" class="form-control" id="triceps" name="triceps" value="{$medicion->triceps}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el pliegue de tríceps en cms.">
 </div>
 <br><br><br>
 
@@ -164,9 +164,9 @@
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Pantorilla (maxima):</label>
+<label class="col-sm-4">Pantorilla (máxima):</label>
 <div class="col-sm-4">
-    <input type="text" class="form-control" id="pantorrilla2" name="pantorrilla2" value="{$medicion->pantorrilla2}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el pliegue pantorrilla maximo en cms.">
+    <input type="text" class="form-control" id="pantorrilla2" name="pantorrilla2" value="{$medicion->pantorrilla2}" disabled pattern="^[0-9 .]+[^.]" title="Ingrese el pliegue pantorrilla máximo en cms.">
 </div>
 
 </td>

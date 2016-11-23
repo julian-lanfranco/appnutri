@@ -27,12 +27,12 @@
       <input type="text" class="form-control" id="dni" name="dni" value="{$dni}" readonly>
       </div>
       
-      <label class="col-sm-1">Direccion:</label>
+      <label class="col-sm-1">Dirección:</label>
       <div class="col-sm-3">
       <input type="text" class="form-control" id="direccion" name="direccion" value="{$direccion}" readonly>
       </div>
       
-      <label class="col-sm-1">Telefono:</label>
+      <label class="col-sm-1">Teléfono:</label>
       <div class="col-sm-2">
       <input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" readonly>
       </div>
@@ -47,18 +47,18 @@
       <input type="text" class="form-control" id="nacimiento" name="nacimiento" value="{$nacimiento}" readonly>
       </div>
       
-      <label class="col-sm-1">Correo Electronico:</label>
+      <label class="col-sm-1">Correo Electrónico:</label>
       <div class="col-sm-2">
       <input type="email" class="form-control" id="correo" name="correo" value="{$correo}" readonly>
       </div>
   <br><br><br>    
-      <label class="col-sm-1">Medico de Cabecera:</label>
+      <label class="col-sm-1">Médico de Cabecera:</label>
       <div class="col-sm-3">
       <input type="text" class="form-control" id="medico" name="medico" value="{$medico}" readonly>
       </div>
       
       
-      <label class="col-sm-1">Ocupacion:</label>
+      <label class="col-sm-1">Ocupación:</label>
       <div class="col-sm-3">
       <input type="text" class="form-control" id="ocupacion" value="{$ocupacion}" readonly>
       </div>

@@ -153,7 +153,7 @@ $("#central").on("click", "#imgMostarActualizarMedicionAntro", function(){
         var idMedicionAntro = $(this).attr('name');
 
 
-                 if (confirm("Esta seguro que desea eliminar la Medicion Antropometrica "+idMedicionAntro))
+                 if (confirm("Esta seguro qué desea eliminar la Medicion Antropometrica "+idMedicionAntro))
                  {
                             $.ajax({
                                         type: "GET",
@@ -222,7 +222,7 @@ $("#central").on("click", "#imgMostarActualizarMedicionAntro", function(){
 
             var idMedicionAntro=$("#idMedicionAntro").val();
 
-             if (confirm(" Esta seguro que desea imprimir la Medicion :"+idMedicionAntro+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir la Medicion :"+idMedicionAntro+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=medicionesAntropometricas&accion=imprimirConsultaMedicionAntro&idMedicionAntro="+idMedicionAntro);
@@ -240,7 +240,7 @@ $("#central").on("click", "#imgMostarActualizarMedicionAntro", function(){
                 var fechaHasta=$("#seleccionFechaHasta").val();
                 
                 if(!fechaDesde){
-                    alert("Es necesario que seleccione la fecha desde");
+                    alert("Es necesario qué seleccione la fecha desde");
                     document.getElementById('btnGraficaMedicionAntropometricas').disabled=true;    
                   }
                   else{  

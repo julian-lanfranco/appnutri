@@ -51,7 +51,7 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
         $("#central").on("click", "#imgMostrarEliminarRecordatorio24", function(){
         recordatorio = $(this).attr('name');
          var idPaciente=$("#idPaciente").val();
-             if (confirm("Esta seguro que desea eliminar el Recordatorio ?"))
+             if (confirm("Esta seguro qué desea eliminar el Recordatorio ?"))
         
         
                  $.ajax({
@@ -131,7 +131,7 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
                 var cena=$("#cena").val();
                 var horadormido=$("#horadormido").val();
                 
-                 if (confirm(" Esta seguro que desea modificar los datos de - > id: "+idRecordatorio+" ?"))
+                 if (confirm(" Esta seguro qué desea modificar los datos de - > id: "+idRecordatorio+" ?"))
                  {
                              $.ajax({
                                            type: "POST",
@@ -208,7 +208,7 @@ $("#central").on("click", "#imgMostarActualizarRecordatorio24", function(){
             var url = "http://"+ambito+"/appnutri/?modulo=recordatorio24";
             var idRecordatorio=$("#idRecordatorio").val();
 
-             if (confirm(" Esta seguro que desea imprimir recordatorio :"+idRecordatorio+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir recordatorio :"+idRecordatorio+"  ?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=recordatorio24&accion=imprimirConsultaRecordatorio24&idRecordatorio="+idRecordatorio);

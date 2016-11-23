@@ -29,12 +29,11 @@ $(document).ready(function() {
             $(contenedor).append(
                                 '<div class="added">'+
                                 '<select name="tipoDeIngesta[]" id="tipoDeIngesta[]">'+
-                                '<option label="desayuno" value="desayuno">DESAYUNO</option>'+
-                                '<option label="merdiaManiana" value="mediaManiana">MEDIA MAÑANA</option>'+
-                                '<option label="almuerzo" value="almuerzo">ALMUERZO</option>'+
-                                '<option label="merienda" value="merienda">MERIENDA</option>'+
-                               '<option label="colacion" value="colacion">COLACION</option>'+
-                               '<option label="cena" value="cena">CENA</option>'+
+                                '<option  value="desayuno">DESAYUNO</option>'+
+                                '<option  value="mediaManiana">MEDIA MAÑANA</option>'+
+                                '<option  value="merienda">MERIENDA</option>'+
+                               '<option  value="colacion">COLACIÓN</option>'+
+                               '<option " value="cena">CENA</option>'+
                                 '</select>'+  
                                 '<select name="alimento[]" id="alimento[]">'+
       '<option label="leche" value="lacteosEnteros">LACT. ENTE.</option>'+

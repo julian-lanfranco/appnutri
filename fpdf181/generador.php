@@ -43,13 +43,13 @@ $pdf->Text(30,140,"Tipo: ".$club->tipo);
 $pdf->Text(30,160,"Telefono: ".$club->telefono);
 
 
-$pdf->Text(30,180,"Direccion: ".$club->direccion);
+$pdf->Text(30,180,"Dirección: ".$club->direccion);
 
 
 $pdf->Text(30,200,"Persona de Contacto: ".$club->contacto);
 
 
-$pdf->Text(30,220,"Correo Electronico: ".$club->mail);
+$pdf->Text(30,220,"Correo Electrónico: ".$club->mail);
 
 
 
@@ -96,7 +96,7 @@ $pdf->Text(30,180,"Persona de Contacto: ".$division->contacto);
 $pdf->Text(30,200,"Telefono de contacto: ".$division->telefono);
 
 
-$pdf->Text(30,220,"Correo Electronico: ".$division->correo);
+$pdf->Text(30,220,"Correo Electrónico: ".$division->correo);
 
 
 
@@ -132,15 +132,15 @@ $pdf->Text(30,110,"Nombre : ".$paciente->nombre."  Apellido : ".$paciente->apell
 
 $pdf->Text(30,120,"Dni: ".$paciente->dni);
 
-$pdf->Text(30,130,"Direccion: ".$paciente->direccion);
+$pdf->Text(30,130,"Dirección: ".$paciente->direccion);
 
 $pdf->Text(30,140,"Obra Social: ".$paciente->obra);
 
 $pdf->Text(30,150,"Telefono: ".$paciente->telefono);
 
-$pdf->Text(30,160,"Correo Electronico: ".$paciente->correo);
+$pdf->Text(30,160,"Correo Electrónico: ".$paciente->correo);
 
-$pdf->Text(30,170,"Medico de Cabecera: ".$paciente->medico);
+$pdf->Text(30,170,"Médico de Cabecera: ".$paciente->medico);
 
 $pdf->Text(30,180,"Motivo de Consulta: ".$paciente->motivo);
 
@@ -176,7 +176,7 @@ $pdf->Text(30,70,"Id de Anamnesis: ".$anam->id."                                
 $pdf->Text(30,80,"Antecedentes Familiares: ");
 
 $pdf->Text(30,90,"Obesidad : ".$anam->obesidad."  Diabetes : ".$anam->diabetes." Hipertension : ".$anam->hipertension
-	." Enfermedad Cardiaca : ".$anam->cardiacas);
+	." Enfermedad Cardíaca : ".$anam->cardiacas);
 
 $pdf->Text(30,100,"Otras Enfermedades: ".$anam->otras);
 
@@ -184,26 +184,26 @@ $pdf->Text(30,110,"Antecedentes Personales: ");
 
 $pdf->Text(30,120,"Enfermedad Diagnosticada: ".$anam->diagnosticada);
 
-$pdf->Text(30,130,"Toma Medicamentos: ".$anam->medicamentos." 			 Como los Toma: ".$anam->toma);
+$pdf->Text(30,130,"Toma Medicamentos: ".$anam->medicamentos." 			 Cómo los Toma: ".$anam->toma);
 
 $pdf->Text(30,140,"Acidez : ".$anam->acidez."  Reflujo : ".$anam->reflujo." Dolor Abdominal : ".$anam->abdominal
-	." Constipacion : ".$anam->constipacion);
+	." Constipación : ".$anam->constipacion);
 
 $pdf->Text(30,140,"Acidez : ".$anam->acidez."  Reflujo : ".$anam->reflujo." Dolor Abdominal : ".$anam->abdominal
-	." Constipacion : ".$anam->constipacion);
+	." Constipación : ".$anam->constipacion);
 
 $pdf->Text(30,150,"Diarrea : ".$anam->diarrea."  Fuma : ".$anam->fuma." Hizo Dietas Anteriormente : ".$anam->dietas
 	." Algun Dolor : ".$anam->dolor);
 
 $pdf->Text(30,160,"En los ultimos 5 anios");
 
-$pdf->Text(30,170,"Peso minimo:".$anam->pesomin."     Peso maximo: ".$anam->pesomax);
+$pdf->Text(30,170,"Peso mínimo:".$anam->pesomin."     Peso maximo: ".$anam->pesomax);
 
 $pdf->Text(30,180,"Habitos Alimentarios");
 
 $pdf->Text(30,190,"Picotea : ".$anam->picotea);
 
-$pdf->Text(30,200,"Alimentos que -> No le gustan: ".$anam->alimentosnogustan." -> No Tolera : ".$anam->alimentosnotolera
+$pdf->Text(30,200,"Alimentos qué no le gustan: ".$anam->alimentosnogustan." -> No Tolera : ".$anam->alimentosnotolera
 	." -> Prefiere : ".$anam->alimentosprefiere);
 
 $pdf->Text(30,210,"Cocina : ".$anam->cocina."  Hace las compras : ".$anam->compras." Horarios de Trabajo : ".$anam->horarios);
@@ -211,7 +211,7 @@ $pdf->Text(30,210,"Cocina : ".$anam->cocina."  Hace las compras : ".$anam->compr
 $pdf->Text(30,220,"Desayuna : ".$anam->desayuna."  Almuerza : ".$anam->almuerza." Merienda : ".$anam->merienda
 	." Cena : ".$anam->cena);
 
-$pdf->Text(30,230,"Toma Suplementos : ".$anam->suplementos."  Realiza actividad fisica : ".$anam->actividad." Con que Frecuencia : ".$anam->frecuencia);
+$pdf->Text(30,230,"Toma Suplementos : ".$anam->suplementos."  Realiza actividad fisica : ".$anam->actividad." Con qué Frecuencia : ".$anam->frecuencia);
 
 
 $pdf->Output();
@@ -294,11 +294,11 @@ $pdf->Text(30,90,"Peso : ".$medicion->pesobruto."  Talla Corporal: ".$medicion->
 
 $pdf->Text(30,100,"Diametros : ");
 
-$pdf->Text(30,110,"Biacromial : ".$medicion->biacromial."  Torax Tranverso:".$medicion->toraxtranverso."  Toraz Anter-Posterio: ".$medicion->toraxantero);
+$pdf->Text(30,110,"Biacromial : ".$medicion->biacromial."  Tórax Tranverso:".$medicion->toraxtranverso."  Toraz Anter-Posterio: ".$medicion->toraxantero);
 
 $pdf->Text(30,120,"Bi-iliocrestideo: ".$medicion->biiliocrestideo."  Humeral: ".$medicion->humeral."  Femoral: ".$medicion->femoral);
 
-$pdf->Text(30,130,"Perimetros: ");
+$pdf->Text(30,130,"Perímetros: ");
 
 $pdf->Text(30,140,"Cabeza: ".$medicion->cabeza."  Brazo Relajado: ".$medicion->brazorelajado."  Brazo Flexionado en tension: ".$medicion->brazoflexionado);
 
@@ -310,7 +310,7 @@ $pdf->Text(30,170,"Pantorrilla (maximo): ".$medicion->pantorrilla);
 
 $pdf->Text(30,180,"Pliegues Cutaneos (mm): ");
 
-$pdf->Text(30,190,"Triceps: ".$medicion->triceps."  Subescapular: ".$medicion->subescapular."  Subpraespinal: ".$medicion->subpraespinal);
+$pdf->Text(30,190,"Tríceps: ".$medicion->triceps."  Subescapular: ".$medicion->subescapular."  Subpraespinal: ".$medicion->subpraespinal);
 
 $pdf->Text(30,200,"Abdominal: ".$medicion->abdominal."  Muslo(medial): ".$medicion->muslomed2."  Pantorrilla (maxima): ".$medicion->pantorrilla2);
 

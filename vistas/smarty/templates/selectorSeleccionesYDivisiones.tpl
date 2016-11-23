@@ -14,7 +14,7 @@
 </select> 
 </div> 
 <br><br>
-<label class="col-sm-2">Division Seleccion:</label>
+<label class="col-sm-2">División Selección:</label>
 <div class="col-sm-4">
     <select name=seleccionSelDivisionesModPacientes class="form-control" id="seleccionSelDivisionesModPacientes" required>
     {foreach from=$selDivisiones item=selDivision}

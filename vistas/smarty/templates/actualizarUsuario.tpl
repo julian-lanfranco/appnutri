@@ -23,7 +23,7 @@
   <div class="col-md-12" >
 
 
-<p>Recuerde que una vez que cambie su contraseña,<br>
+<p>Recuerde qué una vez qué cambie su contraseña,<br>
    sera redirigido al <ins>Login</ins>.<br>
    Para corroborar los cambios realizados.
 </p>

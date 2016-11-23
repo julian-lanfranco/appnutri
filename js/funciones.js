@@ -215,7 +215,7 @@
 
             var idPaciente=$("#idPaciente").val();
 
-             if (confirm(" Esta seguro que desea imprimir la estadistica?"))
+             if (confirm(" Esta seguro qué desea imprimir la estadistica?"))
             {
        
             window.open ("http://"+ambito+"/appnutri/?modulo=medicionesSimples&accion=generarEstadisticaMedicionSimple&idPaciente="+idPaciente);

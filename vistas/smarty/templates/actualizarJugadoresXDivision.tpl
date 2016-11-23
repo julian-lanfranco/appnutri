@@ -45,7 +45,7 @@
 </div>
 </div>
 
-<label class="col-sm-1">Genero:</label>
+<label class="col-sm-1">Género:</label>
 <div id=selectorDeSexoOrigen>
 <div class="col-sm-2">
     <select name="seleccionSexoOrigen" class="form-control" id="seleccionSexoOrigen">
@@ -54,7 +54,7 @@
 </div>
 </div>
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=selectorDeDivisionesOrigen>
 <div class="col-sm-2">
     <select name="seleccionDivisionesOrigen" class="form-control" id="seleccionDivisionesOrigen">
@@ -100,7 +100,7 @@
 
 
 
-<label class="col-sm-1">Genero:</label>
+<label class="col-sm-1">Género:</label>
 <div id=selectorDeSexoDestino>
 <div class="col-sm-2">
     <select name="seleccionSexoDestino" class="form-control" id="seleccionSexoDestino">
@@ -111,7 +111,7 @@
 
 
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=selectorDeDivisionesDestino>
 <div class="col-sm-2">
     <select name="seleccionDivisionesDestino" class="form-control" id="seleccionDivisionesDestino">

@@ -38,7 +38,7 @@
     float: left;text-align: center;">Talla Corporal</th>
         <th style="width: 12%;
     float: left;text-align: center;">Talla Sentado</th>
-        <th style="width: 36%; float: left;text-align: center;">Accion</th>
+        <th style="width: 36%; float: left;text-align: center;">Acción</th>
       </tr>
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$mediciones item=medi}

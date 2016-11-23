@@ -74,8 +74,8 @@
       </div>
       <div id="collapse3" class="panel-collapse collapse">
       	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarTablaDivisiones">Listar Divisiones</a><br>
-      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarNuevoDivision">Nueva Division</a> <br>
-      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarMigrarJugadores">Migracion de Jugadores</a>
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarNuevoDivision">Nueva División</a> <br>
+      	<span lang="es-ar">&nbsp;</span><a href="#" id="btnMostrarMigrarJugadores">Migración de Jugadores</a>
 
       </div>
     </div>
@@ -118,7 +118,7 @@
       <input type="text" class="form-control" id="nombrePaciente" value="Seleccione un paciente"" disabled="true">
       </div>
       
-      <label class="col-sm-1">Division </label>   
+      <label class="col-sm-1">División </label>   
       <div class="col-sm-2">
       <input type="text" class="form-control" id="nombreDivision" value="-" disabled="true">
       </div>

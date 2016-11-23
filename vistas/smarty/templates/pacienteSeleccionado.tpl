@@ -13,7 +13,7 @@
       <input type="text" class="form-control" id="nombrePaciente" value="{$nombrePaciente}" disabled="true">
       </div>
       
-      <label class="col-sm-1">Division </label>   
+      <label class="col-sm-1">División </label>   
       <div class="col-sm-2">
       <input type="text" class="form-control" id="nombreDivision" value="{$nombreDivision}" disabled="true">
       </div>

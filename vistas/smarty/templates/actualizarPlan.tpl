@@ -77,7 +77,7 @@
     {if $ingesta->tipodeingesta eq "mediaManiana"}
           <option label="{$ingesta->tipodeingesta}" value="{$ingesta->tipodeingesta}" selected>{$ingesta->tipodeingesta|upper}</option>
     {else}
-           <option label="mediaManiana" value="mediaManiana">MEDIA MAÑANA</option>
+           <option  value="mediaManiana">MEDIA MAÑANA</option>
     {/if}
 
     {if $ingesta->tipodeingesta eq "almuerzo"}
@@ -93,9 +93,9 @@
     {/if}
 
     {if $ingesta->tipodeingesta eq "colacion"}
-          <option label="{$ingesta->tipodeingesta}" value="{$ingesta->tipodeingesta}" selected>{$ingesta->tipodeingesta|upper}</option>
+          <option value="{$ingesta->tipodeingesta}" selected>{$ingesta->tipodeingesta|upper}</option>
     {else}
-        <option label="colacion" value="colacion">COLACION</option>
+        <option " value="colacion">COLACIÓN</option>
     {/if}
 
     {if $ingesta->tipodeingesta eq "cena"}
@@ -275,10 +275,10 @@
    <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#lunes">Lunes</a></li>
     <li><a data-toggle="tab" href="#martes">Martes</a></li>
-    <li><a data-toggle="tab" href="#miercoles">Miercoles</a></li>
+    <li><a data-toggle="tab" href="#miercoles">Miércoles</a></li>
     <li><a data-toggle="tab" href="#jueves">Jueves</a></li>
     <li><a data-toggle="tab" href="#viernes">Viernes</a></li>
-    <li><a data-toggle="tab" href="#sabado">Sabado</a></li>
+    <li><a data-toggle="tab" href="#sabado">Sábado</a></li>
     <li><a data-toggle="tab" href="#domingo">Domingo</a></li>
   </ul>
 
@@ -295,7 +295,7 @@
 <textarea name="lunes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->lunes_merienda}
 </textarea>
-<textarea name="lunes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="lunes_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->lunes_colacion}
 </textarea>
 <textarea name="lunes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">
@@ -316,7 +316,7 @@
 <textarea name="martes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->martes_merienda}
 </textarea>
-<textarea name="martes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="martes_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->martes_colacion}
 </textarea>
 <textarea name="martes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">
@@ -336,7 +336,7 @@
 <textarea name="miercoles_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->miercoles_merienda}
 </textarea>
-<textarea name="miercoles_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="miercoles_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->miercoles_colacion}
 </textarea>
 <textarea name="miercoles_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">
@@ -356,7 +356,7 @@
 <textarea name="jueves_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->jueves_merienda}
 </textarea>
-<textarea name="jueves_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="jueves_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->jueves_colacion}
 </textarea>
 <textarea name="jueves_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">
@@ -376,7 +376,7 @@
 <textarea name="viernes_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->viernes_merienda}
 </textarea>
-<textarea name="viernes_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="viernes_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->viernes_colacion}
 </textarea>
 <textarea name="viernes_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">
@@ -396,7 +396,7 @@
 <textarea name="sabado_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->sabado_merienda}
 </textarea>
-<textarea name="sabado_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="sabado_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->sabado_colacion}
 </textarea>
 <textarea name="sabado_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">
@@ -416,7 +416,7 @@
 <textarea name="domingo_merienda" placeholder="merienda" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->domingo_merienda}
 </textarea>
-<textarea name="domingo_colacion" placeholder="colacion" rows="5" cols="20" style="resize:none;">
+<textarea name="domingo_colacion" placeholder="colación" rows="5" cols="20" style="resize:none;">
    {$menu_semanal->domingo_colacion}
 </textarea>
 <textarea name="domingo_cena" placeholder="cena" rows="5" cols="20" style="resize:none;">

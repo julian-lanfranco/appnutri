@@ -16,7 +16,7 @@
                           margin: 10px;">
   <div class="col-md-12" >
 
- <label class="col-sm-2">Buscar Division:</label>
+ <label class="col-sm-2">Buscar División:</label>
  <div class="col-sm-4">   
  <input type="text" class="form-control" id="cadenaDivision" name="cadenaDivision" value="{$cadena}">
 </div>
@@ -66,7 +66,7 @@
         <th style="width: 33%;
     float: left;">Nombre</th>
         <th style="width: 33%;
-    float: left;">Accion</th>
+    float: left;">Acción</th>
       </tr>
     <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$divisiones item=division}

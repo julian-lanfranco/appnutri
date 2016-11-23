@@ -1,11 +1,11 @@
-  <h2>Consulta Division</h2>
+  <h2>Consulta División</h2>
  <table class="table table-striped header-fixed" style="width: 100%;" >
 <tbody style="display: block;  overflow-y: auto;    float: left;height: 600px; width:100%">
      <tr style="">
       <td style="width: 100%;    float: left;" >
           
 
-      <label class="col-sm-4">Id de la  Division:</label>
+      <label class="col-sm-4">Id de la  División:</label>
       <div class="col-sm-8">
       <input type="text" class="form-control" id="idDivision" name="idDivision" value="{$idDivision}" readonly>
       </div>
@@ -18,9 +18,9 @@
       </div>
       <br><br><br>
       
-<label class="col-sm-4">Division:</label>
+<label class="col-sm-4">División:</label>
 <div class="col-sm-8">
-<input type="text" class="form-control" id="nombre" name="nombre" value="{$nombre}" required pattern="^[a-zA-Z-\s]+" title="Ingrese la nombre de la division." readonly>
+<input type="text" class="form-control" id="nombre" name="nombre" value="{$nombre}" required pattern="^[a-zA-Z-\s]+" title="Ingrese la nombre de la división." readonly>
 </div>
 <br><br><br>      
       
@@ -31,9 +31,9 @@
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Telefono de Contacto:</label>
+<label class="col-sm-4">Teléfono de Contacto:</label>
 <div class="col-sm-8">
-<input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros" readonly>
+<input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" required pattern="^[0-9]+" title="Ingrese el teléfono. Solo numeros" readonly>
 </div>
 <br><br><br>
 

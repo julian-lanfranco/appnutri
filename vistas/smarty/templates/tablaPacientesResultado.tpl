@@ -22,7 +22,7 @@
   <tr>
    <th style="width: 25%; float: left;text-align: center;">Nombre</th>
    <th style="width: 25%; float: left;text-align: center;">DNI</th>
-   <th style="width: 50%; float: left;text-align: center;">Accion</th>
+   <th style="width: 50%; float: left;text-align: center;">Acción</th>
   </tr>
    <tbody style="display: block;  overflow-y: auto;    float: left;height: 200px; width:100%">
       {foreach from=$pacientes item=paciente}

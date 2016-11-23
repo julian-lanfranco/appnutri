@@ -8,7 +8,7 @@
 <form  id="actualizadivision" method="post">   
   
    
-      <label class="col-sm-4">Id de la  Division:</label>
+      <label class="col-sm-4">Id de la  División:</label>
       <div class="col-sm-8">
       <input type="text" class="form-control" id="idDivision" name="idDivision" value="{$idDivision}" readonly>
       </div>
@@ -21,7 +21,7 @@
       </div>
       <br><br><br>
       
-<label class="col-sm-4">Division:</label>
+<label class="col-sm-4">División:</label>
 <div class="col-sm-8">
 <input type="text" class="form-control" id="nombre" name="nombre" value="{$nombre}" required pattern="*" title="Ingrese la nombre de la division.">
 </div>
@@ -77,7 +77,7 @@
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Telefono de Contacto:</label>
+<label class="col-sm-4">Teléfono de Contacto:</label>
 <div class="col-sm-8">
 <input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros">
 </div>
@@ -85,7 +85,7 @@
 
 <label class="col-sm-4">Correo de Contacto:</label>
 <div class="col-sm-8">
-<input type="email" class="form-control" id="correo" name="correo" value="{$correo}" required  title="Ingrese el correo electronico">
+<input type="email" class="form-control" id="correo" name="correo" value="{$correo}" required  title="Ingrese el correo electrónico">
 </div>
 <br><br><br>
 <label class="col-sm-4">Entrenador:</label>

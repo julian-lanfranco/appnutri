@@ -16,7 +16,7 @@
 
 
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=selectorDeDivisionesSelecciones>
 <div class="col-sm-2">
 <select name=seleccionDivisionesSeleccionModPacientes class="form-control" id="seleccionDivisionesSeleccionModPacientes">

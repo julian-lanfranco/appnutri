@@ -26,15 +26,15 @@
       
        <select name="tipo" class="form-control" id="tipo">
             {if $tipo eq "seleccion"}
-            <option label="seleccion" value="seleccion" selected>SELECCION</option>
+            <option  value="seleccion" selected>SELECCIÓN</option>
             {else}
-            <option label="seleccion" value="seleccion">SELECCION</option>
+            <option  value="seleccion">SELECCIÓN</option>
             {/if}
 
             {if $tipo eq "normal"}
-            <option label="normal" value="normal" selected>NORMAL</option>
+            <option " value="normal" selected>NORMAL</option>
             {else}
-            <option label="normal" value="normal">NORMAL</option>
+            <option  value="normal">NORMAL</option>
             {/if}
 
         </select> 
@@ -43,15 +43,15 @@
     
 <br><br><br>
 
-     <label class="col-sm-4">Telefono:</label>
+     <label class="col-sm-4">Teléfono:</label>
       <div class="col-sm-8">
      <input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros">
      </div>
 <br><br><br>
 
-   <label class="col-sm-4">Direccion:</label>
+   <label class="col-sm-4">Dirección:</label>
    <div class="col-sm-8">
-   <input type="text" class="form-control" id="direccion" name="direccion" value="{$direccion}" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la direccion.">
+   <input type="text" class="form-control" id="direccion" name="direccion" value="{$direccion}" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la dirección.">
    </div>
 
   <br><br><br>
@@ -63,9 +63,9 @@
    
   <br><br><br>
   
-     <label class="col-sm-4">Correo Electronico:</label>
+     <label class="col-sm-4">Correo Electrónico:</label>
      <div class="col-sm-8">
-     <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" value="{$correoElectronico}" required  title="Ingrese el correo electronico">
+     <input type="email" class="form-control" id="correoElectronico" name="correoElectronico" value="{$correoElectronico}" required  title="Ingrese el correo electrónico">
      </div>
      <br>
      

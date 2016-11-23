@@ -29,12 +29,12 @@
                           margin: 10px;">
 
 <h4> Hemograma</h4><br>
-<label class="col-sm-2">Globulos rojos:</label>
+<label class="col-sm-2">Glóbulos rojos:</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="globulosrojos" name="globulosrojos" value="{$estudio->globulosrojos}" required title="F(3.800.000-5.200.000) M(4.400.000-5.900.000) u/lts">
 </div>
 
-<label class="col-sm-2">Globulos Blancos:</label>
+<label class="col-sm-2">Glóbulos Blancos:</label>
 <div class="col-sm-2">
     <input type="text" class="form-control" id="globulosblancos" name="globulosblancos" value="{$estudio->globulosblancos}" title="(4.000.000-10.000.000) u/lts">
 </div>
@@ -84,27 +84,27 @@
                           margin: 10px;">
 
 
-<h4> Formula Leucocitaria</h4><br>
-<label class="col-sm-2">Neutrofilos encayados:</label>
+<h4> Fórmula Leucocitaria</h4><br>
+<label class="col-sm-2">Neutrófilos encayados:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="neutrofilosenca" name="neutrofilosenca" value="{$estudio->neutrofilosenca}" title="Neutrofilos encayados">
+    <input type="text" class="form-control" id="neutrofilosenca" name="neutrofilosenca" value="{$estudio->neutrofilosenca}" title="Neutrófilos encayados">
 </div>
 
-<label class="col-sm-2">Neutrofilos seg.:</label>
+<label class="col-sm-2">Neutrófilos seg.:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="neutrofilosseg" name="neutrofilosseg" value="{$estudio->neutrofilosseg}" title="Neutrofilos segmentados">
+    <input type="text" class="form-control" id="neutrofilosseg" name="neutrofilosseg" value="{$estudio->neutrofilosseg}" title="Neutrófilos segmentados">
 </div>
 
-<label class="col-sm-2">Eocinofilos:</label>
+<label class="col-sm-2">Eocinófilos:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="eocinifilos" name="eocinifilos" value="{$estudio->eocinifilos}" title="Eocinofilos">
+    <input type="text" class="form-control" id="eocinifilos" name="eocinifilos" value="{$estudio->eocinifilos}" title="Eocinófilos">
 </div>
 
 <br><br><br>
 
-<label class="col-sm-2">Basofilos:</label>
+<label class="col-sm-2">Basófilos:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="basofilos" name="basofilos" value="{$estudio->basofilos}" title="Basofilos">
+    <input type="text" class="form-control" id="basofilos" name="basofilos" value="{$estudio->basofilos}" title="Basófilos">
 </div>
 
 <label class="col-sm-2">Linfocitos:</label>
@@ -136,9 +136,9 @@
 
 <br><br><br>
 
-<label class="col-sm-2">ACIDO URICO:</label>
+<label class="col-sm-2">ÁCIDO ÚRICO:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="acidourico" name="acidourico" value="{$estudio->acidourico}" title="ACIDO URICO F(2-5) M(2,5-6) mg/ 100ml">
+    <input type="text" class="form-control" id="acidourico" name="acidourico" value="{$estudio->acidourico}" title="ÁCIDO ÚRICO F(2-5) M(2,5-6) mg/ 100ml">
 </div>
 
 <label class="col-sm-2">CREATININEMIA:</label>
@@ -146,9 +146,9 @@
     <input type="text" class="form-control" id="creatininemia" name="creatininemia" value="{$estudio->creatininemia}" title="CREATININEMIA (0,7 -1,4) mg/dl">
 </div>
 
-<label class="col-sm-2">PROTEINAS TOTALES:</label>
+<label class="col-sm-2">PROTEÍNAS TOTALES:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="proteinastotales" name="proteinastotales" value="{$estudio->proteinastotales}" title="PROTEINAS TOTALES (6,1-6,8) grs %">
+    <input type="text" class="form-control" id="proteinastotales" name="proteinastotales" value="{$estudio->proteinastotales}" title="PROTEÍNAS TOTALES (6,1-6,8) grs %">
 </div>
 
 <br><br><br>
@@ -180,9 +180,9 @@
     <input type="text" class="form-control" id="colesterolhdl" name="colesterolhdl" value="{$estudio->colesterolhdl}" title="COLESTEROL/HDL (2-5)">
 </div>
 
-<label class="col-sm-2">TRIGLICERIDOS:</label>
+<label class="col-sm-2">TRIGLICÉRIDOS:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="trigliceridos" name="trigliceridos" value="{$estudio->trigliceridos}" title="TRIGLICERIDOS (hasta 150grs/dl)">
+    <input type="text" class="form-control" id="trigliceridos" name="trigliceridos" value="{$estudio->trigliceridos}" title="TRIGLICÉRIDOS (hasta 150grs/dl)">
 </div>
 
 <br><br><br>
@@ -192,9 +192,9 @@
     <input type="text" class="form-control" id="presionarterial" name="presionarterial" value="{$estudio->presionarterial}" title="PRESION ARTERIAL BASAL">
 </div>
 
-<label class="col-sm-2">HERGOMETRIA:</label>
+<label class="col-sm-2">ERGOMETRÍA:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="hergometria" name="hergometria" value="{$estudio->hergometria}" title="HERGOMETRIA">
+    <input type="text" class="form-control" id="hergometria" name="hergometria" value="{$estudio->hergometria}" title="ERGOMETRÍA">
 </div>
 
 </div>
@@ -208,19 +208,19 @@
 
 <h4> DATOS CARDIOLOGICOS</h4><br>
 
-<label class="col-sm-2">FRECUENCIA CARDICA BASAL:</label>
+<label class="col-sm-2">FRECUENCIA CARDÍACA BASAL:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="frecuenciacardiaca" name="frecuenciacardiaca" value="{$estudio->frecuenciacardiaca}" title="FRECUENCIA CARDICA BASAL"> 
+    <input type="text" class="form-control" id="frecuenciacardiaca" name="frecuenciacardiaca" value="{$estudio->frecuenciacardiaca}" title="FRECUENCIA CARDÍACA BASAL"> 
 </div>
 
-<label class="col-sm-2">FRECUENCIA CARDICA MAXIMA:</label>
+<label class="col-sm-2">FRECUENCIA CARDÍACA MÁXIMA:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="frecuenciacardiacamaxima" name="frecuenciacardiacamaxima" value="{$estudio->frecuenciacardiacamaxima}" title="FRECUENCIA CARDICA MAXIMA">
+    <input type="text" class="form-control" id="frecuenciacardiacamaxima" name="frecuenciacardiacamaxima" value="{$estudio->frecuenciacardiacamaxima}" title="FRECUENCIA CARDÍACA MÁXIMA">
 </div>
 
 <label class="col-sm-2">PRESION ARTERIAL MAX.</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="presionarterialmaxima" name="presionarterialmaxima" value="{$estudio->presionarterialmaxima}" title="PRESION ARTERIAL MAXIMA">
+    <input type="text" class="form-control" id="presionarterialmaxima" name="presionarterialmaxima" value="{$estudio->presionarterialmaxima}" title="PRESIÓN ARTERIAL MÁXIMA">
 </div>
 
 <br><br><br>
@@ -242,9 +242,9 @@
 
 <br><br><br>
 
-<label class="col-sm-2">F. CARDIACA MAX. AL.:</label>
+<label class="col-sm-2">F. CARDÍACA MAX. AL.:</label>
 <div class="col-sm-2">
-    <input type="text" class="form-control" id="frecuenciacardiomax" name="frecuenciacardiomax" value="{$estudio->frecuenciacardiomax}" title="FRECUENCIA CARDIACA MAXIMA ALCANZADA">
+    <input type="text" class="form-control" id="frecuenciacardiomax" name="frecuenciacardiomax" value="{$estudio->frecuenciacardiomax}" title="FRECUENCIA CARDÍACA MÁXIMA ALCANZADA">
 </div>
 
 <label class="col-sm-2">MINUTOS EJERCITADOS:</label>
@@ -268,9 +268,9 @@
 
 
 
-<label class="col-md-12">CONCLUSION:</label>
+<label class="col-md-12">CONCLUSIÓN:</label>
 <div class="col-md-12">
-    <input type="text" class="form-control" id="conclusion" name="conclusion" value="{$estudio->conclusion}" title="CONCLUSION">
+    <input type="text" class="form-control" id="conclusion" name="conclusion" value="{$estudio->conclusion}" title="CONCLUSIÓN">
 </div>
 </div>
 

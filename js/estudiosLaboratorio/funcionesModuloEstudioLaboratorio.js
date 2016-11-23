@@ -44,7 +44,7 @@ $("#central").on("click", "#imgMostrarListarEstudioLaboratorio", function(){
         var idEstudioLaboratorio = $(this).attr('name');
 
 
-                 if (confirm("Esta seguro que desea eliminar el estudio Id "+idEstudioLaboratorio))
+                 if (confirm("Esta seguro qué desea eliminar el estudio Id "+idEstudioLaboratorio))
                  {
                             $.ajax({
                                         type: "GET",
@@ -170,7 +170,7 @@ $("#central").on("click", "#imgMostrarListarEstudioLaboratorio", function(){
 
             var idEstudioLaboratorio=$("#idEstudioLaboratorio").val();
 
-             if (confirm(" Esta seguro que desea imprimir el estudio :"+idEstudioLaboratorio+"  ?"))
+             if (confirm(" Esta seguro qué desea imprimir el estudio :"+idEstudioLaboratorio+"  ?"))
             {
        
             window.open ("http://"+ambito+

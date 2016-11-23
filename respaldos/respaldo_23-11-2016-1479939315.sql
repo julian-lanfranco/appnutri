@@ -62,7 +62,7 @@ CREATE TABLE `anamnesis` (
   PRIMARY KEY (`id`),
   KEY `paciente` (`paciente`),
   CONSTRAINT `anam-paci` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `anamnesis` (
 
 LOCK TABLES `anamnesis` WRITE;
 /*!40000 ALTER TABLE `anamnesis` DISABLE KEYS */;
-INSERT INTO `anamnesis` VALUES (1,'2016-11-05','SI','SI','SI','SI','no','no','SI','-','SI','SI','SI','SI','SI','SI','NUNCA HICE','SI','100','100','SI','SI','ninguno','ninguno','salados','SI','SI','8-18','SI','SI','SI','SI','no','SI','DIARIAMENTE',4);
+INSERT INTO `anamnesis` VALUES (1,'2016-11-05','SI','SI','SI','SI','no','no','SI','-','SI','SI','SI','SI','SI','SI','NUNCA HICE','SI','100','100','SI','SI','ninguno','ninguno','salados','SI','SI','8-18','SI','SI','SI','SI','no','SI','DIARIAMENTE',4),(2,'2016-11-18','SI','SI','SI','SI','no','no','SI','no','SI','SI','SI','SI','SI','SI','NUNCA HICE','SI','85','90','SI','SI','no','no','no','SI','SI','no','SI','SI','SI','SI','no','SI','DIARIAMENTE',30),(3,'2016-11-18','NO','NO','NO','NO','dfsdf','fdfsdf','NO','fdfs','NO','NO','NO','NO','SI','NO','NUNCA HICE','SI','78','45','SI','SI','-','-','-','SI','SI','-','SI','SI','SI','SI','-','SI','DIARIAMENTE',30),(4,'2016-11-18','SI','SI','SI','SI','y','y','SI','y','SI','SI','SI','SI','SI','SI','NUNCA HICE','SI','y','y','SI','SI','y','y','y','SI','SI','y','SI','SI','SI','SI','y','SI','DIARIAMENTE',6),(5,'2016-11-18','SI','SI','SI','SI','r','r','SI','r','SI','SI','SI','SI','SI','SI','NUNCA HICE','SI','r','r','SI','SI','r','r','r','SI','SI','r','SI','SI','SI','SI','r','SI','DIARIAMENTE',6),(6,'2016-11-19','NO','NO','NO','NO','ninguna','no','SI','no tomo','SI','SI','SI','SI','SI','SI','NEUTRALES','SI','120','100','NO','NO','no','no','-','SI','SI','-','SI','SI','SI','SI','no','SI','DIARIAMENTE',4),(7,'2016-11-22','SI','SI','SI','SI','jgnjdkfngjkdfg','gfdgdfgd','SI','gdfgdfgdfgdg','SI','SI','SI','SI','SI','SI','NUNCA HICE','SI','fgdfgdfg','gdfgdfgdfg','SI','SI','gdfgdfg','gdfgdfgd','dfggfg','SI','SI','dfgdfgdfgdfg','SI','SI','SI','SI','dfgdfgdfgdg','SI','DIARIAMENTE',6),(8,'2016-11-22','NO','NO','NO','NO','-','-','NO','-','NO','NO','NO','NO','NO','NO','NUNCA HICE','NO','100','78','NO','NO','-','-','-','NO','NO','-','NO','NO','NO','NO','-','NO','DIARIAMENTE',31),(9,'2016-11-22','NO','NO','NO','NO','no','me diagnosticaron mal','SI','no','NO','SI','NO','NO','NO','NO','NEGATIVOS','NO','100.501','82.1','NO','NO','no','no','no','NO','NO','7-17','NO','NO','NO','NO','no','NO','EXPORADICAMENTE',31);
 /*!40000 ALTER TABLE `anamnesis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +124,7 @@ CREATE TABLE `deportes` (
 
 LOCK TABLES `deportes` WRITE;
 /*!40000 ALTER TABLE `deportes` DISABLE KEYS */;
-INSERT INTO `deportes` VALUES (1,'basquet'),(2,'futbol'),(3,'rugby'),(4,'jockey'),(5,'natacion'),(6,'voley');
+INSERT INTO `deportes` VALUES (1,'basquet'),(2,'futbol'),(3,'rugby'),(4,'hockey'),(5,'natacion'),(6,'voley');
 /*!40000 ALTER TABLE `deportes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -214,7 +214,7 @@ CREATE TABLE `estudiolaboratorio` (
   PRIMARY KEY (`id`),
   KEY `paciente` (`paciente`),
   CONSTRAINT `paci-lab` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,6 +223,7 @@ CREATE TABLE `estudiolaboratorio` (
 
 LOCK TABLES `estudiolaboratorio` WRITE;
 /*!40000 ALTER TABLE `estudiolaboratorio` DISABLE KEYS */;
+INSERT INTO `estudiolaboratorio` VALUES (1,'2016-11-19',11,8,8,8,8,8,8,8,8,8,8,8,88,8,8,8,8,8,8,8,8,8,8,8,8,88,8,8,8,8,8,8,8,8,'8',8,8,'8','8'),(2,'2016-11-19',6,7,7,7,7,7,7,7,77,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,'7',7,7,'7','oihhhuihuui'),(3,'2016-11-19',6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,'2',2,2,'2','todo normal.-'),(5,'2016-11-22',31,8,8,8,8,8,8,8,8,8,88,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,'8',8,8,'8','todo normal.-');
 /*!40000 ALTER TABLE `estudiolaboratorio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,7 +244,7 @@ CREATE TABLE `ingesta` (
   PRIMARY KEY (`id`),
   KEY `recordatorio` (`recordatorio`),
   CONSTRAINT `reco-inges` FOREIGN KEY (`recordatorio`) REFERENCES `recordatorios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=665 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +253,7 @@ CREATE TABLE `ingesta` (
 
 LOCK TABLES `ingesta` WRITE;
 /*!40000 ALTER TABLE `ingesta` DISABLE KEYS */;
-INSERT INTO `ingesta` VALUES (1,'desayuno','','lacteosEnteros',3,NULL),(2,'desayuno','','lacteosEnteros',222,NULL),(3,'desayuno','','lacteosEnteros',222,NULL),(4,'desayuno','','lacteosEnteros',222,NULL),(5,'desayuno','','lacteosEnteros',222,NULL),(6,'desayuno','','lacteosEnteros',222,NULL),(7,'desayuno','','lacteosEnteros',222,NULL),(8,'desayuno','','lacteosEnteros',222,NULL),(9,'desayuno','','lacteosEnteros',222,NULL),(10,'desayuno','','lacteosEnteros',222,NULL),(11,'desayuno','','lacteosEnteros',7,NULL),(12,'desayuno','','lacteosEnteros',7,NULL),(13,'desayuno','','lacteosEnteros',7,NULL),(14,'desayuno','','lacteosEnteros',222,NULL),(15,'desayuno','','lacteosEnteros',44,NULL),(16,'desayuno','','lacteosEnteros',4,NULL),(17,'desayuno','','lacteosEnteros',33,NULL),(18,'desayuno','','lacteosEnteros',33,NULL),(19,'desayuno','','lacteosEnteros',66,NULL),(20,'desayuno','','lacteosEnteros',66,NULL),(21,'desayuno','','lacteosEnteros',6,NULL),(22,'desayuno','','lacteosEnteros',0,NULL),(23,'desayuno','','lacteosEnteros',0,NULL),(24,'desayuno','','lacteosEnteros',0,NULL),(25,'desayuno','','lacteosEnteros',3,NULL),(26,'desayuno','','lacteosEnteros',3,NULL),(27,'desayuno','','lacteosEnteros',3,NULL),(28,'desayuno','','lacteosEnteros',3,NULL),(29,'desayuno','','lacteosEnteros',3,NULL),(30,'desayuno','','lacteosEnteros',3,NULL),(31,'desayuno','','lacteosEnteros',3,NULL),(32,'desayuno','','lacteosEnteros',2,NULL),(33,'desayuno','','lacteosEnteros',3,24),(34,'desayuno','','lacteosEnteros',3,24),(35,'desayuno','','lacteosEnteros',50,25),(36,'desayuno','','lacteosEnteros',0,25);
+INSERT INTO `ingesta` VALUES (647,'desayuno','','lacteosEnteros',0,51),(648,'desayuno','','lacteosEnteros',0,52),(649,'desayuno','','lacteosEnteros',0,52),(650,'desayuno','07:07','lacteosEnteros',7,53),(663,'desayuno','07:10','lacteosEnteros',45,45),(664,'desayuno','01:00','lacteosEnteros',45,45);
 /*!40000 ALTER TABLE `ingesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,14 +268,14 @@ CREATE TABLE `ingesta_planes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipodeingesta` varchar(255) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
-  `hora` date DEFAULT NULL,
+  `hora` varchar(255) DEFAULT NULL,
   `alimento` varchar(255) DEFAULT NULL,
   `plan` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `plan` (`plan`),
   KEY `plan_2` (`plan`),
   CONSTRAINT `ingesta-pla` FOREIGN KEY (`plan`) REFERENCES `planes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -283,7 +284,7 @@ CREATE TABLE `ingesta_planes` (
 
 LOCK TABLES `ingesta_planes` WRITE;
 /*!40000 ALTER TABLE `ingesta_planes` DISABLE KEYS */;
-INSERT INTO `ingesta_planes` VALUES (19,'desayuno',323,'0000-00-00','lacteosEnteros',35),(20,'desayuno',323,'0000-00-00','vegetalesA',35),(21,'desayuno',3232,'0000-00-00','lacteosEnteros',35),(22,'desayuno',3232,'0000-00-00','vegetalesC',35),(23,'desayuno',3232,'0000-00-00','lacteosEnteros',35),(24,'desayuno',3232,'0000-00-00','panSinGrasa',35),(25,'desayuno',3232,'0000-00-00','lacteosEnteros',35),(26,'desayuno',3,'0000-00-00','lacteosEnteros',36),(27,'desayuno',3,'0000-00-00','quesos',36),(28,'desayuno',3,'0000-00-00','lacteosEnteros',37),(29,'desayuno',3,'0000-00-00','lacteosEnteros',37),(30,'desayuno',23,'0000-00-00','lacteosEnteros',NULL),(31,'desayuno',50,'0000-00-00','lacteosEnteros',38),(35,'desayuno',50,'0000-00-00','lacteosEnteros',40);
+INSERT INTO `ingesta_planes` VALUES (166,'desayuno',7,'01:00','lacteosEnteros',58),(167,'desayuno',4,'16:04','gaseosasJugo',58);
 /*!40000 ALTER TABLE `ingesta_planes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -327,7 +328,7 @@ CREATE TABLE `medicionesantropometricas` (
   KEY `paciente` (`paciente`),
   KEY `paciente_2` (`paciente`),
   CONSTRAINT `paciente-med1` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -336,7 +337,7 @@ CREATE TABLE `medicionesantropometricas` (
 
 LOCK TABLES `medicionesantropometricas` WRITE;
 /*!40000 ALTER TABLE `medicionesantropometricas` DISABLE KEYS */;
-INSERT INTO `medicionesantropometricas` VALUES (5,'2016-10-02',66,66,66,55,55,55,55,55,55,55,55,22,22,22,22,22,22,22,22,13,11,11,11,11,11,5),(6,'2016-10-06',80,175,75,50,50,50,50,50,50,20,20,20,20,20,20,20,20,20,20,30,30,30,30,30,30,5),(7,'2016-10-02',75,66,80,22,22,22,22,55,22,44,44,44,44,22,22,44,44,44,44,88,88,88,88,88,11,5),(15,'2016-10-08',78,150,80,50,50,50,50,50,50,20,30,20,20,20,30,20,20,20,20,30,33,33,33,33,33,5),(16,'2016-10-08',76,140,78,50,50,50,50,50,50,20,20,20,20,20,20,20,20,20,20,33,33,33,33,33,33,5),(17,'2016-11-02',90,180,150,20,20,20,20,20,20,30,30,30,20,20,50,50,50,50,50,30,30,30,30,30,30,5),(18,'2016-11-05',85,180,150,20,20,20,20,20,20,30,25,30,20,20,25,50,50,50,50,50,50,50,50,50,50,5);
+INSERT INTO `medicionesantropometricas` VALUES (1,'2016-11-19',76.5,167.6,89.9,39.2,27.5,21.5,26,7.5,10,55.6,34.3,36.2,29.4,102.5,80.9,95.3,60.2,56.3,35.2,6,10,8,17,6,5,6),(2,'2016-11-17',90,170,98,38.7,28,19.2,29,7.7,10.5,57.6,32.5,35.5,28.5,90.5,80.6,99.5,57,52.1,36.4,6.5,9,7.5,2,14.5,6,6),(3,'2016-11-19',94,180,150,50,50,50,52,10,10,50,30,30,10,10,10,10,10,10,10,5,5,55,10,5,5,6),(4,'2016-11-22',95,180,150,50,50,50,52,10,10,45,28,29,9,9,9,8,8,8,8,4,5,53,53,4,4,6),(5,'2016-11-22',96,180,150,49,49,49,49,8,8,45,27,25,7,7,7,7,7,7,7,3,3,52,52,3,3,6),(6,'2016-11-22',89,180,140,14,14,14,14,14,14,50,50,50,50,50,50,50,50,50,50,50,50,50,50,5,0,31);
 /*!40000 ALTER TABLE `medicionesantropometricas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,7 +396,7 @@ CREATE TABLE `menu_semanal` (
   PRIMARY KEY (`id`),
   KEY `plan` (`plan`),
   CONSTRAINT `plan-menu` FOREIGN KEY (`plan`) REFERENCES `planes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -404,7 +405,7 @@ CREATE TABLE `menu_semanal` (
 
 LOCK TABLES `menu_semanal` WRITE;
 /*!40000 ALTER TABLE `menu_semanal` DISABLE KEYS */;
-INSERT INTO `menu_semanal` VALUES (24,'erwerwer','werwe','rwer','werwe','werwer','rwer','werwe','werwer','ewr','werwe','rwer','rwer','erwe','rwerwer','wer','rwerwerw','rwer','werw','werw','werwe','rwer','erwe','rwer','erwe','werwe','wer','ewr','wer','wer','rwer','rwe','rwer','werwe','werwe','rwer','rwe','rwer','wee','wer','rwe','rwe','wer',35),(25,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',36),(26,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',37),(27,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',38),(29,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',40);
+INSERT INTO `menu_semanal` VALUES (68,'\r\nfdfdsfsdf\r\n\r\n','      sdfsdf','         \r\nsdfsd\r\n\r\n','         \r\nfsdfs\r\n\r\n','         \r\ndfsdfsdfsdf\r\n\r\n','         \r\ndfsdfs\r\n\r\n','  erwer       \r\n\r\nerwer\r\n','         \r\n\r\nrwrwerwerwer\r\n','         \r\nwer\r\nwerw\r\n','         \r\nerwerwer\r\n\r\n','         \r\n\r\nwerw\r\n','        erw\r\n\r\nwer\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\nwer\r\n\r\n','         \r\nr\r\n\r\n','         \r\nerwe\r\n\r\n','         rwerw\r\n\r\n\r\n','         \r\nwerwe\r\n\r\n','         \r\nerw\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n','         \r\n\r\n\r\n',58);
 /*!40000 ALTER TABLE `menu_semanal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -437,7 +438,7 @@ CREATE TABLE `pacientes` (
   KEY `divisionseleccion` (`divisionseleccion`),
   CONSTRAINT `paci-div` FOREIGN KEY (`division`) REFERENCES `divisiones` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `paci-divSeleccion` FOREIGN KEY (`divisionseleccion`) REFERENCES `divisiones` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -446,7 +447,7 @@ CREATE TABLE `pacientes` (
 
 LOCK TABLES `pacientes` WRITE;
 /*!40000 ALTER TABLE `pacientes` DISABLE KEYS */;
-INSERT INTO `pacientes` VALUES (4,'MARIA INES','MANGIONI','28562487','masculino','masculino','IOSPER','4243056','05/4/1980','BLAQUI@HOTMAIL.COM','RIOS NAHUEL','                                                                       VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ','DOCENTE',28,NULL),(5,'GIOVANNI','PETTERIN','123486498','masculino','AV LAS AMERICAS 23','IOSPER','154292724','05/4/1980','GIO@GMAIL.COM','RIOS NAHUEL','vENGO POR CONTROLA\r\n ','EMPLEADO',19,NULL),(6,'JULIAN','LANFRANCO','30558609','masculino','SAN AGUSTIN 4554','OSECAC','13432423','05/11/1983','JFIODJFOIJSDF@FDFDSIJF.COM','SWHARTZ JORGE','VENGO PARA SUPERAR MIS MARCAS.- \r\n ','ESTUDIANTE',26,18),(7,'RIOS','NAHUEL','32518745','masculino','CARBO 23','IOSPER','154292724','05/7/1986','BLAQUI@HOTMAIL.COM','BOROCOTO',' VENGO PARA LLEGAR AL VERANO.\r\n ','EMPLEADO',27,25),(9,'LEOPOLDO','BARRIOS','28562489','masculino','AV SAN MARTIN 44','IOSPER','154292724','12/09/1970','IRIS@GMAIL.COM','RAITIERI PEDRO',' veNGO POR LAS DUDAS.-\r\n ','DOCENTE',NULL,18),(10,'JULIAN','PONS','28562488','masculino','AV LAS AMERICAS 23','IOSPER','154292724','05/11/1983','GIO@GMAIL.COM','RIOS NAHUEL',' VENGO POR UNA CONTROL.-\r\n ','DOCENTE',23,25),(11,'GIOVANNI','DIAZ','205456789','masculino','COLONIA AVELLANEDA','IOSPER','1651515','05/4/1980','BLAQUI@HOTMAIL.COM','SWHARTZ JORGE',' VENGO POR CONTROL.-\r\n ','EMPLEADO',17,29),(25,'GIOVANNI','DIAZ','12','femenino','AV SAN MARTIN 44','UOSIMRA','154292724','05/4/1980','IRIS@GMAIL.COM','RIOS NAHUEL',' \r\n fewfwef','EMPLEADO',17,24),(29,'GIOVANNI','MANGIONI','127','femenino','AV LAS AMERICAS 23','UOSIMRA','154292724','05/4/1980','GIO@GMAIL.COM','RIOS NAHUEL','      \r\n fdfsdf\r\n     ','EMPLEADO',17,NULL),(30,'GIOVANNI','PONS','123582','masculino','AV SAN MARTIN 44','IOSPER','47454849','05/4/1980','IRIS@GMAIL.COM','RIOS NAHUEL',' \r\n ','DOCENTE',NULL,NULL);
+INSERT INTO `pacientes` VALUES (4,'MARIA INES','MANGIONI','28562487','femenino','masculino','IOSPER','4243056','05/4/1980','BLAQUI@HOTMAIL.COM','RIOS NAHUEL','                                                                                      VENGO POR UNA OPERACION.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ','empleado',NULL,NULL),(6,'JULIAN','LANFRANCO','30558609','femenino','SAN AGUSTIN 4554','OSECAC','13432423','05/11/1983','JFIODJFOIJSDF@FDFDSIJF.COM','SWHARTZ JORGE','Vengo por control.-\r\n \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     \r\n     ','ESTUDIANTE',28,NULL),(7,'RIOS','NAHUEL','32518745','masculino','CARBO 23','IOSPER','154292724','05/7/1986','BLAQUI@HOTMAIL.COM','BOROCOTO',' VENGO PARA LLEGAR AL VERANO.\r\n ','EMPLEADO',27,25),(10,'JULIAN','PONS','28562488','masculino','AV LAS AMERICAS 23','IOSPER','154292724','05/11/1983','GIO@GMAIL.COM','RIOS NAHUEL','      VENGO POR UNA CONTROL.-\r\n \r\n     ','DOCENTE',26,25),(11,'GIOVANNI','DIAZ','205456789','masculino','COLONIA AVELLANEDA','IOSPER','1651515','05/4/1980','BLAQUI@HOTMAIL.COM','SWHARTZ JORGE',' VENGO POR CONTROL.-\r\n ','EMPLEADO',26,29),(25,'GIOVANNI','DIAZ','12','femenino','AV SAN MARTIN 44','UOSIMRA','154292724','05/4/1980','IRIS@GMAIL.COM','RIOS NAHUEL',' \r\n fewfwef','EMPLEADO',26,24),(30,'GIOVANNI','PONS','123582','masculino','AV SAN MARTIN 44','IOSPER','47454849','05/4/1980','IRIS@GMAIL.COM','RIOS NAHUEL',' \r\n ','DOCENTE',26,NULL),(31,'fabian','gomez','15948753','masculino','ramirez 2123','IOSPER','4243056','1981-12-13','fabigo@gmail.com','pedro martinez','                vengo por control.\r\n \r\n     \r\n     \r\n     ','taxista',26,NULL);
 /*!40000 ALTER TABLE `pacientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -464,7 +465,7 @@ CREATE TABLE `planes` (
   PRIMARY KEY (`id`),
   KEY `paciente` (`paciente`),
   CONSTRAINT `paciente-plan` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -473,7 +474,7 @@ CREATE TABLE `planes` (
 
 LOCK TABLES `planes` WRITE;
 /*!40000 ALTER TABLE `planes` DISABLE KEYS */;
-INSERT INTO `planes` VALUES (35,'2016-10-31',5),(36,'2016-11-05',5),(37,'2016-11-05',5),(38,'2016-11-14',6),(40,'2016-11-14',6);
+INSERT INTO `planes` VALUES (58,'2016-11-22',6);
 /*!40000 ALTER TABLE `planes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -505,7 +506,7 @@ CREATE TABLE `recordatorios` (
   PRIMARY KEY (`id`),
   KEY `paciente` (`paciente`),
   CONSTRAINT `reco-paci` FOREIGN KEY (`paciente`) REFERENCES `pacientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -514,7 +515,7 @@ CREATE TABLE `recordatorios` (
 
 LOCK TABLES `recordatorios` WRITE;
 /*!40000 ALTER TABLE `recordatorios` DISABLE KEYS */;
-INSERT INTO `recordatorios` VALUES (24,'2016-11-05','7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'23',5),(25,'2016-11-14','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',6);
+INSERT INTO `recordatorios` VALUES (45,'2016-11-22','07:10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'23:10',6),(51,'2016-11-22','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',31),(52,'2016-11-22','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',31),(53,'2016-11-22','07:07',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'02:03',6);
 /*!40000 ALTER TABLE `recordatorios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -531,7 +532,7 @@ CREATE TABLE `respaldos` (
   `detalle` varchar(255) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -540,7 +541,6 @@ CREATE TABLE `respaldos` (
 
 LOCK TABLES `respaldos` WRITE;
 /*!40000 ALTER TABLE `respaldos` DISABLE KEYS */;
-INSERT INTO `respaldos` VALUES (38,'respaldo_06-11-2016-1478389210.sql','respaldo luego de una carga grande en el club echague.','2016-11-06');
 /*!40000 ALTER TABLE `respaldos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -569,7 +569,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'admin','12345678',1,'2016-11-15','2016-10-21','2016-11-05');
+INSERT INTO `usuarios` VALUES (1,'admin','12345678',1,'2016-11-23','2016-10-21','2016-11-05');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -582,4 +582,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-15 13:08:33
+-- Dump completed on 2016-11-23 19:15:16

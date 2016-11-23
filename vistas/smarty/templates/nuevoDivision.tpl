@@ -8,7 +8,7 @@
                           padding-left: 10px;
                           margin: 10px;">
   <div class="col-md-10" >
-   <h2>Nueva Division</h2>
+   <h2>Nueva División</h2>
   </div>
 </div>
 <table class="table table-striped header-fixed">
@@ -27,7 +27,7 @@
    
 <label class="col-sm-4">Nombre:</label>
 <div class="col-sm-8">
-   <input type="text" class="form-control" id="nombre" name="nombre" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la division.">
+   <input type="text" class="form-control" id="nombre" name="nombre" value="" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la división.">
 </div>
 <br><br><br>     
  <label class="col-sm-4">Club:</label>
@@ -67,15 +67,15 @@
 </div>
 <br><br><br>
 
-<label class="col-sm-4">Telefono de Contacto:</label>
+<label class="col-sm-4">Teléfono de Contacto:</label>
 <div class="col-sm-8">
-<input type="text" class="form-control" id="telefono" name="telefono" value="" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros">
+<input type="text" class="form-control" id="telefono" name="telefono" value="" required pattern="^[0-9]+" title="Ingrese el teléfono. Solo numeros">
 </div>
 <br><br><br>
 
 <label class="col-sm-4">Correo de Contacto:</label>
 <div class="col-sm-8">
-<input type="email" class="form-control" id="correo" name="correo" value="" required  title="Ingrese el correo electronico">
+<input type="email" class="form-control" id="correo" name="correo" value="" required  title="Ingrese el correo electrónico">
 </div>
 <br><br><br>
 <label class="col-sm-4">Entrenador:</label>

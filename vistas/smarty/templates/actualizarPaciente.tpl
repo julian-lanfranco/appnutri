@@ -65,7 +65,7 @@
 </div>
 
 
-<label class="col-sm-1">Genero:</label>
+<label class="col-sm-1">Género:</label>
 <div id=selectorDeSexo>
 <div class="col-sm-2">
     <select name="seleccionSexoModPacientes" class="form-control" id="seleccionSexoModPacientes">
@@ -81,7 +81,7 @@
 </div>
 
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=seelctorDeDivisiones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesModPacientes" class="form-control" id="seleccionDivisionesModPacientes">
@@ -139,7 +139,7 @@
 </div>
 
 
-<label class="col-sm-1">Genero:</label>
+<label class="col-sm-1">Género:</label>
 <div id=selectorDeSexoSelecciones>
 <div class="col-sm-2">
     <select name="seleccionSexoSeleccionesModPacientes" class="form-control" id="seleccionSexoSeleccionesModPacientes">
@@ -156,7 +156,7 @@
 
 
 
-<label class="col-sm-1">Division:</label>
+<label class="col-sm-1">División:</label>
 <div id=selectorDeDivisionesSelecciones>
 <div class="col-sm-2">
     <select name="seleccionDivisionesSeleccionModPacientes" class="form-control" id="seleccionDivisionesSeleccionModPacientes">
@@ -205,14 +205,14 @@
       <input type="text" class="form-control" id="dni" name="dni" value="{$dni}" required pattern="^[0-9]+" title="Ingrese el DNI. Solo numeros">
       </div>
       
-      <label class="col-sm-1">Direccion:</label>
+      <label class="col-sm-1">Dirección:</label>
       <div class="col-sm-3">
-      <input type="text" class="form-control" id="direccion" name="direccion" value="{$direccion}" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la direccion. Solo letras">
+      <input type="text" class="form-control" id="direccion" name="direccion" value="{$direccion}" required pattern="^[a-zA-Z0-9-\s]+" title="Ingrese la dirección. Solo letras">
       </div>
       
-      <label class="col-sm-1">Telefono:</label>
+      <label class="col-sm-1">Teléfono:</label>
       <div class="col-sm-2">
-      <input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" required pattern="^[0-9]+" title="Ingrese el telefono. Solo numeros">
+      <input type="text" class="form-control" id="telefono" name="telefono" value="{$telefono}" required pattern="^[0-9]+" title="Ingrese el teléfono. Solo numeros">
       </div>
  <br><br> <br>    
       <label class="col-sm-1">Obra Social:</label>
@@ -225,20 +225,20 @@
       <input type="text" class="form-control" id="nacimiento" name="nacimiento" value="{$nacimiento}" required  title="Ingrese la fecha de nacimiento">
       </div>
       
-      <label class="col-sm-1">Correo Electronico:</label>
+      <label class="col-sm-1">Correo Electrónico:</label>
       <div class="col-sm-2">
-      <input type="email" class="form-control" id="correo" name="correo" value="{$correo}" required title="Ingrese el correo electronico. Solo letras">
+      <input type="email" class="form-control" id="correo" name="correo" value="{$correo}" required title="Ingrese el correo electrónico. Solo letras">
       </div>
   <br><br><br>    
-      <label class="col-sm-1">Medico de Cabecera:</label>
+      <label class="col-sm-1">Médico de Cabecera:</label>
       <div class="col-sm-3">
-      <input type="text" class="form-control" id="medico" name="medico" value="{$medico}" required pattern="^[a-zA-Z-\s]+" title="Ingrese el nombre del medico. Solo letras">
+      <input type="text" class="form-control" id="medico" name="medico" value="{$medico}" required pattern="^[a-zA-Z-\s]+" title="Ingrese el nombre del médico. Solo letras">
       </div>
       
       
-      <label class="col-sm-1">Ocupacion:</label>
+      <label class="col-sm-1">Ocupación:</label>
       <div class="col-sm-3">
-      <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="{$ocupacion}" required pattern="^[a-zA-Z-\s]+" title="Ingrese la ocupacion. Solo letras">
+      <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="{$ocupacion}" required pattern="^[a-zA-Z-\s]+" title="Ingrese la ocupación. Solo letras">
       </div>
 
       <label class="col-sm-1">Sexo:</label>
